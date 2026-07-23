@@ -711,6 +711,7 @@ renderKeywords();renderBuzzCards();renderReviewCats();renderReviews();
 // 실데이터 로드 + 5분마다 자동 새로고침 (열어둔 채로 최신 뉴스 반영)
 loadNewsJson();
 setInterval(loadNewsJson, 5*60*1000);
+renderNewsDates();   // "오늘" 칩 기본 표시
 loadNewsIndex();
 loadStockJson();
 loadEventsJson();
