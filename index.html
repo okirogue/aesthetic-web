@@ -137,6 +137,8 @@
   .filter-chip{cursor:pointer; padding:5px 12px; border-radius:16px; font-size:12px; border:1px solid var(--line); background:var(--panel); color:var(--sub)}
   .filter-chip.on{background:var(--green); color:#fff; border-color:var(--green)}
   .na-msg{text-align:center; color:var(--dim); padding:60px 0; font-size:13px}
+  #cal-grid{grid-auto-rows:1fr}
+  #cal-grid .cell{max-height:118px; overflow:hidden}
   #news-domestic{display:grid; grid-template-columns:1fr 1fr; gap:2px 20px; align-items:start}
   .news-block{min-width:0}
   @media(max-width:720px){#news-domestic{grid-template-columns:1fr}}
@@ -469,15 +471,20 @@ async function loadNewsJson(){
 }
 
 let calDate=new Date(2026,6,1);
+let calCo=null;   // null=전체, 기업명=해당 기업 공시만
 function collectEvents(){
   let out=[];
-  watchlist.forEach(co=>(companyEvents[co]||[]).forEach(e=>out.push({...e,co})));
-  if(watchlist.length) statutoryEvents(calDate.getFullYear()).forEach(e=>out.push({...e,co:"전 종목 공통"}));
+  const cos = calCo ? [calCo] : watchlist;
+  cos.forEach(co=>(companyEvents[co]||[]).forEach(e=>out.push({...e,co})));
+  if(!calCo) statutoryEvents(calDate.getFullYear()).forEach(e=>out.push({...e,co:"전 종목 공통"}));
   return out;
 }
 function renderWatchlist(){
-  document.getElementById('watchlist').innerHTML=watchlist.map(c=>`<span class="chip">${c}</span>`).join('')||'<span style="color:var(--dim)">관찰목록이 비어 있습니다</span>';
+  let html=`<span class="filter-chip ${calCo===null?'on':''}" onclick="setCalCo(null)">전체</span>`;
+  html+=watchlist.map(c=>`<span class="filter-chip ${calCo===c?'on':''}" onclick="setCalCo('${c}')">${c}</span>`).join('');
+  document.getElementById('watchlist').innerHTML=html;
 }
+function setCalCo(c){ calCo=(calCo===c)?null:c; renderWatchlist(); renderCalendar(); renderUpcoming(); }
 function renderCalendar(){
   const y=calDate.getFullYear(),m=calDate.getMonth();
   document.getElementById('cal-month').textContent=`${y}. ${String(m+1).padStart(2,'0')}`;
@@ -488,11 +495,17 @@ function renderCalendar(){
   for(let i=0;i<first;i++)cells+='<div class="cell empty"></div>';
   for(let d=1;d<=days;d++){
     const ds=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-    const evHtml=evs.filter(e=>e.date===ds).map(e=>{
+    const dayEvs=evs.filter(e=>e.date===ds);
+    const MAXEV=3;
+    let evHtml=dayEvs.slice(0,MAXEV).map(e=>{
       const c=CO_COLORS[e.co]||'#9aa4af';
       const click=e.url?` onclick="window.open('${e.url}','_blank')" style="cursor:pointer;border-color:${c};color:${c};background:${c}18"`:` style="border-color:${c};color:${c};background:${c}18"`;
       return `<div class="ev"${click} title="${e.co} · ${e.title}${e.url?' (클릭 시 공시 원문)':''}">${e.title}</div>`;
     }).join('');
+    if(dayEvs.length>MAXEV){
+      const rest=dayEvs.slice(MAXEV).map(e=>`${e.co} · ${e.title}`).join('\n');
+      evHtml+=`<div class="ev" style="border-color:var(--dim);color:var(--dim);background:var(--panel2)" title="${rest}">+${dayEvs.length-MAXEV}건 더</div>`;
+    }
     cells+=`<div class="cell ${ds===todayStr?'today':''}"><div class="d">${d}</div>${evHtml}</div>`;
   }
   document.getElementById('cal-grid').innerHTML=cells;
