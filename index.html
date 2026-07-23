@@ -346,17 +346,23 @@ function renderNewsKeywords(){
 function setNewsKw(k){newsActiveKw=(newsActiveKw===k)?null:k;renderNewsKeywords();renderNewsList();}
 function addNewsKeyword(){const inp=document.getElementById('nkw-input');const v=inp.value.trim();if(v&&!newsCompanies.includes(v)){newsCompanies.push(v);inp.value='';renderNewsKeywords();}}
 function delNewsKeyword(i){if(newsActiveKw===newsCompanies[i])newsActiveKw=null;newsCompanies.splice(i,1);renderNewsKeywords();renderNewsList();}
+function _newsHref(n){ return n.link || n.url || '#'; }
+function _newsTime(n){ return n.time || n.date || ''; }          // 봇 데이터는 date("07/23 14:24")
+function _newsSrc(n){
+  if(n.src) return n.src;
+  try{ return new URL(n.link || n.url).hostname.replace(/^www\./,''); }catch(e){ return ''; }
+}
 function renderNewsList(){
   const match=n=> newsActiveKw===null || n.co===newsActiveKw;
   const dom=newsDomestic.filter(match);
   const byCo={}; dom.forEach(n=>(byCo[n.co]=byCo[n.co]||[]).push(n));
   document.getElementById('news-domestic').innerHTML=Object.keys(byCo).map(co=>
     `<div class="news-co">${co}</div>`+byCo[co].map(n=>
-      `<div class="news-item"><span class="time">${n.time}</span><a href="${n.url}" target="_blank" rel="noopener">${n.title}</a><span class="src">${n.src}</span></div>`).join('')
-  ).join('')||'<div style="color:var(--dim);padding:6px 2px">해당 키워드 뉴스 없음</div>';
+      `<div class="news-item"><span class="time">${_newsTime(n)}</span><a href="${_newsHref(n)}" target="_blank" rel="noopener">${n.title}</a><span class="src">${_newsSrc(n)}</span></div>`).join('')
+  ).join('')||'<div style="color:var(--dim);padding:6px 2px">해당 기업 뉴스 없음</div>';
   const fdom=newsForeign.filter(match);
   document.getElementById('news-foreign').innerHTML=fdom.map(n=>
-    `<div class="news-item"><span class="time">${n.co}</span><a href="${n.url}" target="_blank" rel="noopener">${n.title}</a><span class="src">${n.src}</span></div>`).join('')||'<div style="color:var(--dim);padding:6px 2px">해당 키워드 뉴스 없음</div>';
+    `<div class="news-item"><span class="time">${n.co}</span><a href="${_newsHref(n)}" target="_blank" rel="noopener">${n.title}</a><span class="src">${_newsSrc(n)}</span></div>`).join('')||'<div style="color:var(--dim);padding:6px 2px">해당 기업 뉴스 없음</div>';
 }
 function renderNews(){
   document.getElementById('last-updated').innerHTML=`마지막 업데이트 <b>${newsUpdated}</b>`;
