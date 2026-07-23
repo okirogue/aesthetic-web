@@ -137,6 +137,9 @@
   .filter-chip{cursor:pointer; padding:5px 12px; border-radius:16px; font-size:12px; border:1px solid var(--line); background:var(--panel); color:var(--sub)}
   .filter-chip.on{background:var(--green); color:#fff; border-color:var(--green)}
   .na-msg{text-align:center; color:var(--dim); padding:60px 0; font-size:13px}
+  #news-domestic{display:grid; grid-template-columns:1fr 1fr; gap:2px 20px; align-items:start}
+  .news-block{min-width:0}
+  @media(max-width:720px){#news-domestic{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -386,8 +389,8 @@ function renderNewsList(){
   const dom=newsDomestic.filter(match);
   const byCo={}; dom.forEach(n=>(byCo[n.co]=byCo[n.co]||[]).push(n));
   document.getElementById('news-domestic').innerHTML=Object.keys(byCo).map(co=>
-    `<div class="news-co">${co}</div>`+byCo[co].map(n=>
-      `<div class="news-item"><span class="time">${_newsTime(n)}</span><a href="${_newsHref(n)}" target="_blank" rel="noopener">${n.title}</a><span class="src">${_newsSrc(n)}</span></div>`).join('')
+    `<div class="news-block"><div class="news-co">${co}</div>`+byCo[co].map(n=>
+      `<div class="news-item"><span class="time">${_newsTime(n)}</span><a href="${_newsHref(n)}" target="_blank" rel="noopener">${n.title}</a><span class="src">${_newsSrc(n)}</span></div>`).join('')+`</div>`
   ).join('')||'<div style="color:var(--dim);padding:6px 2px">해당 기업 뉴스 없음</div>';
   const fdom=newsForeign.filter(match);
   document.getElementById('news-foreign').innerHTML=fdom.map(n=>
