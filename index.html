@@ -154,9 +154,9 @@
 
   <!-- ============ DAILY NEWS ============ -->
   <section class="view active" id="view-news">
-    <div class="sec-h"><div class="l"><h2>추적 키워드</h2></div><span class="note">뉴스 수집 키워드 · 칩 클릭 시 필터</span></div>
+    <div class="sec-h"><div class="l"><h2>추적 기업</h2></div><span class="note">기업별 필터 · 칩 클릭 시 해당 기업 뉴스만</span></div>
     <div class="chips" id="news-keywords"></div>
-    <div class="add-form" style="margin-top:6px"><input id="nkw-input" placeholder="키워드 입력 (예: 세포라)" /><button onclick="addNewsKeyword()">+ 추가</button></div>
+    <div class="add-form" style="margin-top:6px"><input id="nkw-input" placeholder="기업명 입력 (예: 파마리서치)" /><button onclick="addNewsKeyword()">+ 추가</button></div>
 
     <div class="sec-h"><div class="l"><h2>오늘의 클리핑</h2></div><span class="note">네이버 · 국내 · 매일 자동(예정)</span></div>
     <div id="news-domestic"></div>
@@ -242,20 +242,22 @@
 /* ================= 데이터 레이어 (실배포 시 API 응답으로 교체) ================= */
 
 // 데일리 뉴스 (봇이 news.json으로 저장 → 페이지가 읽음)
-const newsUpdated = "2026-07-23 08:00";
-const newsDomestic = [
+let newsUpdated = "2026-07-23 08:00";
+let newsDomestic = [
   {co:"파마리서치", time:"07:42", src:"이데일리", url:"#", title:"파마리서치, 리쥬란 유럽 세포라 입점 확대…하반기 매출 기대"},
   {co:"파마리서치", time:"07:05", src:"머니투데이", url:"#", title:"2Q 잠정실적 예고 공정공시 임박, 컨센 상회 전망"},
   {co:"휴젤", time:"08:10", src:"한국경제", url:"#", title:"휴젤, 미국 보툴렉스 처방 실적 순항…3파전 점유 확대"},
   {co:"클래시스", time:"06:55", src:"서울경제", url:"#", title:"클래시스 슈링크 유니버스 국내 설치 대수 사상 최대"},
   {co:"에이피알", time:"07:20", src:"아시아경제", url:"#", title:"에이피알 메디큐브, 미국 아마존 뷰티 랭킹 상위권 유지"},
 ];
-const newsForeign = [
+let newsForeign = [
   {co:"Galderma", time:"06:10", src:"Google RSS", url:"#", title:"Galderma reports strong Q2 aesthetics growth, raises FY guidance"},
   {co:"AbbVie/Allergan", time:"05:48", src:"Google RSS", url:"#", title:"Allergan Aesthetics expands Juvederm portfolio in EU market"},
   {co:"Merz Aesthetics", time:"05:30", src:"Google RSS", url:"#", title:"Merz launches new skinbooster line targeting European clinics"},
 ];
-let newsKeywords = ["리쥬란","실적","세포라","아마존"];
+// 추적 기업: 뉴스 데이터의 회사(co)에서 자동 도출 (news.json 연동 시 갱신)
+function deriveNewsCompanies(){ return [...new Set([...newsDomestic.map(n=>n.co), ...newsForeign.map(n=>n.co)])]; }
+let newsCompanies = deriveNewsCompanies();
 let newsActiveKw = null; // null = 전체
 
 // 커버리지 종목
@@ -338,14 +340,14 @@ let curPeriod="quarter", exportChart=null;
 function renderNewsKeywords(){
   const el=document.getElementById('news-keywords');
   let html=`<span class="filter-chip ${newsActiveKw===null?'on':''}" onclick="setNewsKw(null)">전체</span>`;
-  html+=newsKeywords.map((k,i)=>`<span class="chip" style="${newsActiveKw===k?'border-color:var(--green);color:var(--green-d)':''}"><span onclick="setNewsKw('${k}')" style="cursor:pointer">${k}</span><button onclick="delNewsKeyword(${i})">×</button></span>`).join('');
+  html+=newsCompanies.map((k,i)=>`<span class="chip" style="${newsActiveKw===k?'border-color:var(--green);color:var(--green-d)':''}"><span onclick="setNewsKw('${k}')" style="cursor:pointer">${k}</span><button onclick="delNewsKeyword(${i})">×</button></span>`).join('');
   el.innerHTML=html;
 }
 function setNewsKw(k){newsActiveKw=(newsActiveKw===k)?null:k;renderNewsKeywords();renderNewsList();}
-function addNewsKeyword(){const inp=document.getElementById('nkw-input');const v=inp.value.trim();if(v&&!newsKeywords.includes(v)){newsKeywords.push(v);inp.value='';renderNewsKeywords();}}
-function delNewsKeyword(i){if(newsActiveKw===newsKeywords[i])newsActiveKw=null;newsKeywords.splice(i,1);renderNewsKeywords();renderNewsList();}
+function addNewsKeyword(){const inp=document.getElementById('nkw-input');const v=inp.value.trim();if(v&&!newsCompanies.includes(v)){newsCompanies.push(v);inp.value='';renderNewsKeywords();}}
+function delNewsKeyword(i){if(newsActiveKw===newsCompanies[i])newsActiveKw=null;newsCompanies.splice(i,1);renderNewsKeywords();renderNewsList();}
 function renderNewsList(){
-  const match=n=> newsActiveKw===null || n.title.includes(newsActiveKw) || n.co.includes(newsActiveKw);
+  const match=n=> newsActiveKw===null || n.co===newsActiveKw;
   const dom=newsDomestic.filter(match);
   const byCo={}; dom.forEach(n=>(byCo[n.co]=byCo[n.co]||[]).push(n));
   document.getElementById('news-domestic').innerHTML=Object.keys(byCo).map(co=>
@@ -359,6 +361,20 @@ function renderNewsList(){
 function renderNews(){
   document.getElementById('last-updated').innerHTML=`마지막 업데이트 <b>${newsUpdated}</b>`;
   renderNewsKeywords(); renderNewsList();
+}
+// 실데이터 연동: 봇이 올린 news.json을 읽어 최신 뉴스로 교체 (없으면 샘플 유지)
+async function loadNewsJson(){
+  try{
+    const r = await fetch('news.json', {cache:'no-store'});
+    if(!r.ok) return;
+    const d = await r.json();
+    if(d.updated) newsUpdated = d.updated;
+    if(Array.isArray(d.domestic)) newsDomestic = d.domestic;
+    if(Array.isArray(d.foreign))  newsForeign  = d.foreign;
+    // 관찰목록에 없던 기업은 유지하되, 데이터에 있는 기업을 병합
+    deriveNewsCompanies().forEach(c=>{ if(!newsCompanies.includes(c)) newsCompanies.push(c); });
+    renderNews();
+  }catch(e){ /* news.json 아직 없음 → 샘플 유지 */ }
 }
 
 let calDate=new Date(2026,6,1);
@@ -491,6 +507,10 @@ renderNews();
 renderWatchlist();renderCalendar();renderUpcoming();
 renderKeywords();renderBuzzCards();renderReviewCats();renderReviews();
 document.getElementById('nkw-input').addEventListener('keydown',e=>{if(e.key==='Enter')addNewsKeyword()});
+
+// 실데이터 로드 + 5분마다 자동 새로고침 (열어둔 채로 최신 뉴스 반영)
+loadNewsJson();
+setInterval(loadNewsJson, 5*60*1000);
 </script>
 </body>
 </html>
