@@ -192,7 +192,7 @@
     <div class="sec-h"><div class="l"><h2>투자자 수급</h2></div><span class="note">기간 내 누적 순매수(억원) · 기관·외국인·개인</span></div>
     <div class="chart-box"><canvas id="flowChart"></canvas><div class="na-msg" id="flowNA" style="display:none">해당 종목 데이터 없음 (N/A)</div></div>
 
-    <div class="sec-h"><div class="l"><h2>에스테틱 5사 합산 시총</h2></div><span class="note">파마리서치·휴젤·클래시스·엘앤씨바이오·한스바이오메드 · 조원</span></div>
+    <div class="sec-h"><div class="l"><h2>에스테틱 5사 합산 시총</h2></div><span class="note">5사 시총(조원) vs KOSDAQ(pt) 벤치마크</span></div>
     <div class="chart-box"><canvas id="aggChart"></canvas></div>
   </section>
 
@@ -531,6 +531,7 @@ let activeStock = stockCompanies[0];
 let stockDays = 252;                 // 12개월
 let priceChart=null, flowChart=null, aggChart=null;
 let stockData = null;                 // stock.json의 companies (실데이터)
+let stockKosdaq = null;               // stock.json의 kosdaq {dates, close}
 let stockInited = false;
 const _stockCache = {};
 function getStock(name){ return (stockData && stockData[name]) ? stockData[name] : null; }
@@ -540,6 +541,7 @@ async function loadStockJson(){
     if(!r.ok) return;
     const d=await r.json();
     stockData=d.companies||{};
+    stockKosdaq=d.kosdaq||null;
     if(stockInited){ renderStockCompanies(); renderStockCharts(); }
   }catch(e){ /* stock.json 없음 → N/A */ }
 }
@@ -607,10 +609,18 @@ function renderAggChart(){
   const sum=new Array(N).fill(0);
   comps.forEach(c=>{ const off=c.price.length-N; for(let i=0;i<N;i++) sum[i]+=c.price[off+i]*c.shares/1e12; });
   const labels=_tail(dates,stockDays);
-  const data=_tail(sum,stockDays).map(v=>+v.toFixed(2));
+  const capData=_tail(sum,stockDays).map(v=>+v.toFixed(2));
+  const datasets=[{label:'5사 합산 시총(조원)',data:capData,borderColor:'#57c00a',borderWidth:2.2,backgroundColor:'rgba(87,192,10,.08)',fill:true,pointRadius:0,tension:.15,yAxisID:'y'}];
+  const scales={x:_lineAxes.x, y:{position:'left',ticks:{color:'#9aa4af',callback:v=>v+'조'},grid:{color:'#eef1f3'}}};
+  if(stockKosdaq && stockKosdaq.dates){
+    const kmap={}; stockKosdaq.dates.forEach((d,i)=>kmap[d]=stockKosdaq.close[i]);
+    const kData=labels.map(d=> d in kmap ? kmap[d] : null);
+    datasets.push({label:'KOSDAQ(pt)',data:kData,borderColor:'#8f68c9',borderWidth:1.8,borderDash:[5,3],backgroundColor:'transparent',pointRadius:0,tension:.15,yAxisID:'y1',spanGaps:true});
+    scales.y1={position:'right',ticks:{color:'#8f68c9'},grid:{drawOnChartArea:false},title:{display:true,text:'KOSDAQ(pt)',color:'#8f68c9',font:{size:10}}};
+  }
   const ctx=document.getElementById('aggChart');
   if(aggChart)aggChart.destroy();
-  aggChart=new Chart(ctx,{type:'line',data:{labels,datasets:[{label:'5사 합산 시총(조원)',data,borderColor:'#57c00a',borderWidth:2.2,backgroundColor:'rgba(87,192,10,.08)',fill:true,pointRadius:0,tension:.15}]},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{labels:{color:'#67707b',font:{size:11},boxWidth:18}}},scales:{x:_lineAxes.x,y:{ticks:{color:'#9aa4af',callback:v=>v+'조'},grid:{color:'#eef1f3'}}}}});
+  aggChart=new Chart(ctx,{type:'line',data:{labels,datasets},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{labels:{color:'#67707b',font:{size:11},boxWidth:18}}},scales}});
 }
 function renderFlowChart(){
   const s=getStock(activeStock);
