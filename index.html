@@ -142,10 +142,11 @@
 <div class="wrap">
   <div class="brand">재무팀</div>
   <h1>에스테틱 모니터링</h1>
-  <div class="subtitle" id="last-updated"></div>
+  <div class="subtitle"></div>
 
   <div class="tabs">
     <button class="tab active" data-view="news">데일리 뉴스</button>
+    <button class="tab" data-view="stock">주가 추이</button>
     <button class="tab" data-view="calendar">이벤트 캘린더</button>
     <button class="tab" data-view="buzz">국내 버즈</button>
     <button class="tab" data-view="trend">구글 트렌드</button>
@@ -158,10 +159,33 @@
     <div class="chips" id="news-keywords"></div>
     <div class="add-form" style="margin-top:6px"><input id="nkw-input" placeholder="기업명 입력 (예: 파마리서치)" /><button onclick="addNewsKeyword()">+ 추가</button></div>
 
-    <div class="sec-h"><div class="l"><h2>오늘의 클리핑</h2></div><span class="note">네이버 · 국내 · 매일 자동(예정)</span></div>
+    <div class="sec-h"><div class="l"><h2>오늘의 클리핑</h2><span class="note" id="clip-updated" style="margin-left:9px"></span></div><span class="note">네이버 · 국내</span></div>
     <div id="news-domestic"></div>
     <div class="sec-h"><div class="l"><h2>해외 뉴스</h2></div><span class="note">Google RSS · Galderma · Allergan · Merz 등</span></div>
     <div id="news-foreign"></div>
+  </section>
+
+  <!-- ============ STOCK ============ -->
+  <section class="view" id="view-stock">
+    <div class="sec-h"><div class="l"><h2>추적 기업</h2></div><span class="note">칩 클릭 시 해당 종목 차트</span></div>
+    <div class="chips" id="stock-companies"></div>
+    <div class="add-form" style="margin-top:6px"><input id="sc-input" placeholder="종목명 입력" /><button onclick="addStockCompany()">+ 추가</button></div>
+
+    <div class="sec-h"><div class="l"><h2>기간</h2></div>
+      <div class="toggle" id="period-stock">
+        <button data-days="21">1개월</button>
+        <button data-days="63">3개월</button>
+        <button data-days="126">6개월</button>
+        <button class="active" data-days="252">12개월</button>
+      </div>
+    </div>
+    <div class="add-form" style="margin:2px 0 4px"><input id="period-input" placeholder="직접입력 (개월, 예: 18)" style="width:170px" /><button onclick="applyCustomPeriod()">적용</button></div>
+
+    <div class="sec-h"><div class="l"><h2 id="band-title">멀티플 밴드</h2></div><span class="note">PER 10x~30x · 수정종가</span></div>
+    <div class="chart-box"><canvas id="bandChart"></canvas></div>
+
+    <div class="sec-h"><div class="l"><h2>투자자 수급 &amp; 외국인 지분율</h2></div><span class="note">누적 순매수(억원) · 지분율(%)</span></div>
+    <div class="chart-box"><canvas id="flowChart"></canvas></div>
   </section>
 
   <!-- ============ CALENDAR ============ -->
@@ -365,7 +389,7 @@ function renderNewsList(){
     `<div class="news-item"><span class="time">${n.co}</span><a href="${_newsHref(n)}" target="_blank" rel="noopener">${n.title}</a><span class="src">${_newsSrc(n)}</span></div>`).join('')||'<div style="color:var(--dim);padding:6px 2px">해당 기업 뉴스 없음</div>';
 }
 function renderNews(){
-  document.getElementById('last-updated').innerHTML=`마지막 업데이트 <b>${newsUpdated}</b>`;
+  const el=document.getElementById('clip-updated'); if(el) el.innerHTML=`마지막 업데이트 <b>${newsUpdated}</b>`;
   renderNewsKeywords(); renderNewsList();
 }
 // 실데이터 연동: 봇이 올린 news.json을 읽어 최신 뉴스로 교체 (없으면 샘플 유지)
@@ -493,6 +517,86 @@ function renderExportTable(){
 }
 document.querySelectorAll('#period-toggle button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#period-toggle button').forEach(x=>x.classList.remove('active'));b.classList.add('active');curPeriod=b.dataset.period;renderExportChart();});
 
+/* ================= 주가 추이 ================= */
+let stockCompanies = ["파마리서치","휴젤","클래시스","에이피알","엘앤씨바이오","한스바이오메드"];
+let activeStock = stockCompanies[0];
+let stockDays = 252;                 // 12개월
+let bandChart=null, flowChart=null;
+const _stockCache = {};
+
+function _rng(seed){ let s=seed%2147483647; if(s<=0)s+=2147483646; return ()=>{ s=(s*16807)%2147483647; return (s-1)/2147483646; }; }
+function genStock(name){
+  if(_stockCache[name]) return _stockCache[name];
+  const seed=[...name].reduce((a,c)=>a+c.charCodeAt(0),0)*7+13;
+  const rnd=_rng(seed);
+  const N=252;
+  // 영업일 날짜 (오늘부터 역산)
+  const dts=[]; let d=new Date(2026,6,23);
+  while(dts.length<N){ const w=d.getDay(); if(w!==0&&w!==6) dts.push(`${String(d.getFullYear()).slice(2)}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`); d=new Date(d.getTime()-86400000); }
+  dts.reverse();
+  const eps0=10000+rnd()*8000;
+  const bands={10:[],15:[],20:[],25:[],30:[]};
+  const price=[]; let p=eps0*20*(0.8+rnd()*0.5);
+  const flow={inst:[],frgn:[],indv:[]}; let ci=0,cf=0,cp=0;
+  const own=[]; let o=10+rnd()*6;
+  for(let i=0;i<N;i++){
+    const eps=eps0*(1+i/N*0.25);
+    [10,15,20,25,30].forEach(m=>bands[m].push(Math.round(eps*m)));
+    const fair=eps*(16+rnd()*8);
+    p+=(fair-p)*0.015+(rnd()-0.5)*p*0.055; p=Math.max(p,eps*8);
+    price.push(Math.round(p));
+    ci+=(rnd()-0.5)*380; cf+=(rnd()-0.47)*420; cp+=(rnd()-0.53)*380;
+    flow.inst.push(Math.round(ci)); flow.frgn.push(Math.round(cf)); flow.indv.push(Math.round(cp));
+    o+=(rnd()-0.5)*0.6; o=Math.max(4,Math.min(23,o)); own.push(+o.toFixed(1));
+  }
+  return _stockCache[name]={dates:dts,price,bands,flow,own};
+}
+function _tail(arr,n){ return arr.slice(Math.max(0,arr.length-n)); }
+
+function renderStockCompanies(){
+  document.getElementById('stock-companies').innerHTML=stockCompanies.map((c,i)=>{
+    const on=c===activeStock;
+    return `<span class="chip" style="${on?'border-color:var(--green);color:var(--green-d);font-weight:700':''}"><span onclick="setStockCompany('${c}')" style="cursor:pointer">${c}</span><button onclick="delStockCompany(${i})">×</button></span>`;
+  }).join('')||'<span style="color:var(--dim)">종목을 추가하세요</span>';
+}
+function setStockCompany(c){ activeStock=c; renderStockCompanies(); renderStockCharts(); }
+function addStockCompany(){ const inp=document.getElementById('sc-input'); const v=inp.value.trim(); if(v&&!stockCompanies.includes(v)){ stockCompanies.push(v); inp.value=''; activeStock=v; renderStockCompanies(); renderStockCharts(); } }
+function delStockCompany(i){ const c=stockCompanies[i]; stockCompanies.splice(i,1); if(activeStock===c) activeStock=stockCompanies[0]||null; renderStockCompanies(); renderStockCharts(); }
+
+const BAND_STYLE={10:['#57c00a',1.5],15:['#a5d96a',1.5],20:['#666',1.3],25:['#9aa4af',1.3],30:['#cfd6dd',1.3]};
+function renderBandChart(){
+  if(!activeStock){ if(bandChart){bandChart.destroy();bandChart=null;} return; }
+  const dt=genStock(activeStock);
+  const labels=_tail(dt.dates,stockDays);
+  const ds=[10,15,20,25,30].map(m=>({label:m+'x',data:_tail(dt.bands[m],stockDays),borderColor:BAND_STYLE[m][0],borderWidth:BAND_STYLE[m][1],backgroundColor:'transparent',pointRadius:0,tension:.2}));
+  ds.push({label:'수정종가',data:_tail(dt.price,stockDays),borderColor:'#1f6b1f',borderWidth:2.4,backgroundColor:'transparent',pointRadius:0,tension:.15});
+  document.getElementById('band-title').textContent=`멀티플 밴드 · ${activeStock}`;
+  const ctx=document.getElementById('bandChart');
+  if(bandChart)bandChart.destroy();
+  bandChart=new Chart(ctx,{type:'line',data:{labels,datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{labels:{color:'#67707b',font:{size:11},boxWidth:18}}},scales:{x:{ticks:{color:'#9aa4af',maxTicksLimit:12,autoSkip:true},grid:{color:'#eef1f3'}},y:{ticks:{color:'#9aa4af',callback:v=>(v/1000)+'천'},grid:{color:'#eef1f3'}}}}});
+}
+function renderFlowChart(){
+  if(!activeStock){ if(flowChart){flowChart.destroy();flowChart=null;} return; }
+  const dt=genStock(activeStock);
+  const labels=_tail(dt.dates,stockDays);
+  const ds=[
+    {label:'기관',data:_tail(dt.flow.inst,stockDays),borderColor:'#1f6b1f',borderWidth:1.8,backgroundColor:'transparent',pointRadius:0,tension:.2,yAxisID:'y'},
+    {label:'외국인',data:_tail(dt.flow.frgn,stockDays),borderColor:'#57c00a',borderWidth:1.8,backgroundColor:'transparent',pointRadius:0,tension:.2,yAxisID:'y'},
+    {label:'개인',data:_tail(dt.flow.indv,stockDays),borderColor:'#a5d96a',borderWidth:1.8,backgroundColor:'transparent',pointRadius:0,tension:.2,yAxisID:'y'},
+    {label:'외국인 지분율(%)',data:_tail(dt.own,stockDays),borderColor:'#8f68c9',borderWidth:2,borderDash:[4,3],backgroundColor:'transparent',pointRadius:0,tension:.2,yAxisID:'y1'},
+  ];
+  const ctx=document.getElementById('flowChart');
+  if(flowChart)flowChart.destroy();
+  flowChart=new Chart(ctx,{type:'line',data:{labels,datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{labels:{color:'#67707b',font:{size:11},boxWidth:18}}},scales:{
+    x:{ticks:{color:'#9aa4af',maxTicksLimit:12,autoSkip:true},grid:{color:'#eef1f3'}},
+    y:{position:'left',ticks:{color:'#9aa4af'},grid:{color:'#eef1f3'},title:{display:true,text:'누적 순매수(억원)',color:'#9aa4af',font:{size:10}}},
+    y1:{position:'right',ticks:{color:'#8f68c9'},grid:{drawOnChartArea:false},title:{display:true,text:'지분율(%)',color:'#8f68c9',font:{size:10}}}
+  }}});
+}
+function renderStockCharts(){ renderBandChart(); renderFlowChart(); }
+document.querySelectorAll('#period-stock button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#period-stock button').forEach(x=>x.classList.remove('active'));b.classList.add('active');stockDays=+b.dataset.days;renderStockCharts();});
+function applyCustomPeriod(){ const v=parseInt(document.getElementById('period-input').value,10); if(v>0){ stockDays=Math.min(252,Math.round(v*21)); document.querySelectorAll('#period-stock button').forEach(x=>x.classList.remove('active')); renderStockCharts(); } }
+
 /* 탭 */
 document.querySelectorAll('.tab').forEach(t=>{
   t.onclick=()=>{
@@ -500,6 +604,7 @@ document.querySelectorAll('.tab').forEach(t=>{
     document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));
     t.classList.add('active');
     document.getElementById('view-'+t.dataset.view).classList.add('active');
+    if(t.dataset.view==='stock'&&!bandChart){renderStockCompanies();renderStockCharts();}
     if(t.dataset.view==='buzz'&&!buzzChart)renderBuzzChart();
     if(t.dataset.view==='trend'&&!trendChart){renderTrendChart();renderTrendCards();}
     if(t.dataset.view==='export'&&!exportChart){renderExportChart();renderExportTable();}
