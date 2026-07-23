@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>에스테틱 모니터링 · 재무팀</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#e7eaed; --panel:#ffffff; --panel2:#f1f5ef; --line:#dbe0e5;
+    --txt:#2b3138; --sub:#67707b; --dim:#9aa4af;
+    --green:#4e9d46; --green-d:#3c7f36; --lime:#6fb43a; --lime-txt:#4f9a2a;
+    --lime-bg:#eef6e7; --limebar:#8bc34a;
+    --up:#4e9d46; --down:#d9534f; --blue:#4a90d9; --purple:#8f68c9;
+    --radius:12px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--txt);
+    font-family:'Pretendard','Apple SD Gothic Neo',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased; font-size:14px; line-height:1.5;
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:22px 16px 80px}
+  /* header */
+  .brand{font-size:11px; letter-spacing:2px; color:var(--green); font-weight:700}
+  h1{font-size:25px; margin:5px 0 3px; font-weight:800; letter-spacing:-.4px; color:var(--txt)}
+  .subtitle{color:var(--sub); font-size:13px; margin-bottom:20px}
+  .subtitle b{color:var(--green-d)}
+  /* tabs */
+  .tabs{display:flex; gap:4px; border-bottom:2px solid var(--line); margin-bottom:22px; overflow-x:auto}
+  .tab{
+    padding:10px 15px; background:none; border:none; color:var(--sub);
+    font-size:14px; font-weight:600; cursor:pointer; border-bottom:2px solid transparent;
+    white-space:nowrap; margin-bottom:-2px;
+  }
+  .tab.active{color:var(--green-d); border-bottom-color:var(--green)}
+  .view{display:none}
+  .view.active{display:block}
+  /* section headings — green bar */
+  .sec-h{display:flex; align-items:center; justify-content:space-between; margin:26px 0 12px}
+  .sec-h .l{display:flex; align-items:center; gap:9px}
+  .sec-h .l::before{content:""; width:4px; height:17px; background:var(--green); border-radius:2px}
+  .sec-h h2{font-size:16px; margin:0; font-weight:700}
+  .sec-h .note{color:var(--dim); font-size:11px}
+  /* chips */
+  .chips{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:6px}
+  .chip{
+    display:inline-flex; align-items:center; gap:6px; background:var(--panel);
+    border:1px solid var(--line); border-radius:20px; padding:6px 10px 6px 12px; font-size:13px;
+    box-shadow:0 1px 2px rgba(0,0,0,.03);
+  }
+  .chip button{background:none; border:none; color:var(--dim); cursor:pointer; font-size:15px; line-height:1; padding:0}
+  .chip button:hover{color:var(--down)}
+  .add-form{display:inline-flex; gap:6px}
+  .add-form input{
+    background:var(--panel); border:1px solid var(--line); border-radius:20px;
+    color:var(--txt); padding:6px 12px; font-size:13px; width:130px; outline:none;
+  }
+  .add-form input:focus{border-color:var(--green)}
+  .add-form button{
+    background:var(--green); color:#fff; border:none; border-radius:20px;
+    padding:6px 14px; font-weight:700; cursor:pointer; font-size:13px;
+  }
+  .add-form button:hover{background:var(--green-d)}
+  /* toggle group */
+  .toggle{display:inline-flex; gap:4px; background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:3px}
+  .toggle button{background:none; border:none; padding:6px 13px; border-radius:8px; font-size:13px; color:var(--sub); cursor:pointer; font-weight:600}
+  .toggle button.active{background:var(--green); color:#fff}
+  /* calendar */
+  .cal-head{display:flex; align-items:center; gap:14px; margin-bottom:10px}
+  .cal-head .m{font-size:16px; font-weight:700; min-width:110px; text-align:center}
+  .cal-head button{background:var(--panel); border:1px solid var(--line); color:var(--txt); width:30px; height:30px; border-radius:8px; cursor:pointer; font-size:14px}
+  .grid{display:grid; grid-template-columns:repeat(7,1fr); gap:5px}
+  .dow{text-align:center; font-size:11px; color:var(--dim); padding:4px 0; font-weight:600}
+  .cell{background:var(--panel); border:1px solid var(--line); border-radius:8px; min-height:74px; padding:5px 5px 3px; position:relative}
+  .cell.empty{background:transparent; border:none}
+  .cell.today{border-color:var(--green); box-shadow:0 0 0 1px var(--green) inset}
+  .cell .d{font-size:11px; color:var(--sub); font-weight:600}
+  .cell.today .d{color:var(--green-d)}
+  .ev{font-size:10px; padding:2px 4px; border-radius:4px; margin-top:3px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; border-left:2px solid}
+  .ev.ir{border-color:var(--blue); background:#eaf2fb; color:#2f6cb0}
+  .ev.earn{border-color:var(--lime); background:var(--lime-bg); color:var(--lime-txt)}
+  .ev.filing{border-color:var(--purple); background:#f2edfa; color:#6b47a8}
+  .ev.meeting{border-color:var(--green); background:#e9f5e7; color:var(--green-d)}
+  .legend{display:flex; flex-wrap:wrap; gap:14px; margin-top:12px; font-size:11px; color:var(--sub)}
+  .legend span{display:inline-flex; align-items:center; gap:5px}
+  .dot{width:9px; height:9px; border-radius:2px; display:inline-block}
+  /* upcoming */
+  .up-list{display:flex; flex-direction:column; gap:6px; margin-top:6px}
+  .up-row{display:grid; grid-template-columns:64px 1fr auto; gap:10px; align-items:center; padding:10px 12px; background:var(--panel); border:1px solid var(--line); border-radius:10px}
+  .up-row .date{font-size:12px; color:var(--green-d); font-weight:700}
+  .up-row .title{font-size:13px}
+  .up-row .co{font-size:11px; color:var(--dim)}
+  .up-row .tag{font-size:10px; padding:3px 8px; border-radius:12px; background:var(--panel2); color:var(--sub); white-space:nowrap}
+  /* stat cards (green top border, like deck) */
+  .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-bottom:8px}
+  .card{background:var(--panel); border:1px solid var(--line); border-top:3px solid var(--green); border-radius:var(--radius); padding:13px 16px; box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .card .k{font-size:12px; color:var(--green-d); font-weight:700; margin-bottom:6px}
+  .card .v{font-size:26px; font-weight:800; letter-spacing:-.5px}
+  .card .v.lime{color:var(--lime-txt)}
+  .card .s{font-size:11px; color:var(--dim); margin-top:4px}
+  .card .s .up{color:var(--up); font-weight:700} .card .s .down{color:var(--down); font-weight:700}
+  /* chart */
+  .chart-box{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:16px; margin-bottom:8px; box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .chart-box canvas{max-height:300px}
+  /* table */
+  table{width:100%; border-collapse:collapse; background:var(--panel); border-radius:var(--radius); overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,.04); font-size:13px}
+  thead th{background:var(--green); color:#fff; font-weight:700; padding:11px 12px; text-align:right}
+  thead th:first-child{text-align:left}
+  tbody td{padding:10px 12px; text-align:right; border-bottom:1px solid var(--line)}
+  tbody td:first-child{text-align:left; font-weight:600}
+  tbody tr:nth-child(even){background:#fafbfa}
+  tbody tr.total{background:var(--lime-bg); font-weight:700}
+  tbody tr.total td{border-bottom:none}
+  td .up{color:var(--up)} td .down{color:var(--down)}
+  .hl{color:var(--lime-txt); font-weight:700}
+  /* reviews */
+  .rev{padding:12px 14px; background:var(--panel); border:1px solid var(--line); border-radius:10px; margin-bottom:8px}
+  .rev .top{display:flex; justify-content:space-between; align-items:center; margin-bottom:5px}
+  .rev .src{font-size:11px; color:var(--dim)}
+  .rev .senti{font-size:10px; padding:2px 8px; border-radius:12px; font-weight:700}
+  .senti.pos{background:#e9f5e7; color:var(--green-d)}
+  .senti.neu{background:#eef0f2; color:var(--sub)}
+  .senti.neg{background:#fbeaea; color:var(--down)}
+  .rev .body{font-size:13px; color:var(--txt)}
+  .rev .kw{font-size:11px; color:var(--lime-txt); margin-top:5px; font-weight:600}
+  .seed{font-size:11px; color:var(--dim); text-align:center; margin-top:30px; padding-top:16px; border-top:1px solid var(--line)}
+  .unit{font-size:11px; color:var(--dim); text-align:right; margin-bottom:6px}
+  /* news */
+  .news-co{font-size:12px; font-weight:700; color:var(--green-d); margin:14px 0 6px; display:flex; align-items:center; gap:7px}
+  .news-co::before{content:""; width:3px; height:13px; background:var(--limebar); border-radius:2px}
+  .news-item{display:flex; gap:10px; padding:9px 12px; background:var(--panel); border:1px solid var(--line); border-radius:9px; margin-bottom:5px; align-items:baseline}
+  .news-item .time{font-size:11px; color:var(--dim); white-space:nowrap; min-width:38px}
+  .news-item a{font-size:13px; color:var(--txt); text-decoration:none; flex:1}
+  .news-item a:hover{color:var(--green-d); text-decoration:underline}
+  .news-item .src{font-size:11px; color:var(--dim); white-space:nowrap}
+  .filter-chip{cursor:pointer; padding:5px 12px; border-radius:16px; font-size:12px; border:1px solid var(--line); background:var(--panel); color:var(--sub)}
+  .filter-chip.on{background:var(--green); color:#fff; border-color:var(--green)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">재무팀</div>
+  <h1>에스테틱 모니터링</h1>
+  <div class="subtitle" id="last-updated"></div>
+
+  <div class="tabs">
+    <button class="tab active" data-view="news">데일리 뉴스</button>
+    <button class="tab" data-view="calendar">이벤트 캘린더</button>
+    <button class="tab" data-view="buzz">국내 버즈</button>
+    <button class="tab" data-view="trend">구글 트렌드</button>
+    <button class="tab" data-view="export">수출 데이터</button>
+  </div>
+
+  <!-- ============ DAILY NEWS ============ -->
+  <section class="view active" id="view-news">
+    <div class="sec-h"><div class="l"><h2>추적 키워드</h2></div><span class="note">뉴스 수집 키워드 · 칩 클릭 시 필터</span></div>
+    <div class="chips" id="news-keywords"></div>
+    <div class="add-form" style="margin-top:6px"><input id="nkw-input" placeholder="키워드 입력 (예: 세포라)" /><button onclick="addNewsKeyword()">+ 추가</button></div>
+
+    <div class="sec-h"><div class="l"><h2>오늘의 클리핑</h2></div><span class="note">네이버 · 국내 · 매일 자동(예정)</span></div>
+    <div id="news-domestic"></div>
+    <div class="sec-h"><div class="l"><h2>해외 뉴스</h2></div><span class="note">Google RSS · Galderma · Allergan · Merz 등</span></div>
+    <div id="news-foreign"></div>
+  </section>
+
+  <!-- ============ CALENDAR ============ -->
+  <section class="view" id="view-calendar">
+    <div class="sec-h"><div class="l"><h2>관찰목록</h2></div><span class="note">추가/삭제 시 캘린더·기준일 자동 반영</span></div>
+    <div class="chips" id="watchlist"></div>
+    <div class="add-form" style="margin-top:6px"><input id="wl-input" placeholder="종목명 입력" /><button onclick="addWatch()">+ 추가</button></div>
+
+    <div class="sec-h"><div class="l"><h2>이벤트 캘린더</h2></div><span class="note">IR·기업설명회 · 잠정실적 예고 · 공시 기준일(12월 결산 자동)</span></div>
+    <div class="cal-head"><button onclick="moveMonth(-1)">‹</button><div class="m" id="cal-month"></div><button onclick="moveMonth(1)">›</button></div>
+    <div class="grid" id="cal-dow"></div>
+    <div class="grid" id="cal-grid" style="margin-top:5px"></div>
+    <div class="legend">
+      <span><i class="dot" style="background:var(--blue)"></i> IR·기업설명회</span>
+      <span><i class="dot" style="background:var(--lime)"></i> 잠정실적 예고·발표</span>
+      <span><i class="dot" style="background:var(--purple)"></i> 공시 제출기한</span>
+      <span><i class="dot" style="background:var(--green)"></i> 주총·기준일</span>
+    </div>
+
+    <div class="sec-h"><div class="l"><h2>다가오는 일정</h2></div><span class="note">가까운 순</span></div>
+    <div class="up-list" id="upcoming"></div>
+  </section>
+
+  <!-- ============ BUZZ ============ -->
+  <section class="view" id="view-buzz">
+    <div class="sec-h"><div class="l"><h2>추적 키워드</h2></div><span class="note">네이버 블로그+카페 언급량 · 매주 자동(예정)</span></div>
+    <div class="chips" id="keywords"></div>
+    <div class="add-form" style="margin-top:6px"><input id="kw-input" placeholder="키워드 입력 (예: 리쥬란)" /><button onclick="addKeyword()">+ 추가</button></div>
+
+    <div class="sec-h"><div class="l"><h2>이번 주 스냅샷</h2></div><span class="note">직전 주 대비</span></div>
+    <div class="cards" id="buzz-cards"></div>
+
+    <div class="sec-h"><div class="l"><h2>언급량 추이</h2></div><span class="note">주간 · 네이버 블로그+카페 문서 수</span></div>
+    <div class="chart-box"><canvas id="buzzChart"></canvas></div>
+
+    <div class="sec-h"><div class="l"><h2>후기 (키워드별)</h2></div><span class="note">언급량 많은 순 · 카테고리별 10개 내외</span></div>
+    <div class="chips" id="review-cats"></div>
+    <div id="reviews" style="margin-top:8px"></div>
+  </section>
+
+  <!-- ============ GOOGLE TREND ============ -->
+  <section class="view" id="view-trend">
+    <div class="sec-h"><div class="l"><h2>지역 선택</h2></div><span class="note">pytrends · geo 필터 · 매주 자동(예정)</span></div>
+    <div class="toggle" id="region-toggle">
+      <button class="active" data-region="프랑스">프랑스</button>
+      <button data-region="영국">영국</button>
+      <button data-region="유럽">유럽(EU)</button>
+    </div>
+
+    <div class="sec-h"><div class="l"><h2>검색 관심도 추이</h2></div><span class="note" id="trend-note">상대 검색지수(0–100) · 절대 판매량 아님</span></div>
+    <div class="chart-box"><canvas id="trendChart"></canvas></div>
+
+    <div class="sec-h"><div class="l"><h2>키워드별 현황</h2></div><span class="note">최근값 · 3개월 모멘텀</span></div>
+    <div class="cards" id="trend-cards"></div>
+  </section>
+
+  <!-- ============ EXPORT ============ -->
+  <section class="view" id="view-export">
+    <div class="sec-h"><div class="l"><h2>기간 단위</h2></div><span class="note">관세청 수출 확정치 · HS품목 매핑</span></div>
+    <div class="toggle" id="period-toggle">
+      <button class="active" data-period="quarter">분기별</button>
+      <button data-period="month">월별</button>
+    </div>
+
+    <div class="sec-h"><div class="l"><h2>품목별 수출 추이</h2></div><span class="note">톡신 · 필러(HA) · 스킨부스터 · 화장품</span></div>
+    <div class="unit">단위: 백만원</div>
+    <div class="chart-box"><canvas id="exportChart"></canvas></div>
+
+    <div class="sec-h"><div class="l"><h2>최근 분기 요약</h2></div><span class="note">직전분기 QoQ · 전년동기 YoY</span></div>
+    <div class="unit">단위: 백만원 · %</div>
+    <div id="export-table"></div>
+  </section>
+
+  <div class="seed">시드 데이터 (DART·네이버·pytrends·관세청 API 미연결) — 구조만 잡은 프로토타입입니다</div>
+</div>
+
+<script>
+/* ================= 데이터 레이어 (실배포 시 API 응답으로 교체) ================= */
+
+// 데일리 뉴스 (봇이 news.json으로 저장 → 페이지가 읽음)
+const newsUpdated = "2026-07-23 08:00";
+const newsDomestic = [
+  {co:"파마리서치", time:"07:42", src:"이데일리", url:"#", title:"파마리서치, 리쥬란 유럽 세포라 입점 확대…하반기 매출 기대"},
+  {co:"파마리서치", time:"07:05", src:"머니투데이", url:"#", title:"2Q 잠정실적 예고 공정공시 임박, 컨센 상회 전망"},
+  {co:"휴젤", time:"08:10", src:"한국경제", url:"#", title:"휴젤, 미국 보툴렉스 처방 실적 순항…3파전 점유 확대"},
+  {co:"클래시스", time:"06:55", src:"서울경제", url:"#", title:"클래시스 슈링크 유니버스 국내 설치 대수 사상 최대"},
+  {co:"에이피알", time:"07:20", src:"아시아경제", url:"#", title:"에이피알 메디큐브, 미국 아마존 뷰티 랭킹 상위권 유지"},
+];
+const newsForeign = [
+  {co:"Galderma", time:"06:10", src:"Google RSS", url:"#", title:"Galderma reports strong Q2 aesthetics growth, raises FY guidance"},
+  {co:"AbbVie/Allergan", time:"05:48", src:"Google RSS", url:"#", title:"Allergan Aesthetics expands Juvederm portfolio in EU market"},
+  {co:"Merz Aesthetics", time:"05:30", src:"Google RSS", url:"#", title:"Merz launches new skinbooster line targeting European clinics"},
+];
+let newsKeywords = ["리쥬란","실적","세포라","아마존"];
+let newsActiveKw = null; // null = 전체
+
+// 커버리지 종목
+let watchlist = ["파마리서치","휴젤","클래시스","에이피알","엘앤씨바이오","한스바이오메드"];
+const companyEvents = {
+  "파마리서치":[{date:"2026-07-28",type:"ir",title:"기업설명회(IR) 개최"},{date:"2026-08-11",type:"earn",title:"2Q 잠정실적 예고(공정공시)"}],
+  "휴젤":[{date:"2026-07-30",type:"ir",title:"해외 IR 로드쇼"},{date:"2026-08-06",type:"earn",title:"2Q 잠정실적 발표"}],
+  "클래시스":[{date:"2026-08-13",type:"earn",title:"2Q 잠정실적 발표"}],
+  "에이피알":[{date:"2026-08-07",type:"earn",title:"2Q 잠정실적 예고"}],
+};
+function statutoryEvents(year){
+  return [
+    {date:`${year}-03-31`,type:"filing",title:"사업보고서 제출기한"},
+    {date:`${year}-03-27`,type:"meeting",title:"정기주주총회(통상)"},
+    {date:`${year}-03-20`,type:"meeting",title:"감사보고서 제출(주총 1주 전)"},
+    {date:`${year}-05-15`,type:"filing",title:"1분기보고서 제출기한"},
+    {date:`${year}-08-14`,type:"filing",title:"반기보고서 제출기한"},
+    {date:`${year}-11-14`,type:"filing",title:"3분기보고서 제출기한"},
+    {date:`${year-1}-12-31`,type:"meeting",title:"주총 의결권 기준일"},
+  ];
+}
+
+// 국내 버즈
+let keywords = ["리쥬란","스킨부스터","보툴리눔톡신","울쎄라"];
+const KW_COLORS = {"리쥬란":"#6fb43a","스킨부스터":"#4a90d9","보툴리눔톡신":"#8f68c9","울쎄라":"#e0a13c"};
+const buzzWeeks = ["6/8","6/15","6/22","6/29","7/6","7/13","7/20"];
+const buzzSeries = {
+  "리쥬란":[820,910,880,1040,1180,1320,1510],
+  "스킨부스터":[640,700,720,690,760,810,870],
+  "보툴리눔톡신":[1200,1180,1250,1210,1300,1280,1340],
+  "울쎄라":[430,460,440,500,520,560,610],
+};
+// 후기: 키워드 카테고리별 (표출은 최대 10개)
+const reviewsByKw = {
+  "리쥬란":[
+    {src:"네이버 블로그 · 7/21",senti:"pos",body:"리쥬란 힐러 3회차 끝나고 피부 결이 확실히 매끈해졌어요. 붓기도 덜하고 회복 빠름."},
+    {src:"네이버 블로그 · 7/18",senti:"pos",body:"리쥬란 아이 눈밑에 맞았는데 잔주름이랑 다크서클 톤이 밝아진 느낌. 재방문 의사 있음."},
+    {src:"네이버 카페 · 7/17",senti:"neu",body:"리쥬란 vs 쥬베룩 고민 중인데 둘 다 결은 좋아진다는 후기가 많네요."},
+    {src:"네이버 블로그 · 7/16",senti:"pos",body:"결혼 앞두고 리쥬란 스킨부스터 시작. 화장 안 먹던 부분이 확실히 나아짐."},
+    {src:"네이버 카페 · 7/15",senti:"neg",body:"리쥬란 시술 당일 통증이 생각보다 있었어요. 마취크림 꼭 챙기세요."},
+  ],
+  "보툴리눔톡신":[
+    {src:"네이버 블로그 · 7/20",senti:"neu",body:"톡신 종류별 차이 정리. 지속력은 제품마다 다르니 상담 필수."},
+    {src:"네이버 블로그 · 7/19",senti:"neg",body:"톡신 맞고 표정이 살짝 부자연스러워서 다음엔 용량 줄여달라고 해야겠어요."},
+    {src:"네이버 카페 · 7/18",senti:"pos",body:"사각턱 톡신 3주차, 갸름해진 게 눈에 보여서 만족도 높음."},
+    {src:"네이버 블로그 · 7/16",senti:"pos",body:"이마 주름 톡신 처음인데 자연스럽게 잘 잡혔어요."},
+  ],
+  "스킨부스터":[
+    {src:"네이버 카페 · 7/20",senti:"neu",body:"스킨부스터 종류가 너무 많아 뭐가 맞는지 상담받고 결정. 병원마다 가격 편차 큼."},
+    {src:"네이버 블로그 · 7/18",senti:"pos",body:"스킨부스터 2회 후 속건조가 줄고 광이 도는 느낌."},
+    {src:"네이버 블로그 · 7/15",senti:"pos",body:"환절기 푸석함 때문에 시작했는데 확실히 촉촉해졌어요."},
+  ],
+  "울쎄라":[
+    {src:"네이버 블로그 · 7/19",senti:"pos",body:"울쎄라 리프팅 한 달차, 턱선 라인이 살아나는 중."},
+    {src:"네이버 카페 · 7/17",senti:"neg",body:"울쎄라 시술 통증 후기 많아 걱정. 수면 옵션 문의함."},
+    {src:"네이버 블로그 · 7/14",senti:"neu",body:"울쎄라 vs 슈링크 비교 상담. 목적에 따라 다르다네요."},
+  ],
+};
+
+// 구글 트렌드 (지역별 · 월별 index 0~100)
+const trendMonths = ["1월","2월","3월","4월","5월","6월","7월"];
+const trendData = {
+  "프랑스":{"Rejuran":[42,48,55,60,58,66,72],"Profhilo":[70,68,72,75,73,71,69],"Skinbooster":[38,40,45,44,50,53,58]},
+  "영국":  {"Rejuran":[35,38,44,50,54,60,65],"Profhilo":[80,82,79,85,83,81,84],"Skinbooster":[45,47,44,49,52,55,57]},
+  "유럽":  {"Rejuran":[40,43,49,55,57,63,68],"Profhilo":[74,73,75,78,76,74,73],"Skinbooster":[41,43,45,47,50,53,56]},
+};
+const TREND_COLORS={"Rejuran":"#6fb43a","Profhilo":"#8f68c9","Skinbooster":"#4a90d9"};
+let curRegion="프랑스", trendChart=null;
+
+// 수출 데이터 (관세청 · 백만원)
+const exportQ={labels:["1Q25","2Q25","3Q25","4Q25","1Q26"],
+  series:{"톡신":[41000,45200,43800,48100,52300],"필러(HA)":[28000,30500,31200,33800,36400],"스킨부스터":[9500,11200,12800,13500,15100],"화장품":[62000,68000,72500,79000,86200]}};
+const exportM={labels:["2월","3월","4월","5월","6월","7월"],
+  series:{"톡신":[16800,17200,17000,17800,16900,18100],"필러(HA)":[11800,12200,12000,12600,12100,13200],"스킨부스터":[4600,4900,4800,5100,5000,5400],"화장품":[27500,28800,28100,29900,28600,31200]}};
+const EXP_COLORS={"톡신":"#6fb43a","필러(HA)":"#4a90d9","스킨부스터":"#e0a13c","화장품":"#8f68c9"};
+let curPeriod="quarter", exportChart=null;
+
+/* ================= 렌더링 ================= */
+// 데일리 뉴스
+function renderNewsKeywords(){
+  const el=document.getElementById('news-keywords');
+  let html=`<span class="filter-chip ${newsActiveKw===null?'on':''}" onclick="setNewsKw(null)">전체</span>`;
+  html+=newsKeywords.map((k,i)=>`<span class="chip" style="${newsActiveKw===k?'border-color:var(--green);color:var(--green-d)':''}"><span onclick="setNewsKw('${k}')" style="cursor:pointer">${k}</span><button onclick="delNewsKeyword(${i})">×</button></span>`).join('');
+  el.innerHTML=html;
+}
+function setNewsKw(k){newsActiveKw=(newsActiveKw===k)?null:k;renderNewsKeywords();renderNewsList();}
+function addNewsKeyword(){const inp=document.getElementById('nkw-input');const v=inp.value.trim();if(v&&!newsKeywords.includes(v)){newsKeywords.push(v);inp.value='';renderNewsKeywords();}}
+function delNewsKeyword(i){if(newsActiveKw===newsKeywords[i])newsActiveKw=null;newsKeywords.splice(i,1);renderNewsKeywords();renderNewsList();}
+function renderNewsList(){
+  const match=n=> newsActiveKw===null || n.title.includes(newsActiveKw) || n.co.includes(newsActiveKw);
+  const dom=newsDomestic.filter(match);
+  const byCo={}; dom.forEach(n=>(byCo[n.co]=byCo[n.co]||[]).push(n));
+  document.getElementById('news-domestic').innerHTML=Object.keys(byCo).map(co=>
+    `<div class="news-co">${co}</div>`+byCo[co].map(n=>
+      `<div class="news-item"><span class="time">${n.time}</span><a href="${n.url}" target="_blank" rel="noopener">${n.title}</a><span class="src">${n.src}</span></div>`).join('')
+  ).join('')||'<div style="color:var(--dim);padding:6px 2px">해당 키워드 뉴스 없음</div>';
+  const fdom=newsForeign.filter(match);
+  document.getElementById('news-foreign').innerHTML=fdom.map(n=>
+    `<div class="news-item"><span class="time">${n.co}</span><a href="${n.url}" target="_blank" rel="noopener">${n.title}</a><span class="src">${n.src}</span></div>`).join('')||'<div style="color:var(--dim);padding:6px 2px">해당 키워드 뉴스 없음</div>';
+}
+function renderNews(){
+  document.getElementById('last-updated').innerHTML=`마지막 업데이트 <b>${newsUpdated}</b>`;
+  renderNewsKeywords(); renderNewsList();
+}
+
+let calDate=new Date(2026,6,1);
+function collectEvents(){
+  let out=[];
+  watchlist.forEach(co=>(companyEvents[co]||[]).forEach(e=>out.push({...e,co})));
+  if(watchlist.length) statutoryEvents(calDate.getFullYear()).forEach(e=>out.push({...e,co:"전 종목 공통"}));
+  return out;
+}
+function renderWatchlist(){
+  document.getElementById('watchlist').innerHTML=watchlist.map((c,i)=>`<span class="chip">${c}<button onclick="delWatch(${i})">×</button></span>`).join('')||'<span style="color:var(--dim)">관찰목록이 비어 있습니다</span>';
+}
+function addWatch(){const inp=document.getElementById('wl-input');const v=inp.value.trim();if(v&&!watchlist.includes(v)){watchlist.push(v);inp.value='';renderWatchlist();renderCalendar();renderUpcoming();}}
+function delWatch(i){watchlist.splice(i,1);renderWatchlist();renderCalendar();renderUpcoming();}
+function renderCalendar(){
+  const y=calDate.getFullYear(),m=calDate.getMonth();
+  document.getElementById('cal-month').textContent=`${y}. ${String(m+1).padStart(2,'0')}`;
+  document.getElementById('cal-dow').innerHTML=['일','월','화','수','목','금','토'].map(d=>`<div class="dow">${d}</div>`).join('');
+  const evs=collectEvents(),first=new Date(y,m,1).getDay(),days=new Date(y,m+1,0).getDate();
+  const todayStr=new Date().toISOString().slice(0,10);
+  let cells='';
+  for(let i=0;i<first;i++)cells+='<div class="cell empty"></div>';
+  for(let d=1;d<=days;d++){
+    const ds=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const evHtml=evs.filter(e=>e.date===ds).map(e=>`<div class="ev ${e.type}" title="${e.co} · ${e.title}">${e.title}</div>`).join('');
+    cells+=`<div class="cell ${ds===todayStr?'today':''}"><div class="d">${d}</div>${evHtml}</div>`;
+  }
+  document.getElementById('cal-grid').innerHTML=cells;
+}
+function moveMonth(n){calDate.setMonth(calDate.getMonth()+n);renderCalendar();}
+function renderUpcoming(){
+  const today=new Date();today.setHours(0,0,0,0);
+  const labels={ir:"IR",earn:"실적",filing:"공시",meeting:"주총"};
+  const evs=collectEvents().filter(e=>new Date(e.date)>=today).sort((a,b)=>new Date(a.date)-new Date(b.date)).slice(0,8);
+  document.getElementById('upcoming').innerHTML=evs.map(e=>{const dt=new Date(e.date);return `<div class="up-row"><span class="date">${dt.getMonth()+1}/${dt.getDate()}</span><span><div class="title">${e.title}</div><div class="co">${e.co}</div></span><span class="tag">${labels[e.type]}</span></div>`;}).join('')||'<div style="color:var(--dim)">예정 이벤트 없음</div>';
+}
+
+/* 버즈 */
+let buzzChart=null;
+function renderKeywords(){document.getElementById('keywords').innerHTML=keywords.map((k,i)=>`<span class="chip"><i class="dot" style="background:${KW_COLORS[k]||'#888'}"></i>${k}<button onclick="delKeyword(${i})">×</button></span>`).join('');}
+function addKeyword(){const inp=document.getElementById('kw-input');const v=inp.value.trim();if(v&&!keywords.includes(v)){keywords.push(v);if(!buzzSeries[v])buzzSeries[v]=buzzWeeks.map(()=>0);if(!KW_COLORS[v])KW_COLORS[v]='#9aa4af';inp.value='';renderKeywords();renderBuzzChart();renderBuzzCards();}}
+function delKeyword(i){keywords.splice(i,1);renderKeywords();renderBuzzChart();renderBuzzCards();}
+function renderBuzzCards(){
+  document.getElementById('buzz-cards').innerHTML=keywords.map(k=>{const s=buzzSeries[k]||[0];const cur=s[s.length-1],prev=s[s.length-2]||cur;const pct=prev?Math.round((cur-prev)/prev*100):0;const cls=pct>=0?'up':'down';const sign=pct>=0?'▲':'▼';return `<div class="card"><div class="k">${k}</div><div class="v lime">${cur.toLocaleString()}</div><div class="s">직전주 대비 <span class="${cls}">${sign} ${Math.abs(pct)}%</span></div></div>`;}).join('');
+}
+const axisOpt={x:{ticks:{color:'#9aa4af'},grid:{color:'#eef1f3'}},y:{ticks:{color:'#9aa4af'},grid:{color:'#eef1f3'}}};
+function renderBuzzChart(){
+  const ctx=document.getElementById('buzzChart');
+  const ds=keywords.map(k=>({label:k,data:buzzSeries[k]||[],borderColor:KW_COLORS[k]||'#888',backgroundColor:'transparent',tension:.35,borderWidth:2,pointRadius:2}));
+  if(buzzChart)buzzChart.destroy();
+  buzzChart=new Chart(ctx,{type:'line',data:{labels:buzzWeeks,datasets:ds},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#67707b',font:{size:11}}}},scales:axisOpt}});
+}
+let activeReviewCat=null;
+function reviewCatsSorted(){
+  // 언급량(buzzSeries 최신값) 많은 순
+  return Object.keys(reviewsByKw).sort((a,b)=>{
+    const va=(buzzSeries[a]||[0]).slice(-1)[0], vb=(buzzSeries[b]||[0]).slice(-1)[0];
+    return vb-va;
+  });
+}
+function renderReviewCats(){
+  const cats=reviewCatsSorted();
+  if(activeReviewCat===null||!cats.includes(activeReviewCat)) activeReviewCat=cats[0];
+  document.getElementById('review-cats').innerHTML=cats.map(k=>{
+    const cnt=(buzzSeries[k]||[0]).slice(-1)[0];
+    const on=k===activeReviewCat;
+    return `<span class="filter-chip ${on?'on':''}" onclick="setReviewCat('${k}')"><i class="dot" style="background:${KW_COLORS[k]||'#888'};margin-right:5px"></i>${k} <b style="opacity:.75">${cnt.toLocaleString()}</b></span>`;
+  }).join('');
+}
+function setReviewCat(k){activeReviewCat=k;renderReviewCats();renderReviews();}
+function renderReviews(){
+  const label={pos:"긍정",neu:"중립",neg:"부정"};
+  const list=(reviewsByKw[activeReviewCat]||[]).slice(0,10);
+  document.getElementById('reviews').innerHTML=list.map(r=>`<div class="rev"><div class="top"><span class="src">${r.src}</span><span class="senti ${r.senti}">${label[r.senti]}</span></div><div class="body">${r.body}</div><div class="kw"># ${activeReviewCat}</div></div>`).join('');
+}
+
+/* 구글 트렌드 */
+function renderTrendChart(){
+  const ctx=document.getElementById('trendChart');
+  const region=trendData[curRegion];
+  const ds=Object.keys(region).map(k=>({label:k,data:region[k],borderColor:TREND_COLORS[k]||'#888',backgroundColor:'transparent',tension:.35,borderWidth:2,pointRadius:2}));
+  if(trendChart)trendChart.destroy();
+  trendChart=new Chart(ctx,{type:'line',data:{labels:trendMonths,datasets:ds},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#67707b',font:{size:11}}}},scales:{x:axisOpt.x,y:{...axisOpt.y,min:0,max:100}}}});
+}
+function renderTrendCards(){
+  const region=trendData[curRegion];
+  document.getElementById('trend-cards').innerHTML=Object.keys(region).map(k=>{const s=region[k];const cur=s[s.length-1],prev=s[s.length-4]||s[0];const pct=prev?Math.round((cur-prev)/prev*100):0;const cls=pct>=0?'up':'down';const sign=pct>=0?'▲':'▼';return `<div class="card"><div class="k">${k}</div><div class="v lime">${cur}</div><div class="s">3개월 모멘텀 <span class="${cls}">${sign} ${Math.abs(pct)}%</span></div></div>`;}).join('');
+}
+document.querySelectorAll('#region-toggle button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#region-toggle button').forEach(x=>x.classList.remove('active'));b.classList.add('active');curRegion=b.dataset.region;renderTrendChart();renderTrendCards();});
+
+/* 수출 데이터 */
+function curExport(){return curPeriod==='quarter'?exportQ:exportM;}
+function renderExportChart(){
+  const ctx=document.getElementById('exportChart');const dat=curExport();
+  const ds=Object.keys(dat.series).map(k=>({label:k,data:dat.series[k],backgroundColor:EXP_COLORS[k],borderRadius:3}));
+  if(exportChart)exportChart.destroy();
+  exportChart=new Chart(ctx,{type:'bar',data:{labels:dat.labels,datasets:ds},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#67707b',font:{size:11}}}},scales:{x:{...axisOpt.x,stacked:false},y:{...axisOpt.y,ticks:{color:'#9aa4af',callback:v=>(v/1000)+'천'}}}}});
+}
+function renderExportTable(){
+  const dat=exportQ;const n=dat.labels.length;
+  let rows=Object.keys(dat.series).map(k=>{const s=dat.series[k];const cur=s[n-1],prevQ=s[n-2],prevY=s[n-5]!==undefined?s[n-5]:s[0];
+    const qoq=Math.round((cur-prevQ)/prevQ*100),yoy=Math.round((cur-prevY)/prevY*100);
+    const qc=qoq>=0?'up':'down',yc=yoy>=0?'up':'down';
+    return `<tr><td>${k}</td><td class="hl">${cur.toLocaleString()}</td><td class="${qc}">${qoq>=0?'▲':'▼'} ${Math.abs(qoq)}%</td><td class="${yc}">${yoy>=0?'▲':'▼'} ${Math.abs(yoy)}%</td></tr>`;}).join('');
+  const tot=Object.keys(dat.series).reduce((a,k)=>a+dat.series[k][n-1],0);
+  const totPrevQ=Object.keys(dat.series).reduce((a,k)=>a+dat.series[k][n-2],0);
+  const totPrevY=Object.keys(dat.series).reduce((a,k)=>a+dat.series[k][0],0);
+  const tqoq=Math.round((tot-totPrevQ)/totPrevQ*100),tyoy=Math.round((tot-totPrevY)/totPrevY*100);
+  document.getElementById('export-table').innerHTML=`<table><thead><tr><th>품목</th><th>${dat.labels[n-1]}</th><th>QoQ</th><th>YoY</th></tr></thead><tbody>${rows}<tr class="total"><td>합계</td><td>${tot.toLocaleString()}</td><td class="up">▲ ${tqoq}%</td><td class="up">▲ ${tyoy}%</td></tr></tbody></table>`;
+}
+document.querySelectorAll('#period-toggle button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#period-toggle button').forEach(x=>x.classList.remove('active'));b.classList.add('active');curPeriod=b.dataset.period;renderExportChart();});
+
+/* 탭 */
+document.querySelectorAll('.tab').forEach(t=>{
+  t.onclick=()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById('view-'+t.dataset.view).classList.add('active');
+    if(t.dataset.view==='buzz'&&!buzzChart)renderBuzzChart();
+    if(t.dataset.view==='trend'&&!trendChart){renderTrendChart();renderTrendCards();}
+    if(t.dataset.view==='export'&&!exportChart){renderExportChart();renderExportTable();}
+  };
+});
+document.getElementById('wl-input').addEventListener('keydown',e=>{if(e.key==='Enter')addWatch()});
+document.getElementById('kw-input').addEventListener('keydown',e=>{if(e.key==='Enter')addKeyword()});
+
+// init
+renderNews();
+renderWatchlist();renderCalendar();renderUpcoming();
+renderKeywords();renderBuzzCards();renderReviewCats();renderReviews();
+document.getElementById('nkw-input').addEventListener('keydown',e=>{if(e.key==='Enter')addNewsKeyword()});
+</script>
+</body>
+</html>
