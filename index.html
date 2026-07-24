@@ -231,11 +231,7 @@
     </div>
     <div class="add-form" style="margin:2px 0 8px"><input id="buzz-from" type="date" style="width:150px" /><input id="buzz-to" type="date" style="width:150px" /><button onclick="applyBuzzRange()">적용</button></div>
 
-    <div class="sec-h"><div class="l"><h2>검색지수 · 주사/스킨부스터</h2></div><span class="note">리쥬란·쥬베룩·리투오·셀르디엠·쥬브아셀 · 네이버 DATALAB · 주단위 · 매일 08:30 갱신</span></div>
-    <div class="chart-box"><canvas id="buzzChart1"></canvas><div class="na-msg" id="buzz1NA" style="display:none">데이터 수집 전 — 봇 배포 후 자동 생성됩니다</div></div>
-
-    <div class="sec-h"><div class="l"><h2>검색지수 · EBD(장비)</h2></div><span class="note">덴서티·써마지·슈링크·리팟·볼뉴머 · 네이버 DATALAB · 주단위 · 매일 08:30 갱신</span></div>
-    <div class="chart-box"><canvas id="buzzChart2"></canvas><div class="na-msg" id="buzz2NA" style="display:none">데이터 수집 전 — 봇 배포 후 자동 생성됩니다</div></div>
+    <div id="buzz-charts"><div class="na-msg">데이터 수집 전 — 봇 배포 후 자동 생성됩니다</div></div>
 
     <div class="sec-h"><div class="l"><h2>제품별 정성 분석 · 버즈</h2></div><span class="note" id="insight-note">네이버 카페·블로그 · 주 1회 Claude 요약</span></div>
     <div class="chips" id="insight-weeks" style="margin-bottom:8px"></div>
@@ -533,8 +529,8 @@ function renderUpcoming(){
 }
 
 /* 버즈 — 네이버 DATALAB 검색지수 (buzz.json) */
-let buzzChart1=null, buzzChart2=null, buzzData=null;
-const BUZZ_COLORS=['#e0a13c','#4a90d9','#57c00a','#d9536f','#8f68c9'];
+let buzzChartObjs={}, buzzData=null;
+const BUZZ_COLORS=['#e0a13c','#4a90d9','#57c00a','#d9536f','#8f68c9','#2fa6a6','#c96f9f','#6b8e23'];
 const axisOpt={x:{ticks:{color:'#9aa4af',maxTicksLimit:14,autoSkip:true},grid:{color:'#eef1f3'}},y:{ticks:{color:'#9aa4af'},grid:{color:'#eef1f3'}}};
 async function loadBuzzJson(){
   try{
@@ -557,18 +553,27 @@ function _sliceBuzz(group){
   const series={}; Object.keys(group.series).forEach(k=>series[k]=idx.map(i=>group.series[k][i]));
   return {labels,series};
 }
-function _buzzChart(canvasId,naId,group,chartRef){
-  const ctx=document.getElementById(canvasId);
-  if(!group){ document.getElementById(naId).style.display=''; ctx.style.display='none'; return null; }
-  document.getElementById(naId).style.display='none'; ctx.style.display='';
-  const ds=Object.keys(group.series).map((k,i)=>({label:k,data:group.series[k],borderColor:BUZZ_COLORS[i%5],backgroundColor:'transparent',tension:.3,borderWidth:1.8,pointRadius:0}));
+function _buzzChart(canvasId,group,chartRef){
+  const ctx=document.getElementById(canvasId); if(!ctx||!group) return chartRef;
+  const ds=Object.keys(group.series).map((k,i)=>({label:k,data:group.series[k],borderColor:BUZZ_COLORS[i%BUZZ_COLORS.length],backgroundColor:'transparent',tension:.3,borderWidth:1.8,pointRadius:0}));
   if(chartRef)chartRef.destroy();
   return new Chart(ctx,{type:'line',data:{labels:group.labels,datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{labels:{color:'#67707b',font:{size:11},boxWidth:18}}},scales:{x:axisOpt.x,y:{...axisOpt.y,min:0,max:100}}}});
 }
 function renderBuzzTrends(){
-  const g=buzzData&&buzzData.groups?buzzData.groups:{};
-  buzzChart1=_buzzChart('buzzChart1','buzz1NA',_sliceBuzz(g.injectable),buzzChart1);
-  buzzChart2=_buzzChart('buzzChart2','buzz2NA',_sliceBuzz(g.ebd),buzzChart2);
+  const groups=buzzData&&buzzData.groups?buzzData.groups:{};
+  const cont=document.getElementById('buzz-charts'); if(!cont) return;
+  const keys=Object.keys(groups);
+  if(!keys.length){ cont.innerHTML='<div class="na-msg">데이터 수집 전 — 봇 배포 후 자동 생성됩니다</div>'; return; }
+  const na=cont.querySelector('.na-msg'); if(na) na.remove();
+  keys.forEach(k=>{
+    if(!document.getElementById('bc-'+k)){
+      const g=groups[k];
+      const sec=document.createElement('div');
+      sec.innerHTML=`<div class="sec-h"><div class="l"><h2>검색지수 · ${g.title}</h2></div><span class="note">${Object.keys(g.series||{}).join('·')} · DATALAB 주단위</span></div><div class="chart-box"><canvas id="bc-${k}"></canvas></div>`;
+      cont.appendChild(sec);
+    }
+  });
+  keys.forEach(k=>{ buzzChartObjs[k]=_buzzChart('bc-'+k,_sliceBuzz(groups[k]),buzzChartObjs[k]); });
 }
 function applyBuzzRange(){
   const f=document.getElementById('buzz-from').value, t=document.getElementById('buzz-to').value;
@@ -603,9 +608,10 @@ function renderInsights(d){
   const sm=document.getElementById('insight-summary');
   if(sm&&d.summary) sm.innerHTML=`<div class="rev" style="border-left:3px solid var(--lime);background:var(--lime-bg)"><div class="top"><span class="src" style="color:var(--green-d);font-weight:700">이번 주 요약</span></div><div class="body">${d.summary}</div></div>`;
   const el=document.getElementById('insights');
-  const prods=(d.products||[]);
+  const prods=(d.products||[]).slice().sort((a,b)=>(b.count||0)-(a.count||0));  // 리뷰 많은 순
   if(!prods.length) return;
   el.innerHTML=prods.map(p=>{
+    if(!(p.count>0)) return `<div class="rev" style="margin-bottom:8px;opacity:.7"><div class="top"><span style="font-size:14px;font-weight:700">${p.name} <span style="font-size:11px;color:var(--dim);font-weight:400">${p.brand||''}</span></span><span class="src">수집 대기</span></div><div style="font-size:12px;color:var(--dim)">다음 /buzzraw 수집 후 분석됩니다</div></div>`;
     const pos=(p.pos||[]).map(t=>`<div style="font-size:13px;margin:3px 0"><span style="color:var(--up);font-weight:700">▲</span> ${t}</div>`).join('');
     const neg=(p.neg||[]).map(t=>`<div style="font-size:13px;margin:3px 0"><span style="color:var(--down);font-weight:700">▼</span> ${t}</div>`).join('');
     const keys=(p.keys||[]).map(k=>`<span class="filter-chip" style="cursor:default;padding:2px 9px;font-size:11px">${k}</span>`).join(' ');
