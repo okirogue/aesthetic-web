@@ -231,6 +231,7 @@
     <div class="chart-box"><canvas id="buzzChart2"></canvas><div class="na-msg" id="buzz2NA" style="display:none">데이터 수집 전 — 봇 배포 후 자동 생성됩니다</div></div>
 
     <div class="sec-h"><div class="l"><h2>제품별 정성 분석 · 버즈</h2></div><span class="note" id="insight-note">네이버 카페·블로그 · 주 1회 Claude 요약</span></div>
+    <div class="chips" id="insight-weeks" style="margin-bottom:8px"></div>
     <div id="insight-summary"></div>
     <div id="insights"><div class="na-msg">아직 분석 데이터가 없습니다 — 봇 /buzzraw 수집 후 Cowork에서 "버즈 요약해줘"</div></div>
   </section>
@@ -549,14 +550,28 @@ function renderBuzzTrends(){
   buzzChart1=_buzzChart('buzzChart1','buzz1NA',g.injectable,buzzChart1);
   buzzChart2=_buzzChart('buzzChart2','buzz2NA',g.ebd,buzzChart2);
 }
-/* 제품별 정성 분석 (buzz_insights.json · Claude 주간 요약) */
+/* 제품별 정성 분석 (buzz_insights.json · 주차별 누적 · Claude 주간 요약) */
+let insightDoc=null, insightWeek=null;
 async function loadInsights(){
   try{
     const r=await fetch('buzz_insights.json',{cache:'no-store'});
     if(!r.ok) return;
-    renderInsights(await r.json());
+    insightDoc=await r.json();
+    if(insightDoc.weeks){
+      insightWeek=insightDoc.latest||Object.keys(insightDoc.weeks).sort().pop();
+      renderInsightWeeks(); renderInsights(insightDoc.weeks[insightWeek]);
+    }else{ renderInsights(insightDoc); }   // 구버전(단일) 호환
   }catch(e){}
 }
+function renderInsightWeeks(){
+  const el=document.getElementById('insight-weeks'); if(!el||!insightDoc||!insightDoc.weeks) return;
+  const weeks=Object.keys(insightDoc.weeks).sort().reverse();
+  el.innerHTML=weeks.map((w,i)=>{
+    const wl='W'+(w.split('-W')[1]||w);
+    return `<span class="filter-chip ${w===insightWeek?'on':''}" onclick="setInsightWeek('${w}')">${i===0?'이번주 · ':''}${wl}</span>`;
+  }).join('');
+}
+function setInsightWeek(w){ insightWeek=w; renderInsightWeeks(); renderInsights(insightDoc.weeks[w]); }
 function renderInsights(d){
   const note=document.getElementById('insight-note');
   if(note&&d.updated) note.textContent=`네이버 카페·블로그 · ${d.updated} 요약`;
