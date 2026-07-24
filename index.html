@@ -692,30 +692,40 @@ function renderEUSummary(){
   document.getElementById('eu-updated').textContent=`${d.updated} 갱신 · ${isLatest?'이번주':'주간'}(${isoWeekRange(euWeek)})`;
   document.getElementById('eu-summary').innerHTML=`<div class="rev" style="border-left:3px solid var(--lime);background:var(--lime-bg)"><div class="top"><span class="src" style="color:var(--green-d);font-weight:700">유럽 시장 종합</span></div><div class="body">${d.summary}</div></div>`;
 }
+const EU_CC_ALL={GB:'영국',FR:'프랑스',DE:'독일',ES:'스페인',IT:'이탈리아',PL:'폴란드',NL:'네덜란드',CZ:'체코',SE:'스웨덴',NO:'노르웨이',FI:'핀란드',CH:'스위스',IE:'아일랜드',GR:'그리스',RO:'루마니아',LT:'리투아니아',HU:'헝가리',BE:'벨기에',BG:'불가리아',DK:'덴마크',EE:'에스토니아',SK:'슬로바키아',HR:'크로아티아',TR:'튀르키예',PT:'포르투갈',AT:'오스트리아'};
 function renderEUPen(){
   const cur=euCur(); if(!cur) return;
   const p=cur.penetration;
-  const newTxt=p.first_scan?`+${p.new_this_week}`:`+${p.new_this_week}`;
   const newSub=p.first_scan?'첫 스캔 — 전체 신규 등재':'전주 대비 신규 확인';
-  document.getElementById('eu-pen-cards').innerHTML=
-    `<div class="card"><div class="k">누적 취급 클리닉</div><div class="v lime">${p.total}<span style="font-size:14px;font-weight:600"> 곳</span></div><div class="s">중복제거 유니온 · 웹 풋프린트</div></div>`+
-    `<div class="card"><div class="k">이번주 신규</div><div class="v">${newTxt}</div><div class="s">${newSub}</div></div>`+
-    `<div class="card"><div class="k">확인 국가</div><div class="v">${p.n_countries}<span style="font-size:14px;font-weight:600"> 개국</span></div><div class="s">영국·네덜란드·체코·폴란드 상위</div></div>`;
-  const top=p.by_country.slice(0,10);
+  const cards=[
+    `<div class="card"><div class="k">리쥬란 명시 클리닉</div><div class="v lime">${p.rejuran_total!=null?p.rejuran_total:p.total}<span style="font-size:14px;font-weight:600"> 곳</span></div><div class="s">브랜드 확인분 · 웹 풋프린트</div></div>`];
+  if(p.pn_total!=null) cards.push(`<div class="card" style="border-top-color:var(--purple)"><div class="k" style="color:var(--purple)">PN 계열 타 브랜드</div><div class="v">${p.pn_total}<span style="font-size:14px;font-weight:600"> 곳</span></div><div class="s">Ameela·Plinest·Nucleofill·Vitaran 등</div></div>`,
+    `<div class="card"><div class="k">PN 시장 전체</div><div class="v">${p.total}<span style="font-size:14px;font-weight:600"> 곳</span></div><div class="s">확인분 하한선 · 실제는 이보다 많음</div></div>`);
+  cards.push(`<div class="card"><div class="k">이번주 신규</div><div class="v">+${p.new_this_week}</div><div class="s">${newSub}</div></div>`,
+    `<div class="card"><div class="k">확인 국가</div><div class="v">${p.n_countries}<span style="font-size:14px;font-weight:600"> 개국</span></div><div class="s">영국·네덜란드·스웨덴·체코 상위</div></div>`);
+  document.getElementById('eu-pen-cards').innerHTML=cards.join('');
+  const top=p.by_country.slice(0,12);
   try{
     const ctx=document.getElementById('euCountryChart');
     if(euCountryChart)euCountryChart.destroy();
-    euCountryChart=new Chart(ctx,{type:'bar',data:{labels:top.map(x=>x.name),datasets:[{data:top.map(x=>x.n),backgroundColor:'#8bc34a',borderRadius:3,barThickness:16}]},
-      options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},title:{display:true,text:'국가별 취급 클리닉 분포 (상위 10)',color:'#67707b',font:{size:12}}},scales:{x:{...axisOpt.y},y:{...axisOpt.x,grid:{display:false}}}}});
+    const ds=top[0]&&top[0].rj!=null
+      ?[{label:'리쥬란 명시',data:top.map(x=>x.rj),backgroundColor:'#8bc34a',borderRadius:2,barThickness:14},
+        {label:'PN 타 브랜드',data:top.map(x=>x.pn),backgroundColor:'#b39ddb',borderRadius:2,barThickness:14}]
+      :[{data:top.map(x=>x.n),backgroundColor:'#8bc34a',borderRadius:3,barThickness:16}];
+    euCountryChart=new Chart(ctx,{type:'bar',data:{labels:top.map(x=>x.name),datasets:ds},
+      options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:ds.length>1,labels:{color:'#67707b',font:{size:11}}},title:{display:true,text:'국가별 취급 클리닉 분포 (상위 12 · 누적)',color:'#67707b',font:{size:12}}},scales:{x:{...axisOpt.y,stacked:true},y:{...axisOpt.x,grid:{display:false},stacked:true}}}});
   }catch(e){}
   renderEUClinics();
 }
 function renderEUClinics(){
   const p=euCur().penetration;
   const list=euClinicsOpen?p.clinics:p.clinics.slice(0,12);
-  const rows=list.map(c=>`<tr><td><a href="${c.url}" target="_blank" style="color:var(--txt);text-decoration:none">${c.domain}</a></td><td>${c.name}</td><td>${{GB:'영국',FR:'프랑스',DE:'독일',ES:'스페인',IT:'이탈리아',PL:'폴란드',NL:'네덜란드',CZ:'체코',SE:'스웨덴',NO:'노르웨이',FI:'핀란드',CH:'스위스',IE:'아일랜드',GR:'그리스',RO:'루마니아',LT:'리투아니아',HU:'헝가리'}[c.country]||c.country}</td><td>${c.city||'—'}</td></tr>`).join('');
+  const tag=c=>c.tier==='pn'
+    ?`<span class="senti neu" style="font-size:10px">${c.brand||'PN'}</span>`
+    :`<span class="senti pos" style="font-size:10px">리쥬란</span>`;
+  const rows=list.map(c=>`<tr><td><a href="${c.url}" target="_blank" style="color:var(--txt);text-decoration:none">${c.domain}</a></td><td>${c.name}</td><td>${tag(c)}</td><td>${EU_CC_ALL[c.country]||c.country}</td><td>${c.city||'—'}</td></tr>`).join('');
   document.getElementById('eu-clinic-table').innerHTML=
-    `<table><thead><tr><th>클리닉 (도메인)</th><th>이름</th><th>국가</th><th>도시</th></tr></thead><tbody>${rows}</tbody></table>`+
+    `<table><thead><tr><th>클리닉 (도메인)</th><th>이름</th><th>구분</th><th>국가</th><th>도시</th></tr></thead><tbody>${rows}</tbody></table>`+
     `<div style="text-align:center;margin-top:8px"><span class="filter-chip" style="cursor:pointer" onclick="euClinicsOpen=!euClinicsOpen;renderEUClinics()">${euClinicsOpen?'접기':`전체 ${p.clinics.length}곳 보기`}</span></div>`;
 }
 function renderEUReviews(){
