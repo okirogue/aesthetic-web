@@ -747,16 +747,33 @@ async function loadEventsJson(){
       if(!list.some(x=>x.date===e.date&&x.title===e.title))
         list.push({date:e.date,type:e.type||'filing',title:e.title,url:e.url||null});
     });
-    // IR 중복 정리: 같은 기업·날짜의 기업설명회는 [행사기간] 표기된 것만 남김
-    const hasSpan=t=>/[\[\(]\s*\d{2}\/\d{2}/.test(t);
+    // 중복 정리: 같은 공시 원문(URL)은 최신 항목(백필 최신본) 하나만 유지
     Object.keys(companyEvents).forEach(co=>{
-      const evs=companyEvents[co];
-      companyEvents[co]=evs.filter(e=>{
-        if(!e.title.includes('기업설명회')) return true;
-        if(hasSpan(e.title)) return true;
-        // 기간 없는 IR: 같은 날짜에 기간 있는 IR이 있으면 제거
-        return !evs.some(x=>x!==e&&x.date===e.date&&x.title.includes('기업설명회')&&hasSpan(x.title));
+      const evs=companyEvents[co], seen={}, keep=[];
+      for(let i=evs.length-1;i>=0;i--){
+        const key=evs[i].url || ('t:'+evs[i].title+'|'+evs[i].date);
+        if(seen[key]) continue;
+        seen[key]=1; keep.unshift(evs[i]);
+      }
+      companyEvents[co]=keep;
+    });
+    // IR 월 넘김: [MM/DD~MM/DD] 행사가 이벤트 월을 넘어가면 다음달에도 표시
+    Object.keys(companyEvents).forEach(co=>{
+      const extra=[];
+      companyEvents[co].forEach(e=>{
+        const m=e.title.match(/[\[\(](\d{2})\/(\d{2})\s*~\s*(\d{2})\/(\d{2})[\]\)]/);
+        if(!m||!e.date) return;
+        const y=+e.date.slice(0,4), evM=+e.date.slice(5,7);
+        const sm=+m[1], em=+m[3];
+        if(em!==evM){
+          const ey = em<evM ? y+1 : y;                       // 12월→1월 보정
+          const dd = (sm===em) ? m[2] : '01';                // 다음달에 시작하면 시작일, 걸치면 1일
+          const nd = `${ey}-${String(em).padStart(2,'0')}-${dd}`;
+          if(!companyEvents[co].some(x=>x.date===nd&&x.title===e.title)&&!extra.some(x=>x.date===nd&&x.title===e.title))
+            extra.push({...e,date:nd});
+        }
       });
+      companyEvents[co].push(...extra);
     });
     renderCalendar(); renderUpcoming();
   }catch(e){}
