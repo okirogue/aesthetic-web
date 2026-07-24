@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24 14:11",
+  "updated": "2026-07-24 14:21",
   "domestic": [
     {
       "co": "파마리서치",
@@ -147,6 +147,18 @@
     },
     {
       "co": "에이피알",
+      "title": "해외가 키운 '초고속 성장'… 에이피알, 또 역대급 실적 쓰나?",
+      "link": "http://www.the-biz.co.kr/news/articleView.html?idxno=724958",
+      "date": "07/24 14:18"
+    },
+    {
+      "co": "에이피알",
+      "title": "에이피알 메디큐브, '포에버체리 리본 체리 글래스 헤어브러시' 팝업 진...",
+      "link": "https://www.businesspost.co.kr/BP?command=article_view&num=443069",
+      "date": "07/24 14:16"
+    },
+    {
+      "co": "에이피알",
       "title": "에이피알 메디큐브, 장원영 ‘포에버체리’ 브러시 국내 판매 확대",
       "link": "https://www.ddaily.co.kr/page/view/2026072413362318012",
       "date": "07/24 13:54"
@@ -174,12 +186,6 @@
       "title": "에이피알 메디큐브, 장원영 협업 헤어브러시 국내 팝업서 선봬",
       "link": "https://www.fetv.co.kr/news/articleView.html?idxno=307070",
       "date": "07/24 10:10"
-    },
-    {
-      "co": "에이피알",
-      "title": "에이피알 메디큐브, 신세계면세점 명동점서 헤어브러시 팝업",
-      "link": "https://www.yna.co.kr/view/AKR20260724032400030?input=1195m",
-      "date": "07/24 09:52"
     },
     {
       "co": "에이피알",
@@ -251,15 +257,15 @@
     },
     {
       "co": "Galderma",
-      "title": "Galderma H1 FY26 net income jumps 128.87% to USD 444 million; net sales climb 24.6% to USD 3.13 billion - Bitget",
-      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE96SzgzX0NpcmFMWVM1bU5JREEzYXBrNkVlQkJiNDVPZUVIbkZrM3ItLXdwVTh6YklQNFFLU1psR29QejAyV2NEajJiZXdxTjQxRjBKcWRwYzVPQUR5UFJXZkFlb9IBY0FVX3lxTE96SzgzX0NpcmFMWVM1bU5JREEzYXBrNkVlQkJiNDVPZUVIbkZrM3ItLXdwVTh6YklQNFFLU1psR29QejAyV2NEajJiZXdxTjQxRjBKcWRwYzVPQUR5UFJXZkFlbw?oc=5",
-      "date": "07/23 22:55"
-    },
-    {
-      "co": "Galderma",
       "title": "Galderma Sees Revenue Surge from GLP-1 Weight Loss Drug Trend - GuruFocus",
       "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNTUlmOUlNN1BTMGF2czJ1eDVHbVFaV21hU0V0Q1ZKR0xQQzFEUDdKRFFJOFJvNFhMX0puTXFsZkpRSVZDamI3elIyUndQdkhESEFmNzMyQjdfVk02bWpfX1lPc2RoZzJXWEtMWi1oTjZXTzlYaUFQTzMxNS1TeWRHcEx1cmJsYnR0bm9Ob2psZDVmLUZCNVhFZnJaSFBSMFpXWWdFRVBZMXo5VmJRLUc5YWRJck5MUW1lVmxFQ2c1M1F2dFdSR2Q2R3g1ZF81UWYwczdBUTNR?oc=5",
       "date": "07/23 19:01"
+    },
+    {
+      "co": "Galderma",
+      "title": "Galderma H1 FY26 net income jumps 128.87% to USD 444 million; net sales climb 24.6% to USD 3.13 billion - Bitget",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE96SzgzX0NpcmFMWVM1bU5JREEzYXBrNkVlQkJiNDVPZUVIbkZrM3ItLXdwVTh6YklQNFFLU1psR29QejAyV2NEajJiZXdxTjQxRjBKcWRwYzVPQUR5UFJXZkFlb9IBY0FVX3lxTE96SzgzX0NpcmFMWVM1bU5JREEzYXBrNkVlQkJiNDVPZUVIbkZrM3ItLXdwVTh6YklQNFFLU1psR29QejAyV2NEajJiZXdxTjQxRjBKcWRwYzVPQUR5UFJXZkFlbw?oc=5",
+      "date": "07/23 22:55"
     },
     {
       "co": "Galderma",
@@ -290,12 +296,6 @@
       "title": "GLP-1 weight-loss drug surge boosts Galderma's aesthetics sales by 25%, CEO says - Pluang",
       "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNS1EyU3hCWGJmcmZtcEhNZGVxRTk5b1lLQ2UzLVB4VjZ5ZWRjZUlaNHJITzBmTk41d3NuMllmX1J0WjVsQXZMWU14ZzMxMXlnMXhadjBNcUJKdmVwUWN2NmpsU0dEaVNkTVVEelBjVi1falA3TFVUaUtlRVZlRGt6bkhfMmtrUmtXcFVtbl9XVURiT3hpMnlBSVYxR2dKR0ZaaEx2MC13aG40ZkJW?oc=5",
       "date": "07/23 11:06"
-    },
-    {
-      "co": "Galderma",
-      "title": "Galderma (GALD) Earnings: Full-Year Sales Projection Raised Amid Strong First Half Performance - Smartkarma",
-      "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNWXhud2dqR25OdzlNekd4QlBqRldWYTFHTFpfa3JVTVNmTUNkRGJXSTNTXzVMMnN6S2JKaWdUX013QUFCSHpFdFQ2QWdMeWZJajBUdGlmUTBEUThTN2FmNGQ3X1JXMDJacmxIM1h5bzZ5TTczYnZGMk95bXhMdmprU1NvQkNqbXBnRGY5YzFMaEU3R3VtaldKcTBuYXpNR3FfbFV2UmliU3JwQU4tVUlGNmhOUnhQUlI2cWJxZHA1VzMyZVJMb0RFb0VRdVY5S0MtWmVZYmR4dTYwSzBaWExfejNNOA?oc=5",
-      "date": "07/23 05:16"
     },
     {
       "co": "Galderma",
