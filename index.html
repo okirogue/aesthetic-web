@@ -224,15 +224,11 @@
 
   <!-- ============ BUZZ ============ -->
   <section class="view" id="view-buzz">
-    <div class="sec-h"><div class="l"><h2>추적 키워드</h2></div><span class="note">네이버 블로그+카페 언급량 · 매주 자동(예정)</span></div>
-    <div class="chips" id="keywords"></div>
-    <div class="add-form" style="margin-top:6px"><input id="kw-input" placeholder="키워드 입력 (예: 리쥬란)" /><button onclick="addKeyword()">+ 추가</button></div>
+    <div class="sec-h"><div class="l"><h2>검색지수 · 주사/스킨부스터</h2></div><span class="note">리쥬란·쥬베룩·리투오·셀르디엠·쥬브아셀 · 네이버 DATALAB · 주단위 · 매일 08:30 갱신</span></div>
+    <div class="chart-box"><canvas id="buzzChart1"></canvas><div class="na-msg" id="buzz1NA" style="display:none">데이터 수집 전 — 봇 배포 후 자동 생성됩니다</div></div>
 
-    <div class="sec-h"><div class="l"><h2>이번 주 스냅샷</h2></div><span class="note">직전 주 대비</span></div>
-    <div class="cards" id="buzz-cards"></div>
-
-    <div class="sec-h"><div class="l"><h2>언급량 추이</h2></div><span class="note">주간 · 네이버 블로그+카페 문서 수</span></div>
-    <div class="chart-box"><canvas id="buzzChart"></canvas></div>
+    <div class="sec-h"><div class="l"><h2>검색지수 · EBD(장비)</h2></div><span class="note">덴서티·써마지·슈링크·리팟·볼뉴머 · 네이버 DATALAB · 주단위 · 매일 08:30 갱신</span></div>
+    <div class="chart-box"><canvas id="buzzChart2"></canvas><div class="na-msg" id="buzz2NA" style="display:none">데이터 수집 전 — 봇 배포 후 자동 생성됩니다</div></div>
 
     <div class="sec-h"><div class="l"><h2>후기 (키워드별)</h2></div><span class="note">언급량 많은 순 · 카테고리별 10개 내외</span></div>
     <div class="chips" id="review-cats"></div>
@@ -528,20 +524,30 @@ function renderUpcoming(){
   }).join('')||'<div style="color:var(--dim)">이번 달 이벤트 없음</div>';
 }
 
-/* 버즈 */
-let buzzChart=null;
-function renderKeywords(){document.getElementById('keywords').innerHTML=keywords.map((k,i)=>`<span class="chip"><i class="dot" style="background:${KW_COLORS[k]||'#888'}"></i>${k}<button onclick="delKeyword(${i})">×</button></span>`).join('');}
-function addKeyword(){const inp=document.getElementById('kw-input');const v=inp.value.trim();if(v&&!keywords.includes(v)){keywords.push(v);if(!buzzSeries[v])buzzSeries[v]=buzzWeeks.map(()=>0);if(!KW_COLORS[v])KW_COLORS[v]='#9aa4af';inp.value='';renderKeywords();renderBuzzChart();renderBuzzCards();}}
-function delKeyword(i){keywords.splice(i,1);renderKeywords();renderBuzzChart();renderBuzzCards();}
-function renderBuzzCards(){
-  document.getElementById('buzz-cards').innerHTML=keywords.map(k=>{const s=buzzSeries[k]||[0];const cur=s[s.length-1],prev=s[s.length-2]||cur;const pct=prev?Math.round((cur-prev)/prev*100):0;const cls=pct>=0?'up':'down';const sign=pct>=0?'▲':'▼';return `<div class="card"><div class="k">${k}</div><div class="v lime">${cur.toLocaleString()}</div><div class="s">직전주 대비 <span class="${cls}">${sign} ${Math.abs(pct)}%</span></div></div>`;}).join('');
+/* 버즈 — 네이버 DATALAB 검색지수 (buzz.json) */
+let buzzChart1=null, buzzChart2=null, buzzData=null;
+const BUZZ_COLORS=['#e0a13c','#4a90d9','#57c00a','#d9536f','#8f68c9'];
+const axisOpt={x:{ticks:{color:'#9aa4af',maxTicksLimit:14,autoSkip:true},grid:{color:'#eef1f3'}},y:{ticks:{color:'#9aa4af'},grid:{color:'#eef1f3'}}};
+async function loadBuzzJson(){
+  try{
+    const r=await fetch('buzz.json',{cache:'no-store'});
+    if(!r.ok) return;
+    buzzData=await r.json();
+    if(document.getElementById('view-buzz').classList.contains('active')) renderBuzzTrends();
+  }catch(e){}
 }
-const axisOpt={x:{ticks:{color:'#9aa4af'},grid:{color:'#eef1f3'}},y:{ticks:{color:'#9aa4af'},grid:{color:'#eef1f3'}}};
-function renderBuzzChart(){
-  const ctx=document.getElementById('buzzChart');
-  const ds=keywords.map(k=>({label:k,data:buzzSeries[k]||[],borderColor:KW_COLORS[k]||'#888',backgroundColor:'transparent',tension:.35,borderWidth:2,pointRadius:2}));
-  if(buzzChart)buzzChart.destroy();
-  buzzChart=new Chart(ctx,{type:'line',data:{labels:buzzWeeks,datasets:ds},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#67707b',font:{size:11}}}},scales:axisOpt}});
+function _buzzChart(canvasId,naId,group,chartRef){
+  const ctx=document.getElementById(canvasId);
+  if(!group){ document.getElementById(naId).style.display=''; ctx.style.display='none'; return null; }
+  document.getElementById(naId).style.display='none'; ctx.style.display='';
+  const ds=Object.keys(group.series).map((k,i)=>({label:k,data:group.series[k],borderColor:BUZZ_COLORS[i%5],backgroundColor:'transparent',tension:.3,borderWidth:1.8,pointRadius:0}));
+  if(chartRef)chartRef.destroy();
+  return new Chart(ctx,{type:'line',data:{labels:group.labels,datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{labels:{color:'#67707b',font:{size:11},boxWidth:18}}},scales:{x:axisOpt.x,y:{...axisOpt.y,min:0,max:100}}}});
+}
+function renderBuzzTrends(){
+  const g=buzzData&&buzzData.groups?buzzData.groups:{};
+  buzzChart1=_buzzChart('buzzChart1','buzz1NA',g.injectable,buzzChart1);
+  buzzChart2=_buzzChart('buzzChart2','buzz2NA',g.ebd,buzzChart2);
 }
 let activeReviewCat=null;
 function reviewCatsSorted(){
@@ -724,13 +730,11 @@ document.querySelectorAll('.tab').forEach(t=>{
     t.classList.add('active');
     document.getElementById('view-'+t.dataset.view).classList.add('active');
     if(t.dataset.view==='stock'&&!stockInited){stockInited=true;renderStockCompanies();renderStockCharts();}
-    if(t.dataset.view==='buzz'&&!buzzChart)renderBuzzChart();
+    if(t.dataset.view==='buzz')renderBuzzTrends();
     if(t.dataset.view==='trend'&&!trendChart){renderTrendChart();renderTrendCards();}
     if(t.dataset.view==='export'&&!exportChart){renderExportChart();renderExportTable();}
   };
 });
-document.getElementById('kw-input').addEventListener('keydown',e=>{if(e.key==='Enter')addKeyword()});
-
 // 공시 이벤트 (봇이 events.json으로 누적 → 캘린더 연동)
 async function loadEventsJson(){
   try{
@@ -743,6 +747,17 @@ async function loadEventsJson(){
       if(!list.some(x=>x.date===e.date&&x.title===e.title))
         list.push({date:e.date,type:e.type||'filing',title:e.title,url:e.url||null});
     });
+    // IR 중복 정리: 같은 기업·날짜의 기업설명회는 [행사기간] 표기된 것만 남김
+    const hasSpan=t=>/[\[\(]\s*\d{2}\/\d{2}/.test(t);
+    Object.keys(companyEvents).forEach(co=>{
+      const evs=companyEvents[co];
+      companyEvents[co]=evs.filter(e=>{
+        if(!e.title.includes('기업설명회')) return true;
+        if(hasSpan(e.title)) return true;
+        // 기간 없는 IR: 같은 날짜에 기간 있는 IR이 있으면 제거
+        return !evs.some(x=>x!==e&&x.date===e.date&&x.title.includes('기업설명회')&&hasSpan(x.title));
+      });
+    });
     renderCalendar(); renderUpcoming();
   }catch(e){}
 }
@@ -750,7 +765,8 @@ async function loadEventsJson(){
 // init
 renderNews();
 renderWatchlist();renderCalendar();renderUpcoming();
-renderKeywords();renderBuzzCards();renderReviewCats();renderReviews();
+renderReviewCats();renderReviews();
+loadBuzzJson();
 
 // 실데이터 로드 + 5분마다 자동 새로고침 (열어둔 채로 최신 뉴스 반영)
 loadNewsJson();
