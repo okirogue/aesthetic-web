@@ -218,7 +218,7 @@
       <span><i class="dot" style="background:var(--green)"></i> 주총·기준일</span>
     </div>
 
-    <div class="sec-h"><div class="l"><h2>다가오는 일정</h2></div><span class="note">가까운 순</span></div>
+    <div class="sec-h"><div class="l"><h2>이번달 일정</h2></div><span class="note">캘린더 표시 월 기준 · IR은 [행사기간] 표기</span></div>
     <div class="up-list" id="upcoming"></div>
   </section>
 
@@ -519,13 +519,13 @@ function renderUpcoming(){
   const labels={ir:"IR",earn:"실적",filing:"공시",meeting:"주총"};
   const ym=`${calDate.getFullYear()}-${String(calDate.getMonth()+1).padStart(2,'0')}`;
   const evs=collectEvents()
-    .filter(e=>e.date&&e.date.startsWith(ym)&&new Date(e.date)>=today)
-    .sort((a,b)=>new Date(a.date)-new Date(b.date)).slice(0,12);
+    .filter(e=>e.date&&e.date.startsWith(ym))
+    .sort((a,b)=>new Date(a.date)-new Date(b.date)).slice(0,30);
   document.getElementById('upcoming').innerHTML=evs.map(e=>{
     const dt=new Date(e.date); const c=CO_COLORS[e.co]||'#9aa4af';
     const open=e.url?` onclick="window.open('${e.url}','_blank')" style="cursor:pointer"`:'';
     return `<div class="up-row"${open}><span class="date">${dt.getMonth()+1}/${dt.getDate()}</span><span><div class="title">${e.title}</div><div class="co" style="color:${c};font-weight:600">${e.co}</div></span><span class="tag">${labels[e.type]||'공시'}</span></div>`;
-  }).join('')||'<div style="color:var(--dim)">이번 달 예정 이벤트 없음</div>';
+  }).join('')||'<div style="color:var(--dim)">이번 달 이벤트 없음</div>';
 }
 
 /* 버즈 */
