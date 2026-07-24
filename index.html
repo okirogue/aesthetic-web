@@ -224,6 +224,13 @@
 
   <!-- ============ BUZZ ============ -->
   <section class="view" id="view-buzz">
+    <div class="sec-h"><div class="l"><h2>기간</h2></div>
+      <div class="toggle" id="period-buzz">
+        <button data-w="4">1개월</button><button data-w="13">3개월</button><button data-w="26">6개월</button><button class="active" data-w="52">12개월</button>
+      </div>
+    </div>
+    <div class="add-form" style="margin:2px 0 8px"><input id="buzz-from" type="date" style="width:150px" /><input id="buzz-to" type="date" style="width:150px" /><button onclick="applyBuzzRange()">적용</button></div>
+
     <div class="sec-h"><div class="l"><h2>검색지수 · 주사/스킨부스터</h2></div><span class="note">리쥬란·쥬베룩·리투오·셀르디엠·쥬브아셀 · 네이버 DATALAB · 주단위 · 매일 08:30 갱신</span></div>
     <div class="chart-box"><canvas id="buzzChart1"></canvas><div class="na-msg" id="buzz1NA" style="display:none">데이터 수집 전 — 봇 배포 후 자동 생성됩니다</div></div>
 
@@ -537,6 +544,19 @@ async function loadBuzzJson(){
     if(document.getElementById('view-buzz').classList.contains('active')) renderBuzzTrends();
   }catch(e){}
 }
+let buzzWeeksN=52, buzzRangeDates=null;
+function _sliceBuzz(group){
+  if(!group||!group.labels) return null;
+  let idx;
+  if(buzzRangeDates){
+    idx=group.labels.map((l,i)=>(l>=buzzRangeDates[0]&&l<=buzzRangeDates[1])?i:-1).filter(i=>i>=0);
+  }else{
+    idx=group.labels.map((_,i)=>i); idx=idx.slice(Math.max(0,idx.length-buzzWeeksN));
+  }
+  const labels=idx.map(i=>group.labels[i]);
+  const series={}; Object.keys(group.series).forEach(k=>series[k]=idx.map(i=>group.series[k][i]));
+  return {labels,series};
+}
 function _buzzChart(canvasId,naId,group,chartRef){
   const ctx=document.getElementById(canvasId);
   if(!group){ document.getElementById(naId).style.display=''; ctx.style.display='none'; return null; }
@@ -547,9 +567,14 @@ function _buzzChart(canvasId,naId,group,chartRef){
 }
 function renderBuzzTrends(){
   const g=buzzData&&buzzData.groups?buzzData.groups:{};
-  buzzChart1=_buzzChart('buzzChart1','buzz1NA',g.injectable,buzzChart1);
-  buzzChart2=_buzzChart('buzzChart2','buzz2NA',g.ebd,buzzChart2);
+  buzzChart1=_buzzChart('buzzChart1','buzz1NA',_sliceBuzz(g.injectable),buzzChart1);
+  buzzChart2=_buzzChart('buzzChart2','buzz2NA',_sliceBuzz(g.ebd),buzzChart2);
 }
+function applyBuzzRange(){
+  const f=document.getElementById('buzz-from').value, t=document.getElementById('buzz-to').value;
+  if(f&&t&&f<=t){ buzzRangeDates=[f.slice(2),t.slice(2)]; document.querySelectorAll('#period-buzz button').forEach(x=>x.classList.remove('active')); renderBuzzTrends(); }
+}
+document.querySelectorAll('#period-buzz button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#period-buzz button').forEach(x=>x.classList.remove('active'));b.classList.add('active');buzzWeeksN=+b.dataset.w;buzzRangeDates=null;renderBuzzTrends();});
 /* 제품별 정성 분석 (buzz_insights.json · 주차별 누적 · Claude 주간 요약) */
 let insightDoc=null, insightWeek=null;
 async function loadInsights(){
