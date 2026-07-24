@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24 17:45",
+  "updated": "2026-07-24 17:55",
   "domestic": [
     {
       "co": "파마리서치",
@@ -50,12 +50,6 @@
       "date": "07/23 09:18"
     },
     {
-      "co": "파마리서치",
-      "title": "[모닝 리포트] 파마리서치, 리쥬란·화장품으로 코스닥 주도주 부상",
-      "link": "https://www.newspim.com/news/view/20260723000124",
-      "date": "07/23 08:48"
-    },
-    {
       "co": "휴젤",
       "title": "휴젤, 인도 톡신 시장 출격…'레티보' 글로벌 영토 확대",
       "link": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065599477865719",
@@ -66,6 +60,24 @@
       "title": "[특징주] &quot;2분기는 파마, 3분기는 휴젤&quot;…미용주, 실적 모멘텀으로 반등...",
       "link": "https://www.newstnt.com/news/articleView.html?idxno=711361",
       "date": "07/23 12:20"
+    },
+    {
+      "co": "클래시스",
+      "title": "거래소, 클래시스 불성실공시법인 지정 예고",
+      "link": "https://www.edaily.co.kr/news/newspath.asp?newsid=04985606645517800",
+      "date": "07/24 17:54"
+    },
+    {
+      "co": "클래시스",
+      "title": "클래시스 주가, 7월 24일 44,450원 0.45% 상승 마감",
+      "link": "https://www.joongangenews.com/news/articleView.html?idxno=535339",
+      "date": "07/24 17:52"
+    },
+    {
+      "co": "클래시스",
+      "title": "클래시스, 불성실공시법인 지정예고→상장적격성 심사 우려",
+      "link": "https://www.topstarnews.net/news/articleView.html?idxno=16144923",
+      "date": "07/24 17:48"
     },
     {
       "co": "클래시스",
@@ -96,12 +108,6 @@
       "title": "[헬로스톡] 7/23 주목할 종목 : 한미글로벌·클래시스·LG화학·포스코인...",
       "link": "https://www.hellot.net/news/article.html?no=113937",
       "date": "07/23 18:38"
-    },
-    {
-      "co": "클래시스",
-      "title": "클래시스 주가, 7월 23일 44,250원 1.96% 상승 마감",
-      "link": "https://www.joongangenews.com/news/articleView.html?idxno=534963",
-      "date": "07/23 17:52"
     },
     {
       "co": "클래시스",
@@ -227,15 +233,21 @@
   "foreign": [
     {
       "co": "Galderma",
-      "title": "Switzerland's Galderma lifts full-year guidance after sales jump - Reuters",
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPbkRYaW9leEhGOUZFdWJnZVBOX2NHaGo0Qnd2ei1FUUZST3d1MmZ0STBPeEtBYnVoMUpWeThuV2ttQ1dtejZQVnQxMFRWVnlyNjB3emo0bTJfYU1OanhHWlhYa0JCcFBGV3RBVW1GWnBkT2FrTG9odW1pUm5LMkZCcnFQdGR6cHFVUFBCQmN3bTctYURPb0tYdVVtUjVYVmVUcFVmcDNWOU1udlVHNVR2Vg?oc=5",
-      "date": "07/23 10:03"
+      "title": "Galderma Group AG (GDERF) Half Year 2026 Earnings Call Highlights: Record Sales and Strategic ... - Yahoo Finance UK",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOV2FTc0E4bXVyQVlJME1ITTdfZ1VGX0hKS0NqSVo1MURGMDRQNnl4T1FtNDRtMlU1Wlludnk5akVYb1lvaDI2aldWX3kwcDVHc0p4TlR4LTlnVjFwc3NleW5lYnZyMGFaaGw3eGRCSklxNVNlMG81SFhrWGptZ0VXQ0hoVQ?oc=5",
+      "date": "07/23 19:00"
     },
     {
       "co": "Galderma",
-      "title": "Why is Galderma stock sliding today? - Investing.com",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPb2hucVJ4YU81UGdmY0RWS051MDBScUh1cF9xSEVKTl94clRSQmY3OHd1V1BJSmFnNVlScXNKazd2bEV2a1h1a0lEMGNfTEI1REgxNlNHYmUzbUJMRGZkQXZYeUsza0JYTGVueHBJaUVPVzJJQ3BYVEhlQ3RaSVNDS0p5aXFFaUFsbzRuOHItN0E5ejh0WmJfUkxLc0xhdw?oc=5",
-      "date": "07/23 09:22"
+      "title": "Galderma H1 2026 slides: record sales top $3B, guidance raised - Investing.com",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPSGo5dzJ1V295bVJzSXc0ZDRncldTSjJva1dYU3JRMjdYWnVpOTc3dXUyLWFQR3ozQWgwUGZlQlh2RG1DUGZqd1dHQXo4R0trWkNjdzNGY0lvUVpNNVJlTG5hcjNNNFg3R3hVOHQ3S2R2N1Y3QWJ6Q0JsbUlfa2FCMTh6OC1vTHR2NkRRU0ZUODdBczF4MkNrUWpVUEtZOWlNU19MZlRidEw4bUI2TjgwdTMwSlNZcDg?oc=5",
+      "date": "07/24 05:23"
+    },
+    {
+      "co": "Galderma",
+      "title": "Switzerland's Galderma lifts full-year guidance after sales jump - Reuters",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPbkRYaW9leEhGOUZFdWJnZVBOX2NHaGo0Qnd2ei1FUUZST3d1MmZ0STBPeEtBYnVoMUpWeThuV2ttQ1dtejZQVnQxMFRWVnlyNjB3emo0bTJfYU1OanhHWlhYa0JCcFBGV3RBVW1GWnBkT2FrTG9odW1pUm5LMkZCcnFQdGR6cHFVUFBCQmN3bTctYURPb0tYdVVtUjVYVmVUcFVmcDNWOU1udlVHNVR2Vg?oc=5",
+      "date": "07/23 10:03"
     },
     {
       "co": "Galderma",
@@ -251,21 +263,27 @@
     },
     {
       "co": "Galderma",
+      "title": "Earnings call transcript: Galderma raises 2026 sales outlook after H1 surge - Investing.com",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQQ2VMSkxCc2ktV3dkN21jMV9BNWUzOGlVOW51QWRDRlZ6Z004U296RFJmelhONDJFcnY2OXdRRjZpSjVZanVOX28xbTc4dDVCU1dkRUJVa3VUQ19HUTljaHRDcEJPX3JfYmkxcS1UZ3lXNFROekpGSVBaMVRpNjhHd3poMjlBZ2tHZHl5QjRaQWtXTzJOdHBXaU5yc0xYWU5oWXJWU1F6ekFKaFFqMFFQZlJMY3BibEgtWGxYT0dHYl8zU2VXTTJhbnBR?oc=5",
+      "date": "07/23 12:42"
+    },
+    {
+      "co": "Galderma",
+      "title": "Why is Galderma stock sliding today? - Investing.com",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPb2hucVJ4YU81UGdmY0RWS051MDBScUh1cF9xSEVKTl94clRSQmY3OHd1V1BJSmFnNVlScXNKazd2bEV2a1h1a0lEMGNfTEI1REgxNlNHYmUzbUJMRGZkQXZYeUsza0JYTGVueHBJaUVPVzJJQ3BYVEhlQ3RaSVNDS0p5aXFFaUFsbzRuOHItN0E5ejh0WmJfUkxLc0xhdw?oc=5",
+      "date": "07/23 09:22"
+    },
+    {
+      "co": "Galderma",
       "title": "Galderma Raised Its Sales Outlook, Even With A Choppy Second Half - Finimize",
       "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNVndFVE45WmcxS240V2wwcnI2a0V2MmM1UF85a2hQLVhLTGlTN1RwcVh3czhPOGxfTjlPLUQ4LWNQTnhGYnlMSHlVbUhKSkh4S2xaeTR5NFFHaFFTSGpEcU9xemFTQ1dCU0ZnQnpEUlE0UmhfV3NEcXJ0cG1ITUg3MGJ3clNDZ19Gcnd6aUhDV2hVY0dMc29Hbw?oc=5",
       "date": "07/23 10:19"
     },
     {
       "co": "Galderma",
-      "title": "Galderma H1 2026 slides: record sales top $3B, guidance raised - Investing.com Australia",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPQ1NMclFyaG14WVNuR0VhXzdfRW1OUmtGczlOY2txUnlHbkRJdVlNcmppdUdTaEYtQ0xOZ2Nlanp1aTloS3hoZWFHTHVmVFJlc2tOVU8tM0Njcy1Nd2FCazc2QWFkSnMwcWNGVDh0MnlkTGwwTWctNU44Rkh5dkpSUlhERjc2T21EaGRlcU9OZHBtcVBhQnZMQXkyaEtDaENxNTZ3X1p4Tk1URlNYMmFNRDNpR3Jjdw?oc=5",
-      "date": "07/23 22:58"
-    },
-    {
-      "co": "Galderma",
-      "title": "Earnings call transcript: Galderma raises 2026 sales outlook after H1 surge By Investing.com - Investing.com South Africa",
-      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOR0RrVGYxd0RzX1RvZ19DVG5pLTdXMWpfd1lrYnNfS2Q5QlhiTHZCRElBSm1zUGF5Z0dpVlpnU29adWJtc0FSNU5rTk81ZEJZelcxZTVvR0s5M2Y3bGpfUGZ1SjVQUjRHbktqM3VleXlXNVlaME5EOUlibEtKeDlKUkpBel92SkR3WExaMnZ5bVlCaXZiMXVRSEttYzAyX2Y5UDQzSHVmMTNrQXdRZlRqNmtRcmlMeTBpMDZRUHhLckRnWTNCczk5SQ?oc=5",
-      "date": "07/23 12:22"
+      "title": "Galderma lifts sales outlook after H1 beat on Nemluvio strength By Investing.com - Investing.com Nigeria",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPY2ZPcVRQeXdpS0ZLVjgtT0VmN2ZzVkpFcjBBRnRtVUZJWGRPbmxQVTl2T3luT0dUSW1EdDc0QjdDZ0x6Qm04U001ekZjQzk5Q0NVNzhZdm5CVFN5dWt4aTFwblV0dGYzVmYxU0lKR0V4YnZXbHNSbmtMVm8wY3E3N002d3dnNW9nQUwxdG9vQ2xjOXduN2NPbFJfaFFZS3B3LXdsR1dn?oc=5",
+      "date": "07/23 10:16"
     },
     {
       "co": "Galderma",
