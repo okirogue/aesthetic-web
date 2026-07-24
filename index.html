@@ -155,7 +155,7 @@
     <button class="tab" data-view="stock">주가 추이</button>
     <button class="tab" data-view="calendar">이벤트 캘린더</button>
     <button class="tab" data-view="buzz">국내 버즈</button>
-    <button class="tab" data-view="trend">구글 트렌드</button>
+    <button class="tab" data-view="trend">해외 버즈</button>
     <button class="tab" data-view="export">수출 데이터</button>
   </div>
 
@@ -239,20 +239,24 @@
     <div id="insights"><div class="na-msg">아직 분석 데이터가 없습니다 — 봇 /buzzraw 수집 후 Cowork에서 "버즈 요약해줘"</div></div>
   </section>
 
-  <!-- ============ GOOGLE TREND ============ -->
+  <!-- ============ 해외 버즈 (EU) ============ -->
   <section class="view" id="view-trend">
-    <div class="sec-h"><div class="l"><h2>지역 선택</h2></div><span class="note">pytrends · geo 필터 · 매주 자동(예정)</span></div>
-    <div class="toggle" id="region-toggle">
-      <button class="active" data-region="프랑스">프랑스</button>
-      <button data-region="영국">영국</button>
-      <button data-region="유럽">유럽(EU)</button>
-    </div>
+    <div class="sec-h"><div class="l"><h2>종합 판단</h2></div><span class="note" id="eu-updated"></span></div>
+    <div id="eu-summary"><div class="na-msg">eu_buzz.json 로딩 중...</div></div>
 
-    <div class="sec-h"><div class="l"><h2>검색 관심도 추이</h2></div><span class="note" id="trend-note">상대 검색지수(0–100) · 절대 판매량 아님</span></div>
-    <div class="chart-box"><canvas id="trendChart"></canvas></div>
+    <div class="sec-h"><div class="l"><h2>유럽 침투도 — 리쥬란 취급 클리닉 레지스트리</h2></div><span class="note">클리닉 자체 홈페이지에 시술 명시 확인분 · 주 1회 갱신</span></div>
+    <div class="cards" id="eu-pen-cards"></div>
+    <div class="chart-box"><canvas id="euCountryChart"></canvas></div>
+    <div id="eu-clinic-table" style="margin-top:8px"></div>
 
-    <div class="sec-h"><div class="l"><h2>키워드별 현황</h2></div><span class="note">최근값 · 3개월 모멘텀</span></div>
-    <div class="cards" id="trend-cards"></div>
+    <div class="sec-h"><div class="l"><h2>시술 후기 · 소비자 평가</h2></div><span class="note">지역별 소비자 정보공유 사이트 · 매체 체험기 요약</span></div>
+    <div id="eu-reviews"></div>
+
+    <div class="sec-h"><div class="l"><h2>Big6 구글 트렌드 — 스킨부스터 경쟁 비교</h2></div><span class="note">상대 검색지수(0–100) · 최근 12개월 · 절대 판매량 아님</span></div>
+    <div class="toggle" id="eu-geo-toggle"></div>
+    <div class="chart-box" style="margin-top:10px"><canvas id="euTrendChart"></canvas></div>
+    <div class="unit">표: 12개월 평균 검색지수 · 모멘텀 = 리쥬란 최근 12주 vs 직전 12주</div>
+    <div id="eu-trend-table"></div>
   </section>
 
   <!-- ============ EXPORT ============ -->
@@ -351,15 +355,9 @@ const reviewsByKw = {
   ],
 };
 
-// 구글 트렌드 (지역별 · 월별 index 0~100)
-const trendMonths = ["1월","2월","3월","4월","5월","6월","7월"];
-const trendData = {
-  "프랑스":{"Rejuran":[42,48,55,60,58,66,72],"Profhilo":[70,68,72,75,73,71,69],"Skinbooster":[38,40,45,44,50,53,58]},
-  "영국":  {"Rejuran":[35,38,44,50,54,60,65],"Profhilo":[80,82,79,85,83,81,84],"Skinbooster":[45,47,44,49,52,55,57]},
-  "유럽":  {"Rejuran":[40,43,49,55,57,63,68],"Profhilo":[74,73,75,78,76,74,73],"Skinbooster":[41,43,45,47,50,53,56]},
-};
-const TREND_COLORS={"Rejuran":"#6fb43a","Profhilo":"#8f68c9","Skinbooster":"#4a90d9"};
-let curRegion="프랑스", trendChart=null;
+// 해외 버즈 (eu_buzz.json — 유럽 침투도·후기·Big6 구글트렌드)
+const EU_KW_COLORS={"Rejuran":"#e07b28","Profhilo":"#8f68c9","Sculptra":"#4a90d9","Plinest":"#4e9d46","Sunekos":"#c95f8f"};
+let euDoc=null, euGeo="GB", euTrendChart=null, euCountryChart=null, euClinicsOpen=false;
 
 // 수출 데이터 (관세청 · 백만원)
 const exportQ={labels:["1Q25","2Q25","3Q25","4Q25","1Q26"],
@@ -593,12 +591,23 @@ async function loadInsights(){
     }else{ renderInsights(insightDoc); }   // 구버전(단일) 호환
   }catch(e){}
 }
+function isoWeekRange(w){ // '2026-W30' -> '7/20~7/26' (월~일)
+  const m=/^(\d{4})-W(\d{1,2})$/.exec(w); if(!m) return w;
+  const y=+m[1], wk=+m[2];
+  const jan4=new Date(Date.UTC(y,0,4));
+  const dow=jan4.getUTCDay()||7;
+  const mon=new Date(jan4); mon.setUTCDate(jan4.getUTCDate()-dow+1+(wk-1)*7);
+  const sun=new Date(mon); sun.setUTCDate(mon.getUTCDate()+6);
+  const f=d=>`${d.getUTCMonth()+1}/${d.getUTCDate()}`;
+  return `${f(mon)}~${f(sun)}`;
+}
 function renderInsightWeeks(){
   const el=document.getElementById('insight-weeks'); if(!el||!insightDoc||!insightDoc.weeks) return;
   const weeks=Object.keys(insightDoc.weeks).sort().reverse();
   el.innerHTML=weeks.map((w,i)=>{
-    const wl='W'+(w.split('-W')[1]||w);
-    return `<span class="filter-chip ${w===insightWeek?'on':''}" onclick="setInsightWeek('${w}')">${i===0?'이번주 · ':''}${wl}</span>`;
+    const range=isoWeekRange(w);
+    const label=i===0?`이번주(${range})`:i===1?`전주(${range})`:range;
+    return `<span class="filter-chip ${w===insightWeek?'on':''}" onclick="setInsightWeek('${w}')">${label}</span>`;
   }).join('');
 }
 function setInsightWeek(w){ insightWeek=w; renderInsightWeeks(); renderInsights(insightDoc.weeks[w]); }
@@ -606,11 +615,22 @@ function renderInsights(d){
   const note=document.getElementById('insight-note');
   if(note&&d.updated) note.textContent=`네이버 카페·블로그 · ${d.updated} 요약`;
   const sm=document.getElementById('insight-summary');
-  if(sm&&d.summary) sm.innerHTML=`<div class="rev" style="border-left:3px solid var(--lime);background:var(--lime-bg)"><div class="top"><span class="src" style="color:var(--green-d);font-weight:700">이번 주 요약</span></div><div class="body">${d.summary}</div></div>`;
+  if(sm&&d.summary){
+    const isLatest=insightDoc&&insightDoc.weeks&&insightWeek===(insightDoc.latest||Object.keys(insightDoc.weeks).sort().pop());
+    const lbl=(isLatest?'이번주':'주간')+(insightWeek&&insightWeek.includes('-W')?`(${isoWeekRange(insightWeek)})`:'')+' 요약'+(d.estimated?' · 검색지수 기반 소급':'');
+    sm.innerHTML=`<div class="rev" style="border-left:3px solid var(--lime);background:var(--lime-bg)"><div class="top"><span class="src" style="color:var(--green-d);font-weight:700">${lbl}</span></div><div class="body">${d.summary}</div></div>`;
+  }
   const el=document.getElementById('insights');
-  const prods=(d.products||[]).slice().sort((a,b)=>(b.count||0)-(a.count||0));  // 리뷰 많은 순
+  const prods=(d.products||[]).slice().sort((a,b)=>(b.count||b.idx||0)-(a.count||a.idx||0));  // 리뷰 많은 순
   if(!prods.length) return;
   el.innerHTML=prods.map(p=>{
+    if(p.idx!==undefined&&p.idx!==null&&!(p.count>0)){  // 검색지수 기반 소급 주간
+      const wc=p.wow>=0?'up':'down', ws=p.wow>=0?'▲':'▼';
+      const notes=(p.notes||[]).map(t=>`<div style="font-size:13px;margin:3px 0"><span style="color:var(--dim);font-weight:700">·</span> ${t}</div>`).join('');
+      return `<div class="rev" style="margin-bottom:10px"><div class="top">
+        <span style="font-size:14px;font-weight:800">${p.name} <span style="font-size:11px;color:var(--dim);font-weight:400">${p.brand||''}</span></span>
+        <span class="src">검색지수 ${p.idx}${p.wow!=null?` · WoW <span class="${wc}" style="font-weight:700">${ws} ${Math.abs(p.wow)}%</span>`:''}</span></div>${notes}</div>`;
+    }
     if(!(p.count>0)) return `<div class="rev" style="margin-bottom:8px;opacity:.7"><div class="top"><span style="font-size:14px;font-weight:700">${p.name} <span style="font-size:11px;color:var(--dim);font-weight:400">${p.brand||''}</span></span><span class="src">수집 대기</span></div><div style="font-size:12px;color:var(--dim)">다음 /buzzraw 수집 후 분석됩니다</div></div>`;
     const pos=(p.pos||[]).map(t=>`<div style="font-size:13px;margin:3px 0"><span style="color:var(--up);font-weight:700">▲</span> ${t}</div>`).join('');
     const neg=(p.neg||[]).map(t=>`<div style="font-size:13px;margin:3px 0"><span style="color:var(--down);font-weight:700">▼</span> ${t}</div>`).join('');
@@ -623,19 +643,80 @@ function renderInsights(d){
   }).join('');
 }
 
-/* 구글 트렌드 */
-function renderTrendChart(){
-  const ctx=document.getElementById('trendChart');
-  const region=trendData[curRegion];
-  const ds=Object.keys(region).map(k=>({label:k,data:region[k],borderColor:TREND_COLORS[k]||'#888',backgroundColor:'transparent',tension:.35,borderWidth:2,pointRadius:2}));
-  if(trendChart)trendChart.destroy();
-  trendChart=new Chart(ctx,{type:'line',data:{labels:trendMonths,datasets:ds},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#67707b',font:{size:11}}}},scales:{x:axisOpt.x,y:{...axisOpt.y,min:0,max:100}}}});
+/* 해외 버즈 — 유럽 침투도 · 소비자 후기 · Big6 구글트렌드 (eu_buzz.json) */
+async function loadEU(){
+  if(euDoc) return;
+  try{
+    const r=await fetch('eu_buzz.json',{cache:'no-store'});
+    if(!r.ok){ document.getElementById('eu-summary').innerHTML='<div class="na-msg">eu_buzz.json 없음 — 주간 스캔 후 생성됩니다</div>'; return; }
+    euDoc=await r.json();
+  }catch(e){ return; }
+  renderEUSummary(); renderEUPen(); renderEUReviews(); renderEUGeoToggle(); renderEUTrend();
 }
-function renderTrendCards(){
-  const region=trendData[curRegion];
-  document.getElementById('trend-cards').innerHTML=Object.keys(region).map(k=>{const s=region[k];const cur=s[s.length-1],prev=s[s.length-4]||s[0];const pct=prev?Math.round((cur-prev)/prev*100):0;const cls=pct>=0?'up':'down';const sign=pct>=0?'▲':'▼';return `<div class="card"><div class="k">${k}</div><div class="v lime">${cur}</div><div class="s">3개월 모멘텀 <span class="${cls}">${sign} ${Math.abs(pct)}%</span></div></div>`;}).join('');
+function renderEUSummary(){
+  const d=euDoc;
+  document.getElementById('eu-updated').textContent=`${d.updated} 갱신 · 이번주(${isoWeekRange(d.week)})`;
+  document.getElementById('eu-summary').innerHTML=`<div class="rev" style="border-left:3px solid var(--lime);background:var(--lime-bg)"><div class="top"><span class="src" style="color:var(--green-d);font-weight:700">유럽 시장 종합</span></div><div class="body">${d.summary}</div></div>`;
 }
-document.querySelectorAll('#region-toggle button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#region-toggle button').forEach(x=>x.classList.remove('active'));b.classList.add('active');curRegion=b.dataset.region;renderTrendChart();renderTrendCards();});
+function renderEUPen(){
+  const p=euDoc.penetration;
+  const newTxt=p.first_scan?`+${p.new_this_week}`:`+${p.new_this_week}`;
+  const newSub=p.first_scan?'첫 스캔 — 전체 신규 등재':'전주 대비 신규 확인';
+  document.getElementById('eu-pen-cards').innerHTML=
+    `<div class="card"><div class="k">누적 취급 클리닉</div><div class="v lime">${p.total}<span style="font-size:14px;font-weight:600"> 곳</span></div><div class="s">중복제거 유니온 · 웹 풋프린트</div></div>`+
+    `<div class="card"><div class="k">이번주 신규</div><div class="v">${newTxt}</div><div class="s">${newSub}</div></div>`+
+    `<div class="card"><div class="k">확인 국가</div><div class="v">${p.n_countries}<span style="font-size:14px;font-weight:600"> 개국</span></div><div class="s">영국·네덜란드·체코·폴란드 상위</div></div>`;
+  const top=p.by_country.slice(0,10);
+  try{
+    const ctx=document.getElementById('euCountryChart');
+    if(euCountryChart)euCountryChart.destroy();
+    euCountryChart=new Chart(ctx,{type:'bar',data:{labels:top.map(x=>x.name),datasets:[{data:top.map(x=>x.n),backgroundColor:'#8bc34a',borderRadius:3,barThickness:16}]},
+      options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},title:{display:true,text:'국가별 취급 클리닉 분포 (상위 10)',color:'#67707b',font:{size:12}}},scales:{x:{...axisOpt.y},y:{...axisOpt.x,grid:{display:false}}}}});
+  }catch(e){}
+  renderEUClinics();
+}
+function renderEUClinics(){
+  const p=euDoc.penetration;
+  const list=euClinicsOpen?p.clinics:p.clinics.slice(0,12);
+  const rows=list.map(c=>`<tr><td><a href="${c.url}" target="_blank" style="color:var(--txt);text-decoration:none">${c.domain}</a></td><td>${c.name}</td><td>${{GB:'영국',FR:'프랑스',DE:'독일',ES:'스페인',IT:'이탈리아',PL:'폴란드',NL:'네덜란드',CZ:'체코',SE:'스웨덴',NO:'노르웨이',FI:'핀란드',CH:'스위스',IE:'아일랜드',GR:'그리스',RO:'루마니아',LT:'리투아니아',HU:'헝가리'}[c.country]||c.country}</td><td>${c.city||'—'}</td></tr>`).join('');
+  document.getElementById('eu-clinic-table').innerHTML=
+    `<table><thead><tr><th>클리닉 (도메인)</th><th>이름</th><th>국가</th><th>도시</th></tr></thead><tbody>${rows}</tbody></table>`+
+    `<div style="text-align:center;margin-top:8px"><span class="filter-chip" style="cursor:pointer" onclick="euClinicsOpen=!euClinicsOpen;renderEUClinics()">${euClinicsOpen?'접기':`전체 ${p.clinics.length}곳 보기`}</span></div>`;
+}
+function renderEUReviews(){
+  const rv=euDoc.reviews; if(!rv) return;
+  const themeChips=(a,cls)=>a.map(t=>`<div style="font-size:13px;margin:3px 0"><span style="color:var(--${cls});font-weight:700">${cls==='up'?'▲':'▼'}</span> ${t}</div>`).join('');
+  const overall=`<div class="rev" style="margin-bottom:10px"><div class="top"><span style="font-size:14px;font-weight:800">유럽 소비자 반응 종합</span><span class="senti neu">브랜드 인지 초기</span></div><div class="body" style="margin-bottom:7px">${rv.overall.summary}</div>${themeChips(rv.overall.pos_themes,'up')}${themeChips(rv.overall.neg_themes,'down')}</div>`;
+  const regions=rv.regions.map(r=>{
+    const srcs=(r.sources||[]).map(s=>`<a href="${s.url}" target="_blank" class="filter-chip" style="text-decoration:none;padding:2px 9px;font-size:11px">${s.site}</a>`).join(' ');
+    return `<div class="rev" style="margin-bottom:8px"><div class="top"><span style="font-size:14px;font-weight:800">${r.name_ko}</span></div><div class="body" style="margin-bottom:6px;color:var(--sub)">${r.summary}</div>${themeChips(r.pos||[],'up')}${themeChips(r.neg||[],'down')}<div style="margin-top:7px;display:flex;gap:5px;flex-wrap:wrap;align-items:center"><span style="font-size:10px;color:var(--green-d);font-weight:800">SRC</span> ${srcs}</div></div>`;
+  }).join('');
+  document.getElementById('eu-reviews').innerHTML=overall+regions+(rv.notes?`<div class="unit" style="text-align:left">※ ${rv.notes}</div>`:'');
+}
+function renderEUGeoToggle(){
+  const names={GB:'영국',FR:'프랑스',ES:'스페인',PL:'폴란드',DE:'독일',IT:'이탈리아'};
+  document.getElementById('eu-geo-toggle').innerHTML=euDoc.trends.big6.map(cc=>`<button class="${cc===euGeo?'active':''}" data-geo="${cc}">${names[cc]||cc}</button>`).join('');
+  document.querySelectorAll('#eu-geo-toggle button').forEach(b=>b.onclick=()=>{euGeo=b.dataset.geo;renderEUGeoToggle();renderEUTrend();});
+}
+function euWeekLabels(n){
+  const start=new Date(euDoc.trends.start+'T00:00:00Z');
+  return Array.from({length:n},(_,i)=>{const d=new Date(start);d.setUTCDate(start.getUTCDate()+i*7);return `${String(d.getUTCFullYear()).slice(2)}-${String(d.getUTCMonth()+1).padStart(2,'0')}-${String(d.getUTCDate()).padStart(2,'0')}`;});
+}
+function renderEUTrend(){
+  const t=euDoc.trends; const s=t.series[euGeo]; if(!s) return;
+  const labels=euWeekLabels(s[0].length);
+  const ds=t.keywords.map((k,i)=>({label:k,data:s[i],borderColor:EU_KW_COLORS[k]||'#888',backgroundColor:'transparent',tension:.3,borderWidth:k==='Rejuran'?3:1.5,pointRadius:0}));
+  try{
+    if(euTrendChart)euTrendChart.destroy();
+    euTrendChart=new Chart(document.getElementById('euTrendChart'),{type:'line',data:{labels,datasets:ds},
+      options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{labels:{color:'#67707b',font:{size:11}}}},scales:{x:{...axisOpt.x,ticks:{...axisOpt.x.ticks,maxTicksLimit:10}},y:{...axisOpt.y,min:0,max:100}}}});
+  }catch(e){}
+  const rows=t.table.map(r=>{
+    const m=r.momentum, mc=m>=0?'up':'down', ms=m>=0?'▲':'▼';
+    return `<tr${r.cc===euGeo?' style="background:var(--lime-bg)"':''}><td>${r.name}</td><td class="hl">${r.Rejuran}</td><td>${r.Profhilo}</td><td>${r.Sculptra}</td><td>${r.Plinest}</td><td>${r.Sunekos}</td><td class="${mc}">${ms} ${Math.abs(m)}%</td></tr>`;
+  }).join('');
+  document.getElementById('eu-trend-table').innerHTML=`<table><thead><tr><th>국가</th><th>Rejuran ★</th><th>Profhilo</th><th>Sculptra</th><th>Plinest</th><th>Sunekos</th><th>모멘텀</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
 
 /* 수출 데이터 */
 function curExport(){return curPeriod==='quarter'?exportQ:exportM;}
@@ -781,7 +862,7 @@ document.querySelectorAll('.tab').forEach(t=>{
     document.getElementById('view-'+t.dataset.view).classList.add('active');
     if(t.dataset.view==='stock'&&!stockInited){stockInited=true;renderStockCompanies();renderStockCharts();}
     if(t.dataset.view==='buzz')renderBuzzTrends();
-    if(t.dataset.view==='trend'&&!trendChart){renderTrendChart();renderTrendCards();}
+    if(t.dataset.view==='trend')loadEU();
     if(t.dataset.view==='export'&&!exportChart){renderExportChart();renderExportTable();}
   };
 });
