@@ -230,9 +230,9 @@
     <div class="sec-h"><div class="l"><h2>검색지수 · EBD(장비)</h2></div><span class="note">덴서티·써마지·슈링크·리팟·볼뉴머 · 네이버 DATALAB · 주단위 · 매일 08:30 갱신</span></div>
     <div class="chart-box"><canvas id="buzzChart2"></canvas><div class="na-msg" id="buzz2NA" style="display:none">데이터 수집 전 — 봇 배포 후 자동 생성됩니다</div></div>
 
-    <div class="sec-h"><div class="l"><h2>후기 (키워드별)</h2></div><span class="note">언급량 많은 순 · 카테고리별 10개 내외</span></div>
-    <div class="chips" id="review-cats"></div>
-    <div id="reviews" style="margin-top:8px"></div>
+    <div class="sec-h"><div class="l"><h2>제품별 정성 분석 · 버즈</h2></div><span class="note" id="insight-note">네이버 카페·블로그 · 주 1회 Claude 요약</span></div>
+    <div id="insight-summary"></div>
+    <div id="insights"><div class="na-msg">아직 분석 데이터가 없습니다 — 봇 /buzzraw 수집 후 Cowork에서 "버즈 요약해줘"</div></div>
   </section>
 
   <!-- ============ GOOGLE TREND ============ -->
@@ -549,28 +549,32 @@ function renderBuzzTrends(){
   buzzChart1=_buzzChart('buzzChart1','buzz1NA',g.injectable,buzzChart1);
   buzzChart2=_buzzChart('buzzChart2','buzz2NA',g.ebd,buzzChart2);
 }
-let activeReviewCat=null;
-function reviewCatsSorted(){
-  // 언급량(buzzSeries 최신값) 많은 순
-  return Object.keys(reviewsByKw).sort((a,b)=>{
-    const va=(buzzSeries[a]||[0]).slice(-1)[0], vb=(buzzSeries[b]||[0]).slice(-1)[0];
-    return vb-va;
-  });
+/* 제품별 정성 분석 (buzz_insights.json · Claude 주간 요약) */
+async function loadInsights(){
+  try{
+    const r=await fetch('buzz_insights.json',{cache:'no-store'});
+    if(!r.ok) return;
+    renderInsights(await r.json());
+  }catch(e){}
 }
-function renderReviewCats(){
-  const cats=reviewCatsSorted();
-  if(activeReviewCat===null||!cats.includes(activeReviewCat)) activeReviewCat=cats[0];
-  document.getElementById('review-cats').innerHTML=cats.map(k=>{
-    const cnt=(buzzSeries[k]||[0]).slice(-1)[0];
-    const on=k===activeReviewCat;
-    return `<span class="filter-chip ${on?'on':''}" onclick="setReviewCat('${k}')"><i class="dot" style="background:${KW_COLORS[k]||'#888'};margin-right:5px"></i>${k} <b style="opacity:.75">${cnt.toLocaleString()}</b></span>`;
+function renderInsights(d){
+  const note=document.getElementById('insight-note');
+  if(note&&d.updated) note.textContent=`네이버 카페·블로그 · ${d.updated} 요약`;
+  const sm=document.getElementById('insight-summary');
+  if(sm&&d.summary) sm.innerHTML=`<div class="rev" style="border-left:3px solid var(--lime);background:var(--lime-bg)"><div class="top"><span class="src" style="color:var(--green-d);font-weight:700">이번 주 요약</span></div><div class="body">${d.summary}</div></div>`;
+  const el=document.getElementById('insights');
+  const prods=(d.products||[]);
+  if(!prods.length) return;
+  el.innerHTML=prods.map(p=>{
+    const pos=(p.pos||[]).map(t=>`<div style="font-size:13px;margin:3px 0"><span style="color:var(--up);font-weight:700">▲</span> ${t}</div>`).join('');
+    const neg=(p.neg||[]).map(t=>`<div style="font-size:13px;margin:3px 0"><span style="color:var(--down);font-weight:700">▼</span> ${t}</div>`).join('');
+    const keys=(p.keys||[]).map(k=>`<span class="filter-chip" style="cursor:default;padding:2px 9px;font-size:11px">${k}</span>`).join(' ');
+    return `<div class="rev" style="margin-bottom:10px"><div class="top">
+      <span style="font-size:14px;font-weight:800">${p.name} <span style="font-size:11px;color:var(--dim);font-weight:400">${p.brand||''}</span></span>
+      <span class="src">~${(p.count||0).toLocaleString()}건${p.sample?` (샘플 ${p.sample})`:''}</span></div>
+      ${pos}${neg}
+      <div style="margin-top:7px;display:flex;gap:5px;flex-wrap:wrap;align-items:center"><span style="font-size:10px;color:var(--green-d);font-weight:800">KEY</span> ${keys}</div></div>`;
   }).join('');
-}
-function setReviewCat(k){activeReviewCat=k;renderReviewCats();renderReviews();}
-function renderReviews(){
-  const label={pos:"긍정",neu:"중립",neg:"부정"};
-  const list=(reviewsByKw[activeReviewCat]||[]).slice(0,10);
-  document.getElementById('reviews').innerHTML=list.map(r=>`<div class="rev"><div class="top"><span class="src">${r.src}</span><span class="senti ${r.senti}">${label[r.senti]}</span></div><div class="body">${r.body}</div><div class="kw"># ${activeReviewCat}</div></div>`).join('');
 }
 
 /* 구글 트렌드 */
@@ -782,8 +786,8 @@ async function loadEventsJson(){
 // init
 renderNews();
 renderWatchlist();renderCalendar();renderUpcoming();
-renderReviewCats();renderReviews();
 loadBuzzJson();
+loadInsights();
 
 // 실데이터 로드 + 5분마다 자동 새로고침 (열어둔 채로 최신 뉴스 반영)
 loadNewsJson();
