@@ -181,6 +181,8 @@
     <div class="sec-h"><div class="l"><h2>추적 기업</h2></div><span class="note">칩 클릭 시 해당 종목 차트</span></div>
     <div class="chips" id="stock-companies"></div>
 
+    <div id="stock-quote" style="margin:12px 0 4px"></div>
+
     <div class="sec-h"><div class="l"><h2>기간</h2></div>
       <div class="toggle" id="period-stock">
         <button data-days="21">1개월</button>
@@ -224,19 +226,24 @@
 
   <!-- ============ BUZZ ============ -->
   <section class="view" id="view-buzz">
-    <div class="sec-h"><div class="l"><h2>기간</h2></div>
-      <div class="toggle" id="period-buzz">
-        <button data-w="4">1개월</button><button data-w="13">3개월</button><button data-w="26">6개월</button><button class="active" data-w="52">12개월</button>
+    <div class="sec-h" data-clps="buzz-sec-idx"><div class="l"><h2>검색지수 · 네이버 데이터랩</h2></div><span class="note">주단위 · 제목 클릭 시 접기/펼치기</span></div>
+    <div id="buzz-sec-idx">
+      <div class="sec-h"><div class="l"><h2>기간</h2></div>
+        <div class="toggle" id="period-buzz">
+          <button data-w="4">1개월</button><button data-w="13">3개월</button><button data-w="26">6개월</button><button class="active" data-w="52">12개월</button>
+        </div>
       </div>
+      <div class="add-form" style="margin:2px 0 8px"><input id="buzz-from" type="date" style="width:150px" /><input id="buzz-to" type="date" style="width:150px" /><button onclick="applyBuzzRange()">적용</button></div>
+
+      <div id="buzz-charts"><div class="na-msg">데이터 수집 전 — 봇 배포 후 자동 생성됩니다</div></div>
     </div>
-    <div class="add-form" style="margin:2px 0 8px"><input id="buzz-from" type="date" style="width:150px" /><input id="buzz-to" type="date" style="width:150px" /><button onclick="applyBuzzRange()">적용</button></div>
 
-    <div id="buzz-charts"><div class="na-msg">데이터 수집 전 — 봇 배포 후 자동 생성됩니다</div></div>
-
-    <div class="sec-h"><div class="l"><h2>제품별 정성 분석 · 버즈</h2></div><span class="note" id="insight-note">네이버 카페·블로그 · 주 1회 Claude 요약</span></div>
-    <div class="chips" id="insight-weeks" style="margin-bottom:8px"></div>
-    <div id="insight-summary"></div>
-    <div id="insights"><div class="na-msg">아직 분석 데이터가 없습니다 — 봇 /buzzraw 수집 후 Cowork에서 "버즈 요약해줘"</div></div>
+    <div class="sec-h" data-clps="buzz-sec-insight"><div class="l"><h2>제품별 정성 분석 · 버즈</h2></div><span class="note" id="insight-note">네이버 카페·블로그 · 주 1회 Claude 요약</span></div>
+    <div id="buzz-sec-insight">
+      <div class="chips" id="insight-weeks" style="margin-bottom:8px"></div>
+      <div id="insight-summary"></div>
+      <div id="insights"><div class="na-msg">아직 분석 데이터가 없습니다 — 봇 /buzzraw 수집 후 Cowork에서 "버즈 요약해줘"</div></div>
+    </div>
   </section>
 
   <!-- ============ 해외 버즈 (EU) ============ -->
@@ -247,24 +254,28 @@
     <div class="sec-h"><div class="l"><h2>종합 판단</h2></div><span class="note" id="eu-updated"></span></div>
     <div id="eu-summary"><div class="na-msg">eu_buzz.json 로딩 중...</div></div>
 
-    <div class="sec-h"><div class="l"><h2>유럽 침투도 — 리쥬란 취급 클리닉 레지스트리</h2></div><span class="note">클리닉 자체 홈페이지에 시술 명시 확인분 · 주 1회 갱신</span></div>
-    <div class="cards" id="eu-pen-cards"></div>
-    <div class="chart-box"><canvas id="euCountryChart"></canvas></div>
-    <div id="eu-clinic-table" style="margin-top:8px"></div>
+    <div class="sec-h" data-clps="eu-sec-pen"><div class="l"><h2>유럽 침투도 — 리쥬란 취급 클리닉 레지스트리</h2></div><span class="note">클리닉 자체 홈페이지에 시술 명시 확인분 · 주 1회 갱신</span></div>
+    <div id="eu-sec-pen">
+      <div class="cards" id="eu-pen-cards"></div>
+      <div class="chart-box"><canvas id="euCountryChart"></canvas></div>
+      <div id="eu-clinic-table" style="margin-top:8px"></div>
+    </div>
 
-    <div class="sec-h"><div class="l"><h2>시술 후기 · 소비자 평가</h2></div><span class="note">지역별 소비자 정보공유 사이트 · 매체 체험기 요약</span></div>
+    <div class="sec-h" data-clps="eu-reviews"><div class="l"><h2>시술 후기 · 소비자 평가</h2></div><span class="note">지역별 소비자 정보공유 사이트 · 매체 체험기 요약</span></div>
     <div id="eu-reviews"></div>
 
-    <div class="sec-h"><div class="l"><h2>Big6 구글 트렌드 — 스킨부스터 경쟁 비교</h2></div><span class="note">상대 검색지수(0–100) · 절대 판매량 아님</span></div>
-    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
-      <div class="toggle" id="eu-geo-toggle"></div>
-      <div class="toggle" id="eu-period-toggle">
-        <button data-w="4">1개월</button><button data-w="13">3개월</button><button data-w="26">6개월</button><button class="active" data-w="52">12개월</button>
+    <div class="sec-h" data-clps="eu-sec-trend"><div class="l"><h2>Big6 구글 트렌드 — 스킨부스터 경쟁 비교</h2></div><span class="note">상대 검색지수(0–100) · 절대 판매량 아님</span></div>
+    <div id="eu-sec-trend">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <div class="toggle" id="eu-geo-toggle"></div>
+        <div class="toggle" id="eu-period-toggle">
+          <button data-w="4">1개월</button><button data-w="13">3개월</button><button data-w="26">6개월</button><button class="active" data-w="52">12개월</button>
+        </div>
       </div>
+      <div class="chart-box" style="margin-top:10px"><canvas id="euTrendChart"></canvas></div>
+      <div class="unit" id="eu-table-note">표: 선택기간 평균 검색지수 · 모멘텀 = 리쥬란 최근 12주 vs 직전 12주</div>
+      <div id="eu-trend-table"></div>
     </div>
-    <div class="chart-box" style="margin-top:10px"><canvas id="euTrendChart"></canvas></div>
-    <div class="unit" id="eu-table-note">표: 선택기간 평균 검색지수 · 모멘텀 = 리쥬란 최근 12주 vs 직전 12주</div>
-    <div id="eu-trend-table"></div>
   </section>
 
   <!-- ============ EXPORT ============ -->
@@ -883,7 +894,35 @@ function renderFlowChart(){
   if(flowChart)flowChart.destroy();
   flowChart=new Chart(ctx,{type:'line',data:{labels,datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{labels:{color:'#67707b',font:{size:11},boxWidth:18}}},scales:{x:_lineAxes.x,y:{ticks:{color:'#9aa4af',callback:v=>v.toLocaleString()},grid:{color:'#eef1f3'},title:{display:true,text:'누적 순매수(억원)',color:'#9aa4af',font:{size:10}}}}}});
 }
-function renderStockCharts(){ renderPriceChart(); renderFlowChart(); renderAggChart(); }
+/* 현재가 카드 — stock.json 최신 종가 기준 (전일대비·52주 밴드·시총) */
+function renderStockQuote(){
+  const el=document.getElementById('stock-quote'); if(!el) return;
+  const s=getStock(activeStock);
+  if(!s||!s.price||s.price.length<2){ el.innerHTML=''; return; }
+  const n=s.price.length, cur=s.price[n-1], prev=s.price[n-2], d=cur-prev, pct=prev?(d/prev*100):0;
+  const up=d>0, flat=d===0;
+  const c=flat?'var(--sub)':up?'#d9534f':'#4a90d9';     // 국내 관례: 상승 빨강 · 하락 파랑
+  const arrow=flat?'—':up?'▲':'▼';
+  const yr=s.price.slice(-252), hi=Math.max(...yr), lo=Math.min(...yr);
+  const cap=s.shares?((cur*s.shares)/1e12).toFixed(2)+'조원':'—';
+  const date='20'+(s.dates[n-1]||'');
+  const cell=(k,v)=>`<div style="min-width:118px"><div style="font-size:11px;color:var(--dim)">${k}</div><div style="font-size:14px;font-weight:700">${v}</div></div>`;
+  el.innerHTML=`<div class="card" style="border-top-color:${c}">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:14px">
+      <div>
+        <div class="k" style="color:var(--txt)">${activeStock} <span style="color:var(--dim);font-weight:400">${s.code||''} · ${date} 기준</span></div>
+        <div style="font-size:32px;font-weight:800;letter-spacing:-.5px;color:${c};line-height:1.1">${cur.toLocaleString()}<span style="font-size:14px;font-weight:600"> 원</span></div>
+        <div style="font-size:13px;font-weight:700;color:${c};margin-top:3px">전일대비 ${arrow} ${Math.abs(d).toLocaleString()} · ${pct>=0?'+':''}${pct.toFixed(2)}%</div>
+      </div>
+      <div style="display:flex;gap:18px;flex-wrap:wrap;padding-bottom:4px">
+        ${cell('전일',prev.toLocaleString())}
+        ${cell('52주 최고','<span style=\"color:#d9534f\">'+hi.toLocaleString()+'</span>')}
+        ${cell('52주 최저','<span style=\"color:#4a90d9\">'+lo.toLocaleString()+'</span>')}
+        ${cell('시가총액',cap)}
+      </div>
+    </div></div>`;
+}
+function renderStockCharts(){ renderStockQuote(); renderPriceChart(); renderFlowChart(); renderAggChart(); }
 document.querySelectorAll('#period-stock button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#period-stock button').forEach(x=>x.classList.remove('active'));b.classList.add('active');stockDays=+b.dataset.days;renderStockCharts();});
 function applyCustomPeriod(){ const v=parseInt(document.getElementById('period-input').value,10); if(v>0){ stockDays=Math.round(v*21); document.querySelectorAll('#period-stock button').forEach(x=>x.classList.remove('active')); renderStockCharts(); } }
 
@@ -944,7 +983,25 @@ async function loadEventsJson(){
   }catch(e){}
 }
 
+/* 섹션 접기/펼치기 — .sec-h[data-clps] 제목 클릭 시 대상 토글 */
+function makeCollapsible(){
+  document.querySelectorAll('.sec-h[data-clps]').forEach(h=>{
+    if(h.dataset.bound) return; h.dataset.bound='1';
+    const tgt=document.getElementById(h.dataset.clps); if(!tgt) return;
+    const l=h.querySelector('.l');
+    const caret=document.createElement('span'); caret.textContent='▾'; caret.style.cssText='color:var(--dim);font-size:13px';
+    l.appendChild(caret); l.style.cursor='pointer'; l.title='클릭하여 접기/펼치기';
+    l.onclick=()=>{
+      const open=tgt.style.display!=='none';
+      tgt.style.display=open?'none':'';
+      caret.textContent=open?'▸':'▾';
+      if(!open) window.dispatchEvent(new Event('resize'));   // 차트 리사이즈 복구
+    };
+  });
+}
+
 // init
+makeCollapsible();
 renderNews();
 renderWatchlist();renderCalendar();renderUpcoming();
 loadBuzzJson();
