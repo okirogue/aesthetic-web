@@ -1,6 +1,12 @@
 {
-  "updated": "2026-07-24 19:57",
+  "updated": "2026-07-25 08:30",
   "domestic": [
+    {
+      "co": "파마리서치",
+      "title": "[주간 코스닥 기관] 파마리서치·샘씨엔에스 집중 매수…기관은 실적주...",
+      "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=471388",
+      "date": "07/25 07:04"
+    },
     {
       "co": "파마리서치",
       "title": "[코스닥 기관] 파마리서치 올릭스 하나머티리얼즈 코세스 제닉...헬스케...",
@@ -18,30 +24,6 @@
       "title": "파마리서치 주가, 7월 24일 장중 360,500원 0.14% 상승",
       "link": "https://www.joongangenews.com/news/articleView.html?idxno=535149",
       "date": "07/24 12:30"
-    },
-    {
-      "co": "파마리서치",
-      "title": "파마리서치, 2분기 실적 기대에 10%대 급등…증권가 &quot;의료기기·화장품...",
-      "link": "https://www.imaeil.com/page/view/2026072313132859399",
-      "date": "07/23 13:31"
-    },
-    {
-      "co": "파마리서치",
-      "title": "&quot;피부과·의료기기 역대 최대 매출&quot; 파마리서치 주가 급등",
-      "link": "https://www.gukjenews.com/news/articleView.html?idxno=3643972",
-      "date": "07/23 12:56"
-    },
-    {
-      "co": "휴젤",
-      "title": "휴젤, 인도 톡신 시장 출격…'레티보' 글로벌 영토 확대",
-      "link": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065599477865719",
-      "date": "07/23 16:56"
-    },
-    {
-      "co": "휴젤",
-      "title": "[특징주] &quot;2분기는 파마, 3분기는 휴젤&quot;…미용주, 실적 모멘텀으로 반등...",
-      "link": "https://www.newstnt.com/news/articleView.html?idxno=711361",
-      "date": "07/23 12:20"
     },
     {
       "co": "클래시스",
@@ -90,18 +72,6 @@
       "title": "미용 의료기기·소모품 유통 못 막는데 … 클래시스, 왜 &quot;한의원엔 안 팔...",
       "link": "https://biz.newdaily.co.kr/site/data/html/2026/07/23/2026072300324.html",
       "date": "07/24 06:00"
-    },
-    {
-      "co": "클래시스",
-      "title": "[헬로스톡] 7/23 주목할 종목 : 한미글로벌·클래시스·LG화학·포스코인...",
-      "link": "https://www.hellot.net/news/article.html?no=113937",
-      "date": "07/23 18:38"
-    },
-    {
-      "co": "클래시스",
-      "title": "&quot;한의사에 슈링크·볼뉴머 안 팔아요&quot; … 클래시스發 직역 갈등 재점화",
-      "link": "https://biz.newdaily.co.kr/site/data/html/2026/07/23/2026072300247.html",
-      "date": "07/23 15:40"
     },
     {
       "co": "에이피알",
@@ -170,84 +140,24 @@
       "date": "07/24 08:08"
     },
     {
-      "co": "에이피알",
-      "title": "아모레·에이피알·구다이, 李대통령과 브라질행…글로벌 4위 화장품 시...",
-      "link": "https://www.asiatoday.co.kr/kn/view.php?key=20260723010008530",
-      "date": "07/23 18:00"
-    },
-    {
-      "co": "에이피알",
-      "title": "에이피알·메디큐브 잘나가니 사칭범까지... 사칭 범죄 주의보",
-      "link": "https://www.greened.kr/news/articleView.html?idxno=345758",
-      "date": "07/23 11:29"
-    },
-    {
-      "co": "에이피알",
-      "title": "글로벌 질주 에이피알, 성장공식 신사업서도 통할까",
-      "link": "https://www.viva100.com/article/20260720500633",
-      "date": "07/23 11:08"
-    },
-    {
       "co": "엘앤씨바이오",
       "title": "엘앤씨바이오 메가너브, 국산 동종신경이식재 시장 확대",
       "link": "https://www.bosa.co.kr/news/articleView.html?idxno=3008923",
       "date": "07/24 05:36"
-    },
-    {
-      "co": "엘앤씨바이오",
-      "title": "엘앤씨바이오, 동종신경이식재 '메가너브' 국내 대학병원 40여곳 도입",
-      "link": "http://www.paxetv.com/news/articleView.html?idxno=277769",
-      "date": "07/23 20:56"
-    },
-    {
-      "co": "엘앤씨바이오",
-      "title": "외산 중심 이식재에 변화…엘앤씨바이오, 대학병원 도입 순항",
-      "link": "https://www.medicaltimes.com/Main/News/NewsView.html?ID=1169883&ref=naverpc",
-      "date": "07/23 15:06"
     }
   ],
   "foreign": [
     {
       "co": "Galderma",
-      "title": "Galderma Group AG (GDERF) Half Year 2026 Earnings Call Highlights: Record Sales and Strategic ... - Yahoo Finance UK",
-      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOV2FTc0E4bXVyQVlJME1ITTdfZ1VGX0hKS0NqSVo1MURGMDRQNnl4T1FtNDRtMlU1Wlludnk5akVYb1lvaDI2aldWX3kwcDVHc0p4TlR4LTlnVjFwc3NleW5lYnZyMGFaaGw3eGRCSklxNVNlMG81SFhrWGptZ0VXQ0hoVQ?oc=5",
-      "date": "07/23 19:00"
+      "title": "Price to book forward of Galderma Group AG – DUS:PY3 - TradingView",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNRHJvYkZ5RkZ3ek5MXzFqOGF5NXRqZ0w1M2NycTB4OE5GdTdlWTZNVDVXR3ItMkN0ako5Z1B3c3huTkx1RndhdUF6NFozQVU0Y0lqSUZMeTVoQU4yc1ZKY0xKcmlpTl8wME9Db1NRMm5TV09YMFg1VWVCQTRpRWNZTEk3emVDSDJ1WXBtcGRRRlBqUXQxRzBR?oc=5",
+      "date": "07/24 14:55"
     },
     {
       "co": "Galderma",
       "title": "Galderma H1 2026 slides: record sales top $3B, guidance raised - Investing.com",
       "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPSGo5dzJ1V295bVJzSXc0ZDRncldTSjJva1dYU3JRMjdYWnVpOTc3dXUyLWFQR3ozQWgwUGZlQlh2RG1DUGZqd1dHQXo4R0trWkNjdzNGY0lvUVpNNVJlTG5hcjNNNFg3R3hVOHQ3S2R2N1Y3QWJ6Q0JsbUlfa2FCMTh6OC1vTHR2NkRRU0ZUODdBczF4MkNrUWpVUEtZOWlNU19MZlRidEw4bUI2TjgwdTMwSlNZcDg?oc=5",
       "date": "07/24 05:23"
-    },
-    {
-      "co": "Galderma",
-      "title": "Galderma Sees Revenue Surge from GLP-1 Weight Loss Drug Trend - GuruFocus",
-      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNTUlmOUlNN1BTMGF2czJ1eDVHbVFaV21hU0V0Q1ZKR0xQQzFEUDdKRFFJOFJvNFhMX0puTXFsZkpRSVZDamI3elIyUndQdkhESEFmNzMyQjdfVk02bWpfX1lPc2RoZzJXWEtMWi1oTjZXTzlYaUFQTzMxNS1TeWRHcEx1cmJsYnR0bm9Ob2psZDVmLUZCNVhFZnJaSFBSMFpXWWdFRVBZMXo5VmJRLUc5YWRJck5MUW1lVmxFQ2c1M1F2dFdSR2Q2R3g1ZF81UWYwczdBUTNR?oc=5",
-      "date": "07/23 19:01"
-    },
-    {
-      "co": "Galderma",
-      "title": "Galderma H1 FY26 net income jumps 128.87% to USD 444 million; net sales climb 24.6% to USD 3.13 billion - Bitget",
-      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE96SzgzX0NpcmFMWVM1bU5JREEzYXBrNkVlQkJiNDVPZUVIbkZrM3ItLXdwVTh6YklQNFFLU1psR29QejAyV2NEajJiZXdxTjQxRjBKcWRwYzVPQUR5UFJXZkFlb9IBY0FVX3lxTE96SzgzX0NpcmFMWVM1bU5JREEzYXBrNkVlQkJiNDVPZUVIbkZrM3ItLXdwVTh6YklQNFFLU1psR29QejAyV2NEajJiZXdxTjQxRjBKcWRwYzVPQUR5UFJXZkFlbw?oc=5",
-      "date": "07/23 22:55"
-    },
-    {
-      "co": "Galderma",
-      "title": "Earnings call transcript: Galderma raises 2026 sales outlook after H1 surge - Investing.com Nigeria",
-      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOa1MzMHBlam1ZVHFXLVpCdTFTWkVvdjZTRUNlcW5vc3ROZ2FQb0FtUndRNThJRk5QUHJKdkNiLTQ2STdaZVg3ZzdLYWwtVGRyeEVXR09PSmEwWVpzNW5XWjdMSnA3SVhZTXh6TjNIYVJiNU8ya2JKbjJyWkNvaFlBX2RiNmRMMnJTbEU4Y2t3cVAwaEZiXzc0YWVsMXBfVEtJTXg5bTBRSl9PcFAzc2Z4LWhrZ2xkNG9MblNvZkpNbklBNTEzaFpudQ?oc=5",
-      "date": "07/23 12:51"
-    },
-    {
-      "co": "Galderma",
-      "title": "GLP-1 weight-loss drug surge boosts Galderma's aesthetics sales by 25%, CEO says - Pluang",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNS1EyU3hCWGJmcmZtcEhNZGVxRTk5b1lLQ2UzLVB4VjZ5ZWRjZUlaNHJITzBmTk41d3NuMllmX1J0WjVsQXZMWU14ZzMxMXlnMXhadjBNcUJKdmVwUWN2NmpsU0dEaVNkTVVEelBjVi1falA3TFVUaUtlRVZlRGt6bkhfMmtrUmtXcFVtbl9XVURiT3hpMnlBSVYxR2dKR0ZaaEx2MC13aG40ZkJW?oc=5",
-      "date": "07/23 11:06"
-    },
-    {
-      "co": "Allergan",
-      "title": "AbbVie, Allergan takes on Swiss aesthetics rival over syringe design - Life Sciences IP Review",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQRjJ0WXdPeHhEWnlta3Iwb3l4UEhYVHJ1dFNxLVBIUnJ1Tmh4VE00MWhhbktuWUVIYXhBOG1HUzZQU0lPWUI0aEVMdXEtbnRJNWh4Rk9wa29OMjJ4cmFoT1l1QVp6RGRROHVERmtRNlFsRUh3eV83d3FkTWZzN0NQV1pyTUZmNVBFMnRLOUo0XzU0U3V4NTZfRXVVRU5IZ2ZLMXBYX1JDY3l0NDBNcjZlLWRB?oc=5",
-      "date": "07/23 17:45"
     }
   ]
 }
