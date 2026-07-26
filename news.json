@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27 07:58",
+  "updated": "2026-07-27 08:08",
   "domestic": [
     {
       "co": "파마리서치",
@@ -104,12 +104,5 @@
       "date": "07/26 08:50"
     }
   ],
-  "foreign": [
-    {
-      "co": "Galderma",
-      "title": "Galderma Group AG 2026 Q2 - Results - Earnings Call Presentation (OTCMKTS:GALDY) 2026-07-25 - Seeking Alpha",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNaFc5U3NDbVA2MldVczNRbWJjQU5sQkxzMF8yY1oxdzNRODdoSVQyUWdyXzMzTWNBdGFfRi1FSkhIY3hpeElNT2llcmhqVzlKTFJaaG9oekkwb2FyS0FWU1hZbmlkaHlrS1hySW9XaVRHanNPTHVBdjF0RGc4ZGpvWUp1clFTVlJjVjk3MDEwc2F4djNmdkY4MmRlSDRBVW83amRR?oc=5",
-      "date": "07/25 23:03"
-    }
-  ]
+  "foreign": []
 }
