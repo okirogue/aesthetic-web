@@ -226,7 +226,7 @@
 
   <!-- ============ BUZZ ============ -->
   <section class="view" id="view-buzz">
-    <div class="sec-h" data-clps="buzz-sec-idx"><div class="l"><h2>검색지수 · 네이버 데이터랩</h2></div><span class="note">주단위 · 제목 클릭 시 접기/펼치기</span></div>
+    <div class="sec-h" data-clps="buzz-sec-idx"><div class="l"><h2>검색지수 · 네이버 데이터랩</h2></div><span class="note">주단위(월~일 · 라벨=주 시작 월요일) · 제목 클릭 시 접기/펼치기</span></div>
     <div id="buzz-sec-idx">
       <div class="sec-h"><div class="l"><h2>기간</h2></div>
         <div class="toggle" id="period-buzz">
@@ -264,7 +264,7 @@
     <div class="sec-h" data-clps="eu-reviews"><div class="l"><h2>시술 후기 · 소비자 평가</h2></div><span class="note">지역별 소비자 정보공유 사이트 · 매체 체험기 요약</span></div>
     <div id="eu-reviews"></div>
 
-    <div class="sec-h" data-clps="eu-sec-trend"><div class="l"><h2>Big6 구글 트렌드 — 스킨부스터 경쟁 비교</h2></div><span class="note">상대 검색지수(0–100) · 절대 판매량 아님</span></div>
+    <div class="sec-h" data-clps="eu-sec-trend"><div class="l"><h2>Big6 구글 트렌드 — 스킨부스터 경쟁 비교</h2></div><span class="note">상대 검색지수(0–100) · 주단위(일~토 · 라벨=주 시작 일요일) · 절대 판매량 아님</span></div>
     <div id="eu-sec-trend">
       <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
         <div class="toggle" id="eu-geo-toggle"></div>
@@ -625,14 +625,14 @@ function renderInsightWeeks(){
   const weeks=Object.keys(insightDoc.weeks).sort().reverse();
   el.innerHTML=weeks.map((w,i)=>{
     const range=isoWeekRange(w);
-    const label=i===0?`이번주(${range})`:i===1?`전주(${range})`:range;
+    const label=i===0?`이번주(${range})`:i===1?`지난주(${range})`:range;
     return `<span class="filter-chip ${w===insightWeek?'on':''}" onclick="setInsightWeek('${w}')">${label}</span>`;
   }).join('');
 }
 function setInsightWeek(w){ insightWeek=w; renderInsightWeeks(); renderInsights(insightDoc.weeks[w]); }
 function renderInsights(d){
   const note=document.getElementById('insight-note');
-  if(note&&d.updated) note.textContent=`네이버 카페·블로그 · ${d.updated} 요약`;
+  if(note&&d.updated) note.textContent=`네이버 카페·블로그 · 데이터 기간 ${isoWeekRange(insightWeek)}(월~일) · ${d.updated} 요약`;
   const sm=document.getElementById('insight-summary');
   if(sm&&d.summary){
     const isLatest=insightDoc&&insightDoc.weeks&&insightWeek===(insightDoc.latest||Object.keys(insightDoc.weeks).sort().pop());
@@ -650,7 +650,7 @@ function renderInsights(d){
         <span style="font-size:14px;font-weight:800">${p.name} <span style="font-size:11px;color:var(--dim);font-weight:400">${p.brand||''}</span></span>
         <span class="src">검색지수 ${p.idx}${p.wow!=null?` · WoW <span class="${wc}" style="font-weight:700">${ws} ${Math.abs(p.wow)}%</span>`:''}</span></div>${notes}</div>`;
     }
-    if(!(p.count>0)) return `<div class="rev" style="margin-bottom:8px;opacity:.7"><div class="top"><span style="font-size:14px;font-weight:700">${p.name} <span style="font-size:11px;color:var(--dim);font-weight:400">${p.brand||''}</span></span><span class="src">수집 대기</span></div><div style="font-size:12px;color:var(--dim)">다음 /buzzraw 수집 후 분석됩니다</div></div>`;
+    if(!(p.count>0)) return `<div class="rev" style="margin-bottom:8px;opacity:.7"><div class="top"><span style="font-size:14px;font-weight:700">${p.name} <span style="font-size:11px;color:var(--dim);font-weight:400">${p.brand||''}</span></span><span class="src">${p.obs?`유효 0건${p.sample?` (${p.sample})`:''}`:'수집 대기'}</span></div><div style="font-size:12px;color:var(--dim)">${p.obs||'다음 /buzzraw 수집 후 분석됩니다'}</div></div>`;
     const pos=(p.pos||[]).map(t=>`<div style="font-size:13px;margin:3px 0"><span style="color:var(--up);font-weight:700">▲</span> ${t}</div>`).join('');
     const neg=(p.neg||[]).map(t=>`<div style="font-size:13px;margin:3px 0"><span style="color:var(--down);font-weight:700">▼</span> ${t}</div>`).join('');
     const keys=(p.keys||[]).map(k=>`<span class="filter-chip" style="cursor:default;padding:2px 9px;font-size:11px">${k}</span>`).join(' ');
@@ -658,7 +658,8 @@ function renderInsights(d){
       <span style="font-size:14px;font-weight:800">${p.name} <span style="font-size:11px;color:var(--dim);font-weight:400">${p.brand||''}</span></span>
       <span class="src">~${(p.count||0).toLocaleString()}건${p.sample?` (샘플 ${p.sample})`:''}</span></div>
       ${pos}${neg}
-      <div style="margin-top:7px;display:flex;gap:5px;flex-wrap:wrap;align-items:center"><span style="font-size:10px;color:var(--green-d);font-weight:800">KEY</span> ${keys}</div></div>`;
+      <div style="margin-top:7px;display:flex;gap:5px;flex-wrap:wrap;align-items:center"><span style="font-size:10px;color:var(--green-d);font-weight:800">KEY</span> ${keys}</div>
+      ${p.obs?`<div style="margin-top:6px;font-size:12px;color:var(--dim)">※ ${p.obs}</div>`:''}</div>`;
   }).join('');
 }
 
@@ -681,7 +682,7 @@ function renderEUWeeks(){
   const weeks=Object.keys(euDoc.weeks).sort().reverse();
   el.innerHTML=weeks.map((w,i)=>{
     const range=isoWeekRange(w);
-    const label=i===0?`이번주(${range})`:i===1?`전주(${range})`:range;
+    const label=i===0?`이번주(${range})`:i===1?`지난주(${range})`:range;
     return `<span class="filter-chip ${w===euWeek?'on':''}" onclick="setEUWeek('${w}')">${label}</span>`;
   }).join('');
 }
@@ -689,13 +690,14 @@ function setEUWeek(w){ euWeek=w; renderEUAll(); }
 function renderEUSummary(){
   const d=euCur(); if(!d) return;
   const isLatest=euWeek===(euDoc.latest||Object.keys(euDoc.weeks).sort().pop());
-  document.getElementById('eu-updated').textContent=`${d.updated} 갱신 · ${isLatest?'이번주':'주간'}(${isoWeekRange(euWeek)})`;
+  document.getElementById('eu-updated').textContent=`${isLatest?'이번주':'주간'} ${isoWeekRange(euWeek)}(월~일) · 트렌드 주간은 구글 기준 일~토 · ${d.updated} 스캔`;
   document.getElementById('eu-summary').innerHTML=`<div class="rev" style="border-left:3px solid var(--lime);background:var(--lime-bg)"><div class="top"><span class="src" style="color:var(--green-d);font-weight:700">유럽 시장 종합</span></div><div class="body">${d.summary}</div></div>`;
 }
 const EU_CC_ALL={GB:'영국',FR:'프랑스',DE:'독일',ES:'스페인',IT:'이탈리아',PL:'폴란드',NL:'네덜란드',CZ:'체코',SE:'스웨덴',NO:'노르웨이',FI:'핀란드',CH:'스위스',IE:'아일랜드',GR:'그리스',RO:'루마니아',LT:'리투아니아',HU:'헝가리',BE:'벨기에',BG:'불가리아',DK:'덴마크',EE:'에스토니아',SK:'슬로바키아',HR:'크로아티아',TR:'튀르키예',PT:'포르투갈',AT:'오스트리아'};
 function renderEUPen(){
   const cur=euCur(); if(!cur) return;
   const p=cur.penetration;
+  if(!p){ document.getElementById('eu-pen-cards').innerHTML='<div class="na-msg">첫 스캔(2026-W30 · 7/24) 이전 주 — 레지스트리 미수집 (트렌드만 표시)</div>'; document.getElementById('eu-clinic-table').innerHTML=''; try{if(euCountryChart){euCountryChart.destroy();euCountryChart=null;}}catch(e){} return; }
   const newSub=p.first_scan?'첫 스캔 — 전체 신규 등재':'전주 대비 신규 확인';
   const cards=[
     `<div class="card"><div class="k">리쥬란 명시 클리닉</div><div class="v lime">${p.rejuran_total!=null?p.rejuran_total:p.total}<span style="font-size:14px;font-weight:600"> 곳</span></div><div class="s">브랜드 확인분 · 웹 풋프린트</div></div>`];
@@ -729,7 +731,8 @@ function renderEUClinics(){
     `<div style="text-align:center;margin-top:8px"><span class="filter-chip" style="cursor:pointer" onclick="euClinicsOpen=!euClinicsOpen;renderEUClinics()">${euClinicsOpen?'접기':`전체 ${p.clinics.length}곳 보기`}</span></div>`;
 }
 function renderEUReviews(){
-  const rv=(euCur()||{}).reviews; if(!rv) return;
+  const rv=(euCur()||{}).reviews;
+  if(!rv){ document.getElementById('eu-reviews').innerHTML='<div class="na-msg">첫 스캔(2026-W30 · 7/24) 이전 주 — 후기 수집분 없음</div>'; return; }
   const themeChips=(a,cls)=>a.map(t=>`<div style="font-size:13px;margin:3px 0"><span style="color:var(--${cls});font-weight:700">${cls==='up'?'▲':'▼'}</span> ${t}</div>`).join('');
   const overall=`<div class="rev" style="margin-bottom:10px"><div class="top"><span style="font-size:14px;font-weight:800">유럽 소비자 반응 종합</span><span class="senti neu">브랜드 인지 초기</span></div><div class="body" style="margin-bottom:7px">${rv.overall.summary}</div>${themeChips(rv.overall.pos_themes,'up')}${themeChips(rv.overall.neg_themes,'down')}</div>`;
   const regions=rv.regions.map(r=>{
