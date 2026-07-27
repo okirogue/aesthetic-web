@@ -156,7 +156,8 @@
     <button class="tab" data-view="calendar">이벤트 캘린더</button>
     <button class="tab" data-view="buzz">국내 버즈</button>
     <button class="tab" data-view="trend">해외 버즈</button>
-    <button class="tab" data-view="export">수출 데이터</button>
+    <button class="tab" data-view="export">수출 데이터(작업중)</button>
+    <button class="tab" data-view="visitors">방한 외국인 통계(작업중)</button>
   </div>
 
   <!-- ============ DAILY NEWS ============ -->
@@ -293,6 +294,13 @@
     <div class="sec-h"><div class="l"><h2>최근 분기 요약</h2></div><span class="note">직전분기 QoQ · 전년동기 YoY</span></div>
     <div class="unit">단위: 백만원 · %</div>
     <div id="export-table"></div>
+  </section>
+
+  <!-- ============ 방한 외국인 통계 (작업중) ============ -->
+  <section class="view" id="view-visitors">
+    <div class="sec-h"><div class="l"><h2>방한 외국인 통계</h2></div><span class="note">작업중 — 데이터 소스 연결 예정</span></div>
+    <div class="na-msg" style="padding:40px 0">🚧 준비 중입니다 — 방한 외국인 입국 통계(국적별·월별)와 미용의료 수요 연계 지표를 붙일 예정입니다.<br>
+    <span style="font-size:12px;color:var(--dim)">후보 소스: 한국관광공사 데이터랩(방한 외래관광객), 법무부 출입국 통계, 보건복지부 외국인환자 유치실적</span></div>
   </section>
 
   <div class="seed">시드 데이터 (DART·네이버·pytrends·관세청 API 미연결) — 구조만 잡은 프로토타입입니다</div>
