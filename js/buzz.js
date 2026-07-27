@@ -99,7 +99,7 @@ function renderInsightWeeks(){
 function setInsightWeek(w){ insightWeek=w; renderInsightWeeks(); renderInsights(insightDoc.weeks[w]); }
 function renderInsights(d){
   const note=document.getElementById('insight-note');
-  if(note&&d.updated) note.textContent=`네이버 카페·블로그 · 데이터 기간 ${isoWeekRange(insightWeek)}(월~일) · ${d.updated} 요약`;
+  if(note&&d.updated) note.textContent=`네이버 카페·블로그 · ${d.window_note||`데이터 기간 ${isoWeekRange(insightWeek)}(월~일)`} · ${d.updated} 요약`;
   const sm=document.getElementById('insight-summary');
   if(sm&&d.summary){
     const isLatest=insightDoc&&insightDoc.weeks&&insightWeek===(insightDoc.latest||Object.keys(insightDoc.weeks).sort().pop());
