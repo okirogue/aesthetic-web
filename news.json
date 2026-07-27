@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27 11:16",
+  "updated": "2026-07-27 14:03",
   "domestic": [
     {
       "co": "파마리서치",
@@ -104,5 +104,12 @@
       "date": "07/26 09:38"
     }
   ],
-  "foreign": []
+  "foreign": [
+    {
+      "co": "Galderma",
+      "title": "Galderma Raises 2026 Outlook Following Strong First-Half Sales Growth - Global Cosmetics News",
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNWlUzTHpjUGZQYXJHUTFTSXcxMGJrVXRuWjZRcnZXbUVjZ3ZqQVh3MmVRV3N6ZlI2TGVFbjQ5Mkhsd3EtNWRxN2VhV0FtVVBGX053cUhEbm1BeHBrOHU2ZjRfRHFDVExTZFRvX2FTUHl6ckgtUW5yVXJqeVZSZWtrTzRCMFNNWlpCUTZSVnpZQkJOU1pwZWlJcmlpa29pRkRpQXV4X1Q5by1zZw?oc=5",
+      "date": "07/27 05:00"
+    }
+  ]
 }
