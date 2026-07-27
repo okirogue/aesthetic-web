@@ -9,7 +9,7 @@ async function loadExports(){
   try{const r=await fetch('exports_trass_raw.json',{cache:'no-store'});if(r.ok)expData=await r.json();}catch(e){}
   try{const r=await fetch('exports_insights.json',{cache:'no-store'});if(r.ok)expIns=await r.json();}catch(e){}
   if(!expData){document.getElementById('exp-cards').innerHTML='<div class="na-msg">exports_trass_raw.json 없음</div>';return;}
-  renderExpCards();renderExpGn();renderExpShare();renderExpInsights();
+  renderExpCards();renderExpGn();renderExpShare();renderExpInsights();renderExpTCards();renderExpPace();renderExpTNat();
   const note=document.getElementById('exp-note');
   if(note&&expData.updated)note.textContent=`TRASS 무역통계 · ${expData.updated} 수집 · 확정 매월 15일 / 잠정 1·11·21일`;
 }
@@ -69,7 +69,6 @@ function renderExpInsights(){
 function setExpInsMonth(m){expInsMonth=m;renderExpInsights();}
 /* --- 잠정 뷰 --- */
 const EXP_TNAT_COLORS={"미국":"#4a90d9","중국":"#d9536f","영국":"#8f68c9","일본":"#e0a13c","베트남":"#2fa6a6","러시아":"#c96f9f","기타":"#9aa4af"};
-let expTentInited=false;
 function _tuLast(){const ks=Object.keys(expData.tentative.total.usd).sort();return ks[ks.length-1];}
 function _paceInfo(ym){
   const pace=(expData.tentative.pace||{})[ym]||{};const tu=expData.tentative.total.usd;
@@ -122,11 +121,5 @@ function renderExpTNat(){
   ds.push({label:'기타',data:yms.map(m=>{const tot=tu[m]||0;return M(Math.max(0,tot-tops.reduce((a,t)=>a+(t.c.m[m]||0),0)))}),backgroundColor:EXP_TNAT_COLORS['기타'],borderRadius:2});
   _eChart('exp-tnat-chart',{type:'bar',data:{labels:yms.map(_eLab),datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:_eLegend,tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.raw.toLocaleString()}M$`}}},scales:{x:{stacked:true,ticks:{color:'#9aa4af'},grid:{display:false}},y:{stacked:true,ticks:{color:'#9aa4af',callback:v=>v+'M'},grid:{color:'#eef1f3'}}}}});
 }
-document.querySelectorAll('#exp-mode-toggle button').forEach(b=>b.onclick=()=>{
-  document.querySelectorAll('#exp-mode-toggle button').forEach(x=>x.classList.remove('active'));b.classList.add('active');
-  const tent=b.dataset.mode==='tent';
-  document.getElementById('exp-final').style.display=tent?'none':'';
-  document.getElementById('exp-tent').style.display=tent?'':'none';
-  if(tent&&expData&&!expTentInited){expTentInited=true;renderExpTCards();renderExpPace();renderExpTNat();}
-});
+
 

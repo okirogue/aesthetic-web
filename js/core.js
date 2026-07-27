@@ -20,8 +20,8 @@ let newsCompanies = deriveNewsCompanies();
 let newsActiveKw = null; // null = 전체
 
 // 커버리지 종목
-let watchlist = ["파마리서치","휴젤","클래시스","엘앤씨바이오","한스바이오메드"];
-const CO_COLORS = {"파마리서치":"#4e9d46","휴젤":"#4a90d9","클래시스":"#e0a13c","엘앤씨바이오":"#8f68c9","한스바이오메드":"#d9536f","전 종목 공통":"#9aa4af"};
+let watchlist = ["파마리서치","휴젤","클래시스","에이피알","엘앤씨바이오","한스바이오메드"];
+const CO_COLORS = {"파마리서치":"#4e9d46","휴젤":"#4a90d9","클래시스":"#e0a13c","에이피알":"#2fa6a6","엘앤씨바이오":"#8f68c9","한스바이오메드":"#d9536f","전 종목 공통":"#9aa4af"};
 const companyEvents = {};   // events.json(공시 실데이터)에서 채워짐
 function statutoryEvents(year){
   return [
