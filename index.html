@@ -282,12 +282,25 @@
   <!-- ============ EXPORT ============ -->
   <section class="view" id="view-export">
     <div class="sec-h"><div class="l"><h2>수출 데이터 · 리쥬란류(HS 3304999000)</h2></div><span class="note" id="exp-note">TRASS 무역통계 · 확정 매월 15일 / 잠정 1·11·21일</span></div>
-    <div class="cards" id="exp-cards"><div class="na-msg">불러오는 중…</div></div>
-    <div class="sec-h"><div class="l"><h2>강릉시 수출 — 국가별 월별</h2></div><span class="note">천 달러 · 확정치(수리일) · 파마리서치(리쥬란) 프록시</span></div>
-    <div class="chart-box"><canvas id="exp-gn-chart"></canvas></div>
-    <div class="chart-box"><div id="exp-share-ttl" style="font-size:12px;color:var(--sub);font-weight:700;margin-bottom:6px"></div><canvas id="exp-share-chart" style="max-height:240px"></canvas></div>
-    <div class="sec-h"><div class="l"><h2>전국 수출 추이 — HS 3304999000</h2></div><span class="note">백만 달러 · 마지막 달은 잠정(월 진행분 누계)</span></div>
-    <div class="chart-box"><canvas id="exp-natl-chart"></canvas></div>
+    <div class="toggle" id="exp-mode-toggle" style="margin-bottom:14px">
+      <button class="active" data-mode="final">확정 · 월별 확정치</button>
+      <button data-mode="tent">잠정 · 당월 페이스</button>
+    </div>
+    <div id="exp-final">
+      <div class="cards" id="exp-cards"><div class="na-msg">불러오는 중…</div></div>
+      <div class="sec-h"><div class="l"><h2>강릉시 수출 — 국가별 월별</h2></div><span class="note">천 달러 · 확정치(수리일) · 파마리서치(리쥬란) 프록시</span></div>
+      <div class="chart-box"><canvas id="exp-gn-chart"></canvas></div>
+      <div class="chart-box"><div id="exp-share-ttl" style="font-size:12px;color:var(--sub);font-weight:700;margin-bottom:6px"></div><canvas id="exp-share-chart" style="max-height:240px"></canvas></div>
+      <div class="sec-h"><div class="l"><h2>전국 수출 추이 — HS 3304999000</h2></div><span class="note">백만 달러 · 마지막 달은 잠정(월 진행분 누계)</span></div>
+      <div class="chart-box"><canvas id="exp-natl-chart"></canvas></div>
+    </div>
+    <div id="exp-tent" style="display:none">
+      <div class="cards" id="exp-tcards"></div>
+      <div class="sec-h"><div class="l"><h2>월중 페이스 — 10일 단위 누계</h2></div><span class="note">백만 달러 · 전국 · 1~10일/1~20일 스냅샷은 2026.07부터 갱신 시점마다 누적</span></div>
+      <div class="chart-box"><canvas id="exp-pace-chart"></canvas></div>
+      <div class="sec-h"><div class="l"><h2>전국 국가별 수출 — 월별(잠정 포함)</h2></div><span class="note">백만 달러 · 마지막 달은 잠정 누계 · 기타 = 전체 − 상위 6개국</span></div>
+      <div class="chart-box"><canvas id="exp-tnat-chart"></canvas></div>
+    </div>
     <div class="sec-h"><div class="l"><h2>월간 분석</h2></div><span class="note" id="exp-ins-note">확정치 갱신 시 작성</span></div>
     <div class="chips" id="exp-ins-months"></div>
     <div id="exp-insights"><div class="na-msg">아직 분석이 없습니다</div></div>
@@ -877,6 +890,68 @@ function renderExpInsights(){
     sec('강릉(리쥬란 프록시)',d.gn)+sec('전국·잠정 페이스',d.natl);
 }
 function setExpInsMonth(m){expInsMonth=m;renderExpInsights();}
+/* --- 잠정 뷰 --- */
+const EXP_TNAT_COLORS={"미국":"#4a90d9","중국":"#d9536f","영국":"#8f68c9","일본":"#e0a13c","베트남":"#2fa6a6","러시아":"#c96f9f","기타":"#9aa4af"};
+let expTentInited=false;
+function _tuLast(){const ks=Object.keys(expData.tentative.total.usd).sort();return ks[ks.length-1];}
+function _paceInfo(ym){
+  const pace=(expData.tentative.pace||{})[ym]||{};const tu=expData.tentative.total.usd;
+  const full=tu[ym];const p10=pace.p10||null,p20=pace.p20||null;
+  // 진행 중인 달이면 tu[ym]은 누계 — 경과일 추정
+  const isLast=ym===_tuLast();
+  let elapsed=null;
+  if(isLast){ if(p20&&Math.abs(p20-full)<1)elapsed=20; else if(p10&&Math.abs(p10-full)<1)elapsed=10; else elapsed=p20?20:(p10?10:null); }
+  return {p10,p20,full,elapsed,isLast};
+}
+function renderExpTCards(){
+  const tu=expData.tentative.total.usd;const last=_tuLast();const info=_paceInfo(last);
+  const y=+last.slice(0,4),mo=+last.slice(4);const dim=new Date(y,mo,0).getDate();
+  const prevY=(y-1)+last.slice(4);const prevM=mo===1?(y-1)+'12':y+String(mo-1).padStart(2,'0');
+  const cum=tu[last];const pctPrevYFull=tu[prevY]?Math.round(cum/tu[prevY]*100):null;
+  const runRate=info.elapsed?Math.round(cum/info.elapsed*dim):null;
+  const dailyVs=info.elapsed&&tu[prevM]?((cum/info.elapsed)/(tu[prevM]/new Date(mo===1?y-1:y,mo===1?12:mo-1,0).getDate())-1)*100:null;
+  const ytd=Object.entries(tu).reduce((a,[k,v])=>a+(k.slice(0,4)===String(y)?v:0),0);
+  const fullPrevYear=Object.entries(tu).reduce((a,[k,v])=>a+(k.slice(0,4)===String(y-1)?v:0),0);
+  const f=v=>v==null?'':`<span class="${v>=0?'up':'down'}">${v>=0?'▲':'▼'} ${Math.abs(v).toFixed(1)}%</span>`;
+  document.getElementById('exp-tcards').innerHTML=
+    `<div class="card"><div class="k">${mo}월 잠정 누계${info.elapsed?` · 1~${info.elapsed}일`:''}</div><div class="v lime">${(cum/1e5).toFixed(2)}<span style="font-size:14px;font-weight:600">억 달러</span></div><div class="s">전국 · TRASS 잠정</div></div>`+
+    `<div class="card"><div class="k">전년 ${mo}월 대비</div><div class="v">${pctPrevYFull!=null?pctPrevYFull:'-'}<span style="font-size:14px;font-weight:600">%</span></div><div class="s">${info.elapsed?`${info.elapsed}일 만에 전년 한 달 전체 대비`:'전년 동월 전체 대비'}</div></div>`+
+    `<div class="card"><div class="k">월 환산 페이스</div><div class="v">${runRate!=null?(runRate/1e5).toFixed(2):'-'}<span style="font-size:14px;font-weight:600">억 달러</span></div><div class="s">일평균 기준 · 전월 대비 ${f(dailyVs)}</div></div>`+
+    `<div class="card"><div class="k">${y}년 누계(잠정)</div><div class="v">${(ytd/1e5).toFixed(1)}<span style="font-size:14px;font-weight:600">억 달러</span></div><div class="s">${fullPrevYear?`전년 연간의 <b class="up">${Math.round(ytd/fullPrevYear*100)}%</b>`:''}</div></div>`;
+}
+function renderExpPace(){
+  const tu=expData.tentative.total.usd;const pace=expData.tentative.pace||{};
+  const last=_tuLast();
+  const start=(()=>{let y=+last.slice(0,4),m=+last.slice(4)-7;while(m<1){m+=12;y--}return ''+y+String(m).padStart(2,'0')})();
+  const yms=_eMonths(start,last);
+  const M=v=>v!=null?+(v/1e3).toFixed(1):null;
+  const info=_paceInfo(last);
+  const ds=[
+    {label:'1~10일',data:yms.map(m=>M((pace[m]||{}).p10)),backgroundColor:'#cfe6c9',borderRadius:2},
+    {label:'1~20일',data:yms.map(m=>M((pace[m]||{}).p20)),backgroundColor:'#8bc34a',borderRadius:2},
+    {label:'월 전체',data:yms.map(m=>m===last&&info.elapsed?null:M(tu[m])),backgroundColor:'#4e9d46',borderRadius:2}
+  ];
+  _eChart('exp-pace-chart',{type:'bar',data:{labels:yms.map(_eLab),datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:_eLegend,tooltip:{callbacks:{label:c=>c.raw==null?null:`${c.dataset.label}: ${c.raw.toLocaleString()}M$`}}},scales:{x:{ticks:{color:'#9aa4af'},grid:{display:false}},y:{ticks:{color:'#9aa4af',callback:v=>v+'M'},grid:{color:'#eef1f3'}}}}});
+}
+function renderExpTNat(){
+  const nat=expData.tentative.by_country||{};const tu=expData.tentative.total.usd;const last=_tuLast();
+  const y=last.slice(0,4);
+  const sumY=c=>Object.entries(c.m).reduce((a,[k,v])=>a+(k.slice(0,4)===y?v:0),0);
+  const arr=Object.values(nat).map(c=>({nm:c.nm,v:sumY(c),c}));arr.sort((a,b)=>b.v-a.v);
+  const tops=arr.slice(0,6);
+  const yms=_eMonths((+y-1)+'01',last);
+  const M=v=>+((v||0)/1e3).toFixed(1);
+  const ds=tops.map(t=>({label:t.nm,data:yms.map(m=>M(t.c.m[m])),backgroundColor:EXP_TNAT_COLORS[t.nm]||'#b0b8c1',borderRadius:2}));
+  ds.push({label:'기타',data:yms.map(m=>{const tot=tu[m]||0;return M(Math.max(0,tot-tops.reduce((a,t)=>a+(t.c.m[m]||0),0)))}),backgroundColor:EXP_TNAT_COLORS['기타'],borderRadius:2});
+  _eChart('exp-tnat-chart',{type:'bar',data:{labels:yms.map(_eLab),datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:_eLegend,tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.raw.toLocaleString()}M$`}}},scales:{x:{stacked:true,ticks:{color:'#9aa4af'},grid:{display:false}},y:{stacked:true,ticks:{color:'#9aa4af',callback:v=>v+'M'},grid:{color:'#eef1f3'}}}}});
+}
+document.querySelectorAll('#exp-mode-toggle button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#exp-mode-toggle button').forEach(x=>x.classList.remove('active'));b.classList.add('active');
+  const tent=b.dataset.mode==='tent';
+  document.getElementById('exp-final').style.display=tent?'none':'';
+  document.getElementById('exp-tent').style.display=tent?'':'none';
+  if(tent&&expData&&!expTentInited){expTentInited=true;renderExpTCards();renderExpPace();renderExpTNat();}
+});
 
 /* ================= 주가 추이 ================= */
 let stockCompanies = ["파마리서치","휴젤","클래시스","엘앤씨바이오","한스바이오메드"];
