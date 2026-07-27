@@ -33,7 +33,7 @@ function renderEUPen(){
   const cur=euCur(); if(!cur) return;
   const p=cur.penetration;
   if(!p){ document.getElementById('eu-pen-cards').innerHTML='<div class="na-msg">첫 스캔(2026-W30 · 7/24) 이전 주 — 레지스트리 미수집 (트렌드만 표시)</div>'; document.getElementById('eu-clinic-table').innerHTML=''; try{if(euCountryChart){euCountryChart.destroy();euCountryChart=null;}}catch(e){} return; }
-  const newSub=p.first_scan?'첫 스캔 — 전체 신규 등재':'직전 스캔 대비 신규 확인';
+  const newSub=p.first_scan?'첫 스캔 — 전체 신규 등재':'직전 스캔 대비 신규 <b>발견</b> · 도입 시점과 무관';
   const cards=[
     `<div class="card"><div class="k">리쥬란 명시 클리닉</div><div class="v lime">${p.rejuran_total!=null?p.rejuran_total:p.total}<span style="font-size:14px;font-weight:600"> 곳</span></div><div class="s">브랜드 확인분 · 웹 풋프린트</div></div>`];
   if(p.pn_total!=null) cards.push(`<div class="card" style="border-top-color:var(--purple)"><div class="k" style="color:var(--purple)">PN 계열 타 브랜드</div><div class="v">${p.pn_total}<span style="font-size:14px;font-weight:600"> 곳</span></div><div class="s">Ameela·Plinest·Nucleofill·Vitaran 등</div></div>`,
