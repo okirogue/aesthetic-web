@@ -45,12 +45,25 @@ function renderExpGn(){
   ds.push({label:'기타',data:yms.map(m=>Math.max(0,(gt[m]||0)-tops.reduce((a,t)=>a+(t.c.m[m]||0),0))),backgroundColor:EXP_NAT_COLORS['기타'],borderRadius:2});
   _eChart('exp-gn-chart',{type:'bar',data:{labels:yms.map(_eLab),datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:_eLegend,tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.raw.toLocaleString()}천$`}}},scales:{x:{stacked:true,ticks:{color:'#9aa4af'},grid:{display:false}},y:{stacked:true,ticks:{color:'#9aa4af',callback:v=>v.toLocaleString()},grid:{color:'#eef1f3'}}}}});
 }
+let expShareSel='ytd';
+function setExpShare(s){expShareSel=s;renderExpShare();}
 function renderExpShare(){
   const gl=_gnLatest();const y=gl.slice(0,4);
-  const arr=_expTops();const tot=arr.reduce((a,r)=>a+r.v,0);
+  const chips=document.getElementById('exp-share-chips');
+  if(chips){
+    const months=_eMonths((+y-1)+gl.slice(4),gl).reverse().slice(0,12);
+    chips.innerHTML=[`<span class="filter-chip ${expShareSel==='ytd'?'on':''}" onclick="setExpShare('ytd')">${y}년 누계</span>`]
+      .concat(months.map(m=>`<span class="filter-chip ${expShareSel===m?'on':''}" onclick="setExpShare('${m}')">${_eLab(m)}</span>`)).join('');
+  }
+  const val=c=>expShareSel==='ytd'
+    ?Object.entries(c.m).reduce((a,[k,v])=>a+(k.slice(0,4)===y?v:0),0)
+    :(c.m[expShareSel]||0);
+  const arr=Object.entries(expData.gangneung.by_country).map(([cd,c])=>({nm:c.nm,v:val(c)})).filter(r=>r.v>0).sort((a,b)=>b.v-a.v);
+  const tot=arr.reduce((a,r)=>a+r.v,0)||1;
   const rows=arr.slice(0,8);const etc=tot-rows.reduce((a,r)=>a+r.v,0);
-  const labels=[...rows.map(r=>r.nm),'기타'];const vals=[...rows.map(r=>r.v),etc];
-  document.getElementById('exp-share-ttl').textContent=`강릉 수출 국가별 비중 · ${y}년 누계(~${_eLab(gl)}) 합계 ${Math.round(tot/10).toLocaleString()}만 달러`;
+  const labels=rows.map(r=>r.nm).concat(etc>0.5?['기타']:[]);const vals=rows.map(r=>r.v).concat(etc>0.5?[etc]:[]);
+  const ttl=expShareSel==='ytd'?`${y}년 누계(~${_eLab(gl)})`:`${_eLab(expShareSel)} 월간`;
+  document.getElementById('exp-share-ttl').textContent=`강릉 OUT 국가별 비중 · ${ttl} 합계 ${Math.round(tot/10).toLocaleString()}만 달러`;
   _eChart('exp-share-chart',{type:'bar',data:{labels:labels,datasets:[{data:vals,backgroundColor:labels.map(n=>EXP_NAT_COLORS[n]||'#b0b8c1'),borderRadius:3}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`${c.raw.toLocaleString()}천$ (${(c.raw/tot*100).toFixed(1)}%)`}}},scales:{x:{ticks:{color:'#9aa4af',callback:v=>v.toLocaleString()},grid:{color:'#eef1f3'}},y:{ticks:{color:'#67707b',font:{size:12}},grid:{display:false}}}}});
 }
 function renderExpInsights(){
