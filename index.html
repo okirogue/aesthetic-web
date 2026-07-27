@@ -226,7 +226,7 @@
 
   <!-- ============ BUZZ ============ -->
   <section class="view" id="view-buzz">
-    <div class="sec-h" data-clps="buzz-sec-idx"><div class="l"><h2>검색지수 · 네이버 데이터랩</h2></div><span class="note" id="buzz-idx-note">주단위(월~일 · 라벨=주 시작 월요일) · 제목 클릭 시 접기/펼치기</span></div>
+    <div class="sec-h" data-clps="buzz-sec-idx"><div class="l"><h2>검색지수 · 네이버 데이터랩</h2></div><span class="note" id="buzz-idx-note">주단위(월~일 · 라벨=주 종료 일요일) · 제목 클릭 시 접기/펼치기</span></div>
     <div id="buzz-sec-idx">
       <div class="sec-h"><div class="l"><h2>기간</h2></div>
         <div class="toggle" id="period-buzz">
@@ -264,7 +264,7 @@
     <div class="sec-h" data-clps="eu-reviews"><div class="l"><h2>시술 후기 · 소비자 평가</h2></div><span class="note">지역별 소비자 정보공유 사이트 · 매체 체험기 요약</span></div>
     <div id="eu-reviews"></div>
 
-    <div class="sec-h" data-clps="eu-sec-trend"><div class="l"><h2>Big6 구글 트렌드 — 스킨부스터 경쟁 비교</h2></div><span class="note">상대 검색지수(0–100) · 주단위(일~토 · 라벨=주 시작 일요일) · 절대 판매량 아님</span></div>
+    <div class="sec-h" data-clps="eu-sec-trend"><div class="l"><h2>Big6 구글 트렌드 — 스킨부스터 경쟁 비교</h2></div><span class="note">상대 검색지수(0–100) · 주단위(일~토 · 라벨=주 종료 토요일) · 절대 판매량 아님</span></div>
     <div id="eu-sec-trend">
       <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
         <div class="toggle" id="eu-geo-toggle"></div>
@@ -581,11 +581,15 @@ function _sliceBuzz(group){
   const series={}; Object.keys(group.series).forEach(k=>series[k]=idx.map(i=>group.series[k][i]));
   return {labels,series};
 }
+function _wkEnd(l){ // '26-07-20'(주 시작 월요일) -> '26-07-26'(주 종료 일요일) 표시용
+  try{ const d=new Date('20'+l+'T00:00:00Z'); d.setUTCDate(d.getUTCDate()+6);
+    return `${String(d.getUTCFullYear()).slice(2)}-${String(d.getUTCMonth()+1).padStart(2,'0')}-${String(d.getUTCDate()).padStart(2,'0')}`;
+  }catch(e){ return l; } }
 function _buzzChart(canvasId,group,chartRef){
   const ctx=document.getElementById(canvasId); if(!ctx||!group) return chartRef;
   const ds=Object.keys(group.series).map((k,i)=>({label:k,data:group.series[k],borderColor:BUZZ_COLORS[i%BUZZ_COLORS.length],backgroundColor:'transparent',tension:.3,borderWidth:1.8,pointRadius:0}));
   if(chartRef)chartRef.destroy();
-  return new Chart(ctx,{type:'line',data:{labels:group.labels,datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{labels:{color:'#67707b',font:{size:11},boxWidth:18}}},scales:{x:axisOpt.x,y:{...axisOpt.y,min:0,max:100}}}});
+  return new Chart(ctx,{type:'line',data:{labels:group.labels.map(_wkEnd),datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{labels:{color:'#67707b',font:{size:11},boxWidth:18}}},scales:{x:axisOpt.x,y:{...axisOpt.y,min:0,max:100}}}});
 }
 function renderBuzzTrends(){
   const groups=buzzData&&buzzData.groups?buzzData.groups:{};
@@ -759,7 +763,7 @@ function renderEUGeoToggle(){
 }
 function euWeekLabels(t,n,off){
   const start=new Date(t.start+'T00:00:00Z');
-  return Array.from({length:n},(_,i)=>{const d=new Date(start);d.setUTCDate(start.getUTCDate()+(i+off)*7);return `${String(d.getUTCFullYear()).slice(2)}-${String(d.getUTCMonth()+1).padStart(2,'0')}-${String(d.getUTCDate()).padStart(2,'0')}`;});
+  return Array.from({length:n},(_,i)=>{const d=new Date(start);d.setUTCDate(start.getUTCDate()+(i+off)*7+6);return `${String(d.getUTCFullYear()).slice(2)}-${String(d.getUTCMonth()+1).padStart(2,'0')}-${String(d.getUTCDate()).padStart(2,'0')}`;}); // 라벨=주 종료 토요일
 }
 const EU_CC_KO={GB:'영국',FR:'프랑스',ES:'스페인',PL:'폴란드',DE:'독일',IT:'이탈리아'};
 function _avg(a){ return a.length?Math.round(a.reduce((x,y)=>x+y,0)/a.length):0; }
