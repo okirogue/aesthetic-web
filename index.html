@@ -816,6 +816,7 @@ let stockDays = 252;                 // 12개월
 let priceChart=null, flowChart=null, aggChart=null;
 let stockData = null;                 // stock.json의 companies (실데이터)
 let stockKosdaq = null;               // stock.json의 kosdaq {dates, close}
+let stockNowData = null;              // stock_now.json — 장중 10분 갱신 현재가 (봇 커밋)
 let stockInited = false;
 const _stockCache = {};
 function getStock(name){ return (stockData && stockData[name]) ? stockData[name] : null; }
@@ -828,6 +829,15 @@ async function loadStockJson(){
     stockKosdaq=d.kosdaq||null;
     if(stockInited){ renderStockCompanies(); renderStockCharts(); }
   }catch(e){ /* stock.json 없음 → N/A */ }
+  loadStockNow();
+}
+async function loadStockNow(){ // 장중 현재가 (stock_now.json, 봇이 10분마다 커밋) — 새로고침 시마다 최신값
+  try{
+    const r=await fetch('stock_now.json',{cache:'no-store'});
+    if(!r.ok) return;
+    stockNowData=await r.json();
+    if(stockInited) renderStockQuote();
+  }catch(e){ /* 파일 없음 → 종가 기준 유지 */ }
 }
 function _cumsum(a){ let s=0; return a.map(v=>s+=v); }
 function _naToggle(cid,nid,show){ const c=document.getElementById(cid),n=document.getElementById(nid); if(c)c.style.display=show?'none':''; if(n)n.style.display=show?'':'none'; }
@@ -923,18 +933,23 @@ function renderStockQuote(){
   const el=document.getElementById('stock-quote'); if(!el) return;
   const s=getStock(activeStock);
   if(!s||!s.price||s.price.length<2){ el.innerHTML=''; return; }
-  const n=s.price.length, cur=s.price[n-1], prev=s.price[n-2], d=cur-prev, pct=prev?(d/prev*100):0;
+  const n=s.price.length;
+  const nq=(stockNowData&&stockNowData.prices)?stockNowData.prices[activeStock]:null;   // 장중 현재가 우선
+  const live=!!(nq&&nq.price>0);
+  const cur=live?nq.price:s.price[n-1];
+  const prev=live?(nq.price-(nq.change||0)):s.price[n-2];
+  const d=cur-prev, pct=prev?(d/prev*100):0;
   const up=d>0, flat=d===0;
   const c=flat?'var(--sub)':up?'#d9534f':'#4a90d9';     // 국내 관례: 상승 빨강 · 하락 파랑
   const arrow=flat?'—':up?'▲':'▼';
-  const yr=s.price.slice(-252), hi=Math.max(...yr), lo=Math.min(...yr);
+  const yr=s.price.slice(-252), hi=Math.max(...yr,cur), lo=Math.min(...yr,cur);
   const cap=s.shares?((cur*s.shares)/1e12).toFixed(2)+'조원':'—';
-  const date='20'+(s.dates[n-1]||'');
+  const date=live?`${stockNowData.updated} 현재 · 장중 10분 갱신`:'20'+(s.dates[n-1]||'')+' 종가 기준';
   const cell=(k,v)=>`<div style="min-width:118px"><div style="font-size:11px;color:var(--dim)">${k}</div><div style="font-size:14px;font-weight:700">${v}</div></div>`;
   el.innerHTML=`<div class="card" style="border-top-color:${c}">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:14px">
       <div>
-        <div class="k" style="color:var(--txt)">${activeStock} <span style="color:var(--dim);font-weight:400">${s.code||''} · ${date} 기준</span></div>
+        <div class="k" style="color:var(--txt)">${activeStock} <span style="color:var(--dim);font-weight:400">${s.code||''} · ${date}</span></div>
         <div style="font-size:32px;font-weight:800;letter-spacing:-.5px;color:${c};line-height:1.1">${cur.toLocaleString()}<span style="font-size:14px;font-weight:600"> 원</span></div>
         <div style="font-size:13px;font-weight:700;color:${c};margin-top:3px">전일대비 ${arrow} ${Math.abs(d).toLocaleString()} · ${pct>=0?'+':''}${pct.toFixed(2)}%</div>
       </div>
