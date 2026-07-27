@@ -156,7 +156,7 @@
     <button class="tab" data-view="calendar">이벤트 캘린더</button>
     <button class="tab" data-view="buzz">국내 버즈</button>
     <button class="tab" data-view="trend">해외 버즈</button>
-    <button class="tab" data-view="export">수출 데이터(작업중)</button>
+    <button class="tab" data-view="export">수출 데이터</button>
     <button class="tab" data-view="visitors">방한 외국인</button>
   </div>
 
@@ -281,19 +281,16 @@
 
   <!-- ============ EXPORT ============ -->
   <section class="view" id="view-export">
-    <div class="sec-h"><div class="l"><h2>기간 단위</h2></div><span class="note">관세청 수출 확정치 · HS품목 매핑</span></div>
-    <div class="toggle" id="period-toggle">
-      <button class="active" data-period="quarter">분기별</button>
-      <button data-period="month">월별</button>
-    </div>
-
-    <div class="sec-h"><div class="l"><h2>품목별 수출 추이</h2></div><span class="note">톡신 · 필러(HA) · 스킨부스터 · 화장품</span></div>
-    <div class="unit">단위: 백만원</div>
-    <div class="chart-box"><canvas id="exportChart"></canvas></div>
-
-    <div class="sec-h"><div class="l"><h2>최근 분기 요약</h2></div><span class="note">직전분기 QoQ · 전년동기 YoY</span></div>
-    <div class="unit">단위: 백만원 · %</div>
-    <div id="export-table"></div>
+    <div class="sec-h"><div class="l"><h2>수출 데이터 · 리쥬란류(HS 3304999000)</h2></div><span class="note" id="exp-note">TRASS 무역통계 · 확정 매월 15일 / 잠정 1·11·21일</span></div>
+    <div class="cards" id="exp-cards"><div class="na-msg">불러오는 중…</div></div>
+    <div class="sec-h"><div class="l"><h2>강릉시 수출 — 국가별 월별</h2></div><span class="note">천 달러 · 확정치(수리일) · 파마리서치(리쥬란) 프록시</span></div>
+    <div class="chart-box"><canvas id="exp-gn-chart"></canvas></div>
+    <div class="chart-box"><div id="exp-share-ttl" style="font-size:12px;color:var(--sub);font-weight:700;margin-bottom:6px"></div><canvas id="exp-share-chart" style="max-height:240px"></canvas></div>
+    <div class="sec-h"><div class="l"><h2>전국 수출 추이 — HS 3304999000</h2></div><span class="note">백만 달러 · 마지막 달은 잠정(월 진행분 누계)</span></div>
+    <div class="chart-box"><canvas id="exp-natl-chart"></canvas></div>
+    <div class="sec-h"><div class="l"><h2>월간 분석</h2></div><span class="note" id="exp-ins-note">확정치 갱신 시 작성</span></div>
+    <div class="chips" id="exp-ins-months"></div>
+    <div id="exp-insights"><div class="na-msg">아직 분석이 없습니다</div></div>
   </section>
 
   <!-- ============ 방한 외국인 × 피부과 소비 ============ -->
@@ -314,7 +311,7 @@
     <div id="vis-insights"><div class="na-msg">아직 월간 분석이 없습니다 — 매월 12일 자동 작성</div></div>
   </section>
 
-  <div class="seed">시드 데이터 (DART·네이버·pytrends·관세청 API 미연결) — 구조만 잡은 프로토타입입니다</div>
+  <div class="seed">뉴스·주가·버즈·방한통계·수출: 실데이터 자동/반자동 수집 — 캘린더 일부는 수기 관리</div>
 </div>
 
 <script>
@@ -397,13 +394,9 @@ const reviewsByKw = {
 const EU_KW_COLORS={"Rejuran":"#e07b28","Profhilo":"#8f68c9","Sculptra":"#4a90d9","Plinest":"#4e9d46","Sunekos":"#c95f8f"};
 let euDoc=null, euGeo="GB", euWeek=null, euPeriodW=52, euTrendChart=null, euCountryChart=null, euClinicsOpen=false;
 
-// 수출 데이터 (관세청 · 백만원)
-const exportQ={labels:["1Q25","2Q25","3Q25","4Q25","1Q26"],
-  series:{"톡신":[41000,45200,43800,48100,52300],"필러(HA)":[28000,30500,31200,33800,36400],"스킨부스터":[9500,11200,12800,13500,15100],"화장품":[62000,68000,72500,79000,86200]}};
-const exportM={labels:["2월","3월","4월","5월","6월","7월"],
-  series:{"톡신":[16800,17200,17000,17800,16900,18100],"필러(HA)":[11800,12200,12000,12600,12100,13200],"스킨부스터":[4600,4900,4800,5100,5000,5400],"화장품":[27500,28800,28100,29900,28600,31200]}};
-const EXP_COLORS={"톡신":"#6fb43a","필러(HA)":"#4a90d9","스킨부스터":"#e0a13c","화장품":"#8f68c9"};
-let curPeriod="quarter", exportChart=null;
+// 수출 데이터 (TRASS · exports_trass_raw.json)
+let expInited=false, expData=null, expIns=null, expInsMonth=null, expCharts={};
+const EXP_NAT_COLORS={"미국":"#4a90d9","리투아니아":"#8f68c9","싱가포르":"#2fa6a6","프랑스":"#e0a13c","중국":"#d9536f","기타":"#9aa4af"};
 
 /* ================= 렌더링 ================= */
 // 데일리 뉴스
@@ -810,27 +803,80 @@ function renderEUTrend(){
 }
 document.querySelectorAll('#eu-period-toggle button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#eu-period-toggle button').forEach(x=>x.classList.remove('active'));b.classList.add('active');euPeriodW=+b.dataset.w;renderEUTrend();});
 
-/* 수출 데이터 */
-function curExport(){return curPeriod==='quarter'?exportQ:exportM;}
-function renderExportChart(){
-  const ctx=document.getElementById('exportChart');const dat=curExport();
-  const ds=Object.keys(dat.series).map(k=>({label:k,data:dat.series[k],backgroundColor:EXP_COLORS[k],borderRadius:3}));
-  if(exportChart)exportChart.destroy();
-  exportChart=new Chart(ctx,{type:'bar',data:{labels:dat.labels,datasets:ds},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#67707b',font:{size:11}}}},scales:{x:{...axisOpt.x,stacked:false},y:{...axisOpt.y,ticks:{color:'#9aa4af',callback:v=>(v/1000)+'천'}}}}});
+/* 수출 데이터 (TRASS · exports_trass_raw.json / exports_insights.json) */
+const _eLab=ym=>`${ym.slice(2,4)}.${ym.slice(4)}`;
+const _eChart=(id,cfg)=>{const ctx=document.getElementById(id);if(expCharts[id])expCharts[id].destroy();expCharts[id]=new Chart(ctx,cfg);};
+const _eLegend={labels:{color:'#67707b',font:{size:11},boxWidth:18}};
+function _eMonths(fr,to){var out=[],y=+fr.slice(0,4),m=+fr.slice(4);while(true){var ym=''+y+String(m).padStart(2,'0');if(ym>to)break;out.push(ym);m++;if(m>12){y++;m=1}}return out;}
+function _gnTotal(){const t={};Object.values(expData.gangneung.by_country).forEach(c=>{Object.entries(c.m).forEach(([k,v])=>t[k]=(t[k]||0)+v)});return t;}
+function _gnLatest(){return Object.keys(_gnTotal()).sort().pop();}
+async function loadExports(){
+  try{const r=await fetch('exports_trass_raw.json',{cache:'no-store'});if(r.ok)expData=await r.json();}catch(e){}
+  try{const r=await fetch('exports_insights.json',{cache:'no-store'});if(r.ok)expIns=await r.json();}catch(e){}
+  if(!expData){document.getElementById('exp-cards').innerHTML='<div class="na-msg">exports_trass_raw.json 없음</div>';return;}
+  renderExpCards();renderExpGn();renderExpShare();renderExpNatl();renderExpInsights();
+  const note=document.getElementById('exp-note');
+  if(note&&expData.updated)note.textContent=`TRASS 무역통계 · ${expData.updated} 수집 · 확정 매월 15일 / 잠정 1·11·21일`;
 }
-function renderExportTable(){
-  const dat=exportQ;const n=dat.labels.length;
-  let rows=Object.keys(dat.series).map(k=>{const s=dat.series[k];const cur=s[n-1],prevQ=s[n-2],prevY=s[n-5]!==undefined?s[n-5]:s[0];
-    const qoq=Math.round((cur-prevQ)/prevQ*100),yoy=Math.round((cur-prevY)/prevY*100);
-    const qc=qoq>=0?'up':'down',yc=yoy>=0?'up':'down';
-    return `<tr><td>${k}</td><td class="hl">${cur.toLocaleString()}</td><td class="${qc}">${qoq>=0?'▲':'▼'} ${Math.abs(qoq)}%</td><td class="${yc}">${yoy>=0?'▲':'▼'} ${Math.abs(yoy)}%</td></tr>`;}).join('');
-  const tot=Object.keys(dat.series).reduce((a,k)=>a+dat.series[k][n-1],0);
-  const totPrevQ=Object.keys(dat.series).reduce((a,k)=>a+dat.series[k][n-2],0);
-  const totPrevY=Object.keys(dat.series).reduce((a,k)=>a+dat.series[k][0],0);
-  const tqoq=Math.round((tot-totPrevQ)/totPrevQ*100),tyoy=Math.round((tot-totPrevY)/totPrevY*100);
-  document.getElementById('export-table').innerHTML=`<table><thead><tr><th>품목</th><th>${dat.labels[n-1]}</th><th>QoQ</th><th>YoY</th></tr></thead><tbody>${rows}<tr class="total"><td>합계</td><td>${tot.toLocaleString()}</td><td class="up">▲ ${tqoq}%</td><td class="up">▲ ${tyoy}%</td></tr></tbody></table>`;
+function renderExpCards(){
+  const gt=_gnTotal(),tu=expData.tentative.total.usd,tf=expData.tentative.total.firms||{};
+  const gl=_gnLatest();const gPrevY=(+gl.slice(0,4)-1)+gl.slice(4);
+  const gYoY=gt[gPrevY]?(gt[gl]/gt[gPrevY]-1)*100:null;
+  const nks=Object.keys(tu).sort();const nLast=nks[nks.length-1];
+  // 전국 최신 '완결' 월 = 마지막에서 두 번째(마지막은 진행 중 잠정)
+  const nDone=nks[nks.length-2];const nPrevY=(+nDone.slice(0,4)-1)+nDone.slice(4);
+  const nYoY=tu[nPrevY]?(tu[nDone]/tu[nPrevY]-1)*100:null;
+  const paceBase=(+nLast.slice(0,4)-1)+nLast.slice(4);
+  const pacePct=tu[paceBase]?Math.round(tu[nLast]/tu[paceBase]*100):null;
+  const f=v=>v==null?'':`<span class="${v>=0?'up':'down'}">${v>=0?'▲':'▼'} ${Math.abs(v).toFixed(1)}%</span> YoY`;
+  document.getElementById('exp-cards').innerHTML=
+    `<div class="card"><div class="k">강릉 수출 · ${_eLab(gl)} 확정</div><div class="v lime">${Math.round(gt[gl]/10).toLocaleString()}<span style="font-size:14px;font-weight:600">만 달러</span></div><div class="s">${f(gYoY)}</div></div>`+
+    `<div class="card"><div class="k">전국 3304999000 · ${_eLab(nDone)}</div><div class="v">${(tu[nDone]/1e5).toFixed(2)}<span style="font-size:14px;font-weight:600">억 달러</span></div><div class="s">${f(nYoY)}</div></div>`+
+    `<div class="card"><div class="k">전국 ${+nLast.slice(4)}월 잠정 누계</div><div class="v">${(tu[nLast]/1e5).toFixed(2)}<span style="font-size:14px;font-weight:600">억 달러</span></div><div class="s">${pacePct!=null?`전년 ${+nLast.slice(4)}월 전체의 <span class="up">${pacePct}%</span>`:''}</div></div>`+
+    `<div class="card"><div class="k">수출 업체 수 · ${_eLab(nDone)}</div><div class="v">${(tf[nDone]||0).toLocaleString()}<span style="font-size:14px;font-weight:600">개사</span></div><div class="s">${tf[nPrevY]?f((tf[nDone]/tf[nPrevY]-1)*100):''}</div></div>`;
 }
-document.querySelectorAll('#period-toggle button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#period-toggle button').forEach(x=>x.classList.remove('active'));b.classList.add('active');curPeriod=b.dataset.period;renderExportChart();});
+function _expTops(){
+  const gl=_gnLatest();const y=gl.slice(0,4);
+  const h1=c=>Object.entries(c.m).reduce((a,[k,v])=>a+(k.slice(0,4)===y?v:0),0);
+  const arr=Object.entries(expData.gangneung.by_country).map(([cd,c])=>({cd,nm:c.nm,v:h1(c),c}));
+  arr.sort((a,b)=>b.v-a.v);
+  return arr;
+}
+function renderExpGn(){
+  const gl=_gnLatest();const yms=_eMonths((+gl.slice(0,4)-1)+'01',gl);
+  const tops=_expTops().slice(0,5);const gt=_gnTotal();
+  const ds=tops.map(t=>({label:t.nm,data:yms.map(m=>t.c.m[m]||0),backgroundColor:EXP_NAT_COLORS[t.nm]||'#c96f9f',borderRadius:2}));
+  ds.push({label:'기타',data:yms.map(m=>Math.max(0,(gt[m]||0)-tops.reduce((a,t)=>a+(t.c.m[m]||0),0))),backgroundColor:EXP_NAT_COLORS['기타'],borderRadius:2});
+  _eChart('exp-gn-chart',{type:'bar',data:{labels:yms.map(_eLab),datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:_eLegend,tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.raw.toLocaleString()}천$`}}},scales:{x:{stacked:true,ticks:{color:'#9aa4af'},grid:{display:false}},y:{stacked:true,ticks:{color:'#9aa4af',callback:v=>v.toLocaleString()},grid:{color:'#eef1f3'}}}}});
+}
+function renderExpShare(){
+  const gl=_gnLatest();const y=gl.slice(0,4);
+  const arr=_expTops();const tot=arr.reduce((a,r)=>a+r.v,0);
+  const rows=arr.slice(0,8);const etc=tot-rows.reduce((a,r)=>a+r.v,0);
+  const labels=[...rows.map(r=>r.nm),'기타'];const vals=[...rows.map(r=>r.v),etc];
+  document.getElementById('exp-share-ttl').textContent=`강릉 수출 국가별 비중 · ${y}년 누계(~${_eLab(gl)}) 합계 ${Math.round(tot/10).toLocaleString()}만 달러`;
+  _eChart('exp-share-chart',{type:'bar',data:{labels:labels,datasets:[{data:vals,backgroundColor:labels.map(n=>EXP_NAT_COLORS[n]||'#b0b8c1'),borderRadius:3}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`${c.raw.toLocaleString()}천$ (${(c.raw/tot*100).toFixed(1)}%)`}}},scales:{x:{ticks:{color:'#9aa4af',callback:v=>v.toLocaleString()},grid:{color:'#eef1f3'}},y:{ticks:{color:'#67707b',font:{size:12}},grid:{display:false}}}}});
+}
+function renderExpNatl(){
+  const tu=expData.tentative.total.usd;const nks=Object.keys(tu).sort();const last=nks[nks.length-1];
+  const yms=_eMonths('202201',last);
+  const data=yms.map(m=>tu[m]!=null?+(tu[m]/1e3).toFixed(1):null);
+  _eChart('exp-natl-chart',{type:'line',data:{labels:yms.map(_eLab),datasets:[{label:'전국 수출(백만 달러)',data:data,borderColor:'#4e9d46',borderWidth:2.2,backgroundColor:'rgba(78,157,70,.08)',fill:true,tension:.15,pointRadius:yms.map(m=>m===last?4:0),pointBackgroundColor:'#e0a13c',segment:{borderDash:c=>c.p1DataIndex===yms.length-1?[5,4]:undefined}}]},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:_eLegend,tooltip:{callbacks:{label:c=>`${c.raw.toLocaleString()}M$${c.label===_eLab(last)?' (잠정 누계)':''}`}}},scales:{x:{ticks:{color:'#9aa4af',maxTicksLimit:14},grid:{display:false}},y:{ticks:{color:'#9aa4af',callback:v=>v+'M'},grid:{color:'#eef1f3'}}}}});
+}
+function renderExpInsights(){
+  const box=document.getElementById('exp-insights'),chips=document.getElementById('exp-ins-months');
+  if(!expIns||!expIns.months||!Object.keys(expIns.months).length){box.innerHTML='<div class="na-msg">아직 월간 분석이 없습니다</div>';return;}
+  const months=Object.keys(expIns.months).sort().reverse();
+  if(!expInsMonth||!expIns.months[expInsMonth])expInsMonth=expIns.latest||months[0];
+  chips.innerHTML=months.map(mo=>`<span class="filter-chip ${mo===expInsMonth?'on':''}" onclick="setExpInsMonth('${mo}')">${mo.replace('-','.')}</span>`).join('');
+  const d=expIns.months[expInsMonth];if(!d){box.innerHTML='';return;}
+  const note=document.getElementById('exp-ins-note');
+  if(note)note.textContent=`데이터 기준 ${expInsMonth.replace('-','.')} · ${d.updated||''} 작성`;
+  const sec=(t,b)=>b?`<div class="rev" style="margin-bottom:10px"><div class="top"><span style="font-size:13px;font-weight:800;color:var(--green-d)">${t}</span></div><div style="font-size:13px">${b}</div></div>`:'';
+  box.innerHTML=(d.summary?`<div class="rev" style="border-left:3px solid var(--lime);background:var(--lime-bg);margin-bottom:10px"><div style="font-size:13px">${d.summary}</div></div>`:'')+
+    sec('강릉(리쥬란 프록시)',d.gn)+sec('전국·잠정 페이스',d.natl);
+}
+function setExpInsMonth(m){expInsMonth=m;renderExpInsights();}
 
 /* ================= 주가 추이 ================= */
 let stockCompanies = ["파마리서치","휴젤","클래시스","엘앤씨바이오","한스바이오메드"];
@@ -1084,7 +1130,7 @@ document.querySelectorAll('.tab').forEach(t=>{
     if(t.dataset.view==='stock'&&!stockInited){stockInited=true;renderStockCompanies();renderStockCharts();}
     if(t.dataset.view==='buzz')renderBuzzTrends();
     if(t.dataset.view==='trend')loadEU();
-    if(t.dataset.view==='export'&&!exportChart){renderExportChart();renderExportTable();}
+    if(t.dataset.view==='export'&&!expInited){expInited=true;loadExports();}
     if(t.dataset.view==='visitors'&&!visitorsInited){visitorsInited=true;loadVisitors();}
   };
 });
