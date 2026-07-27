@@ -2,105 +2,119 @@
  "latest": "2026-W30",
  "weeks": {
   "2026-W30": {
-   "updated": "2026-07-24",
-   "summary": "유럽 PN(폴리뉴클레오타이드) 스킨부스터 시장의 웹 확인 클리닉은 총 264곳(26개국) — 리쥬란 브랜드 명시 163곳, Ameela·Plinest·Nucleofill·Vitaran·PhilArt 등 타 브랜드·범주 101곳. 리쥬란은 영국·네덜란드·체코·스웨덴·불가리아·튀르키예 등에서 취급처가 확산 중이고, 경쟁 구도는 영국=Ameela·Plinest·Vitaran, 폴란드·체코=Nucleofill, 네덜란드·오스트리아=PhilArt(Croma)가 우세. 검색 관심도는 영국·프랑스에서 올 3월 급등 후 조정 국면이나 1년 전 대비 2배 수준 유지. 소비자 후기는 광채·눈밑 개선에 긍정적이나 통증·비용 부담이 반복 지적되며, 브랜드 지명 후기는 아직 희소해 공급(취급처 확산) 대비 소비자 브랜드 인지가 뒤따르는 단계. 이 수치는 웹에 명시된 확인분의 하한선으로, 실제 취급처는 이보다 많을 것으로 추정.",
+   "updated": "2026-07-27",
+   "summary": "유럽 PN(폴리뉴클레오타이드) 스킨부스터 시장의 웹 확인 클리닉은 총 316곳(26개국) — 리쥬란 브랜드 명시 166곳, Ameela·Plinest·Nucleofill·Vitaran·PhilArt 등 타 브랜드·범주 150곳 (7/27 증분 스캔 +52곳). 리쥬란은 영국·네덜란드·스웨덴·체코 등에서 취급처 확산 중이나, 이번 증분에서 신규 52곳 중 리쥬란 명시는 3곳뿐 — 대륙(프랑스·독일·스위스·오스트리아·남유럽)의 신규 도입 클리닉은 대부분 PhilArt(Croma)·Plinest·Nucleofill 등 유럽 허가 PN 브랜드로 진입하고 있어, '폴리뉴클레오타이드 시술' 범주 확산이 리쥬란 브랜드 확산을 앞서는 구도가 뚜렷. 검색 관심도는 영국·프랑스에서 올 3월 급등 후 조정 국면이나 1년 전 대비 2배 수준 유지. 소비자 후기는 광채·눈밑 개선에 긍정적이나 통증·비용 부담이 반복 지적. 이 수치는 웹에 명시된 확인분의 하한선으로, 실제 취급처는 이보다 많을 것으로 추정.",
    "penetration": {
     "note": "웹 풋프린트 기반 — 클리닉 자체 홈페이지·예약 디렉토리에 시술 명시 확인분 (검색 기반 스캔, 실제 취급처의 하한선)",
-    "total": 264,
-    "new_this_week": 264,
-    "first_scan": true,
+    "total": 316,
+    "new_this_week": 52,
+    "first_scan": false,
     "n_countries": 26,
     "by_country": [
      {
       "cc": "GB",
       "name": "영국",
       "rj": 32,
-      "pn": 28,
-      "n": 60
+      "pn": 36,
+      "n": 68
      },
      {
       "cc": "NL",
       "name": "네덜란드",
-      "rj": 19,
-      "pn": 4,
-      "n": 23
+      "rj": 20,
+      "pn": 6,
+      "n": 26
      },
      {
       "cc": "SE",
       "name": "스웨덴",
       "rj": 16,
-      "pn": 4,
+      "pn": 5,
+      "n": 21
+     },
+     {
+      "cc": "PL",
+      "name": "폴란드",
+      "rj": 9,
+      "pn": 11,
       "n": 20
      },
      {
       "cc": "CZ",
       "name": "체코",
       "rj": 13,
-      "pn": 5,
-      "n": 18
-     },
-     {
-      "cc": "PL",
-      "name": "폴란드",
-      "rj": 9,
-      "pn": 8,
-      "n": 17
-     },
-     {
-      "cc": "FR",
-      "name": "프랑스",
-      "rj": 7,
-      "pn": 5,
-      "n": 12
+      "pn": 6,
+      "n": 19
      },
      {
       "cc": "DE",
       "name": "독일",
       "rj": 6,
-      "pn": 6,
-      "n": 12
+      "pn": 10,
+      "n": 16
+     },
+     {
+      "cc": "FR",
+      "name": "프랑스",
+      "rj": 7,
+      "pn": 9,
+      "n": 16
      },
      {
       "cc": "ES",
       "name": "스페인",
       "rj": 5,
-      "pn": 7,
-      "n": 12
+      "pn": 10,
+      "n": 15
      },
      {
       "cc": "FI",
       "name": "핀란드",
       "rj": 6,
-      "pn": 4,
-      "n": 10
+      "pn": 5,
+      "n": 11
      },
      {
       "cc": "BE",
       "name": "벨기에",
       "rj": 5,
-      "pn": 4,
-      "n": 9
+      "pn": 6,
+      "n": 11
      },
      {
       "cc": "IT",
       "name": "이탈리아",
       "rj": 2,
-      "pn": 6,
-      "n": 8
+      "pn": 9,
+      "n": 11
      },
      {
       "cc": "CH",
       "name": "스위스",
-      "rj": 5,
-      "pn": 2,
-      "n": 7
+      "rj": 6,
+      "pn": 5,
+      "n": 11
      },
      {
       "cc": "NO",
       "name": "노르웨이",
-      "rj": 6,
+      "rj": 7,
       "pn": 1,
-      "n": 7
+      "n": 8
+     },
+     {
+      "cc": "IE",
+      "name": "아일랜드",
+      "rj": 1,
+      "pn": 7,
+      "n": 8
+     },
+     {
+      "cc": "AT",
+      "name": "오스트리아",
+      "rj": 0,
+      "pn": 8,
+      "n": 8
      },
      {
       "cc": "BG",
@@ -110,39 +124,32 @@
       "n": 7
      },
      {
-      "cc": "IE",
-      "name": "아일랜드",
-      "rj": 1,
-      "pn": 5,
-      "n": 6
-     },
-     {
       "cc": "RO",
       "name": "루마니아",
       "rj": 6,
-      "pn": 0,
-      "n": 6
+      "pn": 1,
+      "n": 7
      },
      {
       "cc": "PT",
       "name": "포르투갈",
       "rj": 1,
-      "pn": 4,
-      "n": 5
-     },
-     {
-      "cc": "AT",
-      "name": "오스트리아",
-      "rj": 0,
-      "pn": 5,
-      "n": 5
+      "pn": 6,
+      "n": 7
      },
      {
       "cc": "DK",
       "name": "덴마크",
       "rj": 1,
-      "pn": 3,
-      "n": 4
+      "pn": 5,
+      "n": 6
+     },
+     {
+      "cc": "HU",
+      "name": "헝가리",
+      "rj": 3,
+      "pn": 2,
+      "n": 5
      },
      {
       "cc": "TR",
@@ -159,18 +166,11 @@
       "n": 3
      },
      {
-      "cc": "HU",
-      "name": "헝가리",
-      "rj": 3,
-      "pn": 0,
+      "cc": "GR",
+      "name": "그리스",
+      "rj": 1,
+      "pn": 2,
       "n": 3
-     },
-     {
-      "cc": "SK",
-      "name": "슬로바키아",
-      "rj": 2,
-      "pn": 0,
-      "n": 2
      },
      {
       "cc": "HR",
@@ -180,11 +180,11 @@
       "n": 2
      },
      {
-      "cc": "GR",
-      "name": "그리스",
-      "rj": 1,
+      "cc": "SK",
+      "name": "슬로바키아",
+      "rj": 2,
       "pn": 0,
-      "n": 1
+      "n": 2
      },
      {
       "cc": "EE",
@@ -2407,10 +2407,454 @@
       "brand": "Vitaran",
       "url": "https://kosmetiskhviidsminde.dk/vitaran-polynukleotider/",
       "tier": "pn"
+     },
+     {
+      "name": "Pavillon Esthetic (Dr Magali Lavillenie)",
+      "domain": "pavillon-esthetic.com",
+      "country": "FR",
+      "city": "Beausoleil",
+      "url": "https://pavillon-esthetic.com/medecine-esthetique/polypeptides-plinest-newest-juvenus",
+      "tier": "pn",
+      "brand": "Plinest·Nucleofill"
+     },
+     {
+      "name": "Cabinet Dr Fays-Michel",
+      "domain": "dr-fays-michel.com",
+      "country": "FR",
+      "city": "Nancy",
+      "url": "https://dr-fays-michel.com/activites-du-cabinet/dermatologie-esthetique/croma-philart-injectable-aux-polynucleotides.html",
+      "tier": "pn",
+      "brand": "PhilArt"
+     },
+     {
+      "name": "Dr Christine Luneau",
+      "domain": "docteur-luneau.fr",
+      "country": "FR",
+      "city": "Aix-en-Provence",
+      "url": "https://www.docteur-luneau.fr/medecine-esthetique/injections-de-polynucleotides/",
+      "tier": "pn"
+     },
+     {
+      "name": "Centre LEDEN",
+      "domain": "centre-leden.fr",
+      "country": "FR",
+      "city": "Jossigny",
+      "url": "https://centre-leden.fr/nos-solutions/medecine-esthetique/injections-de-polynucleotides/",
+      "tier": "pn"
+     },
+     {
+      "name": "NutriEsthetic",
+      "domain": "nutriesthetic.be",
+      "country": "BE",
+      "city": "Liège",
+      "url": "https://www.nutriesthetic.be/medecine-esthetique-liege/polynucleotides",
+      "tier": "pn"
+     },
+     {
+      "name": "Dr Benjamin",
+      "domain": "dokterbenjamin.com",
+      "country": "BE",
+      "city": "Antwerpen",
+      "url": "https://dokterbenjamin.com/polynucleotide-antwerpen/",
+      "tier": "pn"
+     },
+     {
+      "name": "Maison Tóā",
+      "domain": "maisontoa.com",
+      "country": "CH",
+      "city": "Lausanne",
+      "url": "https://maisontoa.com/injection/adn-saumon/",
+      "tier": "pn",
+      "brand": "PhilArt"
+     },
+     {
+      "name": "ProDerm",
+      "domain": "proderm.ch",
+      "country": "CH",
+      "city": "Biel/Bienne",
+      "url": "https://proderm.ch/behandlung/polynucleotides-regeneration-naturelle",
+      "tier": "rejuran"
+     },
+     {
+      "name": "ConceptYOU Clinic",
+      "domain": "concept-you.ch",
+      "country": "CH",
+      "city": "Zürich",
+      "url": "https://concept-you.ch/polynukleotide/",
+      "tier": "pn",
+      "brand": "PhilArt"
+     },
+     {
+      "name": "Praxisklinik Urania",
+      "domain": "praxisklinik-urania.ch",
+      "country": "CH",
+      "city": "Zürich",
+      "url": "https://www.praxisklinik-urania.ch/de/leistungen/nichtchirurgische-behandlungen/polynukleotide",
+      "tier": "pn"
+     },
+     {
+      "name": "Praxis Dr. MEK",
+      "domain": "dr-mek.de",
+      "country": "DE",
+      "city": "Berlin",
+      "url": "https://dr-mek.de/aesthetik/lachssperma-behandlung/",
+      "tier": "pn"
+     },
+     {
+      "name": "Medart Beauty",
+      "domain": "medartbeauty.de",
+      "country": "DE",
+      "city": "München",
+      "url": "https://medartbeauty.de/treatments/polynukleotide",
+      "tier": "pn"
+     },
+     {
+      "name": "Haut- und Laserzentrum an der Oper",
+      "domain": "haut-und-laser-zentrum.de",
+      "country": "DE",
+      "city": "München",
+      "url": "https://www.haut-und-laser-zentrum.de/regenerative-medizin/polynukleotide/",
+      "tier": "pn"
+     },
+     {
+      "name": "Beethoven Klinik Köln",
+      "domain": "beethoven-klinik-koeln.de",
+      "country": "DE",
+      "city": "Köln",
+      "url": "https://www.beethoven-klinik-koeln.de/aesthetische-medizin/hautbehandlung/handrueckenverjuengung-koeln-duesseldorf-nrw/",
+      "tier": "pn",
+      "brand": "PhilArt"
+     },
+     {
+      "name": "Ordination Dr. Josipa Ivancic",
+      "domain": "dr-ivancic.at",
+      "country": "AT",
+      "city": "Graz",
+      "url": "https://dr-ivancic.at/polynukleotide/",
+      "tier": "pn",
+      "brand": "PhilArt"
+     },
+     {
+      "name": "Hautarzt Linz Dr. Kaisergruber & Dr. Lackner",
+      "domain": "hautarztlinz.at",
+      "country": "AT",
+      "city": "Linz",
+      "url": "https://www.hautarztlinz.at/leistungen/polynucleotide",
+      "tier": "pn",
+      "brand": "PhilArt"
+     },
+     {
+      "name": "Individual Beauty Wien",
+      "domain": "beautywien.at",
+      "country": "AT",
+      "city": "Wien",
+      "url": "https://beautywien.at/polynukleotid-lachssperma-behandlung-wien/",
+      "tier": "pn"
+     },
+     {
+      "name": "SKIN Amsterdam",
+      "domain": "skinamsterdam.nl",
+      "country": "NL",
+      "city": "Amsterdam",
+      "url": "https://skinamsterdam.nl/zalm-dna-microneedling-behandeling/",
+      "tier": "rejuran"
+     },
+     {
+      "name": "Van Lennep Kliniek",
+      "domain": "vanlennepkliniek.nl",
+      "country": "NL",
+      "city": "Den Haag",
+      "url": "https://www.vanlennepkliniek.nl/en/treatments/polynucleotide-skinbooster",
+      "tier": "pn",
+      "brand": "Plenhyage"
+     },
+     {
+      "name": "Signé Clinics",
+      "domain": "signeclinics.nl",
+      "country": "NL",
+      "city": "Rotterdam",
+      "url": "https://signeclinics.nl/polynucleotiden/",
+      "tier": "pn",
+      "brand": "PhilArt"
+     },
+     {
+      "name": "Medical Salus Roma",
+      "domain": "medicalsalusroma.it",
+      "country": "IT",
+      "city": "Roma",
+      "url": "https://medicalsalusroma.it/biorivitalizzazione-del-viso-con-i-polinucleotidi/",
+      "tier": "pn"
+     },
+     {
+      "name": "Istituto Estetico Italiano",
+      "domain": "istitutoesteticoitaliano.it",
+      "country": "IT",
+      "city": "Milano",
+      "url": "https://www.istitutoesteticoitaliano.it/medicina_estetica/plinest-hair/",
+      "tier": "pn",
+      "brand": "Plinest"
+     },
+     {
+      "name": "Dr. Piero Notarrigo",
+      "domain": "medicina-estetica-bologna.it",
+      "country": "IT",
+      "city": "Bologna",
+      "url": "https://www.medicina-estetica-bologna.it/treatment/rassodamento-cutaneo/",
+      "tier": "pn",
+      "brand": "Plinest"
+     },
+     {
+      "name": "Dra. Cecilia Arthur",
+      "domain": "ceciliaarthur.com",
+      "country": "ES",
+      "city": "Madrid",
+      "url": "https://ceciliaarthur.com/tratamientos/faciales/polinucleotidos/",
+      "tier": "pn"
+     },
+     {
+      "name": "Clínica Dra. Elena Berezo",
+      "domain": "drelenaberezo.com",
+      "country": "ES",
+      "city": "Madrid",
+      "url": "https://drelenaberezo.com/rejuvenecimiento-facial-sin-cirugia/polinucleotidos",
+      "tier": "pn"
+     },
+     {
+      "name": "Instituto Médico Ricart",
+      "domain": "institutomedicoricart.com",
+      "country": "ES",
+      "city": "Madrid",
+      "url": "https://institutomedicoricart.com/medicina-estetica/flacidez-facial/polinucleotidos/",
+      "tier": "pn"
+     },
+     {
+      "name": "Atelier do Sorriso",
+      "domain": "atelierdosorriso.pt",
+      "country": "PT",
+      "city": "Almancil",
+      "url": "https://www.atelierdosorriso.pt/blog/tratamento-pdrn-polinucleotideos-algarve/",
+      "tier": "pn"
+     },
+     {
+      "name": "Clínica You Care",
+      "domain": "clinicayoucare.com",
+      "country": "PT",
+      "city": "Leiria",
+      "url": "https://www.clinicayoucare.com/pt/harmonizacao-facial/polinucleotidos",
+      "tier": "pn"
+     },
+     {
+      "name": "MyDermaClinic",
+      "domain": "mydermaclinic.gr",
+      "country": "GR",
+      "city": "Attica",
+      "url": "https://mydermaclinic.gr/polynoukleotidia-therapeia-vioanadomisis-tou-dermatos/",
+      "tier": "pn"
+     },
+     {
+      "name": "KM Plastic Surgery Clinic",
+      "domain": "makrygiorgisplasticsurgeon.com",
+      "country": "GR",
+      "city": "Athens",
+      "url": "https://makrygiorgisplasticsurgeon.com/polynoukleotidia-therapeia/",
+      "tier": "pn"
+     },
+     {
+      "name": "Velvet Skin Clinic",
+      "domain": "velvetskin.pl",
+      "country": "PL",
+      "city": "Warszawa",
+      "url": "https://velvetskin.pl/nucleofill/",
+      "tier": "pn",
+      "brand": "Nucleofill"
+     },
+     {
+      "name": "Absolu Klinika",
+      "domain": "absoluklinika.pl",
+      "country": "PL",
+      "city": "Warszawa",
+      "url": "https://absoluklinika.pl/oferta/medycyna-estetyczna/biostymulatory-tkankowe/nucleofill/",
+      "tier": "pn",
+      "brand": "Nucleofill"
+     },
+     {
+      "name": "Sthetic Klinika",
+      "domain": "sthetic.pl",
+      "country": "PL",
+      "city": "Warszawa",
+      "url": "https://sthetic.pl/zabiegi/zabiegi-na-twarz/nucleofill-lifting-na-poziomie-komorkowym/",
+      "tier": "pn",
+      "brand": "Nucleofill"
+     },
+     {
+      "name": "YES VISAGE Clinic",
+      "domain": "yesvisage.cz",
+      "country": "CZ",
+      "city": "Praha",
+      "url": "https://www.yesvisage.cz/zakrok/nucleofill/",
+      "tier": "pn",
+      "brand": "Nucleofill"
+     },
+     {
+      "name": "Soulutions Medical",
+      "domain": "soulutionsmedical.hu",
+      "country": "HU",
+      "city": "Budapest",
+      "url": "https://soulutionsmedical.hu/philart/",
+      "tier": "pn",
+      "brand": "PhilArt"
+     },
+     {
+      "name": "Aesthetica Orvosi Központ",
+      "domain": "aesthetica.hu",
+      "country": "HU",
+      "city": "Budapest",
+      "url": "https://aesthetica.hu/nucleofill-kezeles-a-melyhidratalas-uj-korszaka/",
+      "tier": "pn",
+      "brand": "Nucleofill"
+     },
+     {
+      "name": "Clinica UltraEstetic",
+      "domain": "ultraestetic.ro",
+      "country": "RO",
+      "city": "București",
+      "url": "https://ultraestetic.ro/tratamente/polinucleotide/",
+      "tier": "pn"
+     },
+     {
+      "name": "MyClinic",
+      "domain": "myclinic.nu",
+      "country": "SE",
+      "city": "Stockholm",
+      "url": "https://www.myclinic.nu/en/filler-injections/other-injections/polynucleotides/",
+      "tier": "pn"
+     },
+     {
+      "name": "Clinica Medspa",
+      "domain": "clinicamedspa.no",
+      "country": "NO",
+      "city": "Oslo",
+      "url": "https://www.clinicamedspa.no/products/rejuran-eye-oslo",
+      "tier": "rejuran"
+     },
+     {
+      "name": "LuminaLux",
+      "domain": "luminalux.dk",
+      "country": "DK",
+      "city": "Aarhus",
+      "url": "https://www.luminalux.dk/hvad-er-polynukeotider/",
+      "tier": "pn"
+     },
+     {
+      "name": "Cosmetica",
+      "domain": "cosmetica.dk",
+      "country": "DK",
+      "city": "København",
+      "url": "https://www.cosmetica.dk/behandlinger/polynukleotid-behandling.aspx",
+      "tier": "pn",
+      "brand": "Vitaran"
+     },
+     {
+      "name": "Ebeling Beauty",
+      "domain": "ekauneus.fi",
+      "country": "FI",
+      "city": "Helsinki",
+      "url": "https://www.ekauneus.fi/en/treatments/polynucleotides/",
+      "tier": "pn",
+      "brand": "Vitaran"
+     },
+     {
+      "name": "Thriyv Aesthetics",
+      "domain": "thriyv.co.uk",
+      "country": "GB",
+      "city": "Manchester",
+      "url": "https://thriyv.co.uk/services/polynucleotides-treatment/",
+      "tier": "pn",
+      "brand": "Ameela·Plinest·PhilArt"
+     },
+     {
+      "name": "Manchester Aesthetics Clinic",
+      "domain": "manchesteraesthetics.com",
+      "country": "GB",
+      "city": "Manchester",
+      "url": "https://manchesteraesthetics.com/polynucleotides-treatment-manchester/",
+      "tier": "pn"
+     },
+     {
+      "name": "Medi Glow Clinic",
+      "domain": "medi-glow.co.uk",
+      "country": "GB",
+      "city": "Glasgow",
+      "url": "https://medi-glow.co.uk/skin-boosters-polynucleotides/",
+      "tier": "pn",
+      "brand": "Nucleofill"
+     },
+     {
+      "name": "TM Aesthetics",
+      "domain": "tmaesthetics.co.uk",
+      "country": "GB",
+      "city": "Glasgow",
+      "url": "https://www.tmaesthetics.co.uk/treatment/polynucleotide-treatment/",
+      "tier": "pn"
+     },
+     {
+      "name": "Dr Victoria Clinic",
+      "domain": "drvictoria.co.uk",
+      "country": "GB",
+      "city": "Edinburgh",
+      "url": "https://drvictoria.co.uk/treatment/polynucleotide",
+      "tier": "pn"
+     },
+     {
+      "name": "KinDRed Clinic",
+      "domain": "kindredclinic.co.uk",
+      "country": "GB",
+      "city": "Bristol",
+      "url": "https://kindredclinic.co.uk/polynucleotides/",
+      "tier": "pn",
+      "brand": "Plinest"
+     },
+     {
+      "name": "The Doctors Practice",
+      "domain": "thedoctorspractice.co.uk",
+      "country": "GB",
+      "city": "Birmingham",
+      "url": "https://thedoctorspractice.co.uk/aesthetic-medicine/polynucleotides-birmingham/",
+      "tier": "pn"
+     },
+     {
+      "name": "Bespoke Medical Clinic",
+      "domain": "bespokemedicalclinic.co.uk",
+      "country": "GB",
+      "city": "Leeds",
+      "url": "https://bespokemedicalclinic.co.uk/treatments/polynucleotides-ameela/",
+      "tier": "pn",
+      "brand": "Ameela"
+     },
+     {
+      "name": "Dr Mark Hamilton",
+      "domain": "drmarkhamilton.com",
+      "country": "IE",
+      "city": "Dublin",
+      "url": "https://www.drmarkhamilton.com/polynucleotide-injections",
+      "tier": "pn",
+      "brand": "PolyPhil"
+     },
+     {
+      "name": "Eden Medical Clinic",
+      "domain": "eden-medicalclinic.com",
+      "country": "IE",
+      "city": "Dublin",
+      "url": "https://eden-medicalclinic.com/aesthetic-treatments/polynucleotides/",
+      "tier": "pn"
      }
     ],
-    "rejuran_total": 163,
-    "pn_total": 101
+    "rejuran_total": 166,
+    "pn_total": 150,
+    "rescans": [
+     "2026-07-24 첫 스캔 264곳",
+     "2026-07-27 증분 +52곳"
+    ]
    },
    "reviews": {
     "overall": {
