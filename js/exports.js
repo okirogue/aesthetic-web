@@ -116,9 +116,9 @@ function renderExpPace(){
   const M=v=>v!=null?+(v/1e3).toFixed(1):null;
   const info=_paceInfo(last);
   const ds=[
-    {label:'1~10일',data:yms.map(m=>M((pace[m]||{}).p10)),backgroundColor:'#cfe6c9',borderRadius:2},
-    {label:'1~20일',data:yms.map(m=>M((pace[m]||{}).p20)),backgroundColor:'#8bc34a',borderRadius:2},
-    {label:'월 전체',data:yms.map(m=>m===last&&info.elapsed?null:M(tu[m])),backgroundColor:'#4e9d46',borderRadius:2}
+    {label:'1~10일',data:yms.map(m=>M((pace[m]||{}).p10)),backgroundColor:'#cfe3f5',borderRadius:2},
+    {label:'1~20일',data:yms.map(m=>M((pace[m]||{}).p20)),backgroundColor:'#6ba3dd',borderRadius:2},
+    {label:'월 전체',data:yms.map(m=>m===last&&info.elapsed?null:M(tu[m])),backgroundColor:'#1d5b96',borderRadius:2}
   ];
   _eChart('exp-pace-chart',{type:'bar',data:{labels:yms.map(_eLab),datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:_eLegend,tooltip:{callbacks:{label:c=>c.raw==null?null:`${c.dataset.label}: ${c.raw.toLocaleString()}M$`}}},scales:{x:{ticks:{color:'#9aa4af'},grid:{display:false}},y:{ticks:{color:'#9aa4af',callback:v=>v+'M'},grid:{color:'#eef1f3'}}}}});
 }

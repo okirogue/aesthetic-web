@@ -1,5 +1,6 @@
 /* ================= 방한 외국인 × 피부과 소비 (visitors.json · visitors_insights.json) ================= */
 let visitorsInited=false, visData=null, visIns=null, visInsMonth=null, visCharts={};
+let visShareSel='recent6';   // 'recent6' | 'ytd' | 'YYYYMM'
 const VIS_NAT_COLORS={"중국":"#d9536f","미국":"#4a90d9","일본":"#8f68c9","대만":"#e0a13c","홍콩":"#2fa6a6","기타":"#9aa4af"};
 const VIS_CONT_COLORS={"아시아":"#4e9d46","아메리카":"#4a90d9","유럽":"#8f68c9","오세아니아":"#e0a13c","기타":"#9aa4af"};
 const _vLab=ym=>`${ym.slice(2,4)}.${ym.slice(4)}`;
@@ -47,13 +48,35 @@ function renderVisNat(){
     {label:'기타',data:s.other.map(v=>Math.round(v/100)),backgroundColor:VIS_NAT_COLORS['기타'],borderRadius:2}];
   _vChart('vis-nat-chart',{type:'bar',data:{labels:s.yms.map(_vLab),datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:_vLegend},scales:{x:{stacked:true,ticks:{color:'#9aa4af'},grid:{display:false}},y:{stacked:true,ticks:{color:'#9aa4af',callback:v=>v.toLocaleString()+'억'},grid:{color:'#eef1f3'}}}}});
 }
+function setVisShare(v){visShareSel=v;renderVisShare();}
 function renderVisShare(){
   const s=_visNatSeries();if(!s)return;
-  const n=Math.min(6,s.yms.length);
-  const sum=arr=>arr.slice(-n).reduce((a,b)=>a+b,0);
-  const rows=[...s.top.map(c=>({nm:c.nm,v:sum(c.amt)})),{nm:'기타',v:sum(s.other)}];
-  const tot=rows.reduce((a,r)=>a+r.v,0);
-  document.getElementById('vis-share-ttl').textContent=`국가별 피부과 소비 비중 · 최근 6개월(${_vLab(s.yms[s.yms.length-n])}~${_vLab(s.yms[s.yms.length-1])}) 합계 ${Math.round(tot/100).toLocaleString()}억 원`;
+  const yms=s.yms, last=yms[yms.length-1], y=last.slice(0,4);
+  // 칩: 최근 6개월 · 연 누계 · 최근 12개월(월별)
+  const chips=document.getElementById('vis-share-chips');
+  if(chips){
+    const ms=yms.slice(-12).reverse();
+    const c=(v,l)=>`<span class="filter-chip ${visShareSel===v?'on':''}" onclick="setVisShare('${v}')">${l}</span>`;
+    chips.innerHTML=c('recent6','최근 6개월')+c('ytd',`${y}년 누계`)+ms.map(m=>c(m,_vLab(m))).join('');
+  }
+  // 선택 구간의 인덱스 집합
+  let idx, ttl;
+  if(visShareSel==='ytd'){
+    idx=yms.map((m,i)=>m.slice(0,4)===y?i:-1).filter(i=>i>=0);
+    ttl=`${y}년 누계(~${_vLab(last)})`;
+  }else if(yms.includes(visShareSel)){
+    idx=[yms.indexOf(visShareSel)];
+    ttl=`${_vLab(visShareSel)} 월간`;
+  }else{
+    const n=Math.min(6,yms.length);
+    idx=yms.map((m,i)=>i).slice(-n);
+    ttl=`최근 6개월(${_vLab(yms[yms.length-n])}~${_vLab(last)})`;
+  }
+  const sum=arr=>idx.reduce((a,i)=>a+(arr[i]||0),0);
+  const rows=[...s.top.map(c=>({nm:c.nm,v:sum(c.amt)})),{nm:'기타',v:sum(s.other)}]
+    .filter(r=>r.v>0).sort((a,b)=>b.v-a.v);
+  const tot=rows.reduce((a,r)=>a+r.v,0)||1;
+  document.getElementById('vis-share-ttl').textContent=`국가별 피부과 소비 비중 · ${ttl} 합계 ${Math.round(tot/100).toLocaleString()}억 원`;
   _vChart('vis-share-chart',{type:'bar',data:{labels:rows.map(r=>r.nm),datasets:[{data:rows.map(r=>Math.round(r.v/100)),backgroundColor:rows.map(r=>VIS_NAT_COLORS[r.nm]),borderRadius:3}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`${c.raw.toLocaleString()}억 원 (${(c.raw/(tot/100)*100).toFixed(1)}%)`}}},scales:{x:{ticks:{color:'#9aa4af',callback:v=>v.toLocaleString()+'억'},grid:{color:'#eef1f3'}},y:{ticks:{color:'#67707b',font:{size:12}},grid:{display:false}}}}});
 }
 function renderVisArr(){

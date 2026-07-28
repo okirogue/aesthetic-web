@@ -14,13 +14,16 @@ let newsForeign = [
   {co:"AbbVie/Allergan", time:"05:48", src:"Google RSS", url:"#", title:"Allergan Aesthetics expands Juvederm portfolio in EU market"},
   {co:"Merz Aesthetics", time:"05:30", src:"Google RSS", url:"#", title:"Merz launches new skinbooster line targeting European clinics"},
 ];
-// 추적 기업: 뉴스 데이터의 회사(co)에서 자동 도출 (news.json 연동 시 갱신)
-function deriveNewsCompanies(){ return [...new Set([...newsDomestic.map(n=>n.co), ...newsForeign.map(n=>n.co)])]; }
+// 커버리지 종목 (뉴스 칩·캘린더 공통 기준 — 뉴스가 0건인 날에도 칩은 항상 노출)
+let watchlist = ["파마리서치","휴젤","클래시스","에이피알","엘앤씨바이오","한스바이오메드"];
+
+// 추적 기업 칩: 커버리지 6사 고정 + 뉴스 데이터에 등장한 기업(해외 등) 병합
+function deriveNewsCompanies(){
+  return [...new Set([...watchlist, ...newsDomestic.map(n=>n.co), ...newsForeign.map(n=>n.co)])];
+}
 let newsCompanies = deriveNewsCompanies();
 let newsActiveKw = null; // null = 전체
 
-// 커버리지 종목
-let watchlist = ["파마리서치","휴젤","클래시스","에이피알","엘앤씨바이오","한스바이오메드"];
 const CO_COLORS = {"파마리서치":"#4e9d46","휴젤":"#4a90d9","클래시스":"#e0a13c","에이피알":"#2fa6a6","엘앤씨바이오":"#8f68c9","한스바이오메드":"#d9536f","전 종목 공통":"#9aa4af"};
 const companyEvents = {};   // events.json(공시 실데이터)에서 채워짐
 function statutoryEvents(year){

@@ -75,7 +75,7 @@ function renderPriceChart(){
   if(!s){ if(priceChart){priceChart.destroy();priceChart=null;} _naToggle('priceChart','priceNA',true); return; }
   _naToggle('priceChart','priceNA',false);
   const labels=_tail(s.dates,stockDays);
-  const ds=[{label:'종가',data:_tail(s.price,stockDays),borderColor:'#1f6b1f',borderWidth:2.2,backgroundColor:'rgba(31,107,31,.06)',fill:true,pointRadius:0,tension:.12}];
+  const ds=[{label:'종가',data:_tail(s.price,stockDays),borderColor:'#4e9d46',borderWidth:2.2,backgroundColor:'rgba(78,157,70,.07)',fill:true,pointRadius:0,tension:.12}];
   const ctx=document.getElementById('priceChart');
   if(priceChart)priceChart.destroy();
   priceChart=new Chart(ctx,{type:'line',data:{labels,datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{labels:{color:'#67707b',font:{size:11},boxWidth:18}}},scales:{x:_lineAxes.x,y:{ticks:{color:'#9aa4af',callback:v=>(v/1000)+'천'},grid:{color:'#eef1f3'}}}}});
@@ -91,7 +91,7 @@ function renderAggChart(){
   comps.forEach(c=>{ const off=c.price.length-N; for(let i=0;i<N;i++) sum[i]+=c.price[off+i]*c.shares/1e12; });
   const labels=_tail(dates,stockDays);
   const capData=_tail(sum,stockDays).map(v=>+v.toFixed(2));
-  const datasets=[{label:'5사 합산 시총(조원)',data:capData,borderColor:'#57c00a',borderWidth:2.2,backgroundColor:'rgba(87,192,10,.08)',fill:true,pointRadius:0,tension:.15,yAxisID:'y'}];
+  const datasets=[{label:'5사 합산 시총(조원)',data:capData,borderColor:'#4e9d46',borderWidth:2.2,backgroundColor:'rgba(78,157,70,.08)',fill:true,pointRadius:0,tension:.15,yAxisID:'y'}];
   const scales={x:_lineAxes.x, y:{position:'left',ticks:{color:'#9aa4af',callback:v=>v+'조'},grid:{color:'#eef1f3'}}};
   if(stockKosdaq && stockKosdaq.dates){
     const kmap={}; stockKosdaq.dates.forEach((d,i)=>kmap[d]=stockKosdaq.close[i]);
@@ -109,9 +109,9 @@ function renderFlowChart(){
   _naToggle('flowChart','flowNA',false);
   const labels=_tail(s.dates,stockDays);
   const ds=[
-    {label:'기관',data:_cumsum(_tail(s.flow.inst,stockDays)),borderColor:'#1f6b1f',borderWidth:1.8,backgroundColor:'transparent',pointRadius:0,tension:.2},
-    {label:'외국인',data:_cumsum(_tail(s.flow.frgn,stockDays)),borderColor:'#57c00a',borderWidth:1.8,backgroundColor:'transparent',pointRadius:0,tension:.2},
-    {label:'개인',data:_cumsum(_tail(s.flow.indv,stockDays)),borderColor:'#a5d96a',borderWidth:1.8,backgroundColor:'transparent',pointRadius:0,tension:.2},
+    {label:'기관',data:_cumsum(_tail(s.flow.inst,stockDays)),borderColor:'#4e9d46',borderWidth:2.2,backgroundColor:'transparent',pointRadius:0,tension:.2},
+    {label:'외국인',data:_cumsum(_tail(s.flow.frgn,stockDays)),borderColor:'#4a90d9',borderWidth:2.2,backgroundColor:'transparent',pointRadius:0,tension:.2},
+    {label:'개인',data:_cumsum(_tail(s.flow.indv,stockDays)),borderColor:'#d9536f',borderWidth:2.2,backgroundColor:'transparent',pointRadius:0,tension:.2},
   ];
   const ctx=document.getElementById('flowChart');
   if(flowChart)flowChart.destroy();

@@ -2,11 +2,23 @@
 // 데일리 뉴스
 let newsDates=[];          // 아카이브 날짜 목록 ["2026-07-23",...]
 let newsRange='today';     // 'today'|'week'|'month'|[from,to]
+function _newsCounts(){
+  const c={};
+  const baseD=newsRange==='today'?_todayOnly(newsDomestic):newsDomestic;
+  const baseF=newsRange==='today'?_todayOnly(newsForeign):newsForeign;
+  [...baseD,...baseF].forEach(n=>{c[n.co]=(c[n.co]||0)+1;});
+  return c;
+}
 function renderNewsKeywords(){
   const el=document.getElementById('news-keywords');
-  let html=`<span class="filter-chip ${newsActiveKw===null?'on':''}" onclick="setNewsKw(null)">전체</span>`;
-  html+=newsCompanies.map(k=>`<span class="filter-chip ${newsActiveKw===k?'on':''}" onclick="setNewsKw('${k}')">${k}</span>`).join('');
-  el.innerHTML=html;
+  const cnt=_newsCounts(), total=Object.values(cnt).reduce((a,b)=>a+b,0);
+  const chip=(k,label,n)=>{
+    const on=newsActiveKw===k;
+    const dot=k===null?'':`<i class="co-dot" style="background:${CO_COLORS[k]||'#9aa4af'}"></i>`;
+    const badge=`<b class="chip-n">${n||0}</b>`;
+    return `<span class="filter-chip ${on?'on':''} ${!n&&k!==null?'zero':''}" onclick="setNewsKw(${k===null?'null':`'${k}'`})">${dot}${label}${badge}</span>`;
+  };
+  el.innerHTML=chip(null,'전체',total)+newsCompanies.map(k=>chip(k,k,cnt[k])).join('');
 }
 function setNewsKw(k){newsActiveKw=(newsActiveKw===k)?null:k;renderNewsKeywords();renderNewsList();}
 function renderNewsDates(){
@@ -71,13 +83,28 @@ function renderNewsList(){
   const baseF=newsRange==='today'?_todayOnly(newsForeign):newsForeign;
   const dom=baseD.filter(match);
   const byCo={}; dom.forEach(n=>(byCo[n.co]=byCo[n.co]||[]).push(n));
-  document.getElementById('news-domestic').innerHTML=Object.keys(byCo).map(co=>
-    `<div class="news-block"><div class="news-co">${co}</div>`+byCo[co].map(n=>
-      `<div class="news-item"><span class="time">${_newsTime(n)}</span><a href="${_newsHref(n)}" target="_blank" rel="noopener">${n.title}</a><span class="src">${_newsSrc(n)}</span></div>`).join('')+`</div>`
-  ).join('')||'<div style="color:var(--dim);padding:6px 2px">해당 기업 뉴스 없음</div>';
+  // 커버리지 6사를 앞에, 그 외는 뒤에 — 기사 많은 순
+  const order=Object.keys(byCo).sort((a,b)=>{
+    const wa=watchlist.indexOf(a), wb=watchlist.indexOf(b);
+    if(wa>=0&&wb>=0) return byCo[b].length-byCo[a].length;
+    if(wa>=0) return -1; if(wb>=0) return 1;
+    return byCo[b].length-byCo[a].length;
+  });
+  const item=n=>`<div class="news-item"><div class="row"><span class="time">${_newsTime(n)}</span>`+
+    `<a href="${_newsHref(n)}" target="_blank" rel="noopener">${n.title}</a>`+
+    `<span class="src">${_newsSrc(n)}</span></div>`+
+    (n.desc?`<div class="desc">${n.desc}</div>`:'')+`</div>`;
+  document.getElementById('news-domestic').innerHTML=order.map(co=>{
+    const c=CO_COLORS[co]||'#9aa4af';
+    return `<div class="news-block"><div class="news-co" style="--co:${c}">${co}`+
+      `<span class="n">${byCo[co].length}건</span></div>`+byCo[co].map(item).join('')+`</div>`;
+  }).join('')||'<div style="color:var(--dim);padding:6px 2px">해당 기업 뉴스 없음</div>';
   const fdom=baseF.filter(match);
-  document.getElementById('news-foreign').innerHTML=fdom.map(n=>
-    `<div class="news-item"><span class="time">${n.co}</span><a href="${_newsHref(n)}" target="_blank" rel="noopener">${n.title}</a><span class="src">${_newsSrc(n)}</span></div>`).join('')||'<div style="color:var(--dim);padding:6px 2px">해당 기업 뉴스 없음</div>';
+  const byF={}; fdom.forEach(n=>(byF[n.co]=byF[n.co]||[]).push(n));
+  document.getElementById('news-foreign').innerHTML=Object.keys(byF).sort((a,b)=>byF[b].length-byF[a].length).map(co=>
+    `<div class="news-block"><div class="news-co fo">${co}<span class="n">${byF[co].length}건</span></div>`+
+    byF[co].map(item).join('')+`</div>`
+  ).join('')||'<div style="color:var(--dim);padding:6px 2px">해당 기업 뉴스 없음</div>';
 }
 function renderNews(){
   const el=document.getElementById('clip-updated'); if(el) el.innerHTML=`마지막 업데이트 <b>${newsUpdated}</b>`;
