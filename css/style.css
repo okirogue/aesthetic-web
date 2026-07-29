@@ -130,6 +130,7 @@
   .news-item a{font-size:13px; color:var(--txt); text-decoration:none; flex:1; line-height:1.5}
   .news-item a:hover{color:var(--green-d); text-decoration:underline}
   .news-item .src{font-size:11px; color:var(--dim); white-space:nowrap}
+  .news-item .kw-tag{font-size:10.5px; color:var(--sub); border:1px solid var(--line); border-radius:8px; padding:0 6px; white-space:nowrap; align-self:center}
   .news-item .desc{margin:3px 0 0 48px; font-size:11.5px; color:var(--dim); line-height:1.55;
     display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden}
   .filter-chip{cursor:pointer; padding:5px 12px; border-radius:16px; font-size:12px; border:1px solid var(--line); background:var(--panel); color:var(--sub); display:inline-flex; align-items:center; gap:6px}

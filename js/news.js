@@ -91,6 +91,7 @@ function renderNewsList(){
     return byCo[b].length-byCo[a].length;
   });
   const item=n=>`<div class="news-item"><div class="row"><span class="time">${_newsTime(n)}</span>`+
+    (n.kw&&n.kw!==n.co?`<span class="kw-tag">${n.kw}</span>`:'')+
     `<a href="${_newsHref(n)}" target="_blank" rel="noopener">${n.title}</a>`+
     `<span class="src">${_newsSrc(n)}</span></div>`+
     (n.desc?`<div class="desc">${n.desc}</div>`:'')+`</div>`;
