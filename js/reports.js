@@ -1,8 +1,10 @@
 /* ================= 증권사 리포트 ================= */
-let repInited=false, repData=null, repPeriod='2Q26E', repType=null, repChart=null;
+let repInited=false, repData=null, repTrendMode='year', repSeason=null, repPeriod='2Q26E', repType=null;
+let repChart=null, repTrendChart=null;
 const REP_SEG_ORDER=['의료기기','화장품','의약품','기타'];
 const REP_SEG_COLORS={'의료기기':'#4e9d46','화장품':'#d9536f','의약품':'#4a90d9','기타':'#c3ccd4'};
 const REP_TYPE_COLORS={'실적리뷰':'#4a90d9','프리뷰':'#e0a13c','이슈':'#8f68c9','신규커버':'#2fa6a6'};
+const REP_SEASON_COLORS=['#b8c2cc','#8fb56a','#4e9d46','#2e6b2a','#e0a13c','#d9536f'];  // 오래된→최신
 const _rN=n=>n==null?'–':Math.round(n).toLocaleString();
 const _rTp=n=>n==null?'–':(n/10000)+'만원';
 const _rDir=d=>d==='상향'?'<span class="up">▲상향</span>':d==='하향'?'<span class="down">▼하향</span>':d==='신규'?'<span style="color:var(--green-d)">신규</span>':'유지';
@@ -12,36 +14,102 @@ async function loadReports(){
     const r=await fetch('reports.json',{cache:'no-store'});
     if(!r.ok){document.getElementById('rep-list').innerHTML='<div class="na-msg">reports.json 없음</div>';return;}
     repData=await r.json();
+    repSeason=repSeasons().slice(-1)[0];   // 기본: 최신 시즌
     renderReports();
   }catch(e){document.getElementById('rep-list').innerHTML='<div class="na-msg">리포트 데이터를 불러오지 못했습니다</div>';}
 }
-function renderReports(){renderRepCards();renderRepEst();renderRepList();
-  const n=document.getElementById('rep-note');if(n)n.textContent=`PDF 원문 + 부문별 매출 추정 · ${repData.updated} 기준 ${repData.reports.length}건`;}
+function repSeasons(){
+  if(repData.seasons) return repData.seasons;
+  const m={};repData.reports.forEach(r=>{const d=m[r.season];m[r.season]=(!d||r.date<d)?r.date:d;});
+  return Object.keys(m).sort((a,b)=>m[a].localeCompare(m[b]));
+}
+function repLatestPerBroker(rs){
+  const m={};rs.forEach(r=>{if(!m[r.broker]||r.date>m[r.broker].date)m[r.broker]=r;});
+  return Object.values(m);
+}
+function repSeasonReports(season){return repLatestPerBroker(repData.reports.filter(r=>r.season===season));}
+function repCons(season,period,key){
+  const v=repSeasonReports(season).map(r=>r.est&&r.est[period]&&r.est[period][key]).filter(x=>x!=null);
+  return v.length?v.reduce((a,b)=>a+b,0)/v.length:null;
+}
+function repSegCons(season,period,seg){
+  const v=repSeasonReports(season).map(r=>r.est&&r.est[period]&&r.est[period].seg&&r.est[period].seg[seg]).filter(x=>x!=null);
+  return v.length?v.reduce((a,b)=>a+b,0)/v.length:null;
+}
+function repDxCons(season,period,seg,dx){
+  const v=repSeasonReports(season).map(r=>r.segdx&&r.segdx[period]&&r.segdx[period][seg]&&r.segdx[period][seg][dx]).filter(x=>x!=null);
+  return v.length?{avg:v.reduce((a,b)=>a+b,0)/v.length,n:v.length}:null;
+}
+function renderReports(){
+  renderRepCards();renderRepTrend();renderRepEst();renderRepDx();renderRepList();
+  const n=document.getElementById('rep-note');
+  if(n)n.textContent=`PDF 원문 + 부문별 매출 추정 · ${repData.updated} 기준 ${repData.reports.length}건 · 커버리지 ${new Set(repData.reports.map(r=>r.broker)).size}개사`;
+}
 
+/* ---- KPI: 최신 시즌 기준 ---- */
 function renderRepCards(){
-  const rs=repData.reports, tps=rs.filter(r=>r.tp).map(r=>r.tp);
+  const seasons=repSeasons(), latest=seasons.slice(-1)[0];
+  const rs=repSeasonReports(latest), tps=rs.filter(r=>r.tp).map(r=>r.tp);
   const avg=tps.reduce((a,b)=>a+b,0)/tps.length;
   const buy=rs.filter(r=>/buy|매수/i.test(r.rating||'')).length;
-  const latest=rs.map(r=>r.date).sort().slice(-1)[0];
-  const opAvg=avgOf(rs,'2026E','op'), revAvg=avgOf(rs,'2026E','rev');
+  const prev=seasons.length>1?seasons[seasons.length-2]:null;
+  const rev=repCons(latest,'2026E','rev'), revP=prev?repCons(prev,'2026E','rev'):null;
+  const chg=revP?(rev/revP-1)*100:null;
   document.getElementById('rep-cards').innerHTML=[
-    ['리포트','<span class="v">'+rs.length+'건</span>','최근 '+latest],
-    ['평균 목표주가','<span class="v lime">'+Math.round(avg/10000)+'만원</span>',`범위 ${Math.min(...tps)/10000}만~${Math.max(...tps)/10000}만`],
-    ['투자의견','<span class="v">Buy '+buy+'</span>',(rs.length-buy)+'곳 중립·기타'],
-    ['2026E 컨센서스','<span class="v">'+_rN(revAvg)+'</span>','매출 억원 · 영업이익 '+_rN(opAvg)+'억원']
+    [`최신 시즌`,`<span class="v">${latest}</span>`,`${rs.length}개사 · 전체 ${repData.reports.length}건`],
+    ['평균 목표주가',`<span class="v lime">${Math.round(avg/10000)}만원</span>`,`범위 ${Math.min(...tps)/10000}만~${Math.max(...tps)/10000}만`],
+    ['투자의견',`<span class="v">Buy ${buy}</span>`,(rs.length-buy)?`${rs.length-buy}곳 중립·기타`:'전원 매수'],
+    ['2026E 매출 컨센',`<span class="v">${_rN(rev)}</span>`,`억원 · 영업이익 ${_rN(repCons(latest,'2026E','op'))}억`+(chg!=null?` · 직전 시즌비 <span class="${chg>=0?'up':'down'}">${chg>=0?'+':''}${chg.toFixed(1)}%</span>`:'')]
   ].map(c=>`<div class="card"><div class="k">${c[0]}</div>${c[1]}<div class="s">${c[2]}</div></div>`).join('');
 }
-function avgOf(rs,p,k){const v=rs.map(r=>r.est&&r.est[p]&&r.est[p][k]).filter(x=>x!=null);return v.length?v.reduce((a,b)=>a+b,0)/v.length:null;}
 
-function setRepPeriod(p){repPeriod=p;renderRepEst();}
+/* ---- 컨센서스 추이 (시즌별 변화) ---- */
+function setRepTrend(m){repTrendMode=m;renderRepTrend();}
+function renderRepTrend(){
+  const modes=[['year','연간 매출 (26/27/28E)'],['qtr','2026 분기별 매출'],['seg','2026E 부문별'],['op','영업이익 (연간)']];
+  document.getElementById('rep-trend-chips').innerHTML=modes.map(([k,l])=>
+    `<span class="filter-chip ${repTrendMode===k?'on':''}" onclick="setRepTrend('${k}')">${l}</span>`).join('');
+  const seasons=repSeasons();
+  let labels,val;
+  if(repTrendMode==='year'){labels=['2026E','2027E','2028E'];val=(s,p)=>repCons(s,p,'rev');}
+  else if(repTrendMode==='qtr'){labels=['2Q26E','3Q26E','4Q26E'];val=(s,p)=>repCons(s,p,'rev');}
+  else if(repTrendMode==='op'){labels=['2026E','2027E','2028E'];val=(s,p)=>repCons(s,p,'op');}
+  else{labels=REP_SEG_ORDER;val=(s,p)=>repSegCons(s,'2026E',p);}
+  const ds=seasons.map((s,i)=>({label:s,
+    data:labels.map(p=>{const v=val(s,p);return v==null?null:Math.round(v);}),
+    backgroundColor:REP_SEASON_COLORS[Math.max(0,REP_SEASON_COLORS.length-seasons.length+i)]||'#4e9d46'}));
+  const ctx=document.getElementById('rep-trend-chart');
+  if(repTrendChart)repTrendChart.destroy();
+  repTrendChart=new Chart(ctx,{type:'bar',data:{labels,datasets:ds},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'top',labels:{boxWidth:10,font:{size:11},color:'#67707b'}},
+        tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.parsed.y==null?'–':c.parsed.y.toLocaleString()+'억'}`}}},
+      scales:{x:{ticks:{color:'#67707b'},grid:{display:false}},
+              y:{ticks:{color:'#9aa4af',callback:v=>v.toLocaleString()+'억'},grid:{color:'#eef1f3'}}}}});
+  // 변화율 요약 라인
+  const el=document.getElementById('rep-trend-delta');
+  if(el&&seasons.length>1){
+    const a=seasons[seasons.length-2],b=seasons[seasons.length-1];
+    el.innerHTML=labels.map(p=>{
+      const va=val(a,p),vb=val(b,p);
+      if(va==null||vb==null)return `<span class="filter-chip zero">${p} –</span>`;
+      const d=(vb/va-1)*100;
+      return `<span class="filter-chip">${p} <b class="${d>=0?'up':'down'}">${d>=0?'+':''}${d.toFixed(1)}%</b></span>`;
+    }).join('')+`<span class="unit" style="margin-left:6px">${a} → ${b} 컨센 변화</span>`;
+  }else if(el){el.innerHTML='';}
+}
+
+/* ---- 부문별 매출 추정 비교 (시즌·기간 선택) ---- */
+function setRepSeason(s){repSeason=s;renderRepEst();renderRepDx();}
+function setRepPeriod(p){repPeriod=p;renderRepEst();renderRepDx();}
 function renderRepEst(){
-  const chips=document.getElementById('rep-period-chips');
-  chips.innerHTML=['2Q26E','2026E','2027E'].map(p=>
+  document.getElementById('rep-season-chips').innerHTML=repSeasons().map(s=>
+    `<span class="filter-chip ${repSeason===s?'on':''}" onclick="setRepSeason('${s}')">${s}</span>`).join('');
+  document.getElementById('rep-period-chips').innerHTML=['2Q26E','2026E','2027E'].map(p=>
     `<span class="filter-chip ${repPeriod===p?'on':''}" onclick="setRepPeriod('${p}')">${p}</span>`).join('');
-  const rs=repData.reports.filter(r=>r.est&&r.est[repPeriod]&&r.est[repPeriod].seg)
-    .filter((r,i,a)=>a.findIndex(x=>x.broker===r.broker)===i)   // 증권사당 최신 1건
+  const inSeason=repSeasonReports(repSeason);
+  const rs=inSeason.filter(r=>r.est&&r.est[repPeriod]&&r.est[repPeriod].seg)
     .sort((a,b)=>(b.est[repPeriod].rev||0)-(a.est[repPeriod].rev||0));
-  // 스택 바 차트
   const ctx=document.getElementById('rep-est-chart');
   if(repChart)repChart.destroy();
   repChart=new Chart(ctx,{type:'bar',
@@ -52,20 +120,34 @@ function renderRepEst(){
         tooltip:{callbacks:{label:c=>`${c.dataset.label} ${c.parsed.x.toLocaleString()}억`}}},
       scales:{x:{stacked:true,ticks:{color:'#9aa4af',callback:v=>v.toLocaleString()+'억'},grid:{color:'#eef1f3'}},
               y:{stacked:true,ticks:{color:'#67707b',font:{size:11}},grid:{display:false}}}}});
-  // 비교 테이블 (전 증권사, seg 없는 곳 포함)
-  const all=repData.reports.filter(r=>r.est&&r.est[repPeriod])
-    .filter((r,i,a)=>a.findIndex(x=>x.broker===r.broker)===i)
-    .sort((a,b)=>(b.tp||0)-(a.tp||0));
+  const all=inSeason.filter(r=>r.est&&r.est[repPeriod]).sort((a,b)=>(b.tp||0)-(a.tp||0));
   const seg=(r,s)=>r.est[repPeriod].seg?_rN(r.est[repPeriod].seg[s]):'–';
-  const avgRow=k=>_rN(avgOf(all,repPeriod,k));
-  const segAvg=s=>{const v=all.map(r=>r.est[repPeriod].seg&&r.est[repPeriod].seg[s]).filter(x=>x!=null);return v.length?_rN(v.reduce((a,b)=>a+b,0)/v.length):'–';};
+  const avg=k=>_rN(repCons(repSeason,repPeriod,k));
+  const segAvg=s=>{const v=repSegCons(repSeason,repPeriod,s);return v==null?'–':_rN(v);};
   document.getElementById('rep-est-table').innerHTML=
     `<table><thead><tr><th>증권사</th><th>매출액</th><th>영업이익</th>${REP_SEG_ORDER.map(s=>`<th>${s}</th>`).join('')}<th>목표주가</th></tr></thead><tbody>`+
     all.map(r=>`<tr><td><b>${r.broker}</b></td><td>${_rN(r.est[repPeriod].rev)}</td><td>${_rN(r.est[repPeriod].op)}</td>${REP_SEG_ORDER.map(s=>`<td>${seg(r,s)}</td>`).join('')}<td><b>${_rTp(r.tp)}</b></td></tr>`).join('')+
-    `<tr style="background:var(--panel2);font-weight:700"><td>평균</td><td>${avgRow('rev')}</td><td>${avgRow('op')}</td>${REP_SEG_ORDER.map(s=>`<td>${segAvg(s)}</td>`).join('')}<td></td></tr>`+
-    `</tbody></table><div class="unit" style="margin-top:4px">단위: 억 원 · 증권사당 최신 리포트 기준 · – = 해당 추정 미제시</div>`;
+    `<tr style="background:var(--panel2);font-weight:700"><td>평균</td><td>${avg('rev')}</td><td>${avg('op')}</td>${REP_SEG_ORDER.map(s=>`<td>${segAvg(s)}</td>`).join('')}<td></td></tr>`+
+    `</tbody></table><div class="unit" style="margin-top:4px">단위: 억 원 · ${repSeason} 시즌, 증권사당 최신 1건 · – = 해당 추정 미제시</div>`;
 }
 
+/* ---- 내수/수출 컨센서스 ---- */
+function renderRepDx(){
+  const el=document.getElementById('rep-dx-table');if(!el)return;
+  const rows=['의료기기','화장품','의약품'].map(s=>{
+    const d=repDxCons(repSeason,repPeriod,s,'내수'), x=repDxCons(repSeason,repPeriod,s,'수출');
+    if(!d&&!x)return null;
+    const tot=(d?d.avg:0)+(x?x.avg:0);
+    const share=x&&tot?Math.round(x.avg/tot*100):null;
+    return `<tr><td><b style="color:${REP_SEG_COLORS[s]}">■</b> ${s}</td><td>${d?_rN(d.avg):'–'}</td><td>${x?_rN(x.avg):'–'}</td><td>${share!=null?share+'%':'–'}</td><td>${Math.max(d?d.n:0,x?x.n:0)}곳</td></tr>`;
+  }).filter(Boolean);
+  el.innerHTML=rows.length?
+    `<table><thead><tr><th>부문</th><th>내수 컨센</th><th>수출 컨센</th><th>수출 비중</th><th>표본</th></tr></thead><tbody>${rows.join('')}</tbody></table>`+
+    `<div class="unit" style="margin-top:4px">단위: 억 원 · ${repSeason} · ${repPeriod} · 내수/수출 구분을 제시한 증권사 평균</div>`
+    :'<div class="na-msg">이 시즌·기간에는 내수/수출 구분 추정이 없습니다</div>';
+}
+
+/* ---- 리포트 목록 ---- */
 function setRepType(t){repType=(repType===t)?null:t;renderRepList();}
 function renderRepList(){
   const types=[...new Set(repData.reports.map(r=>r.type))];
@@ -80,7 +162,7 @@ function renderRepList(){
     `<span class="rep-broker">${r.broker}</span>`+
     `<span class="rep-type" style="background:${REP_TYPE_COLORS[r.type]||'#9aa4af'}">${r.type}</span>`+
     `<a class="ttl" href="${r.file}" target="_blank" rel="noopener">${r.title}</a>`+
-    `<span class="rep-meta">${r.date}${r.analyst?' · '+r.analyst:''}</span>`+
+    `<span class="rep-meta">${r.date}${r.analyst?' · '+r.analyst:''} · ${r.season}</span>`+
     `<span class="rep-tp">${r.rating||''} · TP ${_rTp(r.tp)} ${_rDir(r.tp_dir)}</span></div>`+
     `<div class="rep-sum">${r.summary}</div>`+
     (r.points&&r.points.length?`<ul class="rep-points">${r.points.map(p=>`<li>${p}</li>`).join('')}</ul>`:'')+
