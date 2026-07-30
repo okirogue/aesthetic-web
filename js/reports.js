@@ -4,7 +4,7 @@ let repChart=null, repTrendChart=null;
 const REP_SEG_ORDER=['의료기기','화장품','의약품','기타'];
 const REP_SEG_COLORS={'의료기기':'#4e9d46','화장품':'#d9536f','의약품':'#4a90d9','기타':'#c3ccd4'};
 const REP_TYPE_COLORS={'실적리뷰':'#4a90d9','프리뷰':'#e0a13c','이슈':'#8f68c9','신규커버':'#2fa6a6'};
-const REP_SEASON_COLORS=['#b8c2cc','#8fb56a','#4e9d46','#2e6b2a','#e0a13c','#d9536f'];  // 오래된→최신
+const repSeasonColor=(i,total)=>{const d=total-1-i;return d===0?'#4e9d46':d===1?'#b8c2cc':'#dfe4e8';}; // 최신=녹색, 과거=회색
 const _rN=n=>n==null?'–':Math.round(n).toLocaleString();
 const _rTp=n=>n==null?'–':(n/10000)+'만원';
 const _rDir=d=>d==='상향'?'<span class="up">▲상향</span>':d==='하향'?'<span class="down">▼하향</span>':d==='신규'?'<span style="color:var(--green-d)">신규</span>':'유지';
@@ -77,8 +77,9 @@ function renderRepTrend(){
   else{labels=REP_SEG_ORDER;val=(s,p)=>repSegCons(s,'2026E',p);}
   const ds=seasons.map((s,i)=>({label:s,
     data:labels.map(p=>{const v=val(s,p);return v==null?null:Math.round(v);}),
-    backgroundColor:REP_SEASON_COLORS[Math.max(0,REP_SEASON_COLORS.length-seasons.length+i)]||'#4e9d46'}));
+    backgroundColor:repSeasonColor(i,seasons.length)}));
   const ctx=document.getElementById('rep-trend-chart');
+  ctx.parentElement.style.height='300px';
   if(repTrendChart)repTrendChart.destroy();
   repTrendChart=new Chart(ctx,{type:'bar',data:{labels,datasets:ds},
     options:{responsive:true,maintainAspectRatio:false,
@@ -111,6 +112,7 @@ function renderRepEst(){
   const rs=inSeason.filter(r=>r.est&&r.est[repPeriod]&&r.est[repPeriod].seg)
     .sort((a,b)=>(b.est[repPeriod].rev||0)-(a.est[repPeriod].rev||0));
   const ctx=document.getElementById('rep-est-chart');
+  ctx.parentElement.style.height=(rs.length*36+100)+'px';   // 증권사 수만큼 확보 (autoSkip 방지)
   if(repChart)repChart.destroy();
   repChart=new Chart(ctx,{type:'bar',
     data:{labels:rs.map(r=>r.broker),
@@ -119,7 +121,7 @@ function renderRepEst(){
       plugins:{legend:{position:'top',labels:{boxWidth:10,font:{size:11},color:'#67707b'}},
         tooltip:{callbacks:{label:c=>`${c.dataset.label} ${c.parsed.x.toLocaleString()}억`}}},
       scales:{x:{stacked:true,ticks:{color:'#9aa4af',callback:v=>v.toLocaleString()+'억'},grid:{color:'#eef1f3'}},
-              y:{stacked:true,ticks:{color:'#67707b',font:{size:11}},grid:{display:false}}}}});
+              y:{stacked:true,ticks:{color:'#67707b',font:{size:11},autoSkip:false},grid:{display:false}}}}});
   const all=inSeason.filter(r=>r.est&&r.est[repPeriod]).sort((a,b)=>(b.tp||0)-(a.tp||0));
   const seg=(r,s)=>r.est[repPeriod].seg?_rN(r.est[repPeriod].seg[s]):'–';
   const avg=k=>_rN(repCons(repSeason,repPeriod,k));
