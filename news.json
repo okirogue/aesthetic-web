@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30 19:44",
+  "updated": "2026-07-31 07:05",
   "domestic": [
     {
       "co": "파마리서치",
@@ -14,13 +14,6 @@
       "link": "https://www.ebn.co.kr/news/articleView.html?idxno=1718206",
       "date": "07/30 06:00",
       "desc": "파마리서치가 올해 2분기에도 시장 기대치를 웃도는 실적을 거둘 것으로 전망된다. 주력 의료기기 '리쥬란' 판매 호조가 이어지는 가운데 화장품 사업이 새로운 성장축으로 자리 잡으면서 분기 기준 최대 실적을 다시..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "코스닥, 6% 낙폭에 670선 밑으로...파마리서치, HLB 상승 VS 주성엔지니...",
-      "link": "http://www.econonews.co.kr/news/articleView.html?idxno=442025",
-      "date": "07/29 21:30",
-      "desc": "시가총액 상위 10개 종목은 파마리서치(4.13%), HLB(2.8%), 레인보우로보틱스(2.5%)를 제외하고 하락 마감했다. 주성엔지니어링(-9.86%), 에코프로비엠(-9.04%), 에이비엘바이오(-7.99%), 에코프로(-7.29%), 원익IPS(-7.04..."
     },
     {
       "co": "휴젤",
@@ -51,27 +44,6 @@
       "desc": "◆아모레·에이피알·구다이…브랜드별 공략법 차별화 선두주자는 아모레퍼시픽이다. 2023년 멕시코에... 에이피알은 화장품과 뷰티 디바이스를 결합한 브랜드 경쟁력을 브라질 시장에 확산한다는 전략이다. 현지 소비자..."
     },
     {
-      "co": "에이피알",
-      "title": "에이피알, 실적 발표 앞두고 주가 약세…외국인은 매수세",
-      "link": "https://www.thebk.co.kr/news/articleView.html?idxno=310812",
-      "date": "07/29 19:26",
-      "desc": "K-뷰티 대표 성장주로 주목되는 에이피알의 주가가 8월5일 2분기 실적 발표를 앞두고 약세 흐름을... 에이피알 주가는 지난 7월 7일 종가 기준 41만원을 기록한 이후 하락세를 지속하고 있다. 29일에는 전 거래일 대비..."
-    },
-    {
-      "co": "에이피알",
-      "title": "고속 성장 에이피알, 뷰티 3사 중 유일하게 직원 채용 증가",
-      "link": "https://www.ceoscoredaily.com/page/view/2026072916482838657",
-      "date": "07/29 17:28",
-      "desc": "국내 주요 화장품 기업인 아모레퍼시픽, 에이피알, LG생활건강 중 에이피알이 유일하게 3년 연속 채용을 늘린 것으로 나타났다. 최근 에이피알이 빠르게 외형을 확장시킨 영향으로 분석된다. 29일 에이피알에..."
-    },
-    {
-      "co": "에이피알",
-      "title": "에이피알 주가, 7월 29일 장중 322,000원 3.45% 하락",
-      "link": "https://www.joongangenews.com/news/articleView.html?idxno=536343",
-      "date": "07/29 14:50",
-      "desc": "따르면 에이피알의 현재 주가는 지난 종가 대비 하락세를 보이고 있다. 현재 주가는 322,000원으로... 에이피알은 코스피 시장에서 시가총액 12조 1,112억 원을 기록하며 56위에 이름을 올리고 있다. 총..."
-    },
-    {
       "co": "엘앤씨바이오",
       "title": "재건 재료 국산화로 환자 부담 줄여… 엘앤씨바이오 메가너브, 대학병원...",
       "link": "https://health.chosun.com/site/data/html_dir/2026/07/30/2026073002507.html",
@@ -98,23 +70,29 @@
       "link": "http://www.inews24.com/view/1990214",
       "date": "07/30 10:56",
       "desc": "한스바이오메드가 국내에서 연구·생산한 프리미엄 실리콘겔 가슴보형물 '바운스'(BOUNS)의 공급 확대에 나섰다. 지난 4월 국내 판매를 시작한 데 이어 연말까지 전국 성형외과 100곳에 제품을 공급한다는 목표다. 30일..."
-    },
-    {
-      "co": "ECM",
-      "kw": "리투오",
-      "title": "“최소 조작 맞다” vs “아니다” 리투오·셀르디엠 두고 의사들도 견...",
-      "link": "https://health.chosun.com/site/data/html_dir/2026/07/29/2026072902593.html",
-      "date": "07/29 16:40",
-      "desc": "현재 시판 중인 인체 조직 ECM 주사제로는 ▲엘엔씨바이오의 ‘엘라비에 리투오(Elravie Re2O)’ ▲한스바이오메드 ‘셀르디엠(CellREDM)’이 있다. 국내에 유통되는 ECM 주사제는 미국에서 수입한 인체 진피를 가공한 것이라..."
-    },
-    {
-      "co": "ECM",
-      "kw": "리투오",
-      "title": "제니크의원 부산 센텀점, ECM 부스터 '엘라비에 리투오' 신규 도입",
-      "link": "http://www.hemophilia.co.kr/news/articleView.html?idxno=43478",
-      "date": "07/29 15:42",
-      "desc": "제니크의원 부산 센텀점이 ECM 부스터 '엘라비에 리투오'를 도입했다고 밝혔다. '엘라비에 리투오'는 무세포동종진피(hADM, human Acellular Dermal Matrix)를 기반으로 한 ECM 부스터로, 피부를 구성하는 세포외기질(ECM)의..."
     }
   ],
-  "foreign": []
+  "foreign": [
+    {
+      "co": "Galderma",
+      "title": "Galderma Lifted Its 2026 Outlook, And RBC Followed Suit - Finimize",
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPOVgtcU1maEV6M1ktN0FJZ0JHNG93SGV0R0JBZjNzNlkwdWNnTDMyeGpJekdMY1BNaEhJNTVqdHVMMEJva3lRck16UVdrOEROeUgyVk00RXdoamt4OHVDWlhnVmFkZWh5V0Z4UlEzRUM1SklJRHlTcVdISmIwbDZ5SENURndDRG9rSkJv?oc=5",
+      "date": "07/30 13:51",
+      "desc": "Galderma Lifted Its 2026 Outlook, And RBC Followed Suit&nbsp;&nbsp;Finimize"
+    },
+    {
+      "co": "Galderma",
+      "title": "Galderma Group Forecasts Revised as RBC Notes Robust H1, Upgraded FY26 Outlook - marketscreener.com",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxONWpEZEwzYUpEbms0NGtaWmhmWkdFZjFIVHN2QWNTZ2lFNjByaUFEa0pEcTZHU2RzcnFpZGhQNGJEb0VDY3lCZWstd2ZndWN3bnY5a01PNnRQb0haV2RJVDltbkMxM2FOTThJQkZ2SWRxYXNGSXByRl84RWZ0bTVOOUItc1hkRF80Qlp1NEJmVW5HU3ZRS3RUdXBZajU2MDVDOWQ1XzQtRERQcF9lMEg4ajFJRlEwOHhSRnlMMzFhUVdkMUsyRlIyYnN3?oc=5",
+      "date": "07/30 12:45",
+      "desc": "Galderma Group Forecasts Revised as RBC Notes Robust H1, Upgraded FY26 Outlook&nbsp;&nbsp;marketscreener.com"
+    },
+    {
+      "co": "Galderma",
+      "title": "Morgan Stanley bullish on Galderma on stronger Nemluvio growth outlook By Investing.com - Investing.com UK",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPMmhfSnFjaXFfWHFUNDV4dWNDS2Zuc3BYRFg5RThjSHVObDZSTjJSUGFDRlpadUx4RG04WWQ3UkFXamZ3cHVXSkMweV8zLW5BNVM3c3VhOEthcmZDclhtRng4b3l0VUhLT3pVV2lycndnSTFBRkk5cWFEal9Zd0ZCTEpUV3MtQURPRVZUU3F2bXFzRndENnd5aTFpMXplb2xlb05oUXpPQmZiaWl5Qk9TYmQ5NExVZkROQnJQNjNwZ1E3RFpIdWZxMTNlSEVyRVl1N09KYg?oc=5",
+      "date": "07/30 13:05",
+      "desc": "Morgan Stanley bullish on Galderma on stronger Nemluvio growth outlook By Investing.com&nbsp;&nbsp;Investing.com UK"
+    }
+  ]
 }
