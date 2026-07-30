@@ -88,7 +88,7 @@ function renderRepCards(){
 const _hexA=(h,a)=>{const n=parseInt(h.slice(1),16);return `rgba(${n>>16},${(n>>8)&255},${n&255},${a})`;};
 function setRepTrend(m){repTrendMode=m;renderRepTrend();}
 function renderRepTrend(){
-  const modes=[['year','연간 매출 (26/27/28E)'],['qseg','2026 분기별 · 부문별'],['op','영업이익 (연간)']];
+  const modes=[['year','연간 매출·영업이익 (26/27/28E)'],['qseg','2026 분기별 · 부문별']];
   if(!modes.some(([k])=>k===repTrendMode))repTrendMode='year';
   document.getElementById('rep-trend-chips').innerHTML=modes.map(([k,l])=>
     `<span class="filter-chip ${repTrendMode===k?'on':''}" onclick="setRepTrend('${k}')">${l}</span>`).join('');
@@ -96,11 +96,11 @@ function renderRepTrend(){
   const ctx=document.getElementById('rep-trend-chart');
   ctx.parentElement.style.height='300px';
   if(repTrendChart)repTrendChart.destroy();
-  let labels,val,note='';
+  let labels,chipFns,note='';
   if(repTrendMode==='qseg'){
     // 분기별 × 부문별: 시즌당 스택 하나 (이전 시즌은 연하게)
     labels=['2Q26E','3Q26E','4Q26E'];
-    val=(s,p)=>repCons(s,p,'rev');
+    chipFns=[{name:'',f:(s,p)=>repCons(s,p,'rev')}];
     const ds=[];
     seasons.forEach((s,si)=>{
       const latest=si===seasons.length-1;
@@ -118,28 +118,35 @@ function renderRepTrend(){
                 y:{stacked:true,ticks:{color:'#9aa4af',callback:v=>v.toLocaleString()+'억'},grid:{color:'#eef1f3'}}}}});
     note=` · 왼쪽 연한 막대 = 이전 시즌, 오른쪽 진한 막대 = 최신 시즌 · 변화율은 분기 매출 총액 기준`;
   }else{
+    // 연간 매출(막대) + 영업이익(선) 통합
     labels=['2026E','2027E','2028E'];
-    const key=repTrendMode==='op'?'op':'rev';
-    val=(s,p)=>repCons(s,p,key);
-    const ds=seasons.map((s,i)=>({label:s,
-      data:labels.map(p=>{const v=val(s,p);return v==null?null:Math.round(v);}),
+    const rv=(s,p)=>repCons(s,p,'rev'), ov=(s,p)=>repCons(s,p,'op');
+    chipFns=[{name:'매출',f:rv},{name:'영익',f:ov}];
+    const ds=[];
+    seasons.forEach((s,i)=>ds.push({type:'bar',label:`${s} · 매출`,order:2,
+      data:labels.map(p=>{const v=rv(s,p);return v==null?null:Math.round(v);}),
       backgroundColor:repSeasonColor(i,seasons.length)}));
+    seasons.forEach((s,i)=>{const latest=i===seasons.length-1, c=latest?'#2e6b2a':'#8a97a3';
+      ds.push({type:'line',label:`${s} · 영업이익`,order:1,
+        data:labels.map(p=>{const v=ov(s,p);return v==null?null:Math.round(v);}),
+        borderColor:c,backgroundColor:c,borderWidth:2,pointRadius:4,borderDash:latest?[]:[6,4]});});
     repTrendChart=new Chart(ctx,{type:'bar',data:{labels,datasets:ds},
       options:{responsive:true,maintainAspectRatio:false,
         plugins:{legend:{position:'top',labels:{boxWidth:10,font:{size:11},color:'#67707b'}},
           tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.parsed.y==null?'–':c.parsed.y.toLocaleString()+'억'}`}}},
         scales:{x:{ticks:{color:'#67707b'},grid:{display:false}},
                 y:{ticks:{color:'#9aa4af',callback:v=>v.toLocaleString()+'억'},grid:{color:'#eef1f3'}}}}});
+    note=' · 막대 = 매출, 선 = 영업이익';
   }
   // 변화율 요약 라인
   const el=document.getElementById('rep-trend-delta');
   if(el&&seasons.length>1){
     const a=seasons[seasons.length-2],b=seasons[seasons.length-1];
+    const fmt=(va,vb)=>{if(va==null||vb==null)return null;const d=(vb/va-1)*100;
+      return `<b class="${d>=0?'up':'down'}">${d>=0?'+':''}${d.toFixed(1)}%</b>`;};
     el.innerHTML=labels.map(p=>{
-      const va=val(a,p),vb=val(b,p);
-      if(va==null||vb==null)return `<span class="filter-chip zero">${p} –</span>`;
-      const d=(vb/va-1)*100;
-      return `<span class="filter-chip">${p} <b class="${d>=0?'up':'down'}">${d>=0?'+':''}${d.toFixed(1)}%</b></span>`;
+      const parts=chipFns.map(({name,f})=>{const t=fmt(f(a,p),f(b,p));return t?(name?name+' ':'')+t:null;}).filter(Boolean);
+      return parts.length?`<span class="filter-chip">${p} ${parts.join(' · ')}</span>`:`<span class="filter-chip zero">${p} –</span>`;
     }).join('')+`<span class="unit" style="margin-left:6px">${a} → ${b} 컨센 변화${note}</span>`;
   }else if(el){el.innerHTML='';}
 }
