@@ -47,20 +47,41 @@ function renderReports(){
 }
 
 /* ---- KPI: 최신 시즌 기준 ---- */
+function repFocusPeriod(season){
+  // 시즌명에서 대상 분기 도출: "26Q2 Preview" → "2Q26E" (프리뷰든 어닝이든 해당 분기 컨센)
+  const m=/(\d{2})Q([1-4])/.exec(season||'');
+  return m?`${m[2]}Q${m[1]}E`:'2026E';
+}
 function renderRepCards(){
   const seasons=repSeasons(), latest=seasons.slice(-1)[0];
   const rs=repSeasonReports(latest), tps=rs.filter(r=>r.tp).map(r=>r.tp);
   const avg=tps.reduce((a,b)=>a+b,0)/tps.length;
   const buy=rs.filter(r=>/buy|매수/i.test(r.rating||'')).length;
   const prev=seasons.length>1?seasons[seasons.length-2]:null;
-  const rev=repCons(latest,'2026E','rev'), revP=prev?repCons(prev,'2026E','rev'):null;
-  const chg=revP?(rev/revP-1)*100:null;
+  const focus=repFocusPeriod(latest);
+  const rev=repCons(latest,focus,'rev'), op=repCons(latest,focus,'op');
+  const revP=prev?repCons(prev,focus,'rev'):null;
+  const chg=(rev!=null&&revP)?(rev/revP-1)*100:null;
   document.getElementById('rep-cards').innerHTML=[
     [`최신 시즌`,`<span class="v">${latest}</span>`,`${rs.length}개사 · 전체 ${repData.reports.length}건`],
     ['평균 목표주가',`<span class="v lime">${Math.round(avg/10000)}만원</span>`,`범위 ${Math.min(...tps)/10000}만~${Math.max(...tps)/10000}만`],
     ['투자의견',`<span class="v">Buy ${buy}</span>`,(rs.length-buy)?`${rs.length-buy}곳 중립·기타`:'전원 매수'],
-    ['2026E 매출 컨센',`<span class="v">${_rN(rev)}</span>`,`억원 · 영업이익 ${_rN(repCons(latest,'2026E','op'))}억`+(chg!=null?` · 직전 시즌비 <span class="${chg>=0?'up':'down'}">${chg>=0?'+':''}${chg.toFixed(1)}%</span>`:'')]
+    [`${focus} 매출 컨센`,`<span class="v">${_rN(rev)}</span>`,`억원 · 영업이익 ${_rN(op)}억`+(chg!=null?` · 직전 시즌비 <span class="${chg>=0?'up':'down'}">${chg>=0?'+':''}${chg.toFixed(1)}%</span>`:'')]
   ].map(c=>`<div class="card"><div class="k">${c[0]}</div>${c[1]}<div class="s">${c[2]}</div></div>`).join('');
+  // 부문별 내수/수출 컨센 (최신 시즌 · 대상 분기)
+  const dxEl=document.getElementById('rep-dx-cards');
+  if(dxEl){
+    const cards=['의료기기','화장품','의약품'].map(s=>{
+      const d=repDxCons(latest,focus,s,'내수'), x=repDxCons(latest,focus,s,'수출');
+      if(!d&&!x)return '';
+      const tot=(d?d.avg:0)+(x?x.avg:0), share=x&&tot?Math.round(x.avg/tot*100):null;
+      return `<div class="card"><div class="k"><i class="co-dot" style="background:${REP_SEG_COLORS[s]}"></i> ${s} · ${focus} 내수/수출</div>`+
+        `<span class="v" style="font-size:22px">${d?_rN(d.avg):'–'} <span style="font-size:12px;color:var(--dim);font-weight:600">내수</span> · ${x?_rN(x.avg):'–'} <span style="font-size:12px;color:var(--dim);font-weight:600">수출</span></span>`+
+        `<div class="s">억원 · 수출 비중 ${share!=null?share+'%':'–'} · ${Math.max(d?d.n:0,x?x.n:0)}곳 평균</div></div>`;
+    }).join('');
+    dxEl.innerHTML=cards;
+    dxEl.style.display=cards?'':'none';
+  }
 }
 
 /* ---- 컨센서스 추이 (시즌별 변화) ---- */
