@@ -85,29 +85,52 @@ function renderRepCards(){
 }
 
 /* ---- 컨센서스 추이 (시즌별 변화) ---- */
+const _hexA=(h,a)=>{const n=parseInt(h.slice(1),16);return `rgba(${n>>16},${(n>>8)&255},${n&255},${a})`;};
 function setRepTrend(m){repTrendMode=m;renderRepTrend();}
 function renderRepTrend(){
-  const modes=[['year','연간 매출 (26/27/28E)'],['qtr','2026 분기별 매출'],['seg','2026E 부문별'],['op','영업이익 (연간)']];
+  const modes=[['year','연간 매출 (26/27/28E)'],['qseg','2026 분기별 · 부문별'],['op','영업이익 (연간)']];
+  if(!modes.some(([k])=>k===repTrendMode))repTrendMode='year';
   document.getElementById('rep-trend-chips').innerHTML=modes.map(([k,l])=>
     `<span class="filter-chip ${repTrendMode===k?'on':''}" onclick="setRepTrend('${k}')">${l}</span>`).join('');
   const seasons=repSeasons();
-  let labels,val;
-  if(repTrendMode==='year'){labels=['2026E','2027E','2028E'];val=(s,p)=>repCons(s,p,'rev');}
-  else if(repTrendMode==='qtr'){labels=['2Q26E','3Q26E','4Q26E'];val=(s,p)=>repCons(s,p,'rev');}
-  else if(repTrendMode==='op'){labels=['2026E','2027E','2028E'];val=(s,p)=>repCons(s,p,'op');}
-  else{labels=REP_SEG_ORDER;val=(s,p)=>repSegCons(s,'2026E',p);}
-  const ds=seasons.map((s,i)=>({label:s,
-    data:labels.map(p=>{const v=val(s,p);return v==null?null:Math.round(v);}),
-    backgroundColor:repSeasonColor(i,seasons.length)}));
   const ctx=document.getElementById('rep-trend-chart');
   ctx.parentElement.style.height='300px';
   if(repTrendChart)repTrendChart.destroy();
-  repTrendChart=new Chart(ctx,{type:'bar',data:{labels,datasets:ds},
-    options:{responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{position:'top',labels:{boxWidth:10,font:{size:11},color:'#67707b'}},
-        tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.parsed.y==null?'–':c.parsed.y.toLocaleString()+'억'}`}}},
-      scales:{x:{ticks:{color:'#67707b'},grid:{display:false}},
-              y:{ticks:{color:'#9aa4af',callback:v=>v.toLocaleString()+'억'},grid:{color:'#eef1f3'}}}}});
+  let labels,val,note='';
+  if(repTrendMode==='qseg'){
+    // 분기별 × 부문별: 시즌당 스택 하나 (이전 시즌은 연하게)
+    labels=['2Q26E','3Q26E','4Q26E'];
+    val=(s,p)=>repCons(s,p,'rev');
+    const ds=[];
+    seasons.forEach((s,si)=>{
+      const latest=si===seasons.length-1;
+      REP_SEG_ORDER.forEach(g=>ds.push({label:g,stack:s,
+        data:labels.map(q=>{const v=repSegCons(s,q,g);return v==null?0:Math.round(v);}),
+        backgroundColor:_hexA(REP_SEG_COLORS[g],latest?0.95:0.35)}));
+    });
+    repTrendChart=new Chart(ctx,{type:'bar',data:{labels,datasets:ds},
+      options:{responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{position:'top',labels:{boxWidth:10,font:{size:11},color:'#67707b',
+            filter:(it,data)=>it.datasetIndex>=data.datasets.length-REP_SEG_ORDER.length}},
+          tooltip:{callbacks:{title:c=>`${c[0].label} · ${c[0].dataset.stack}`,
+            label:c=>`${c.dataset.label}: ${c.parsed.y.toLocaleString()}억`}}},
+        scales:{x:{stacked:true,ticks:{color:'#67707b'},grid:{display:false}},
+                y:{stacked:true,ticks:{color:'#9aa4af',callback:v=>v.toLocaleString()+'억'},grid:{color:'#eef1f3'}}}}});
+    note=` · 왼쪽 연한 막대 = 이전 시즌, 오른쪽 진한 막대 = 최신 시즌 · 변화율은 분기 매출 총액 기준`;
+  }else{
+    labels=['2026E','2027E','2028E'];
+    const key=repTrendMode==='op'?'op':'rev';
+    val=(s,p)=>repCons(s,p,key);
+    const ds=seasons.map((s,i)=>({label:s,
+      data:labels.map(p=>{const v=val(s,p);return v==null?null:Math.round(v);}),
+      backgroundColor:repSeasonColor(i,seasons.length)}));
+    repTrendChart=new Chart(ctx,{type:'bar',data:{labels,datasets:ds},
+      options:{responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{position:'top',labels:{boxWidth:10,font:{size:11},color:'#67707b'}},
+          tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.parsed.y==null?'–':c.parsed.y.toLocaleString()+'억'}`}}},
+        scales:{x:{ticks:{color:'#67707b'},grid:{display:false}},
+                y:{ticks:{color:'#9aa4af',callback:v=>v.toLocaleString()+'억'},grid:{color:'#eef1f3'}}}}});
+  }
   // 변화율 요약 라인
   const el=document.getElementById('rep-trend-delta');
   if(el&&seasons.length>1){
@@ -117,7 +140,7 @@ function renderRepTrend(){
       if(va==null||vb==null)return `<span class="filter-chip zero">${p} –</span>`;
       const d=(vb/va-1)*100;
       return `<span class="filter-chip">${p} <b class="${d>=0?'up':'down'}">${d>=0?'+':''}${d.toFixed(1)}%</b></span>`;
-    }).join('')+`<span class="unit" style="margin-left:6px">${a} → ${b} 컨센 변화</span>`;
+    }).join('')+`<span class="unit" style="margin-left:6px">${a} → ${b} 컨센 변화${note}</span>`;
   }else if(el){el.innerHTML='';}
 }
 
