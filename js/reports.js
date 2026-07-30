@@ -214,7 +214,8 @@ function renderRepList(){
     `<div class="rep-item"><div class="top">`+
     `<span class="rep-broker">${r.broker}</span>`+
     `<span class="rep-type" style="background:${REP_TYPE_COLORS[r.type]||'#9aa4af'}">${r.type}</span>`+
-    `<a class="ttl" href="${r.file}" target="_blank" rel="noopener">${r.title}</a>`+
+    (r.file?`<a class="ttl" href="${r.file}" target="_blank" rel="noopener">${r.title}</a>`
+           :`<span class="ttl" style="font-size:13px;font-weight:600">${r.title}</span><span class="rep-meta">(원문 미보유)</span>`)+
     `<span class="rep-meta">${r.date}${r.analyst?' · '+r.analyst:''} · ${r.season}</span>`+
     `<span class="rep-tp">${r.rating||''} · TP ${_rTp(r.tp)} ${_rDir(r.tp_dir)}</span></div>`+
     `<div class="rep-sum">${r.summary}</div>`+
