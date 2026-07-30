@@ -10,6 +10,7 @@ document.querySelectorAll('.tab').forEach(t=>{
     if(t.dataset.view==='trend')loadEU();
     if(t.dataset.view==='export'&&!expInited){expInited=true;loadExports();}
     if(t.dataset.view==='visitors'&&!visitorsInited){visitorsInited=true;loadVisitors();}
+    if(t.dataset.view==='reports'&&!repInited){repInited=true;loadReports();}
   };
 });
 // 공시 이벤트 (봇이 events.json으로 누적 → 캘린더 연동)
