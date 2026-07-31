@@ -103,15 +103,51 @@ function renderAggChart(){
   if(aggChart)aggChart.destroy();
   aggChart=new Chart(ctx,{type:'line',data:{labels,datasets},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{labels:{color:'#67707b',font:{size:11},boxWidth:18}}},scales}});
 }
+/* ---- 수급 기간 선택 (이번달 / 3·6·12개월 / 기간설정) ---- */
+let flowMode='month';                  // 'month' | 63 | 126 | 252 | 'custom'
+let flowCustom={from:null,to:null};    // 'YYYY-MM-DD'
+function _flowRange(s){                // 선택 모드 → [시작idx, 끝idx] (끝 포함), 없으면 null
+  const n=s.dates.length; if(!n) return null;
+  if(flowMode==='month'){
+    const pfx=s.dates[n-1].slice(0,5);                       // 최신 데이터의 'YY-MM'
+    let i0=n-1; while(i0>0 && s.dates[i0-1].slice(0,5)===pfx) i0--;
+    return [i0,n-1,'이번달(20'+pfx.replace('-','.')+')'];
+  }
+  if(flowMode==='custom'){
+    const f=flowCustom.from, t=flowCustom.to;
+    let i0=0, i1=n-1;
+    if(f) i0=s.dates.findIndex(d=>('20'+d)>=f);
+    if(i0<0) return null;
+    if(t){ i1=-1; for(let i=n-1;i>=0;i--){ if(('20'+s.dates[i])<=t){ i1=i; break; } } }
+    if(i1<0||i1<i0) return null;
+    return [i0,i1,'20'+s.dates[i0]+' ~ 20'+s.dates[i1]];
+  }
+  const days=+flowMode||252;
+  const i0=Math.max(0,n-days);
+  return [i0,n-1,{63:'3개월',126:'6개월',252:'12개월'}[days]||days+'영업일'];
+}
+function _fmtSign(v){ const r=Math.round(v); return (r>0?'+':'')+r.toLocaleString(); }
 function renderFlowChart(){
   const s=getStock(activeStock);
-  if(!s){ if(flowChart){flowChart.destroy();flowChart=null;} _naToggle('flowChart','flowNA',true); return; }
+  const sumEl=document.getElementById('flow-sum');
+  if(!s){ if(flowChart){flowChart.destroy();flowChart=null;} _naToggle('flowChart','flowNA',true); if(sumEl)sumEl.textContent=''; return; }
+  const rng=_flowRange(s);
+  if(!rng){ if(flowChart){flowChart.destroy();flowChart=null;} _naToggle('flowChart','flowNA',true); if(sumEl)sumEl.textContent='선택 기간 내 거래일 데이터가 없습니다'; return; }
   _naToggle('flowChart','flowNA',false);
-  const labels=_tail(s.dates,stockDays);
+  const [i0,i1,plabel]=rng;
+  const labels=s.dates.slice(i0,i1+1);
+  const cum={inst:_cumsum(s.flow.inst.slice(i0,i1+1)),frgn:_cumsum(s.flow.frgn.slice(i0,i1+1)),indv:_cumsum(s.flow.indv.slice(i0,i1+1))};
+  if(sumEl){
+    const w=(t,v,c)=>`<span style="margin-right:14px">${t} <b style="color:${c}">${_fmtSign(v)}</b></span>`;
+    sumEl.innerHTML=`<span style="color:var(--dim);margin-right:14px">${plabel} 누적(억원)</span>`
+      +w('기관',cum.inst[cum.inst.length-1]||0,'#4e9d46')
+      +w('외국인',cum.frgn[cum.frgn.length-1]||0,'#4a90d9')
+      +w('개인',cum.indv[cum.indv.length-1]||0,'#d9536f');
+  }
   const ds=[
-    {label:'기관',data:_cumsum(_tail(s.flow.inst,stockDays)),borderColor:'#4e9d46',borderWidth:2.2,backgroundColor:'transparent',pointRadius:0,tension:.2},
-    {label:'외국인',data:_cumsum(_tail(s.flow.frgn,stockDays)),borderColor:'#4a90d9',borderWidth:2.2,backgroundColor:'transparent',pointRadius:0,tension:.2},
-    {label:'개인',data:_cumsum(_tail(s.flow.indv,stockDays)),borderColor:'#d9536f',borderWidth:2.2,backgroundColor:'transparent',pointRadius:0,tension:.2},
+    {label:'기관',data:cum.inst,borderColor:'#4e9d46',borderWidth:2.2,backgroundColor:'transparent',pointRadius:0,tension:.2},
+    {label:'외국인',data:cum.frgn,borderColor:'#4a90d9',borderWidth:2.2,backgroundColor:'transparent',pointRadius:0,tension:.2},
+    {label:'개인',data:cum.indv,borderColor:'#d9536f',borderWidth:2.2,backgroundColor:'transparent',pointRadius:0,tension:.2},
   ];
   const ctx=document.getElementById('flowChart');
   if(flowChart)flowChart.destroy();
@@ -153,4 +189,29 @@ function renderStockQuote(){
 function renderStockCharts(){ renderStockQuote(); renderPriceChart(); renderFlowChart(); renderAggChart(); }
 document.querySelectorAll('#period-stock button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#period-stock button').forEach(x=>x.classList.remove('active'));b.classList.add('active');stockDays=+b.dataset.days;renderStockCharts();});
 function applyCustomPeriod(){ const v=parseInt(document.getElementById('period-input').value,10); if(v>0){ stockDays=Math.round(v*21); document.querySelectorAll('#period-stock button').forEach(x=>x.classList.remove('active')); renderStockCharts(); } }
+
+/* 수급 기간 칩 · 기간설정 */
+document.querySelectorAll('#period-flow button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#period-flow button').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  const v=b.dataset.fp;
+  const box=document.getElementById('flow-custom');
+  if(box) box.style.display=(v==='custom')?'':'none';
+  if(v==='custom'){
+    const s=getStock(activeStock);                       // 기본값: 데이터 전체 구간
+    const f=document.getElementById('flow-from'), t=document.getElementById('flow-to');
+    if(s&&s.dates.length){ if(f&&!f.value) f.value='20'+s.dates[0]; if(t&&!t.value) t.value='20'+s.dates[s.dates.length-1]; }
+    applyFlowCustom(); return;
+  }
+  flowMode=(v==='month')?'month':+v;
+  renderFlowChart();
+});
+function applyFlowCustom(){
+  const f=document.getElementById('flow-from'), t=document.getElementById('flow-to');
+  flowCustom.from=(f&&f.value)||null;
+  flowCustom.to=(t&&t.value)||null;
+  flowMode='custom';
+  document.querySelectorAll('#period-flow button').forEach(x=>x.classList.toggle('active',x.dataset.fp==='custom'));
+  renderFlowChart();
+}
 

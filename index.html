@@ -64,7 +64,19 @@
     <div class="sec-h"><div class="l"><h2 id="price-title">주가 흐름 추이</h2></div><span class="note">일별 종가 · 원</span></div>
     <div class="chart-box"><canvas id="priceChart"></canvas><div class="na-msg" id="priceNA" style="display:none">해당 종목 데이터 없음 (N/A)</div></div>
 
-    <div class="sec-h"><div class="l"><h2>투자자 수급</h2></div><span class="note">기간 내 누적 순매수(억원) · 기관·외국인·개인</span></div>
+    <div class="sec-h"><div class="l"><h2>투자자 수급</h2><span class="note" style="margin-left:8px">누적 순매수(억원) · 기관·외국인·개인</span></div>
+      <div class="toggle" id="period-flow">
+        <button class="active" data-fp="month">이번달</button>
+        <button data-fp="63">3개월</button>
+        <button data-fp="126">6개월</button>
+        <button data-fp="252">12개월</button>
+        <button data-fp="custom">기간설정</button>
+      </div>
+    </div>
+    <div class="add-form" id="flow-custom" style="display:none;margin:2px 0 4px;align-items:center">
+      <input type="date" id="flow-from" style="width:150px" /><span style="color:var(--dim);font-size:12px">~</span><input type="date" id="flow-to" style="width:150px" /><button onclick="applyFlowCustom()">적용</button>
+    </div>
+    <div id="flow-sum" style="font-size:12px;color:var(--sub);margin:2px 0 4px;font-variant-numeric:tabular-nums"></div>
     <div class="chart-box"><canvas id="flowChart"></canvas><div class="na-msg" id="flowNA" style="display:none">해당 종목 데이터 없음 (N/A)</div></div>
 
     <div class="sec-h"><div class="l"><h2>에스테틱 5사 합산 시총</h2></div><span class="note">5사 시총(조원) vs KOSDAQ(pt) 벤치마크</span></div>
@@ -213,7 +225,7 @@
 <script src="js/buzz.js?v=20260727c"></script>
 <script src="js/eu.js?v=20260727c"></script>
 <script src="js/exports.js?v=20260727d"></script>
-<script src="js/stock.js?v=20260727d"></script>
+<script src="js/stock.js?v=20260731a"></script>
 <script src="js/visitors.js?v=20260727d"></script>
 <script src="js/reports.js?v=20260730g"></script>
 <script src="js/main.js?v=20260730a"></script>
