@@ -89,7 +89,7 @@ function _paceInfo(ym){
   // 진행 중인 달이면 tu[ym]은 누계 — 경과일 추정
   const isLast=ym===_tuLast();
   let elapsed=null;
-  if(isLast){ if(p20&&Math.abs(p20-full)<1)elapsed=20; else if(p10&&Math.abs(p10-full)<1)elapsed=10; else elapsed=p20?20:(p10?10:null); }
+  if(isLast){ if(pace.full)elapsed=null; else if(p20&&Math.abs(p20-full)<1)elapsed=20; else if(p10&&Math.abs(p10-full)<1)elapsed=10; else elapsed=p20?20:(p10?10:null); }
   return {p10,p20,full,elapsed,isLast};
 }
 function renderExpTCards(){
@@ -97,8 +97,10 @@ function renderExpTCards(){
   const y=+last.slice(0,4),mo=+last.slice(4);const dim=new Date(y,mo,0).getDate();
   const prevY=(y-1)+last.slice(4);const prevM=mo===1?(y-1)+'12':y+String(mo-1).padStart(2,'0');
   const cum=tu[last];const pctPrevYFull=tu[prevY]?Math.round(cum/tu[prevY]*100):null;
-  const runRate=info.elapsed?Math.round(cum/info.elapsed*dim):null;
-  const dailyVs=info.elapsed&&tu[prevM]?((cum/info.elapsed)/(tu[prevM]/new Date(mo===1?y-1:y,mo===1?12:mo-1,0).getDate())-1)*100:null;
+  const isFull=info.isLast&&!info.elapsed&&!!((expData.tentative.pace||{})[last]||{}).full;
+  const eDays=info.elapsed||(isFull?dim:null);
+  const runRate=eDays?Math.round(cum/eDays*dim):null;
+  const dailyVs=eDays&&tu[prevM]?((cum/eDays)/(tu[prevM]/new Date(mo===1?y-1:y,mo===1?12:mo-1,0).getDate())-1)*100:null;
   const ytd=Object.entries(tu).reduce((a,[k,v])=>a+(k.slice(0,4)===String(y)?v:0),0);
   const fullPrevYear=Object.entries(tu).reduce((a,[k,v])=>a+(k.slice(0,4)===String(y-1)?v:0),0);
   const f=v=>v==null?'':`<span class="${v>=0?'up':'down'}">${v>=0?'▲':'▼'} ${Math.abs(v).toFixed(1)}%</span>`;
