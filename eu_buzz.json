@@ -4,7 +4,7 @@
   "2026-W31": {
    "updated": "2026-08-03",
    "period": "7/27~8/2",
-   "summary": "클리닉 레지스트리 대확장 주간 — 브랜드명(Plinest·Ameela·Nucleofill·Vitaran·PhilArt)·소도시까지 질의를 넓힌 정기 스캔에서 신규 360곳을 발견해 총 725곳·28개국(라트비아 신규 진입)으로 확대됐다. 신규분의 성격은 '이번 주 도입'이 아니라 검색 커버리지 확대에 따른 발견이 지배적이며(2026년 페이지 게시·갱신 등 최근 도입 정황은 37곳), 국가별로는 독일 +61·스페인 +46·영국 +68 등 서유럽 대형시장의 PN 저변이 기존 집계보다 훨씬 두터움이 확인됐다 — 다만 브랜드는 Croma PhilArt/PolyPhil·Mastelli Plinest·Nucleofill 등 유럽·이탈리아계가 절대다수이고 리쥬란 지명 신규는 9곳뿐이라 '범주는 크고 리쥬란 침투는 이제 시작' 구도가 뚜렷하다. 월간 표본 재확인(20곳)에서는 15곳 유효, 3곳은 PN 메뉴가 사라져 등재 해제했다(누적 레지스트리 순도 관리 첫 적용). 구글 트렌드 리쥬란 모멘텀(최근 12주 vs 직전 12주)은 GB -33%, FR -50%, ES -38%, PL -28%, DE -19%, IT -28%로 여름 비수기 진입과 함께 전 국가 두 자릿수 하락으로 조정이 뚜렷하며, 마지막 완결주(7/26~8/1)엔 6개국 모두 신규 스파이크 없이 저점 횡보 — 특히 GB·DE는 Plinest·Sunekos 지수가 미미하게나마 연속 잡히기 시작한 점이 눈에 띈다. 소비자 후기는 유럽 내 신규 발화가 확인되지 않아 전주 유지(9월 프랑스 VIVACY 정식 출시 전 공백기), 글로벌에서는 Reddit에 리쥬란힐러 첫 시술 극찬 후기와 미국 매체의 '근거보다 마케팅이 앞선다' 신중론 기사가 병존했다.",
+   "summary": "클리닉 레지스트리 대확장 주간 — 브랜드명(Plinest·Ameela·Nucleofill·Vitaran·PhilArt)·소도시까지 질의를 넓힌 정기 스캔에서 신규 360곳을 발견해 총 725곳·28개국(라트비아 신규 진입)으로 확대됐다. 신규분의 성격은 '이번 주 도입'이 아니라 검색 커버리지 확대에 따른 발견이 지배적이며(2026년 페이지 게시·갱신 등 최근 도입 정황은 37곳), 국가별로는 독일 +61·스페인 +46·영국 +68 등 서유럽 대형시장의 PN 저변이 기존 집계보다 훨씬 두터움이 확인됐다 — 다만 브랜드는 Croma PhilArt/PolyPhil·Mastelli Plinest·Nucleofill 등 유럽·이탈리아계가 절대다수이고 리쥬란 지명 신규는 9곳뿐이라 '범주는 크고 리쥬란 침투는 이제 시작' 구도가 뚜렷하다. 월간 표본 재확인(20곳)에서는 15곳 유효, 3곳은 PN 메뉴가 사라져 등재 해제했다(누적 레지스트리 순도 관리 첫 적용). 구글 트렌드 리쥬란 모멘텀(최근 12주 vs 직전 12주)은 GB -33%, FR -50%, ES -38%, PL -28%, DE -19%, IT -28%로 여름 비수기 진입과 함께 전 국가 두 자릿수 하락으로 조정이 뚜렷하며, 마지막 완결주(7/26~8/1)엔 6개국 모두 신규 스파이크 없이 저점 횡보 — 특히 GB·DE는 Plinest·Sunekos 지수가 미미하게나마 연속 잡히기 시작한 점이 눈에 띈다. 후기 파트는 이번 주부터 '주간 신규 관찰' 전용으로 전환 — 유럽 6개 시장 모두 기간 내 신규 소비자 발화 0건(9월 프랑스 VIVACY 출시 전 공백기)이었고, 글로벌 신규는 Reddit 리쥬란힐러 첫 시술 극찬 후기와 미국 매체 신중론 기사 2건이 긍·부 양극을 이뤘다.",
    "penetration": {
     "note": "웹 풋프린트 기반 — 클리닉 자체 홈페이지·예약 디렉토리에 시술 명시 확인분 (검색 기반 스캔, 실제 취급처의 하한선)",
     "total": 725,
@@ -6271,215 +6271,106 @@
    },
    "reviews": {
     "overall": {
-     "summary": "유럽에서 리쥬란은 브랜드명 자체보다 '폴리뉴클레오타이드(PN/PDRN)'·'연어 DNA 주사'라는 시술 범주로 소비자 사이에서 회자되고 있으며, 브랜드를 특정한 소비자 리뷰는 아직 드물다. 소비자 논의가 가장 활발한 곳은 영국으로, 뷰티 매체 체험기는 눈밑 개선·광채 효과에 긍정적인 반면 Mumsnet 등 실사용자 포럼에서는 '비용 대비 효과가 미묘하다'는 회의론이 뚜렷해 온도차가 크다. 프랑스·독일·스페인·이탈리아·폴란드는 클리닉 마케팅과 언론 트렌드 기사가 담론을 주도하고 있고 소비자 포럼 버즈는 아직 희소한 초기 단계다. 공통 긍정 테마는 피부결·광채·눈밑 개선, 공통 부정 테마는 통증, 붓기·멍, 고비용과 반복 시술 부담, 효과 체감 편차다.",
+     "summary": "[주간 관찰 · 7/27~8/2] 유럽 현지의 신규 소비자 발화는 이번 주 사실상 제로 — 영국 포함 6개 시장 모두 기간 내 날짜가 확인되는 새 후기·언론 보도가 없었다(9월 프랑스 VIVACY 정식 출시 전 공백기로, 담론은 여전히 클리닉 마케팅이 주도). 이번 주 신규 발화는 글로벌 2건뿐: Reddit의 리쥬란힐러 첫 시술 극찬 후기(즉각 광·리프팅, 아시아 클리닉)와 미국 매체의 '마케팅이 과학적 근거를 앞선다'는 신중론 기사(7/31)가 긍·부 양극을 이뤘다. 누적 맥락(영국 Mumsnet 회의론, 통증·비용 부담 등 구조적 테마)은 W30 항목 참조.",
      "pos_themes": [
-      "피부결·광채(글로우) 개선 및 '유리피부' 효과",
-      "눈밑 다크서클·잔주름·꺼짐 개선",
-      "필러와 달리 자연스럽고 점진적인 재생 효과",
-      "시술 시간이 짧고 다운타임이 비교적 짧음"
+      "[이번 주 신규] Reddit 첫 시술 후기 — '즉시 광이 나고 리프팅됐다, 너무 좋아서 못 믿을 정도'(풀페이스, 보톡스 대안으로 시도)",
+      "[이번 주 신규] 눈밑 비수술 옵션 문의에서 리쥬란·PN이 울쎄라·RF와 나란히 후보로 소환 — 인지 확산 신호"
      ],
      "neg_themes": [
-      "통증(특히 눈가 다회 주사 시 심한 통증 호소)",
-      "시술 후 붓기·멍·주사 자국(24~72시간)",
-      "고비용(영국 기준 회당 £300~800)과 2~3회 코스 + 6개월 주기 유지비 부담",
-      "효과가 미묘하거나 전혀 체감 못 했다는 사용자도 많아 편차 큼",
-      "지속 기간이 6개월 내외로 짧음",
-      "유럽 내 브랜드 인지도 낮음(Rejuran보다 Ameela·Plinest·Vitaran 등 경쟁 브랜드나 범주명으로 통용)"
+      "[이번 주 신규] 미국 매체 신중론 — '근거 논문 대비 마케팅 과열' 프레임(FDA 미승인 신분 지적)",
+      "[이번 주 신규] Reddit 후기에도 가격 불투명(1지 사용에 박스값 $225 과금 문의)·지속기간 불확실성 질문 동반 — 재구매 전환의 관건"
      ]
     },
     "regions": [
      {
       "region": "GB",
       "name_ko": "영국",
-      "summary": "리쥬란 브랜드를 지명한 소비자 후기만 집계 (Ameela·Plinest 등 동일 계열 PN 시술 일반 후기는 제외). 브랜드 지명 발화는 RealSelf 질문·Trustpilot 언급 등 2~3건 수준으로 매우 희소하고, 실제 시술 완료 후기는 아직 확인되지 않음 — 클리닉 15곳이 취급하는 공급 측 확산 대비 소비자 브랜드 인지는 초기 단계.",
-      "pos": [
-       "스코틀랜드 사용자가 한국·싱가포르 인기를 근거로 리쥬란 S의 흉터 개선에 기대감을 보이며 시술 경험자를 찾는 질문 게시(RealSelf)",
-       "런던 클리닉 5점 후기에서 '다음엔 목주름에 리쥬란을 받아보고 싶다'며 브랜드를 지명한 긍정적 관심 표현(Trustpilot)",
-       "TikTok에 'Rejuran Healer London' 콘텐츠 모음이 형성되는 등 관심 형성 초기 신호"
-      ],
-      "neg": [
-       "시술 완료 후 결과(효과·통증·가성비)를 브랜드명과 함께 서술한 완결형 소비자 후기는 미발견",
-       "RealSelf 전문의 답변은 결과 편차가 크고 오래된 흉터엔 효과가 제한적일 수 있다는 신중론",
-       "런던 클리닉들의 리쥬란 페이지는 마케팅 문구·비포애프터 위주로 실명 고객 후기 부재"
-      ],
+      "summary": "[이번 주] 리쥬란 브랜드 지명 신규 후기 0건 — RealSelf·Trustpilot·TikTok·영국 언론·Reddit UK(r/SkincareAddictionUK 최근 한 달 0건)를 확인했으나 기간 내 날짜가 잡히는 신규 발화 없음. 5월 VIVACY 영국 론칭 이후 클리닉 공급(이번 스캔 기준 GB 137곳·rj 33곳)은 계속 느는데 소비자 발화가 따라오지 않는 공급 선행 국면 지속.",
+      "pos": [],
+      "neg": [],
       "sources": [
        {
         "site": "RealSelf",
         "url": "https://www.realself.com/question/scotland-united-kingdom-rejuran"
        },
        {
-        "site": "Trustpilot",
-        "url": "https://au.trustpilot.com/review/londonfinsburyclinic.co.uk"
-       },
-       {
-        "site": "TikTok",
-        "url": "https://www.tiktok.com/discover/rejuran-healer-london"
+        "site": "r/SkincareAddictionUK",
+        "url": "https://old.reddit.com/r/SkincareAddictionUK/search?q=rejuran&restrict_sr=on&sort=new&t=month"
        }
       ]
      },
      {
       "region": "FR",
       "name_ko": "프랑스",
-      "summary": "Doctissimo·aufeminin 등 소비자 포럼에서 체험 스레드는 사실상 확인되지 않으며, 담론은 파리·마르세유 등 미용의원 홍보 페이지와 의학 정보 사이트가 주도. Vivacy가 리쥬란 유통에 나서면서 'ADN de saumon(연어 DNA)' 스킨부스터로 소개되는 초기 단계로 소비자 버즈는 아직 희소하다.",
-      "pos": [
-       "클리닉·정보 사이트에서 재생·탄력·눈밑 개선 목적의 차세대 스킨부스터로 소개",
-       "'연어 DNA' 컨셉 + 한국발 트렌드가 호기심 요소로 작용"
-      ],
-      "neg": [
-       "실제 소비자 체험담·포럼 후기가 거의 없어 효과 검증 정보 부족",
-       "정보가 클리닉 마케팅에 편중, 가격·부작용 중립 후기 부재"
-      ],
-      "sources": [
-       {
-        "site": "Dermatonet",
-        "url": "https://www.dermatonet.com/polynucleotides-pdrn-peau.htm"
-       },
-       {
-        "site": "Vivacy",
-        "url": "https://vivacy.com/fr/rejuran"
-       }
-      ]
+      "summary": "[이번 주] 신규 소비자 후기·기사 없음. 9월 VIVACY 정식 출시 전 공백기 — 대신 이번 스캔에서 클리닉들의 '폴리뉴클레오티드 도입' 공지(actualités)가 다수 발견돼 출시 전 공급망 정비가 진행 중.",
+      "pos": [],
+      "neg": [],
+      "sources": []
      },
      {
       "region": "DE",
       "name_ko": "독일",
-      "summary": "소비자 포럼의 시술 체험담(Erfahrungen)은 확인되지 않고, 함부르크 등 일부 클리닉의 'Lachssperma-DNA' 시술 페이지와 K-뷰티 콘텐츠가 담론 주도. 특기점은 eBay.de에서 리쥬란 화장품(앰플·크림) 리셀이 활발해 주사 시술보다 토피컬 제품 관심이 먼저 형성되고 있다는 것.",
-      "pos": [
-       "K-뷰티 PDRN 열풍의 연장선에서 재생·안티에이징 성분으로 관심 상승",
-       "eBay.de 내 리쥬란 앰플·크림 매물 다수 등 화장품 라인 수요 존재"
-      ],
-      "neg": [
-       "주사 시술 실사용 후기·포럼 토론이 거의 없어 체감 정보 부족",
-       "개인 리셀 경로 구매가 많아 정품·품질 우려 소지"
-      ],
-      "sources": [
-       {
-        "site": "Formel Skin",
-        "url": "https://www.formelskin.de/skin-care/pdrn-hautpflege-der-k-beauty-trend"
-       },
-       {
-        "site": "Klosterstern Praxis",
-        "url": "https://klosterstern-praxis.de/plastische-chirurgie-hamburg/haut/lachssperma-dna-rejuran/"
-       }
-      ]
+      "summary": "[이번 주] 신규 소비자 발화 없음. 하반기 시장 진입 예정 상태 유지 — 다만 이번 스캔에서 PN 취급 클리닉이 18→79곳으로 확인돼(질의 확대 효과) 범주 저변은 기존 집계보다 훨씬 두터움.",
+      "pos": [],
+      "neg": [],
+      "sources": []
      },
      {
       "region": "ES",
       "name_ko": "스페인",
-      "summary": "enfemenino 등 소비자 포럼 스레드는 확인되지 않고 검색 결과는 클리닉의 '폴리뉴클레오티도스/연어 DNA' 홍보 페이지가 대부분. 셀럽(킴 카다시안 등) 트렌드를 차용한 클리닉 마케팅이 인지도 형성의 주 경로로, 소비자 버즈는 희소하다.",
-      "pos": [
-       "클리닉들이 재생·콜라겐 자극·눈밑 개선을 내세워 프리미엄 시술로 포지셔닝"
-      ],
-      "neg": [
-       "독립적 소비자 체험담이 사실상 부재해 실효성·가격 검증 정보 부족"
-      ],
-      "sources": [
-       {
-        "site": "Clínica Ennova",
-        "url": "https://clinicaennova.com/rejuran-polinucleotidos-esperma-salmon/"
-       }
-      ]
+      "summary": "[이번 주] 신규 소비자 후기 없음. 7월 중순 클리닉 블로그들이 PN을 '올해의 스타 시술'로 미는 공급자 콘텐츠만 계속 축적(Essentia 7월 기사 등) — 소비자 포럼 발화는 여전히 희소.",
+      "pos": [],
+      "neg": [],
+      "sources": []
      },
      {
       "region": "IT",
       "name_ko": "이탈리아",
-      "summary": "소비자 포럼 스레드는 확인되지 않았으나 주요 일간지 Il Messaggero가 리쥬란을 '스타들의 연어 DNA 유행'으로 다루는 등 언론발 인지도는 형성 시작. 자국산 PN 브랜드(Plinest 등 Mastelli사)의 본고장이라 리쥬란이 후발 외래 브랜드로 인식되는 구도.",
-      "pos": [
-       "언론·클리닉을 통해 재생·안티에이징 신기술 + 셀럽 트렌드로 관심 상승"
-      ],
-      "neg": [
-       "언론이 유행의 안전성·검증 부족을 지적하는 등 신중론 병존",
-       "자국 브랜드(Plinest)가 선점해 리쥬란 특정 후기는 거의 없음"
-      ],
-      "sources": [
-       {
-        "site": "Il Messaggero",
-        "url": "https://www.ilmessaggero.it/salute/medicina/rejuran_trattamento_pelle_dna_salmone_cos_e_come_funziona_rischi_moda_kim_kardashian_star_vip_ultime_notizie-9054386.html"
-       }
-      ]
+      "summary": "[이번 주] 신규 소비자 발화 없음. Mastelli(Plinest) 홈그라운드로 카테고리 자체는 성숙 — 리쥬란 지명 발화는 계속 부재.",
+      "pos": [],
+      "neg": [],
+      "sources": []
      },
      {
       "region": "PL",
       "name_ko": "폴란드",
-      "summary": "아직 소비자 버즈가 희소한 초기 시장. Wizaz에 리쥬란 화장품 13종 브랜드 페이지가 있으나 사용자 리뷰 0건, 포럼 체험담도 미확인. 대신 바르샤바·크라쿠프 클리닉들이 '킴 카다시안이 받은 한국 정품 폴리뉴클레오타이드' 마케팅으로 적극 도입 중 — 공급자 주도의 인지도 형성 단계.",
-      "pos": [
-       "클리닉들이 '한국 1위 스킨부스터'·셀럽 콘셉트로 프리미엄 포지셔닝, 도입 클리닉 증가"
-      ],
-      "neg": [
-       "Wizaz 리쥬란 제품 리뷰 0건 등 실사용자 후기 부재",
-       "가격·효과 중립 정보가 클리닉 홍보에 의존"
-      ],
-      "sources": [
-       {
-        "site": "Wizaz",
-        "url": "https://wizaz.pl/kosmetyki/marka-rejuran"
-       },
-       {
-        "site": "Ceneo",
-        "url": "https://www.ceneo.pl/175443685"
-       }
-      ]
+      "summary": "[이번 주] 신규 소비자 후기 없음. 6월 로드쇼 이후 후속 발화 아직 미확인 — Nucleofill 중심의 기존 PN 시장 구도 유지.",
+      "pos": [],
+      "neg": [],
+      "sources": []
      },
      {
       "region": "EU",
-      "name_ko": "범유럽 · 영어권 온라인",
-      "summary": "RealSelf에는 리쥬란 전용 페이지(Worth It 지수)가 없고 개별 리뷰·Q&A만 산재하며 상당수가 아시아 사용자. 유럽 소비자에게는 아직 '해외에서 유명한 시술'로 인식되는 단계다. 영어권 체험기는 광채·모공·피부결 개선에 긍정적이나, 인체 효능 근거 부족이라는 전문가 단서와 눈밑 멍 등 부작용 사례 질문이 병존한다.",
-      "pos": [
-       "광채('유리피부')·모공·피부결·수분감 개선 체감 후기(영어권 체험기)",
-       "레이저·마이크로니들링 병행 시너지 후기",
-       "한국 현지 시술가($180~275/회)가 유럽 대비 저렴해 원정 시술 매력 부각"
-      ],
-      "neg": [
-       "인체 효능 근거가 아직 부족하다는 전문가 지적",
-       "이마·관자놀이 등 부위별 통증, 시술 직후 붓기",
-       "눈밑 멍 장기 지속 등 부작용 상담 사례"
-      ],
+      "name_ko": "범유럽",
+      "summary": "[이번 주] 범카테고리 신규 언론 기사 없음(5월 로드쇼 PR·작년 말 트렌드 기사 이후 공백). 다음 촉매는 9월 프랑스 출시.",
+      "pos": [],
+      "neg": [],
       "sources": [
        {
-        "site": "RealSelf",
-        "url": "https://www.realself.com/news/trendy-new-injectables"
-       },
-       {
-        "site": "Marie Claire",
-        "url": "https://www.marieclaire.com/rejuran-salmon-sperm-injections-korean-skincare-review/"
-       },
-       {
-        "site": "Irish Examiner",
-        "url": "https://www.irishexaminer.com/lifestyle/fashionandbeauty/arid-41497475.html"
+        "site": "PRNewswire(5/13 로드쇼)",
+        "url": "https://www.prnewswire.co.uk/news-releases/pharmaresearch-completes-five-market-western-europe-roadshow-for-rejuran-302770238.html"
        }
       ]
      },
      {
       "region": "REDDIT",
-      "name_ko": "Reddit · 영어권 커뮤니티",
-      "summary": "브랜드 지명 논의는 글로벌 서브레딧 r/30PlusSkinCare에 집중(최근 1년 20건+). 영국 전용 r/SkincareAddictionUK에서는 'Rejuran' 검색 결과 0건 — 영국 소비자는 브랜드명 대신 '폴리뉴클레오타이드' 범주로 인식. 실사용자들 사이에선 '즉효가 아닌 유지관리형 시술'이라는 공감대. [W31 갱신] r/30PlusSkinCare에 리쥬란 힐러 풀페이스 첫 시술 후기(즉각 광·리프팅 극찬, '너무 좋아서 못 믿겠다'는 톤, 지속기간·재시술 주기 질문 — 아시아 소재 클리닉·1지 사용 $225 과금 구조 문의 동반)와 눈밑 지방·꺼짐 비수술 옵션으로 리쥬란·PN을 묻는 질문 글이 새로 관찰. r/SkincareAddictionUK는 최근 한 달 관련 글 0건.",
+      "name_ko": "Reddit(글로벌)",
+      "summary": "[이번 주] r/30PlusSkinCare에 리쥬란힐러 풀페이스 첫 시술 후기(7/25경) — '즉시 광·리프팅, 너무 좋아서 못 믿겠다'는 극찬과 함께 지속기간·재시술 주기, 1지 사용 $225 과금 구조 문의 동반(아시아 소재 클리닉). 8/2에는 눈밑 지방 비수술 옵션으로 리쥬란·PN·울쎄라·RF를 묻는 질문 글. 보톡스 대안 탐색 맥락에서 리쥬란이 소환되는 패턴이 새로 관찰됨.",
       "pos": [
-       "리쥬란아이 장기 사용자 만족 — '3회×연 2회 주기로 유지 중, 피부 상태가 좋다'는 후기",
-       "효과는 몇 주 후 서서히 나타나는 재생·유지형이라는 사용자 간 공감대 형성",
-       "통증은 견딜 만하다는 평 — 얕은 바늘 따끔함 + 용액 주입 시 쓰라림(치과마취 비유)"
+       "첫 시술 즉각 체감 극찬 — '인스턴트 글로우, 리프팅, 어려 보임'"
       ],
       "neg": [
-       "비용이 최대 고민 — '6개월마다 반복할 가치가 있나' 문의 반복",
-       "장기 항노화 효과인지 일시적 개선인지에 대한 확신 부족",
-       "단기간 내 가시적 변화를 기대한 사용자는 실망 — 기대치 관리 필요"
+       "가격·과금 구조 불신(박스 개봉 후 1지만 사용, $225)과 '효과가 얼마나 갈지' 불안 병존"
       ],
       "sources": [
        {
         "site": "r/30PlusSkinCare",
-        "url": "https://www.reddit.com/r/30PlusSkinCare/comments/1nysm0k/"
-       },
-       {
-        "site": "r/30PlusSkinCare",
-        "url": "https://www.reddit.com/r/30PlusSkinCare/comments/1rnze6i/"
-       },
-       {
-        "site": "r/SkincareAddictionUK",
-        "url": "https://www.reddit.com/r/SkincareAddictionUK/search/?q=rejuran"
+        "url": "https://old.reddit.com/r/30PlusSkinCare/search?q=rejuran&restrict_sr=on&sort=new&t=month"
        }
       ]
      }
     ],
-    "notes": "영국 섹션은 리쥬란 브랜드 지명 후기만 집계(동일 계열 PN 일반 후기 제외). 기타 지역은 브랜드·범주 혼재. Reddit은 크롬 경유 수집. ※ 2026-W31(7/27~8/2): 유럽 각국 신규 소비자 후기 미확인 — 전주 내용 유지. 글로벌 신규: Reddit 리쥬란힐러 첫 시술 극찬 후기(7/25경·아시아 클리닉, 가격 $225 구조 문의 동반)·눈밑 시술 옵션 문의(8/2), 미국 매체 신중론 기사(7/31, '마케팅이 근거를 앞선다')."
+    "notes": "※ W31부터 후기 파트는 '주간 신규 관찰'만 기록(전주 본문 복사 없음 — 국내 버즈 신규-diff와 동일 원칙). 누적 테마·배경은 W30 항목에 보존. 영국은 리쥬란 브랜드 지명 후기만 집계, Reddit은 크롬 경유 수집."
    },
    "trends": {
     "keywords": [
