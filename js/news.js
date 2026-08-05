@@ -127,7 +127,7 @@ async function loadNewsJson(){
   }catch(e){ /* news.json 아직 없음 → 샘플 유지 */ }
 }
 
-let calDate=new Date(2026,6,1);
+let calDate=(()=>{const t=new Date();return new Date(t.getFullYear(),t.getMonth(),1);})(); // 항상 현재 월로 시작
 let calCo=null;   // null=전체, 기업명=해당 기업 공시만
 function collectEvents(){
   let out=[];
