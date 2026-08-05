@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05 14:44",
+  "updated": "2026-08-05 14:54",
   "domestic": [
     {
       "co": "파마리서치",
@@ -119,6 +119,13 @@
       "link": "https://www.newstopkorea.com/news/articleView.html?idxno=46766",
       "date": "08/04 14:48",
       "desc": "클래시스가 삼성전자·뷰노 출신 김택수 박사를 신임 최고기술책임자(CTO) 겸 연구개발본부장으로... 4일 클래시스에 따르면 김 신임 CTO는 회사의 R&amp;D 조직을 총괄한다. 클래시스는 글로벌 사업 확대와 인공지능(AI)..."
+    },
+    {
+      "co": "에이피알",
+      "title": "에이피알, 미국에 유럽까지 터졌다...3조 클럽 유력",
+      "link": "https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202608050513&t=NNv",
+      "date": "08/05 14:47",
+      "desc": "에이피알이 창사 이래 최대 분기 매출과 영업이익을 동시에 경신하며 사상 최대 실적 기록을... 이 기자, 에이피알이 미국에서 잘 나가는 건 알고 있었지만 올 상반기 유럽에서의 매출 성장률이 미국 매출 성장률 보다..."
     },
     {
       "co": "에이피알",
@@ -332,17 +339,17 @@
     },
     {
       "co": "에이피알",
-      "title": "&quot;창사 이래 최대&quot; 에이피알, 분기 매출 7천억 돌파 … '3조 클럽 입성' ...",
-      "link": "https://biz.newdaily.co.kr/site/data/html/2026/08/05/2026080500081.html",
-      "date": "08/05 10:26",
-      "desc": "뉴데일리 조현우 기자 = 에이피알이 북미와 유럽을 중심으로 해외 사업을 확대하며 창사 이후 최대 분기... 5일 에이피알은 올해 2분기 연결 기준 매출이 전년 대비 134.2% 증가한 7675억원을 기록했다고 잠정..."
-    },
-    {
-      "co": "에이피알",
       "title": "에이피알 주가, 8월 5일 장중 346,000원 3.75% 하락",
       "link": "https://www.topstarnews.net/news/articleView.html?idxno=16155236",
       "date": "08/05 10:26",
       "desc": "5일 오전 10시 24분 기준, 네이버페이 증권에 따르면 에이피알의 주가는 현재 346,000원에 거래되고 있다. 이는 지난 종가 359,500원보다 13,500원 하락한 3.75% 낮은 가격이다. 에이피알의 주가 변동폭은 시가..."
+    },
+    {
+      "co": "에이피알",
+      "title": "&quot;창사 이래 최대&quot; 에이피알, 분기 매출 7천억 돌파 … '3조 클럽 입성' ...",
+      "link": "https://biz.newdaily.co.kr/site/data/html/2026/08/05/2026080500081.html",
+      "date": "08/05 10:26",
+      "desc": "뉴데일리 조현우 기자 = 에이피알이 북미와 유럽을 중심으로 해외 사업을 확대하며 창사 이후 최대 분기... 5일 에이피알은 올해 2분기 연결 기준 매출이 전년 대비 134.2% 증가한 7675억원을 기록했다고 잠정..."
     },
     {
       "co": "에이피알",
@@ -478,13 +485,6 @@
       "desc": "업계에 따르면 아모레퍼시픽홀딩스 이상목 사장, 에이피알 김병훈 대표, 구다이글로벌 천주혁 대표... 에이피알은 ‘메디큐브’를 앞세워 중남미 14개국을 훑고 있다. 지난해 하반기부터 브라질 현지 전문 편집숍과..."
     },
     {
-      "co": "에이피알",
-      "title": "&quot;아마존 1위 찍고 타깃 공략&quot;…에이피알, 2Q 영업익 113% '껑충' [줌인e종...",
-      "link": "https://www.news1.kr/industry/general-industry/6247563",
-      "date": "08/05 06:20",
-      "desc": "온라인에서 인지도를 쌓은 에이피알이 미국 대형 유통업체로 판매망을 넓히며 K-뷰티의 오프라인 확장을... 5일 업계에 따르면 조경진 IBK투자증권 연구원은 에이피알의 올해 2분기 연결 기준 매출액이 전년 동기 대비..."
-    },
-    {
       "co": "엘앤씨바이오",
       "title": "독 될까? 약 될까?...엘앤씨바이오 1400억 유증에 엇갈린 시선",
       "link": "https://www.ebn.co.kr/news/articleView.html?idxno=1719219",
@@ -537,10 +537,10 @@
   "foreign": [
     {
       "co": "Allergan",
-      "title": "Hueston Hennigan wins Allergan bellwether summary judgments - Daily Journal",
+      "title": "Hueston Hennigan wins Allergan bellwether summary judgments - dailyjournal.com",
       "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPN2VQaHdyUnhnN1NPOFBhU1ZPZlpMZnRIQjZUa3QxendBcHVZMG8tWkQtM2dfX3Y1N3JrT3dhdHJpMnU0SnQ0dk5CbWMweW5lM29rWmwzeWQ2eTZ4WUUzemtvbGxjekZqbDJvalhVbVRrZkpBUGF6VUlYQmN0YzVWT2otd2VRbzVnQldwNjRDbnBjUlkzRlIyNXN0bWRuLVc2RGFHNXl3?oc=5",
       "date": "08/04 22:37",
-      "desc": "Hueston Hennigan wins Allergan bellwether summary judgments&nbsp;&nbsp;Daily Journal"
+      "desc": "Hueston Hennigan wins Allergan bellwether summary judgments&nbsp;&nbsp;dailyjournal.com"
     },
     {
       "co": "Allergan",
