@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-10 14:01",
+  "updated": "2026-08-10 14:11",
   "domestic": [
     {
       "co": "파마리서치",
@@ -185,17 +185,17 @@
     },
     {
       "co": "클래시스",
+      "title": "클래시스, EBD 연계 '빌리로빈 앰플' 출시…피부 관리 솔루션 확대",
+      "link": "https://www.news1.kr/bio/healthcare/6254210",
+      "date": "08/10 14:04",
+      "desc": "클래시스(214150)가 에너지 기반 디바이스(EBD)와 연계해 사용할 수 있는 항산화 스킨부스터를 선보이며 메디컬 에스테틱 제품군을 확대한다. 클래시스는 독자 기술을 적용한 '슈링크 유니버스 빌리로빈 앰플'을 출시했다고..."
+    },
+    {
+      "co": "클래시스",
       "title": "클래시스, '빌리로빈 앰플' 출시…에너지기반 장비 전용",
       "link": "https://www.medicaltimes.com/Main/News/NewsView.html?ID=1170075&ref=naverpc",
       "date": "08/10 12:02",
       "desc": "글로벌 메디컬 에스테틱 기업 클래시스가 자사 에너지 기반 장비(EBD) 포트폴리오에 전용 스킨부스터를 결합, 통합 메디컬 에스테틱 솔루션 구축에 나선다.10일 클래시스는 자사 EBD와 연계해 시너지를 낼 수 있는 항산화..."
-    },
-    {
-      "co": "클래시스",
-      "title": "클래시스, '빌리로빈 앰플' 출시…EBD 연계 스킨부스터 확대",
-      "link": "https://www.medipana.com/news/articleView.html?idxno=415727",
-      "date": "08/10 11:34",
-      "desc": "메디컬 에스테틱 기업 클래시스(대표집행위원 윤준오)는 독자 기술 기반 항산화 스킨부스터 '슈링크 유니버스 빌리로빈 앰플'을 출시했다고 10일 밝혔다. 이번 신제품은 슈링크 유니버스, 볼뉴머 등 클래시스의 에너지..."
     },
     {
       "co": "클래시스",
@@ -262,5 +262,13 @@
       "desc": "대표적인 스킨부스터 중 하나인 '리쥬란'은 폴리뉴클레오타이드(Polynucleotide, PN)를 주요 성분으로 하며 피부의... 주사 방식의 시술은 시술 부위에 일시적으로 홍반이나 붓기, 멍, 통증 등이 발생할 수 있으며, 리쥬란과 같은..."
     }
   ],
-  "foreign": []
+  "foreign": [
+    {
+      "co": "Allergan",
+      "title": "Latham, Wachtell File Takeover Defense Suit for Allergan - Law.com",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1yYzlQTUdkc01GVndCYVpjOFY1QjV4Q0MzZmpQZUpkUzEtOXhrSGNZd0hOejFUeUpuYVh4UF9DRHhsUmpXUlozX1p6OWlDQ1BiNC11T1JrWmQ1eEJx?oc=5",
+      "date": "08/09 17:14",
+      "desc": "Latham, Wachtell File Takeover Defense Suit for Allergan&nbsp;&nbsp;Law.com"
+    }
+  ]
 }
