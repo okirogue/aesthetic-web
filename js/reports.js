@@ -88,13 +88,23 @@ function renderRepCards(){
   // 부문별 내수/수출 컨센 (최신 시즌 · 대상 분기)
   const dxEl=document.getElementById('rep-dx-cards');
   if(dxEl){
+    const q=/(\d)Q(\d{2})E/.exec(focus)||[];
+    const nq=q.length?(q[1]==='4'?`1Q${+q[2]+1}E`:`${+q[1]+1}Q${q[2]}E`):null;
     const cards=['의료기기','화장품','의약품'].map(s=>{
       const d=repDxCons(latest,focus,s,'내수'), x=repDxCons(latest,focus,s,'수출');
       if(!d&&!x)return '';
       const tot=(d?d.avg:0)+(x?x.avg:0), share=x&&tot?Math.round(x.avg/tot*100):null;
-      return `<div class="card"><div class="k"><i class="co-dot" style="background:${REP_SEG_COLORS[s]}"></i> ${s} · ${focus} 내수/수출</div>`+
+      let head=`${s} · ${focus} 내수/수출`, extra='';
+      if(isEarn&&prev){
+        // 어닝 시즌: 부문별 2Q 실적 vs 프리뷰 컨센 + 다음 분기 컨센
+        const act=repSegCons(latest,focus,s), pre=repSegCons(prev,focus,s);
+        const nxt=nq?repSegCons(latest,nq,s):null;
+        head=`${s} · ${q[1]}Q${q[2]} 실적/컨센 · ${nq||''}`;
+        extra=`<div class="s" style="margin-top:2px">${q[1]}Q${q[2]} 실적 <b>${_rN(act)}억</b> ${_bm(act,pre)} (컨센 ${_rN(pre)}억) · ${nq} 컨센 <b>${nxt!=null?_rN(nxt):'–'}억</b></div>`;
+      }
+      return `<div class="card"><div class="k"><i class="co-dot" style="background:${REP_SEG_COLORS[s]}"></i> ${head}</div>`+
         `<span class="v" style="font-size:22px">${d?_rN(d.avg):'–'} <span style="font-size:12px;color:var(--dim);font-weight:600">내수</span> · ${x?_rN(x.avg):'–'} <span style="font-size:12px;color:var(--dim);font-weight:600">수출</span></span>`+
-        `<div class="s">억원 · 수출 비중 ${share!=null?share+'%':'–'} · ${Math.max(d?d.n:0,x?x.n:0)}곳 평균</div></div>`;
+        `<div class="s">억원 · 수출 비중 ${share!=null?share+'%':'–'} · ${Math.max(d?d.n:0,x?x.n:0)}곳 평균</div>`+extra+`</div>`;
     }).join('');
     dxEl.innerHTML=cards;
     dxEl.style.display=cards?'':'none';
