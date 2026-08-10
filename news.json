@@ -1,6 +1,20 @@
 {
-  "updated": "2026-08-10 19:27",
+  "updated": "2026-08-11 07:08",
   "domestic": [
+    {
+      "co": "파마리서치",
+      "title": "[더벨]파마리서치, 든든한 의료기기 성장에 CAPEX 투자 '속도'",
+      "link": "https://www.thebell.co.kr/free/content/ArticleView.asp?key=202608071707530040107344",
+      "date": "08/11 07:02",
+      "desc": "파마리서치가 가파르게 늘어나는 실적을 바탕으로 성장 재투자에 속도를 내고 있다. 리쥬란을 중심으로 의료기기 매출이 수년째 우상향한 데 이어 올 상반기에도 최대 실적을 새로 썼다. 이 같은 실적을..."
+    },
+    {
+      "co": "파마리서치",
+      "title": "'연어주사' 수출 호조에 파마리서치 강세…목표가도 줄상향 [종목+]",
+      "link": "https://www.hankyung.com/article/2026081047396",
+      "date": "08/11 06:31",
+      "desc": "올해 2분기 역대 최대 실적을 낸 파마리서치에 대해 증권사들이 목표주가를 잇달아 올렸다. 스킨부스터 '리쥬란'의 유럽 수출과 미국 화장품 수출이 예상보다 빠르게 늘어난 덕이다. 코스닥 시장 훈풍까지 더해지면서..."
+    },
     {
       "co": "파마리서치",
       "title": "&quot;유럽은 리쥬란, 미국은 화장품…파마리서치 '쌍끌이' 수출 사이클 진입...",
@@ -268,13 +282,6 @@
       "desc": "글로벌 메디컬 에스테틱 플랫폼 기업 클래시스가 글로벌 기술 경영 전문가 김택수 신임 최고기술책임자(CTO) 겸 연구개발본부장을 선임했다고 밝혔다. 클래시스는 글로벌 성장을 뒷받침할 최고 수준의 인재를..."
     },
     {
-      "co": "클래시스",
-      "title": "[어바웃 C] 클래시스 CTO 공백 메운 김택수, R&amp;D 로드맵 계승",
-      "link": "https://www.bloter.net/news/articleView.html?idxno=670430",
-      "date": "08/09 18:00",
-      "desc": "클래시스가 박수만 전 최고기술책임자(CTO) 사임 뒤 4개월 만에 김택수 CTO를 선임해 연구개발(R&amp;D) 수장... CTO 공백 뒤 개발 로드맵 계승 7일 금융감독원 전자공시시스템에 따르면 클래시스는 박 전 CTO의 후임으로 김..."
-    },
-    {
       "co": "에이피알",
       "title": "아모레퍼시픽·에이피알·구다이글로벌, 브라질 시장 주목..중남미 성장...",
       "link": "https://kpenews.com/View.aspx?No=4180097",
@@ -296,6 +303,13 @@
       "desc": "올해 상반기 호실적을 거둔 '에이피알'이 연간 매출 전망치를 연초 대비 최소 9000억원 상향했다. 하반기... 10일 뷰티업계에 따르면 에이피알은 올해 매출이 보수적으로 봐도 3조원 이상을 기록할 것으로 전망하고 있다...."
     },
     {
+      "co": "엘앤씨바이오",
+      "title": "엘앤씨바이오, 1406억 주주배정 유증…대규모 자금조달 이어져",
+      "link": "https://www.dailypharm.com/user/news/341268?REFERER=NP",
+      "date": "08/11 06:02",
+      "desc": "엘앤씨바이오가 지난해 4월 이후 전환사채(CB)와 제3자배정 유상증자로 850억원을 조달한 데 이어 1406억원 규모 주주배정 유상증자를 추진한다. 약 1년 4개월간 자본시장을 통한 자금조달 규모는 2256억원에..."
+    },
+    {
       "co": "리쥬란",
       "kw": "리쥬란",
       "title": "여름철 피부 관리 고민… 리쥬란 등 스킨부스터가 도움될 수 있을까",
@@ -312,13 +326,5 @@
       "desc": "리투오는 피부 속 진피에서 면역 반응을 일으킬 수 있는 세포 성분을 제거하고, 피부 조직을 지지하는 성분을... 리투오는 이러한 피부 구조를 보완하는 방식으로 활용되며, 피부가 얇아지거나 탄력이 저하되고 피부결이..."
     }
   ],
-  "foreign": [
-    {
-      "co": "Allergan",
-      "title": "Latham, Wachtell File Takeover Defense Suit for Allergan - Law.com",
-      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1yYzlQTUdkc01GVndCYVpjOFY1QjV4Q0MzZmpQZUpkUzEtOXhrSGNZd0hOejFUeUpuYVh4UF9DRHhsUmpXUlozX1p6OWlDQ1BiNC11T1JrWmQ1eEJx?oc=5",
-      "date": "08/09 17:14",
-      "desc": "Latham, Wachtell File Takeover Defense Suit for Allergan&nbsp;&nbsp;Law.com"
-    }
-  ]
+  "foreign": []
 }
