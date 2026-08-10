@@ -62,12 +62,29 @@ function renderRepCards(){
   const rev=repCons(latest,focus,'rev'), op=repCons(latest,focus,'op');
   const revP=prev?repCons(prev,focus,'rev'):null;
   const chg=(rev!=null&&revP)?(rev/revP-1)*100:null;
-  document.getElementById('rep-cards').innerHTML=[
+  const isEarn=/Earnings/i.test(latest||'');
+  const cards=[
     [`최신 시즌`,`<span class="v">${latest}</span>`,`${rs.length}개사 · 전체 ${repData.reports.length}건`],
     ['평균 목표주가',`<span class="v lime">${Math.round(avg/10000)}만원</span>`,`범위 ${Math.min(...tps)/10000}만~${Math.max(...tps)/10000}만`],
-    ['투자의견',`<span class="v">Buy ${buy}</span>`,(rs.length-buy)?`${rs.length-buy}곳 중립·기타`:'전원 매수'],
-    [`${focus} 매출 컨센`,`<span class="v">${_rN(rev)}</span>`,`억원 · 영업이익 ${_rN(op)}억`+(chg!=null?` · 직전 시즌비 <span class="${chg>=0?'up':'down'}">${chg>=0?'+':''}${chg.toFixed(1)}%</span>`:'')]
-  ].map(c=>`<div class="card"><div class="k">${c[0]}</div>${c[1]}<div class="s">${c[2]}</div></div>`).join('');
+    ['투자의견',`<span class="v">Buy ${buy}</span>`,(rs.length-buy)?`${rs.length-buy}곳 중립·기타`:'전원 매수']
+  ];
+  const _bm=(a,c)=>{if(a==null||!c)return '';const p=(a/c-1)*100;return `<span class="${p>=0?'up':'down'}">${p>=0?'+':''}${p.toFixed(1)}% ${p>=0?'상회':'하회'}</span>`;};
+  if(isEarn&&prev){
+    // 어닝 시즌: 발표 실적 vs 직전(프리뷰) 컨센 미트/미스 표기
+    const opP=repCons(prev,focus,'op');
+    const q=/(\d)Q(\d{2})E/.exec(focus)||[];
+    cards.push([`${q[1]}Q${q[2]} 실적 vs 프리뷰 컨센`,
+      `<span class="v">${_rN(rev)} ${_bm(rev,revP)}</span>`,
+      `억원 (컨센 ${_rN(revP)}억) · 영업이익 ${_rN(op)}억 ${_bm(op,opP)} (컨센 ${_rN(opP)}억)`]);
+    // 다음 분기 컨센
+    const nq=q.length?(q[1]==='4'?`1Q${+q[2]+1}E`:`${+q[1]+1}Q${q[2]}E`):null;
+    const nRev=nq?repCons(latest,nq,'rev'):null, nOp=nq?repCons(latest,nq,'op'):null;
+    const nN=nq?rs.filter(r=>r.est&&r.est[nq]&&r.est[nq].rev!=null).length:0;
+    if(nRev!=null)cards.push([`다음 분기 ${nq} 컨센`,`<span class="v">${_rN(nRev)}</span>`,`억원 · 영업이익 ${_rN(nOp)}억 · ${nN}곳 평균`]);
+  }else{
+    cards.push([`${focus} 매출 컨센`,`<span class="v">${_rN(rev)}</span>`,`억원 · 영업이익 ${_rN(op)}억`+(chg!=null?` · 직전 시즌비 <span class="${chg>=0?'up':'down'}">${chg>=0?'+':''}${chg.toFixed(1)}%</span>`:'')]);
+  }
+  document.getElementById('rep-cards').innerHTML=cards.map(c=>`<div class="card"><div class="k">${c[0]}</div>${c[1]}<div class="s">${c[2]}</div></div>`).join('');
   // 부문별 내수/수출 컨센 (최신 시즌 · 대상 분기)
   const dxEl=document.getElementById('rep-dx-cards');
   if(dxEl){
