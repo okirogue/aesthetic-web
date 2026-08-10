@@ -15,6 +15,8 @@ async function loadReports(){
     if(!r.ok){document.getElementById('rep-list').innerHTML='<div class="na-msg">reports.json 없음</div>';return;}
     repData=await r.json();
     repSeason=repSeasons().slice(-1)[0];   // 기본: 최신 시즌
+    const f=repFocusPeriod(repSeason), qm=/(\d)Q(\d{2})E/.exec(f);
+    repPeriod=(/Earnings/i.test(repSeason)&&qm)?(qm[1]==='4'?`1Q${+qm[2]+1}E`:`${+qm[1]+1}Q${qm[2]}E`):f;  // 어닝 시즌=다음 분기 기본
     renderReports();
   }catch(e){document.getElementById('rep-list').innerHTML='<div class="na-msg">리포트 데이터를 불러오지 못했습니다</div>';}
 }
@@ -185,7 +187,7 @@ function setRepPeriod(p){repPeriod=p;renderRepEst();renderRepDx();}
 function renderRepEst(){
   document.getElementById('rep-season-chips').innerHTML=repSeasons().map(s=>
     `<span class="filter-chip ${repSeason===s?'on':''}" onclick="setRepSeason('${s}')">${s}</span>`).join('');
-  document.getElementById('rep-period-chips').innerHTML=['2Q26E','2026E','2027E'].map(p=>
+  document.getElementById('rep-period-chips').innerHTML=['2Q26E','3Q26E','4Q26E','2026E','2027E'].map(p=>
     `<span class="filter-chip ${repPeriod===p?'on':''}" onclick="setRepPeriod('${p}')">${p}</span>`).join('');
   const inSeason=repSeasonReports(repSeason);
   const rs=inSeason.filter(r=>r.est&&r.est[repPeriod]&&r.est[repPeriod].seg)
