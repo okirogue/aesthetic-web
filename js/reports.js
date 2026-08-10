@@ -56,7 +56,7 @@ function renderRepCards(){
   const seasons=repSeasons(), latest=seasons.slice(-1)[0];
   const rs=repSeasonReports(latest), tps=rs.filter(r=>r.tp).map(r=>r.tp);
   const avg=tps.reduce((a,b)=>a+b,0)/tps.length;
-  const buy=rs.filter(r=>/buy|매수/i.test(r.rating||'')).length;
+  const buy=rs.filter(r=>/buy|매수|overweight|비중확대/i.test(r.rating||'')).length;
   const prev=seasons.length>1?seasons[seasons.length-2]:null;
   const focus=repFocusPeriod(latest);
   const rev=repCons(latest,focus,'rev'), op=repCons(latest,focus,'op');
