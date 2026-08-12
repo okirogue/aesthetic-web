@@ -7,7 +7,7 @@
 <meta name="googlebot" content="noindex, nofollow" />
 <title>에스테틱 모니터링 · 재무팀</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-<link rel="stylesheet" href="css/style.css?v=20260730b">
+<link rel="stylesheet" href="css/style.css?v=20260812a">
 </head>
 <body>
 <div class="wrap">
@@ -198,20 +198,26 @@
 
   <section class="view" id="view-reports">
     <div class="sec-h"><div class="l"><h2>증권사 리포트 · 파마리서치</h2></div><span class="note" id="rep-note">PDF 원문 + 부문별 매출 추정</span></div>
-    <div class="cards" id="rep-cards"><div class="na-msg">불러오는 중…</div></div>
-    <div class="cards" id="rep-dx-cards" style="display:none"></div>
-    <div class="sec-h"><div class="l"><h2>컨센서스 추이 — 시즌별 추정 변화</h2></div><span class="note">억 원 · 시즌별 커버리지 증권사 평균 · 시즌 = 어닝/프리뷰 사이클</span></div>
+    <div class="rep-strip" id="rep-strip"><span class="na-msg" style="padding:0">불러오는 중…</span></div>
+    <div class="rep-hero" id="rep-hero"></div>
+    <div class="sec-h"><div class="l"><h2>컨센서스 추이 — 시즌별 추정 변화</h2></div><span class="note">억 원 · 잔여 분기·연간 컨센이 시즌마다 어떻게 바뀌었는지 · 증권사 평균</span></div>
     <div class="chips" id="rep-trend-chips"></div>
-    <div class="chart-box"><canvas id="rep-trend-chart" style="max-height:330px"></canvas></div>
+    <div class="chart-box rep-trend-box">
+      <div class="rep-trend-grid">
+        <div id="rep-trend-qwrap"><div class="ct">잔여 분기</div><div class="cwrap"><canvas id="rep-trend-q"></canvas></div></div>
+        <div><div class="ct">연간</div><div class="cwrap"><canvas id="rep-trend-y"></canvas></div></div>
+      </div>
+    </div>
     <div class="chips" id="rep-trend-delta" style="margin-bottom:10px"></div>
-    <div class="sec-h"><div class="l"><h2>부문별 매출 추정 비교</h2></div><span class="note">억 원 · 시즌·기간 선택 · 부문 추정 제시한 곳만 차트 표시</span></div>
+    <div id="rep-trend-table" style="margin-bottom:8px"></div>
+    <div class="sec-h"><div class="l"><h2>부문별 매출 추정 — 발표 시즌 × 기간</h2></div><span class="note">억 원 · 부문 추정 제시한 곳만 차트 표시 · 막대 끝 = 합산 매출</span></div>
     <div class="chips" id="rep-season-chips"></div>
     <div class="chips" id="rep-period-chips"></div>
+    <div class="rep-strip" id="rep-est-sum" style="margin-bottom:8px"></div>
     <div class="chart-box"><canvas id="rep-est-chart" style="max-height:430px"></canvas></div>
     <div id="rep-est-table" style="margin-bottom:8px"></div>
-    <div class="sec-h"><div class="l"><h2>내수/수출 컨센서스</h2></div><span class="note">부문별 내수·수출 구분 추정 평균</span></div>
-    <div id="rep-dx-table" style="margin-bottom:8px"></div>
     <div class="sec-h"><div class="l"><h2>리포트 목록</h2></div><span class="note" id="rep-cnt"></span></div>
+    <div class="chips" id="rep-season-tabs"></div>
     <div class="chips" id="rep-type-chips"></div>
     <div id="rep-list"></div>
   </section>
@@ -227,7 +233,7 @@
 <script src="js/exports.js?v=20260801a"></script>
 <script src="js/stock.js?v=20260731a"></script>
 <script src="js/visitors.js?v=20260727d"></script>
-<script src="js/reports.js?v=20260810e"></script>
+<script src="js/reports.js?v=20260812a"></script>
 <script src="js/main.js?v=20260730a"></script>
 </body>
 </html>
