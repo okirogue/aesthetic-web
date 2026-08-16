@@ -1,26 +1,19 @@
 {
-  "updated": "2026-08-16 08:30",
+  "updated": "2026-08-17 07:08",
   "domestic": [
     {
       "co": "파마리서치",
-      "title": "호주 간 파마리서치…&quot;리쥬란 임상 사례 공유&quot;",
-      "link": "https://www.newsis.com/view/NISX20260813_0003748170",
-      "date": "08/15 10:01",
-      "desc": "재생의학 전문기업 파마리서치가 국제 심포지엄에 참가해 의료기기 ‘리쥬란’ 임상 사례를 공유했다. 파마리서치는 최근 호주 시드니에서 열린 국제 미용의학 심포지엄 ‘에스테틱스(Aesthetics) 2026’에 참가해..."
+      "title": "기관 '이오테크닉스'·외인 '파마리서치'·개인 '제주반도체' 1위 [주간...",
+      "link": "https://www.fntimes.com/html/view.php?ud=20260815211415527179ad43907_18",
+      "date": "08/16 12:02",
+      "desc": "[주간 코스닥 순매수] 정선은 한국금융신문 기자"
     },
     {
-      "co": "파마리서치",
-      "title": "[주간 코스닥 외국인] 파마리서치·심텍 웃고 제주반도체·이오테크닉스...",
-      "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=477644",
-      "date": "08/15 06:22",
-      "desc": "지난주 코스닥 시장에서 외국인 투자자들의 매수세가 파마리서치와 심텍, 레인보우로보틱스 등으로 집중됐다. 외국인 수급은 바이오와 반도체, 로봇 등 성장주를 중심으로 엇갈린 흐름을 보였다. 14일 한국거래소에..."
-    },
-    {
-      "co": "클래시스",
-      "title": "두 분기 연속 실적 부진에 목표가 낮춘 클래시스…장기 성장성은 유지",
-      "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=477685",
-      "date": "08/15 11:16",
-      "desc": "클래시스가 외형 성장세를 이어가고 있지만 수익성 회복이 늦어지면서 주가 눈높이도 낮아졌다. 대신증권은... 클래시스의 최근 실적에서 가장 두드러지는 특징은 외형 확대와 수익성 사이의 온도 차다. 매출 규모는 한..."
+      "co": "에이피알",
+      "title": "에이피알, 영업익 화장품 빅2 제쳐…해외시장 '올인'",
+      "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4430353",
+      "date": "08/17 07:02",
+      "desc": "올해 영업이익 에이피알이 1위 수성 가능성 해외 매출 메디큐브 증심 90% 비중 차지 에이피알 올해 2분기 지역별 매출[출처: 에이피알] (서울=연합인포맥스) 변명섭 기자 = 에이피알[278470]이 올해 상반기..."
     },
     {
       "co": "에이피알",
@@ -30,13 +23,21 @@
       "desc": "컬래버, 日 큐텐 메가포 입점 '부스터 프로 X2'에 굿즈 결합  에이피알 뷰티 브랜드 메디큐브가 가수... 이번 협업은 에이피알이 뷰티 디바이스를 글로벌 사업 핵심축으로 키우는 흐름과도 맞닿아 있다. 메디큐브..."
     },
     {
-      "co": "리쥬란",
-      "kw": "리쥬란",
-      "title": "여름철 트러블 진정 후 피부결 관리…리쥬란 시술 시점도 중요",
-      "link": "https://www.e-science.co.kr/news/articleView.html?idxno=133496",
-      "date": "08/15 10:00",
-      "desc": "대표적인 스킨부스터 중 하나인 리쥬란은 PN(폴리뉴클레오타이드)을 주요 성분으로 활용하는 주사형 시술이다. 다만 리쥬란은 여드름이나 모낭염 자체를 치료하는 목적으로 사용하는 시술과는 구분해야 한다. 현재 염증성..."
+      "co": "ECM",
+      "kw": "리투오",
+      "title": "휴메딕스, '리투오' 앞세워 분기 최대 매출… 2분기 504억원",
+      "link": "http://www.biztribune.co.kr/news/articleView.html?idxno=357496",
+      "date": "08/16 22:14",
+      "desc": "휴메딕스가 세포외기질(ECM) 스킨부스터 '리투오'와 일회용 점안제 수주 확대에 힘입어 분기 최대 매출을... 2분기 실적은 리투오 제조사의 생산능력 확대에 따른 공급 증가와 학술 마케팅 효과가 이끌었다. 일회용..."
     }
   ],
-  "foreign": []
+  "foreign": [
+    {
+      "co": "Allergan",
+      "title": "Allergan Aesthetics Refreshes APP Loyalty Program for Aesthetic Practices - Dermatology Times",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPR1NWSGs2alUzckk0alBLeC1KMUVfZEpoekRVQ2pmeWFucXpnUVZ4WDVJZjJNVGNRX0NmWDE1ZWtkekl3dUJsNHNmMUZyX0JSN3VKVmpieGItNnc5LTlGOWRzV2h4MDZrM3g0WGxFZW0ydmZvRmVPQXZuanloNWRuTmQtcE4yWUpNTHQybmN3akNjeUQwc2NSa0dVdHF1dzlxVkg0MlVLdUZERzZocnhUbw?oc=5",
+      "date": "08/15 22:16",
+      "desc": "Allergan Aesthetics Refreshes APP Loyalty Program for Aesthetic Practices&nbsp;&nbsp;Dermatology Times"
+    }
+  ]
 }
