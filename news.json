@@ -1,6 +1,13 @@
 {
-  "updated": "2026-08-17 18:46",
+  "updated": "2026-08-18 07:07",
   "domestic": [
+    {
+      "co": "파마리서치",
+      "title": "파마리서치, 수출이 성장 이끌었다…&quot;눈높이만 낮추면 기회&quot;",
+      "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=477982",
+      "date": "08/18 00:16",
+      "desc": "사진=핀포인트뉴스DB 파마리서치가 해외 시장을 중심으로 성장세를 이어가고 있다. 유안타증권은 최근 보고서에서 파마리서치의 수출 확대가 실적 성장을 이끌고 있는 만큼 단기적인 비용 부담보다 해외 사업의 성장..."
+    },
     {
       "co": "파마리서치",
       "title": "수출이 끌어올린 K미용의료 몸값…휴젤·파마리서치 목표가 ‘줄상향’...",
@@ -16,18 +23,18 @@
       "desc": "파마리서치가 의료기기와 화장품 사업의 해외 확장에 힘입어 2분기에도 견조한 성장세를 이어갔다. 교보증권은 최근 보고서에서 유럽을 비롯한 해외 시장에서 의료기기 판매가 늘고 미국과 동남아를 중심으로 화장품..."
     },
     {
-      "co": "파마리서치",
-      "title": "기관 '이오테크닉스'·외인 '파마리서치'·개인 '제주반도체' 1위 [주간...",
-      "link": "https://www.fntimes.com/html/view.php?ud=20260815211415527179ad43907_18",
-      "date": "08/16 12:02",
-      "desc": "[주간 코스닥 순매수] 정선은 한국금융신문 기자"
-    },
-    {
       "co": "휴젤",
       "title": "비용 부담 털어낸 휴젤…하반기 실적 개선 기대 커진다",
       "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=477936",
       "date": "08/17 10:50",
       "desc": "휴젤이 2분기 시장 기대를 웃도는 실적을 내놓으며 하반기 성장 가능성을 확인했다. 교보증권은 최근... 휴젤의 2분기 매출액은 1397억원으로 지난해 같은 기간보다 25.1% 증가했다. 영업이익은 560억원으로 1.1% 감소했지만..."
+    },
+    {
+      "co": "에이피알",
+      "title": "&quot;시총 100조 기업 목표&quot;… 에이피알 김병훈 대표, 글로벌 K-뷰티 성장 이...",
+      "link": "https://www.newscj.com/news/articleView.html?idxno=3425824",
+      "date": "08/17 20:28",
+      "desc": "기업 에이피알의 김병훈 대표(38)가 회사를 시가총액 100조원 규모의 기업으로 키우겠다는 목표를 제시했다. 17일 뷰티업계에 따르면 김 대표는 최근 미국 경제지 포브스와의 인터뷰에서 이같이 밝혔다. 에이피알은..."
     },
     {
       "co": "에이피알",
@@ -52,5 +59,13 @@
       "desc": "휴메딕스가 세포외기질(ECM) 스킨부스터 '리투오'와 일회용 점안제 수주 확대에 힘입어 분기 최대 매출을... 2분기 실적은 리투오 제조사의 생산능력 확대에 따른 공급 증가와 학술 마케팅 효과가 이끌었다. 일회용..."
     }
   ],
-  "foreign": []
+  "foreign": [
+    {
+      "co": "Allergan",
+      "title": "Breast implants class action loses bid to strike out Allergan defence - Lawyerly",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQNGN0cFJPZklYWWNmQ0hBMGRPdlh1eEp3U0ZGWTZ0WFg1emtRTTZyYkN2U2tmcTl0TE1DNVV1OFYyYkIyTEozNDdlSzZUcWgwc0ZOYUV4dmswbEFibE9JMFhxVDFPbXVZeHdlRGRiZFhJZWlPdWxMWlEtOWZscUd1SXdMRjlmWUpZb1FrRnRtWFRTMFpRdUswNlc5eDFqNTg?oc=5",
+      "date": "08/17 13:59",
+      "desc": "Breast implants class action loses bid to strike out Allergan defence&nbsp;&nbsp;Lawyerly"
+    }
+  ]
 }
