@@ -200,3 +200,9 @@
   .chip-cap{font-size:11px; color:var(--dim); font-weight:700; margin-right:2px}
   td .dx{font-size:10.5px; color:var(--dim); font-variant-numeric:tabular-nums; margin-top:1px}
   td .dx .sh{color:var(--lime-txt); font-weight:700}
+
+/* ===== 버즈 탭 v2 (2026-08-17) ===== */
+.bz-tbl{width:100%;border-collapse:collapse;font-size:13px}
+.bz-tbl th{text-align:left;color:var(--dim);font-size:11px;font-weight:700;padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+.bz-tbl td{padding:7px 8px;border-bottom:1px solid #eef1f3}
+.bz-tbl tr:hover td{background:#f6f9f3}
