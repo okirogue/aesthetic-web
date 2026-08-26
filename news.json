@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-26 15:28",
+  "updated": "2026-08-26 15:58",
   "domestic": [
     {
       "co": "파마리서치",
@@ -91,6 +91,13 @@
       "link": "http://www.bokuennews.com/news/article.html?no=283023",
       "date": "08/25 10:30",
       "desc": "글로벌 메디컬 에스테틱 전문 기업 클래시스(대표 윤준오)가 탄탄한 글로벌 판매 기반을 바탕으로 올해 전 세계 장비 누적 판매 대수 5만대를 돌파할 것으로 기대된다고 24일 밝혔다. 이 같은 성과는 클래시스가 고강도..."
+    },
+    {
+      "co": "에이피알",
+      "title": "대규모 보호예수 해제 앞둔 에이피알...오버행 리스크 경고등",
+      "link": "https://www.edaily.co.kr/News/Read?newsId=04113126645551256&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article",
+      "date": "08/26 15:50",
+      "desc": "글로벌 뷰티 기업 에이피알(278470)의 김병훈 대표 등 주요 임원의 지분에 대한 보호예수 해제가 하루 앞으로... 에이피알은 대규모 지분 매도 가능성에 선을 그은 가운데, 업계에선 향후 글로벌 시장 확장과 신사업에..."
     },
     {
       "co": "에이피알",
@@ -200,13 +207,5 @@
       "desc": "셀르디엠의 경우 인체 유래 ECM(Extracellular Matrix, 세포외기질) 기반 성분을 활용한 스킨부스터 시술로, 콜라겐∙엘라스틴∙글리코사미노글리칸(GAGs) 등 다양한 ECM 성분을 복합적으로 포함하고 있다. ECM은 세포 주변에서..."
     }
   ],
-  "foreign": [
-    {
-      "co": "Merz Aesthetics",
-      "title": "Merz Aesthetics advances Aesthetic Longevity through landmark research partnership with NANOTEC - Bangkok Post",
-      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQVlB6bTFodzVyc1dFdWU2aTNlbzNUZVJ1M1ZOMkVmLVo3Z1lyQWFJVi1oaGVOSF9tOUdhOUMyOVFWMWZYZjI2R2Jzd0ZKdUFsY2dnSEk4QVFuY3JObnhIVm9OTTlubDgtd1NIR2VidF9jbXhyVndRN1JOdFAzbTlCa0J4UEhtUmFhcTl3OHlkTkNHSUZIc2FTalN2WTNaU21la1RTaXdSNGo2el9HT3k1U1ltaWFCZllya0JGRlI1VHJKcmZBZXFUYnRlS2tsRmxTaDdud2Q0T0pJZHQzbjZRTUhB?oc=5",
-      "date": "08/25 06:52",
-      "desc": "Merz Aesthetics advances Aesthetic Longevity through landmark research partnership with NANOTEC&nbsp;&nbsp;Bangkok Post"
-    }
-  ]
+  "foreign": []
 }
