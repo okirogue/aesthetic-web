@@ -16,7 +16,7 @@ async function loadReports(){
     if(!r.ok){document.getElementById('rep-list').innerHTML='<div class="na-msg">reports.json 없음</div>';return;}
     repData=await r.json();
     repSeason=repSeasons().slice(-1)[0];   // 기본: 최신 시즌
-    repListSeason=repSeason;
+    repListSeason=repListSeasons().slice(-1)[0];   // 목록 기본 탭: 가장 최근 분류(Update 포함)
     const f=repFocusPeriod(repSeason);
     repPeriod=(/Earnings/i.test(repSeason)&&repNextQ(f))?repNextQ(f):f;  // 어닝 시즌=다음 분기 기본
     renderReports();
@@ -31,7 +31,15 @@ function repLatestPerBroker(rs){
   const m={};rs.forEach(r=>{if(!m[r.broker]||r.date>m[r.broker].date)m[r.broker]=r;});
   return Object.values(m);
 }
-function repSeasonReports(season){return repLatestPerBroker(repData.reports.filter(r=>r.season===season));}
+// 추정치 집계 시즌: est_season(있으면) > season — 목록 분류(season)와 컨센 편입(est_season)을 분리
+const repEstSeason=r=>r.est_season||r.season;
+function repSeasonReports(season){return repLatestPerBroker(repData.reports.filter(r=>repEstSeason(r)===season));}
+function repListSeasons(){  // 목록 탭용: 컨센 시즌 + 리포트에만 있는 분류(예: 26Q2 Update)를 날짜순 합집합
+  const base=repSeasons(), m={};
+  repData.reports.forEach(r=>{const d=m[r.season];m[r.season]=(!d||r.date<d)?r.date:d;});
+  const extra=Object.keys(m).filter(s=>!base.includes(s)).sort((a,b)=>m[a].localeCompare(m[b]));
+  return [...base,...extra];
+}
 function repCons(season,period,key){
   const v=repSeasonReports(season).map(r=>r.est&&r.est[period]&&r.est[period][key]).filter(x=>x!=null);
   return v.length?v.reduce((a,b)=>a+b,0)/v.length:null;
@@ -295,7 +303,7 @@ function renderRepEst(){
 function setRepListSeason(s){repListSeason=s;renderRepList();}
 function setRepType(t){repType=(repType===t)?null:t;renderRepList();}
 function renderRepList(){
-  const seasons=repSeasons().slice().reverse();
+  const seasons=repListSeasons().slice().reverse();
   document.getElementById('rep-season-tabs').innerHTML=
     seasons.map(s=>{
       const n=repData.reports.filter(r=>r.season===s).length;
