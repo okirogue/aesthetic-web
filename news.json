@@ -1,6 +1,13 @@
 {
-  "updated": "2026-09-01 17:35",
+  "updated": "2026-09-01 18:36",
   "domestic": [
+    {
+      "co": "파마리서치",
+      "title": "파마리서치 &quot;리쥬란 논문 철회, 안전·유효성 문제와 무관&quot;",
+      "link": "https://www.mdtoday.co.kr/news/articleView.html?idxno=610499",
+      "date": "09/01 18:26",
+      "desc": "리쥬란의 임상 3상 논문 철회를 둘러싸고 효능 근거에 대한 의문이 제기된 가운데 파마리서치가 논문 철회는 제품의 안전성·유효성 문제가 아닌 연구비 지원 및 이해상충 공시 문제에 따른 것이라고 반박했다. 1일..."
+    },
     {
       "co": "파마리서치",
       "title": "파마리서치메디케어-GE헬스케어코리아 MOU 체결",
@@ -77,13 +84,6 @@
       "link": "http://www.hansbiz.co.kr/news/articleView.html?idxno=860721",
       "date": "08/31 10:30",
       "desc": "GE 헬스케어 코리아 김용덕 대표, 파마리서치메디케어 서영재 대표./파마리서치 제공 | 서울=한스경제 허승아 기자 | 파마리서치메디케어가 GE헬스케어 코리아와 손잡고 근골격계 질환의 진단부터 치료까지 연계하는 임상..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "GE헬스케어-파마리서치메디케어, 전략적 업무 협약 체결",
-      "link": "https://www.medicaltimes.com/Main/News/NewsView.html?ID=1170441&ref=naverpc",
-      "date": "08/31 10:10",
-      "desc": "GE헬스케어가 파마리서치메디케어와 MOU를 체결했다.[메디칼타임즈=이인복 기자]GE헬스케어 코리아(대표 김용덕)는 파마리서치메디케어(대표 서영재)와 근골격계 분야의 진단부터 치료에 이르는 통합 솔루션을 제공하고..."
     },
     {
       "co": "휴젤",
@@ -254,13 +254,6 @@
       "desc": "에이피알이 2026년 하반기 신입사원 공개채용을 진행한다. 에이피알은 9월1일부터 20일까지 채용 홈페이지를 통해 신입사원 지원서를 받는다고 31일 밝혔다. 에이피알이 2026년 하반기 8개 부문에서 신입사원 공개채용을..."
     },
     {
-      "co": "에이피알",
-      "title": "32개 포지션, 8개 부문에서 뽑는다…에이피알 채용 살펴보니",
-      "link": "https://www.ddaily.co.kr/page/view/2026083109221886625",
-      "date": "08/31 09:36",
-      "desc": "에이피알은 9월1일부터 하반기 대규모 신입사원 채용을 진행한다고 31일 밝혔다. 서류 접수는 오는 20일까지다. 에이피알은 채용 기간 동안 상품 기획과 마케팅 및 디자인, 법무, 개발, 생산 등 총 8개 부문, 32개..."
-    },
-    {
       "co": "리쥬란",
       "kw": "리쥬란",
       "title": "美 뷰티시장 '리쥬란' 돌풍…현지화 속도",
@@ -296,10 +289,10 @@
   "foreign": [
     {
       "co": "Allergan",
-      "title": "Allergan Aesthetics Refreshes Allergan Partner Privileges® to Better Support Today's Modern Aesthetics Practices - thewisemarketer.com",
+      "title": "Allergan Aesthetics Refreshes Allergan Partner Privileges® to Better Support Today's Modern Aesthetics Practices - The Wise Marketer",
       "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOOUNaNnJCaFdpanRtRTN4enZJOEhKWWFseGR0OUFzWTFGTGd4UjlQb2V2THBpNThBODhRbHhVbnIxSk9ySW5TSWpfaHUxTWpTc0RUWVc0VVJxVVU5M2FsTGMtYjJuLU1uNWtvZFdWeWtKUlVTSkpsY0RyN0FuVjZRYno5TWpacklxcHBTLVEzXzFFOG5Ra1ZSWHFoNXMwdWViNzhkWTNtMGpVT19vbEN6M2xxbXl3dHg4RXVVUWZ1ZGRuZ1dRZGlYWjdzZ1RHUG55ejNxSWJ3?oc=5",
       "date": "08/31 12:14",
-      "desc": "Allergan Aesthetics Refreshes Allergan Partner Privileges® to Better Support Today's Modern Aesthetics Practices&nbsp;&nbsp;thewisemarketer.com"
+      "desc": "Allergan Aesthetics Refreshes Allergan Partner Privileges® to Better Support Today's Modern Aesthetics Practices&nbsp;&nbsp;The Wise Marketer"
     }
   ]
 }
