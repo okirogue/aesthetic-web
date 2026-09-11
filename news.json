@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-11 12:05",
+  "updated": "2026-09-11 12:15",
   "domestic": [
     {
       "co": "파마리서치",
@@ -241,17 +241,17 @@
     },
     {
       "co": "에이피알",
-      "title": "에이피알, 美·유럽 메디큐브 팝업 확대…글로벌 시장 공략 속도",
-      "link": "https://www.m-i.kr/news/articleView.html?idxno=1412170",
-      "date": "09/10 08:54",
-      "desc": "에이피알이 뉴욕·로스앤젤레스·런던·파리에서 메디큐브 팝업스토어를 열고 글로벌 고객 접점 확대에 나선다. 사진=에이피알 제공 매일일보 = 강소슬 기자  |  에이피알이 미국과 유럽 주요 도시에서 메디큐브..."
-    },
-    {
-      "co": "에이피알",
       "title": "에이피알, 뉴욕·런던 등서 메디큐브 팝업스토어 운영",
       "link": "https://dealsite.co.kr/articles/168778",
       "date": "09/10 08:54",
       "desc": "기업 에이피알이 미국과 유럽 주요 도시에서 메디큐브 팝업스토어를 잇달아 열며 오프라인 고객 접점을... 에이피알은 이달부터 10월까지 미국과 유럽 주요 도시에서 메디큐브 릴레이 팝업스토어를 운영한다고 10일..."
+    },
+    {
+      "co": "에이피알",
+      "title": "에이피알, 美·유럽 메디큐브 팝업 확대…글로벌 시장 공략 속도",
+      "link": "https://www.m-i.kr/news/articleView.html?idxno=1412170",
+      "date": "09/10 08:54",
+      "desc": "에이피알이 뉴욕·로스앤젤레스·런던·파리에서 메디큐브 팝업스토어를 열고 글로벌 고객 접점 확대에 나선다. 사진=에이피알 제공 매일일보 = 강소슬 기자  |  에이피알이 미국과 유럽 주요 도시에서 메디큐브..."
     },
     {
       "co": "에이피알",
@@ -331,10 +331,17 @@
   "foreign": [
     {
       "co": "Galderma",
-      "title": "W&H GALDERMA VODAST HERO ENG SUBS - Yahoo",
+      "title": "Galderma launches ALASTIN skincare in Korea at GAIN RESTAGE - Korea Biomedical Review",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1TTjJFMUxHR3ZlOEJkRlNLekZpOTBpOVREVVZqUmNEcWhfbkFIb0pMclZybVZGNThud3pJdlE5TzNBaUZMTmNFQkZxWDdKNk50LUI3OTFJVTVJOEt6M1ZuVGNzZHN0NnhhUHZvLXpB0gFyQVVfeXFMT2wyVzU1U2NGZmcwMFRXdWJfT3VNdXpLYWlzSkcyUHBtRnZSZHRrMHJ3R1RIV01yTmtDaktQUi1hSDVrblRuQ3BTbXFlb1RZeTY4Rzc3RktnS0tSQWlUNkRwM1l0ZDM3al9ZdHFQSm45RFZR?oc=5",
+      "date": "09/11 02:09",
+      "desc": "Galderma launches ALASTIN skincare in Korea at GAIN RESTAGE&nbsp;&nbsp;Korea Biomedical Review"
+    },
+    {
+      "co": "Galderma",
+      "title": "W&H GALDERMA VODAST HERO ENG SUBS - yahoo.com",
       "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPODdqNGtndFZ5dm8xRXFFR3FzY2tmZU5JZVBkX01taUduZ0Q0WFJMaWxnSUVid2U2U1pEZDRHbTNZdUFOV0RsRjdGMjl1TFZQem54Ry1nUVl0aVp3Yi1NNGpkN3dPMTQ1dC1wZE1jbWx0b2VQYU9kTVhRTUo0WVhqLUdvanA?oc=5",
       "date": "09/10 14:20",
-      "desc": "W&amp;H GALDERMA VODAST HERO ENG SUBS&nbsp;&nbsp;Yahoo"
+      "desc": "W&amp;H GALDERMA VODAST HERO ENG SUBS&nbsp;&nbsp;yahoo.com"
     },
     {
       "co": "Merz Aesthetics",
