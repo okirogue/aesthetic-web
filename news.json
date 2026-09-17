@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-17 17:53",
+  "updated": "2026-09-17 19:24",
   "domestic": [
     {
       "co": "파마리서치",
@@ -142,13 +142,6 @@
       "desc": "16일 오전 11시 3분 기준, 네이버페이 증권에 따르면 에이피알 주가가 9월 16일 장중 하락세를 나타내고 있다. 현재 에이피알의 주가는 349,750원을 기록하며, 지난 종가 361,500원 대비 11,750원, 3.25..."
     },
     {
-      "co": "에이피알",
-      "title": "화장품 관련주 엇갈려…코스메카코리아 2.76%↑·에이피알 3.60%↓",
-      "link": "https://www.cbci.co.kr/news/articleView.html?idxno=607257",
-      "date": "09/16 10:22",
-      "desc": "반면 에이피알과 달바글로벌, 본느, 씨티케이 등은 하락하면서 K뷰티 관련주 안에서도 차별화가... 에이피알은 전 거래일보다 1만3000원(3.60%) 하락한 34만8500원에 거래되고 있다. 36만1500원으로 출발해 장중..."
-    },
-    {
       "co": "엘앤씨바이오",
       "title": "[약업분석]엘앤씨바이오, 외형·영업익 동시에 뛰었다…매출 691억·영업...",
       "link": "https://www.yakup.com/news/index.html?mode=view&cat=12&nid=332664",
@@ -171,17 +164,17 @@
     },
     {
       "co": "엘앤씨바이오",
-      "title": "엘앤씨바이오 ‘리투오’, 태국 뚫었다…“생산·매출 확대”",
-      "link": "https://biz.chosun.com/science-chosun/bio/2026/09/16/G5DCVADS75EFRFWT4FIZSDLFKU/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-      "date": "09/16 14:42",
-      "desc": "타이 FDA, 인체피부조직 ECM 제품 허가 승인 회사 “월 생산능력 15만개 이상 확대 추진” 엘앤씨바이오는 인체피부조직 유래 세포외기질(ECM) 제품 리투오(Re2O)와 리투오 파인(Re2O Fine)이 태국 식품의약품청(Thai FDA)..."
-    },
-    {
-      "co": "엘앤씨바이오",
       "title": "엘앤씨바이오, 'Re2O' 태국 허가 획득…해외 매출 확대 추진",
       "link": "https://dealsite.co.kr/articles/169148",
       "date": "09/16 14:42",
       "desc": "리투오·리투오 파인 Thai FDA Class 4 동시 승인…증설과 맞물려 ASEAN 시장 공략 엘앤씨바이오의 인체피부조직 기반 세포외기질(ECM) 제품 ‘리투오(Re2O)’가 태국 시장 진입을 위한 인허가를 마쳤다. 국내 수요에..."
+    },
+    {
+      "co": "엘앤씨바이오",
+      "title": "엘앤씨바이오 ‘리투오’, 태국 뚫었다…“생산·매출 확대”",
+      "link": "https://biz.chosun.com/science-chosun/bio/2026/09/16/G5DCVADS75EFRFWT4FIZSDLFKU/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+      "date": "09/16 14:42",
+      "desc": "타이 FDA, 인체피부조직 ECM 제품 허가 승인 회사 “월 생산능력 15만개 이상 확대 추진” 엘앤씨바이오는 인체피부조직 유래 세포외기질(ECM) 제품 리투오(Re2O)와 리투오 파인(Re2O Fine)이 태국 식품의약품청(Thai FDA)..."
     },
     {
       "co": "엘앤씨바이오",
