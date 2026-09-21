@@ -77,7 +77,7 @@ const reviewsByKw = {
 };
 
 // 해외 버즈 (eu_buzz.json — 유럽 침투도·후기·Big6 구글트렌드)
-const EU_KW_COLORS={"Rejuran":"#e07b28","Profhilo":"#8f68c9","Sculptra":"#4a90d9","Plinest":"#4e9d46","Sunekos":"#c95f8f"};
+const EU_KW_COLORS={"Rejuran":"#e07b28","Profhilo":"#8f68c9","Sculptra":"#4a90d9","Plinest":"#4e9d46","Sunekos":"#c95f8f","Vitaran":"#2aa198"};
 let euDoc=null, euGeo="GB", euWeek=null, euPeriodW=52, euTrendChart=null, euCountryChart=null, euClinicsOpen=false;
 
 // 수출 데이터 (TRASS · exports_trass_raw.json)
