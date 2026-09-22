@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>취미생활</title>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#221b16;
+    --panel:#2d241d;
+    --panel-deep:#191410;
+    --ink:#e8ddcf;
+    --ink-dim:#a89880;
+    --gold:#c9a45c;
+    --ember:#b0603a;
+    --line:#453729;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'IBM Plex Sans KR',sans-serif;
+    font-size:15px;
+    line-height:1.75;
+    padding-bottom:60px;
+  }
+  header{
+    padding:44px 22px 26px;
+    border-bottom:1px solid var(--line);
+  }
+  header h1{
+    font-family:'Gowun Batang',serif;
+    font-size:34px;
+    font-weight:700;
+    letter-spacing:.04em;
+    color:var(--gold);
+  }
+  header p{
+    margin-top:6px;
+    color:var(--ink-dim);
+    font-size:13px;
+  }
+  .top-tabs{
+    display:flex;
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;
+    background:var(--bg);
+    z-index:10;
+  }
+  .top-tabs button{
+    flex:1;
+    padding:15px 0 13px;
+    background:none;
+    border:none;
+    border-bottom:2px solid transparent;
+    color:var(--ink-dim);
+    font-family:'Gowun Batang',serif;
+    font-size:17px;
+    cursor:pointer;
+  }
+  .top-tabs button.on{
+    color:var(--gold);
+    border-bottom-color:var(--gold);
+  }
+  main{padding:22px 18px;}
+  .hidden{display:none;}
+  .view-toggle{
+    display:flex;
+    gap:8px;
+    margin-bottom:22px;
+  }
+  .view-toggle button{
+    padding:7px 16px;
+    border-radius:20px;
+    border:1px solid var(--line);
+    background:none;
+    color:var(--ink-dim);
+    font-size:13px;
+    font-family:inherit;
+    cursor:pointer;
+  }
+  .view-toggle button.on{
+    background:var(--gold);
+    border-color:var(--gold);
+    color:#241c12;
+    font-weight:600;
+  }
+  /* 목록 카드 (탭하면 상세로) */
+  .list-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:16px 18px;
+    margin-bottom:12px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    transition:border-color .15s;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .list-card:active{border-color:var(--gold);}
+  .list-card .body{flex:1;min-width:0;}
+  .list-card .no{
+    font-family:'Gowun Batang',serif;
+    color:var(--ember);
+    font-size:12px;
+    letter-spacing:.08em;
+  }
+  .list-card h2{
+    font-family:'Gowun Batang',serif;
+    font-size:17px;
+    color:var(--ink);
+    margin:1px 0;
+  }
+  .list-card .sub{
+    color:var(--ink-dim);
+    font-size:12.5px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+  .list-card .chev{
+    color:var(--ink-dim);
+    font-size:18px;
+    flex-shrink:0;
+  }
+  .list-card.empty{cursor:default;}
+  .list-card.empty h2{color:var(--ink-dim);}
+  /* 위스키 그룹 헤더 */
+  .whisky-group h2.grp{
+    font-family:'Gowun Batang',serif;
+    font-size:16px;
+    color:var(--gold);
+    margin:24px 0 10px;
+    padding-bottom:6px;
+    border-bottom:1px solid var(--line);
+  }
+  .whisky-group:first-child h2.grp{margin-top:0;}
+  .whisky-group h2.grp small{
+    color:var(--ink-dim);
+    font-weight:400;
+    font-size:12px;
+    margin-left:8px;
+  }
+  /* 상세 페이지 */
+  .detail{padding:0;}
+  .back{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:none;
+    border:1px solid var(--line);
+    border-radius:20px;
+    color:var(--ink-dim);
+    font-family:inherit;
+    font-size:13px;
+    padding:7px 16px;
+    margin-bottom:20px;
+    cursor:pointer;
+  }
+  .back:active{border-color:var(--gold);color:var(--gold);}
+  .detail .d-no{
+    font-family:'Gowun Batang',serif;
+    color:var(--ember);
+    font-size:13px;
+    letter-spacing:.1em;
+  }
+  .detail h2.d-title{
+    font-family:'Gowun Batang',serif;
+    font-size:24px;
+    color:var(--gold);
+    margin:4px 0 2px;
+    line-height:1.35;
+  }
+  .detail .d-meta{
+    color:var(--ink-dim);
+    font-size:13px;
+    margin-bottom:18px;
+  }
+  .detail .d-body p{
+    margin-bottom:14px;
+  }
+  .d-photo{
+    width:100%;
+    max-width:420px;
+    display:block;
+    border-radius:10px;
+    border:1px solid var(--line);
+    margin:0 auto 18px;
+  }
+  .phase{
+    font-family:'Gowun Batang',serif;
+    color:var(--gold);
+    font-size:14px;
+    margin:20px 0 6px;
+  }
+  .quote{
+    background:var(--panel-deep);
+    border-left:3px solid var(--ember);
+    border-radius:0 8px 8px 0;
+    padding:12px 16px;
+    margin:16px 0;
+    font-family:'Gowun Batang',serif;
+    font-size:15px;
+    color:var(--ink);
+  }
+  .lesson{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:14px 16px;
+    margin-top:22px;
+    font-size:13.5px;
+    color:var(--ink-dim);
+  }
+  .lesson b{color:var(--gold);font-weight:600;}
+  .todo{
+    color:var(--ink-dim);
+    font-size:13px;
+    font-style:italic;
+  }
+  footer{
+    margin-top:40px;
+    padding:20px 22px 0;
+    border-top:1px solid var(--line);
+    color:var(--ink-dim);
+    font-size:12.5px;
+    text-align:center;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>취미생활</h1>
+  <p>시가와 위스키, 천천히 배워가는 기록</p>
+</header>
+
+<div class="top-tabs" id="topTabs">
+  <button id="tabCigar" class="on" onclick="topTab('cigar')">시가</button>
+  <button id="tabWhisky" onclick="topTab('whisky')">위스키</button>
+</div>
+
+<main>
+
+<!-- ===================== 시가 목록 ===================== -->
+<section id="secCigar">
+
+  <div class="view-toggle">
+    <button id="vDate" class="on" onclick="cigarView('date')">날짜별</button>
+    <button id="vCigar" onclick="cigarView('cigar')">시가별</button>
+  </div>
+
+  <!-- 날짜별 보기 -->
+  <div id="viewDate">
+    <div class="list-card" onclick="openDetail('d-c11')">
+      <div class="body">
+        <div class="no">No.11 · 2026. 9. 19.</div>
+        <h2>다비도프 야마사 페팃 처칠</h2>
+        <div class="sub">후추 → 흙 → 단맛 → 다시 후추 — "난 후추는 취향이 아닌 거 같아"</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+    <div class="list-card" onclick="openDetail('d-c10')">
+      <div class="body">
+        <div class="no">No.10 · 2026. 9. 19.</div>
+        <h2>아투로 푸엔테 로얄 살루트 마두로</h2>
+        <div class="sub">첫 더블 코로나 — "좋은 시가다" 그리고 "난 5인치대가 맞는 듯"</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+    <div class="list-card" onclick="openDetail('d-c9')">
+      <div class="body">
+        <div class="no">No.9 · 2026. 9. 17.</div>
+        <h2>다비도프 프리메로스 마두로 니카라과</h2>
+        <div class="sub">직구 틴 첫 개비 — 시작점과의 재회, 후추 지나 고소달콤</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+    <div class="list-card" onclick="openDetail('d-c8')">
+      <div class="body">
+        <div class="no">No.8 · 2026. 9. 16.</div>
+        <h2>올리바 코네티컷 리저브 로부스토</h2>
+        <div class="sub">"보급형 No.2" — 아쉽지만 시가 피고 싶은 마음을 달랠 만하다</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+    <div class="list-card" onclick="openDetail('d-c7')">
+      <div class="body">
+        <div class="no">No.7 · 2026. 9. 16.</div>
+        <h2>올리바 세리에 G 스페셜 G</h2>
+        <div class="sub">직구 물량 첫 개시 — "5불짜리 저렴이 치고 괜찮네"</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+    <div class="list-card" onclick="openDetail('d-c6')">
+      <div class="body">
+        <div class="no">No.6 · 2026. 9. 13.</div>
+        <h2>플라센시아 알마 델 시엘로</h2>
+        <div class="sub">건초와 마일드가 일관적이다가, 마지막에 고소함이 얹힌다</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+    <div class="list-card" onclick="openDetail('d-c5')">
+      <div class="body">
+        <div class="no">No.5 · 2026. 9. 11.</div>
+        <h2>다이아몬드 크라운 마두로 No.5</h2>
+        <div class="sub">파드론 대비 "압도적" — 차에서 태운 게 후회될 만큼</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+    <div class="list-card" onclick="openDetail('d-c4')">
+      <div class="body">
+        <div class="no">No.4 · 2026. 9. 9.</div>
+        <h2>다비도프 시그니처 No.2</h2>
+        <div class="sub">첫 라운지 세션 — "나 다비도프다!" 그리고 취향의 발견</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+    <div class="list-card" onclick="openDetail('d-c3')">
+      <div class="body">
+        <div class="no">No.3 · 2026. 9. 5.</div>
+        <h2>올리바 세리에 G 토로</h2>
+        <div class="sub">첫 토로 — 플로럴에서 밀크초콜릿, 그리고 페퍼로</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+    <div class="list-card" onclick="openDetail('d-c2')">
+      <div class="body">
+        <div class="no">No.2</div>
+        <h2>로키파텔 빈티지 1990 주니어</h2>
+        <div class="sub">토치 실수에서 배운 것 — 스파이스는 기술이었다</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+    <div class="list-card" onclick="openDetail('d-c1')">
+      <div class="body">
+        <div class="no">No.1</div>
+        <h2>파드론 2000 내추럴</h2>
+        <div class="sub">"가성비 쥑이네"</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+  </div>
+
+  <!-- 시가별 보기 -->
+  <div id="viewCigar" class="hidden">
+    <div class="whisky-group">
+      <h2 class="grp">다비도프<small>Davidoff</small></h2>
+      <div class="list-card" onclick="openDetail('d-c4')">
+        <div class="body">
+          <div class="no">No.4</div>
+          <h2>시그니처 No.2</h2>
+          <div class="sub">파나텔라 · 코네티컷 · 라운지 레솔베르</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+      <div class="list-card" onclick="openDetail('d-c9')">
+        <div class="body">
+          <div class="no">No.9</div>
+          <h2>프리메로스 마두로 니카라과</h2>
+          <div class="sub">쁘띠 파나텔라 · 멕시칸 수마트라 마두로 · 미국 직구</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+      <div class="list-card" onclick="openDetail('d-c11')">
+        <div class="body">
+          <div class="no">No.11</div>
+          <h2>야마사 페팃 처칠</h2>
+          <div class="sub">페팃 처칠 · 야마사(도미니카) · 파스타바코</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+    </div>
+    <div class="whisky-group">
+      <h2 class="grp">파드론<small>Padrón</small></h2>
+      <div class="list-card" onclick="openDetail('d-c1')">
+        <div class="body">
+          <div class="no">No.1</div>
+          <h2>파드론 2000 내추럴</h2>
+          <div class="sub">니카라과 · "가성비 쥑이네"</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+    </div>
+    <div class="whisky-group">
+      <h2 class="grp">로키파텔<small>Rocky Patel</small></h2>
+      <div class="list-card" onclick="openDetail('d-c2')">
+        <div class="body">
+          <div class="no">No.2</div>
+          <h2>빈티지 1990 주니어</h2>
+          <div class="sub">틴 5개입 중 첫 개비</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+    </div>
+    <div class="whisky-group">
+      <h2 class="grp">올리바<small>Oliva</small></h2>
+      <div class="list-card" onclick="openDetail('d-c3')">
+        <div class="body">
+          <div class="no">No.3</div>
+          <h2>세리에 G 토로</h2>
+          <div class="sub">첫 토로 사이즈 · 역삼 시가브로</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+      <div class="list-card" onclick="openDetail('d-c7')">
+        <div class="body">
+          <div class="no">No.7</div>
+          <h2>세리에 G 스페셜 G</h2>
+          <div class="sub">페르펙토 · 카메룬 · 미국 직구 첫 개시</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+      <div class="list-card" onclick="openDetail('d-c8')">
+        <div class="body">
+          <div class="no">No.8</div>
+          <h2>코네티컷 리저브 로부스토</h2>
+          <div class="sub">로부스토 · 에콰도르 코네티컷 · 미국 직구</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+    </div>
+    <div class="whisky-group">
+      <h2 class="grp">다이아몬드 크라운<small>Diamond Crown</small></h2>
+      <div class="list-card" onclick="openDetail('d-c5')">
+        <div class="body">
+          <div class="no">No.5</div>
+          <h2>마두로 No.5</h2>
+          <div class="sub">로부스토 · 브로드리프 마두로 · 라운지 레솔베르</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+    </div>
+    <div class="whisky-group">
+      <h2 class="grp">플라센시아<small>Plasencia</small></h2>
+      <div class="list-card" onclick="openDetail('d-c6')">
+        <div class="body">
+          <div class="no">No.6</div>
+          <h2>알마 델 시엘로</h2>
+          <div class="sub">로부스토 · 니카라과 · 라운지 레솔베르</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+    </div>
+    <div class="whisky-group">
+      <h2 class="grp">아투로 푸엔테<small>Arturo Fuente</small></h2>
+      <div class="list-card" onclick="openDetail('d-c10')">
+        <div class="body">
+          <div class="no">No.10</div>
+          <h2>샤토 푸엔테 로얄 살루트 마두로</h2>
+          <div class="sub">더블 코로나 · 코네티컷 브로드리프 마두로 · 미국 직구</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===================== 위스키 목록 ===================== -->
+<section id="secWhisky" class="hidden">
+
+  <div class="whisky-group">
+    <h2 class="grp">싱글몰트 · 논피트<small>과일과 꽃의 결</small></h2>
+    <div class="list-card" onclick="openDetail('d-w-signet')">
+      <div class="body">
+        <h2>글렌모렌지 시그넷</h2>
+        <div class="sub">"실패 없는 선택" — 로스티드 스모크와 건포도, 완벽한 무난함</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+    <div class="list-card" onclick="openDetail('d-w-keris')">
+      <div class="body">
+        <h2>케리스 실버</h2>
+        <div class="sub">"꿀물 먹는 느낌" — 인도네시아 최초의 싱글몰트</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+  </div>
+
+  <div class="whisky-group">
+    <h2 class="grp">싱글몰트 · 피트<small>연기와 바다의 결</small></h2>
+    <div class="list-card" onclick="openDetail('d-w-tal')">
+      <div class="body">
+        <h2>탈리스커 10</h2>
+        <div class="sub">"피트가 빡세네" — 피트 강도의 개인 기준점</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+  </div>
+
+  <div class="whisky-group">
+    <h2 class="grp">블렌디드<small>여러 증류소의 조화</small></h2>
+    <div class="list-card" onclick="openDetail('d-w-green')">
+      <div class="body">
+        <h2>조니워커 그린라벨 15</h2>
+        <div class="sub">"나 위스키다!!!" — 블렌디드 몰트 첫 좌표</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+    <div class="list-card" onclick="openDetail('d-w-blue')">
+      <div class="body">
+        <h2>조니워커 블루라벨</h2>
+        <div class="sub">즐겨 마셔온 병 — 좌표만 먼저 기록</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+    <div class="list-card empty">
+      <div class="body">
+        <h2>로얄살루트 21</h2>
+        <div class="sub">노트 미기입 — 기억나는 대로 채울 예정</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="whisky-group">
+    <h2 class="grp">그 외 오크 숙성<small>위스키는 아니지만 같은 결</small></h2>
+    <div class="list-card" onclick="openDetail('d-w-taylor')">
+      <div class="body">
+        <h2>테일러스 20년 토니 포트</h2>
+        <div class="sub">캐러멜과 건포도의 끈적한 단맛, 옅은 한약 향</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+    <div class="list-card" onclick="openDetail('d-w-kirk')">
+      <div class="body">
+        <h2>커클랜드 시그니처 타우니 포트 10년</h2>
+        <div class="sub">알코올이 살짝 튀고 새큼 — 그래도 가성비 디저트 와인</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+    <div class="list-card" onclick="openDetail('d-w-chusa')">
+      <div class="body">
+        <h2>추사 50 배치3 시라 캐스크</h2>
+        <div class="sub">"정말 위스키 향이 나" — 오크가 만든 위스키의 골격</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===================== 시가 상세 ===================== -->
+
+<section id="d-c11" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">SESSION No.11</div>
+  <h2 class="d-title">다비도프 야마사 페팃 처칠</h2>
+  <div class="d-meta">2026. 9. 19. 22:06–22:58 (약 50분) · 차량 세션 · 파스타바코 1개비 63,000원 (미국가 약 $17) · 페팃 처칠 4×48 · 야마사 랩퍼·바인더(도미니카) · 니카라과(에스텔리·콘데가)+도미니카(필로토·메호라도) 필러 · 블랙 필러 시리즈</div>
+  <div class="d-body">
+    <img class="d-photo" src="__PHOTO_C11__" alt="다비도프 야마사 페팃 처칠" onerror="this.style.display='none'">
+    <p>외출용 가죽 케이스(아도리니 3-5)를 사러 간 파스타바코에서, 직구 물량이 막 도착한 터라 딱 한 개비만 아쉬운 마음에 집어온 시가. 랩퍼가 진해서 마두로 쪽인 줄 알았는데, 야마사는 마두로가 아니다 — 도미니카 야마사 지역의 늪지 흙에서 20년 걸려 키워낸 잎이라 색이 진할 뿐, 발효로 단맛을 끌어낸 마두로와는 문법이 다르다. 미국가 17불짜리를 63,000원에 산 셈이라 가격은 "맛보기 수업료"로 정리.</p>
+
+    <div class="phase">초반 — 열이 아니라 후추</div>
+    <div class="quote">"일단 느껴지는 건 스파이시함이야. 열관리보다는 페퍼인가 보네?"</div>
+    <p>첫 퍼프부터 온 매운맛이라 토치 탓은 아니다. 혀끝과 코 안쪽이 따끔하고 뒤에 쓴맛이 안 남으면 후추, 목이 칼칼하고 텁텁한 쓴맛이 남으면 열 — 이날은 전자였다. 니카라과 에스텔리 필러의 오프닝인데, 프리메로스나 코네티컷 리저브의 초반 매콤보다 세고 훨씬 오래 갔다. 짧은 시가라 금방 빠질 줄 알았는데 25분 가까이 후추가 앞을 막았다.</p>
+    <div class="quote">"흠… 후추가 아직 세구먼"</div>
+
+    <div class="phase">흙 — 이름 붙이기까지</div>
+    <p>후추 뒤에 뭐가 있는지 찾는 도전을 시작했다. "비 온 날 창문 열었을 때 냄새"는 안 통했고, 버섯 볶는 냄새·흙 묻은 감자 껍질·우엉 삶은 물로 바꾸니 잡히기 시작했다.</p>
+    <div class="quote">"오 뭔지 알 거 같긴 한데, 표현하기 모호하네" · "무겁냐 하면 그렇진 않아. 좀 부드러운데, 크림은 아닌 그런 거야" · "흙 맞는 거 같아. 약간 부드러운데 묵직. 고소하다고 하긴 그런데 그쪽 결에 무언가"</div>
+    <p>마지막 표현이 흙을 처음 잡은 사람들이 거의 똑같이 하는 말이다. 고소함과 흙은 둘 다 볶은 것·구운 것 계열이라 같은 결로 붙어 다니고, 흙은 거기서 단맛과 향긋함을 뺀 자리. No.10에서 "입에 남는 텁텁한 무게감"으로 정의했던 흙이, 이날 "부드러운데 묵직한, 고소한 결의 무언가"로 한 번 더 좌표를 얻었다.</p>
+    <p>더 큰 발견은 그 뒤에 왔다.</p>
+    <div class="quote">"내가 건초라고 느낀 향이 뭔가 흙과 비슷한 느낌을 받나 봐. No.2나 플라센시아에서도 느꼈던 게 지속적으로 있어"</div>
+    <p>건초와 흙은 같은 축 위에 있다 — 마른 풀에서 젖은 흙까지 하나의 연속선이고, 그 중간 어디쯤에 담뱃잎 자체의 기본 결이 있다. 코네티컷에서는 가볍게 건초로, 야마사에서는 무겁게 흙으로 읽혔을 뿐. 시그니처 No.2, 플라센시아, 야마사에 공통으로 흐르던 그 결의 정체다. 앞으로는 "건초 쪽" "흙 쪽"으로 방향만 붙이면 된다.</p>
+
+    <div class="phase">가죽 — 꺼질락 말락 할 때의 맛</div>
+    <div class="quote">"가죽은 뭐랄까, 불이 꺼질랑 말랑 할 때 나는 애 같아"</div>
+    <p>꽤 정확한 연결이다. 불이 약해지면 연기가 낮은 온도로 나오면서 향은 빠지고 담뱃잎의 밋밋하고 마른 결만 남는데, 그게 가죽이라 부르는 노트와 닮았다. 불 살려서 정상 온도에서도 남아 있으면 블렌드의 가죽이고, 온도가 올라오며 사라지면 그냥 꺼지는 신호. 그 밋밋한 결을 "가죽"이라 좋게 부르냐 "꺼진 맛"이라 나쁘게 부르냐는 종이 한 장 차이다.</p>
+
+    <div class="phase">중반 (22:30) — 갑자기 부드러워지다</div>
+    <div class="quote">"갑자기 부드러워짐" · "후추가 빠진 후에는 상당히 일관적이네"</div>
+    <p>후추 구간이 끝나고 야마사 본체가 나온 구간. 그리고 한 번 자리 잡으면 끝까지 흔들리지 않는 다비도프 하우스 스타일이 여기서도 그대로였다 — No.4, No.9에서 내린 결론과 같다. 리뷰에 적힌 커피·견과는 못 잡았지만, 레트로헤일을 조금만 하는 요령(입에 머금은 연기 대부분은 입으로 뱉고 마지막 한 줌만 코로)으로 단맛을 찾았다.</p>
+    <div class="quote">"얼래 좀 달달한 게 느껴진다?"</div>
+    <p>니카라과 필러의 흑설탕 느낌 단맛. 초코처럼 진하지 않고 끝에 살짝 걸리는 정도가 정상이다. 후추 → 흙 → 단맛까지, 처음 피우는 시가에서 꽤 많이 읽어낸 세션.</p>
+
+    <div class="phase">후반 — 후추의 귀환, 그리고 결론</div>
+    <div class="quote">"뒤로 가니 후추가 다시 나와"</div>
+    <p>야마사는 후추가 앞뒤를 감싸고 중간에 흙·단맛이 있는 구조다. 재우면 초반 후추는 줄어도 후반 후추는 블렌드 구조라 남는다. 중반 20분이 좋았던 건 사실이지만, 그 20분을 위해 앞뒤 후추를 견디는 건 취향에 안 맞는 거래였다.</p>
+    <div class="quote">"일단 확실한 건 난 후추는 취향이 아닌 거 같아. 좀 다른 향들을 더 느끼고 싶어" · "이런 맛이라면 차라리 No.2나 플라센시아로 갈래"</div>
+
+    <div class="lesson"><b>이 세션의 발견:</b> 취향 축에 <b>"후추는 아니다"</b>라는 좌표가 하나 더 박혔다. 후추가 세면 큼직한 맛(초콜릿·흙·커피)은 뚫고 나오지만 세밀한 결은 묻히고, 그 세밀한 결 쪽이 취향이라는 자각. 노트 쪽에서는 <b>건초와 흙이 같은 축</b>이라는 것, 흙은 "부드러운데 묵직한, 고소한 결의 무언가"라는 것, 가죽은 꺼질락 말락 할 때 나는 그 맛과 닮았다는 것을 배웠다. 야마사는 마두로가 아니라 <b>진한 내추럴</b>이며 다비도프 중 가장 센 축. 방향은 후추 적고 향 풍부한 도미니카·온두라스·재운 시가 쪽 — 파드론 1964, 다비도프 그랑크뤼, 푸엔테 헤밍웨이, 쿠바산 오요 에피큐어 No.2 정도가 홍콩 쇼핑 리스트의 기준점. 야마사는 리스트에서 제외.</div>
+  </div>
+</section>
+
+<section id="d-c10" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">SESSION No.10</div>
+  <h2 class="d-title">아투로 푸엔테 샤토 푸엔테 로얄 살루트 마두로</h2>
+  <div class="d-meta">2026. 9. 19. 09:20–10:26 (약 65분, 절반에서 종료) · 야외 아침 세션 · 미국 직구 2개비 $12.10 (개비당 약 $6) · 더블 코로나 7⅝×54 · 코네티컷 브로드리프 마두로 랩퍼 · 도미니카 바인더·필러 · 첫 더블 코로나</div>
+  <div class="d-body">
+    <img class="d-photo" src="__PHOTO_C10__" alt="아투로 푸엔테 로얄 살루트 마두로" onerror="this.style.display='none'">
+    <p>직구 물량 중 가장 큰 놈. 이름이 위스키랑 같아서 헷갈릴 뻔했지만, 로얄 살루트는 샤토 푸엔테 라인의 사이즈 이름이다 — 7⅝인치에 54링, 지금까지 태운 것 중 압도적으로 크다. 궁금해서 꺼냈지, 아니었으면 망설였을 크기.</p>
+
+    <div class="phase">착화 — 매운맛이 없다</div>
+    <div class="quote">"확실히 길고 크니 초반에 불 붙이고 나서 퍼핑 해도 매운맛이 안 나 ㅋㅋㅋ"</div>
+    <p>링게이지 효과다. 54링은 불 붙은 끝에서 입까지 거리가 길고 필러 덩어리도 커서, 열이 식으며 올라온다. 파나텔라·주니어에서 반복됐던 초반 매콤은 얇은 포맷이 열을 그대로 혀에 꽂아서 과장된 것이었고, 여기선 랩퍼 본색이 첫 퍼프부터 나왔다. 레트로헤일도 처음부터 편했다.</p>
+
+    <div class="phase">초반 — 바로 초콜릿·고소함</div>
+    <div class="quote">"레트로헤일 해도 괜찮고 바로 초콜릿 고소함이 느껴진다"</div>
+    <p>큰 사이즈라 시더·흙이 먼저 올 거라 예상했는데 빗나갔다 — 브로드리프 마두로 랩퍼가 처음부터 일했다. 파드론 2000 이후 취향 축(고소·초콜릿·견과)에 두 번째로 정확히 앉은 오프닝. 시더도 옅게 잡혔는데, 건초와 헷갈릴 만했다 — 둘 다 드라이한 식물성 향이고, 시더는 연필 깎을 때 나무 냄새로 살짝 매콤·향긋한 쪽, 건초는 마른 풀로 밋밋·달큰한 쪽이다.</p>
+    <p>흙(earthy)은 이날 처음 제대로 정의한 노트. 향이 아니라 입에 남는 질감 — 혀 뒤쪽과 입천장에 남는 텁텁한 미네랄 무게감이다. 그리고 초콜릿과 뿌리가 같다: 마두로 발효로 잎 속 당분이 캐러멜화되며 초콜릿 단맛과 흙 느낌이 함께 만들어진다. 다크초콜릿 뒤에 남는 묵직함이 그것. 리뷰에서 "초콜릿과 흙"이 세트로 붙는 이유다.</p>
+
+    <div class="phase">1/10 — 초콜릿이 배경으로 내려가다</div>
+    <div class="quote">"초코는 좀 줄어든 건지 익숙해진 건지… 옅은 고소함과 건초인지 얼씨인지 느껴지는 거 같아 착각인가 ㅋ"</div>
+    <p>착각이 아니다. 강한 첫인상 노트에 코가 적응하며 초콜릿이 배경으로 내려간 것과, 랩퍼 끝부분이 먼저 타던 초반이 지나 필러가 본격 합류하며 도미니카 특유의 옅은 고소함이 올라온 것이 겹쳤다. 건초냐 흙이냐는 끝까지 확정 못 했고, 헷갈리는 상태 그대로 기록하기로 했다 — 그 자체가 좌표다.</p>
+
+    <div class="phase">1/5 (30분) — 꺼질락 말락, 그리고 가벼움</div>
+    <div class="quote">"잠깐 내려놓으면 불이 꺼질랑 말랑 해서 퍼프 열심히 하고 다시 펴야 하네 ㅋㅋㅋㅋ 신기한 경험"</div>
+    <p>두꺼운 시가의 숙명. 필러가 많아 계속 산소가 들어가야 불이 유지되고, 내려놓으면 안쪽부터 식는다. 살릴 땐 세게 몰아치기보다 토치로 끝을 살짝 돌려 데운 뒤 가볍게 두세 번 — 급하게 빨면 열이 확 올라 매워진다. 재를 좀 길게 남겨두면 단열이 돼 불 유지에 오히려 도움이 된다.</p>
+    <div class="quote">"마두로 랩퍼인데도 가벼운 느낌이야. 코네티컷같이"</div>
+    <p>정확한 관찰이다. 푸엔테 마두로는 "마두로 중 제일 순한 마두로"로 통한다. 도미니카 필러가 가벼움을 주고, 브로드리프는 색과 초콜릿만 얹은 구조. 순한 시가 공통 노트인 건초 비슷한 결이 여기서도 잡히는 게 이상하지 않다. 이날의 결론 하나 — <b>마두로라고 다 묵직한 게 아니고, 무게는 랩퍼가 아니라 필러가 정한다.</b> 사이즈 가설(두꺼우면 랩퍼 비중이 희석돼 둥글어진다)도 반은 맞지만, 부드러움의 더 큰 몫은 도미니카 블렌드다. 검증하려면 니카라과 블렌드를 큰 사이즈로 태워보면 된다.</p>
+
+    <div class="phase">절반 (약 60분) — 일관성, 그리고 종료</div>
+    <div class="quote">"이제 좀 드로우도 편하고 그르네. 향은 일관적이야. 약한 초콜릿과 건초 같은 얼씨"</div>
+    <p>변화는 완만했다. 올리바처럼 플로럴→초콜릿→가죽으로 꺾이는 구조가 아니라, 같은 곡을 볼륨만 조금씩 바꾸는 타입. 두꺼워서 여러 잎이 한꺼번에 섞여 타니 평균화되는 것도 있고, 샤토 푸엔테 자체가 균형·일관성 컨셉이라 다비도프 시그니처처럼 일직선 성향이 있다. 후반의 커피·페퍼 구간은 못 보고 절반에서 내려놓았다 — 재떨이에 그냥 두고 꺼지게.</p>
+    <div class="quote">"야 이건 반 못 피겠어 ㅋㅋㅋㅋ" · "난 5인치대가 맞는 듯"</div>
+
+    <div class="phase">총평 — 좋은 시가, 다른 자리의 시가</div>
+    <div class="quote">"일관적이고 좋긴 하다. 이건 진짜 술 먹으면서 꾸준히 물고 있을 수 있는 곳 가야 할 듯" · "좋은 시가다 AF도"</div>
+    <p>집중해서 분석하는 시가가 아니라 자리를 채우는 시가. 변화가 적고 순해서 두 시간 대화하며 옆에 두기 좋은 구조고, 혼자 앉아 노트 잡으려니 지루하게 느껴진 것. 순한 마두로라 위스키를 덮지 않으니 블루라벨 같은 둥근 술과 라운지에서 길게 가면 맞을 것이다. 푸엔테 브랜드 자체는 합격.</p>
+
+    <div class="lesson"><b>이 세션의 발견:</b> 비톨라 취향이 확정됐다 — <b>5인치대(로부스토·코로나)</b>. 시간 부담이 없고, 얇을수록 랩퍼 존재감이 살아 변화도 더 잘 보인다. 초반 매콤의 세 번째 원인도 정리됐다: 토치(No.2), 니카라과 오프닝(No.8)에 이어 <b>얇은 링게이지의 열</b>. 노트 쪽에서는 흙을 "입에 남는 텁텁한 무게감"으로, 시더를 "연필 나무 냄새"로 처음 정의했고, 초콜릿과 흙이 같은 발효의 두 얼굴이라는 것을 배웠다. 이 시가의 자리는 취향 탐색용이 아니라 <b>라운지에서 오래 앉을 때 한 대</b>. 남은 한 개비는 그 자리를 위해 남겨둔다. 다음 푸엔테는 헤밍웨이 쇼트 스토리(4인치 피그, 카메룬 랩퍼)로 대비를 볼 것.</div>
+  </div>
+</section>
+
+<section id="d-c9" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">SESSION No.9</div>
+  <h2 class="d-title">다비도프 프리메로스 마두로 니카라과</h2>
+  <div class="d-meta">2026. 9. 17. 08:45경 점화 (약 20분) · 야외 아침 세션 · 미국 직구 틴 6개비 $29.95 (개비당 약 $5) · 쁘띠 파나텔라 4⅛×34 · 멕시칸 수마트라 마두로 랩퍼 · 에콰도르 바인더 · 니카라과(에스텔리·오메테페·할라파)+도미니칸 필러</div>
+  <div class="d-body">
+    <img class="d-photo" src="__PHOTO_C9__" alt="다비도프 프리메로스 마두로 니카라과" onerror="this.style.display='none'">
+    <p>모든 것의 시작점과의 재회. 기록을 시작하기 전 처음 태워 취미의 문을 열었던 그 시가를, 직구 틴이 터퍼더에 들어온 지 이틀 만에 아침 야외에서 다시 만났다. 이번엔 제대로 기록하면서.</p>
+
+    <div class="phase">착화 — 첫 퍼프가 부드럽다</div>
+    <div class="quote">"오랜만이라 그런지 첫 퍼핑이 되게 부드럽네? 나 스킬이 좋아졌나봄 ㅋㅋ"</div>
+    <p>토스팅을 안 태우고 잘 붙인 실력도 맞고, 34링의 작은 착화 면적과 다비도프의 드로우 품질 관리가 거든 것도 맞다. 얇은 시가에서 첫 퍼프가 맵지 않게 나왔다는 건 라이팅이 깨끗했다는 신호.</p>
+
+    <div class="phase">초반 — 후추와 고소함이 같이 온다</div>
+    <p>초반에 블랙페퍼와 고소함이 동시에 왔다. No.8에서 정리한 니카라과 오프닝 패턴 그대로인데, 이번엔 매콤이 거칠지 않고 고소함과 나란히 왔다. 비교 좌표도 바로 나왔다.</p>
+    <div class="quote">"RP 빈티지 1990보다 훨씬 부드럽고 고소해"</div>
+    <p>숙성 브로드리프의 흙·가죽 쪽 묵직함(RP)과 니카라과 마두로의 단맛 붙은 고소함이 갈리는 지점이다.</p>
+
+    <div class="phase">중반 — 묵직부드러움, 고소달콤</div>
+    <div class="quote">"초반 스파이스한 걸 지나니 향의 질감이 묵직부드럽고 고소달콤이 남는구먼"</div>
+    <p>마두로 발효 랩퍼의 본체가 나온 구간. 파드론 2000에서 잡았던 견과→코코아 라인의 연장선인데, 질감이 실제 바디(미디엄)보다 한 겹 묵직하게 느껴지는 게 마두로의 효과다.</p>
+
+    <div class="phase">관찰 — 얇아도 균일한 다비도프</div>
+    <div class="quote">"다비도프가 전반적으로 얇은 종류에서도 균일한 맛을 잘 뽑아내는 것 같아"</div>
+    <p>얇은 포맷이 사실 만들기 제일 어렵다. 필러 잎이 몇 장 안 들어가 잎 하나의 편차가 그대로 드러나고, 랩퍼가 맛에서 차지하는 비중도 커진다. 프리메로스는 숏필러 섞인 쁘띠인데도 구간 간 흔들림이 없었다 — 잎 선별과 드로우 검사를 이중으로 돌리는 세공 정밀도의 값.</p>
+
+    <div class="phase">복합성 — 얘도 직선형</div>
+    <div class="quote">"맛의 변화는 얘도 복합적이지 않다"</div>
+    <p>시그니처 No.2에서 내린 결론과 같다. 포맷 한계(20분 러닝타임에 3막을 넣기 어렵다)도 있지만, 극적인 전환보다 흐트러짐 없는 밸런스를 지향하는 다비도프 하우스 스타일이 근본이다. 후추→고소달콤 전환 하나면 이 사이즈에선 준수한 편.</p>
+
+    <div class="phase">총평 — 가격이 완성한 만족</div>
+    <div class="quote">"직구로 28불이니까… 이거면 만족할 가격 같음"</div>
+    <p>개비당 5불대. 국내 틴 14만원(개비당 2만 3천원대)과 비교하면 4배 차이로, 이 품질이 이 가격이면 데일리 슬롯에 부담 없이 들어온다.</p>
+
+    <div class="lesson"><b>이 세션의 발견:</b> 취미의 시작점이었던 시가가 드디어 제대로 된 기록을 가졌다. 취향 축(고소·초콜릿·견과 + 니카라과 마두로)에 정확히 앉는 시가라는 재확인. 숏 스모크 슬롯 서열은 재검토 대상 — No.7에서 <b>스페셜 G ≥ 프리메로스</b>였는데 오늘 인상은 프리메로스 쪽이 올라왔다. 다음 숏 세션에서 비교해 확정할 것.</div>
+  </div>
+</section>
+
+<section id="d-c8" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">SESSION No.8</div>
+  <h2 class="d-title">올리바 코네티컷 리저브 로부스토</h2>
+  <div class="d-meta">2026. 9. 16. 19:42–20:25 (약 45분) · 미국 직구 (5팩 $22.99, 개비당 약 $4.6) · 로부스토 5×50 · 에콰도르 코네티컷 셰이드 랩퍼</div>
+  <div class="d-body">
+    <img class="d-photo" src="__PHOTO_C8__" alt="올리바 코네티컷 리저브 로부스토" onerror="this.style.display='none'">
+    <p>직구 도착 이튿날, 아침 스페셜 G(No.7)에 이어 같은 날 두 번째 세션. 5팩 중 첫 개비다. 랩퍼는 옅은 금갈색이 예쁘게 나온 에콰도르 코네티컷 — 이름은 코네티컷이지만 에콰도르의 구름 낀 자연광 아래서 기른 잎이고, 속은 세리에 G와 같은 니카라과 잎이다.</p>
+
+    <div class="phase">초반 — 마일드, 그러나 향이 약하다. 그리고 또 매콤</div>
+    <p>마일드한 건 맞는데 향이 전반적으로 약했다. 어제 막 도착한 물량이라 배송 스트레스 변수가 있는 상태. 그리고 초반 매콤함이 또 왔다.</p>
+    <div class="quote">"이게 좀 매콤~~한 게, 항상 시가 피면 초반에 그러더라?"</div>
+    <p>이번엔 토칭을 짧게 하고 불꽃도 안 닿게 했는데도 그랬다. 즉 기술 문제가 아니라 — 니카라과 필러 시가의 정상 오프닝이다. 블렌더들이 일부러 첫 1/3을 페퍼로 시작하게 말고, 세션 초입엔 미각이 제일 예민해서 같은 스파이스도 크게 온다. 파드론, 세리에 G, 그리고 이것까지 전부 니카라과 속심이라 초반 매콤이 공통이었던 것.</p>
+
+    <div class="phase">건초 — 랩퍼 단위로 향을 읽기 시작하다</div>
+    <div class="quote">"코네티컷 랩퍼가 어떤 느낌인지는 알겠어 ㅎㅎ 다비도프 No.2도 그랬고, 약간 건초향?"</div>
+    <p>시그니처 No.2 후반에 스스로 잡아냈던 건초가 여기서도 나왔다. 시가 단위가 아니라 랩퍼 단위로 향을 인식하기 시작한 세션. 같은 건초 축 위에서 다비도프는 크림·바닐라로, 올리바는 니카라과 속심 탓에 스파이스 쪽으로 기운다. 너트는 이번에도 잘 안 잡혔다 — 원래 애매하게 오는 노트라 못 잡아도 이상한 게 아니다.</p>
+
+    <div class="phase">중반 — 보급형 No.2</div>
+    <p>매콤함이 가라앉고 부드러운 건초향과 약간의 크림이 왔다.</p>
+    <div class="quote">"보급형 No.2인가"</div>
+    <p>꽤 정확한 요약이다. 같은 코네티컷 셰이드 랩퍼 문법이라 건초·크림 축이 겹치고, 차이는 정제도 — 다비도프는 그 축을 매끈하게 일직선으로 뽑고, 올리바는 같은 재료를 니카라과 스파이스 섞인 채 투박하게 낸다. 가격 차이가 곧 마감 차이.</p>
+
+    <div class="phase">후반 — 쓴맛, 그리고 종료</div>
+    <p>후반부에 들어서자 쓴맛이 올라왔다. 마일드 시가의 전형적인 마무리 — 타르 농축과 열 누적이 겹치는데, 가려줄 진한 노트가 없어 유독 빨리 드러난다. 마일드는 밴드까지 억지로 가지 않고 쓴맛이 올라올 때 내려놓는 게 맞다. 여기서 종료.</p>
+
+    <div class="phase">총평</div>
+    <div class="quote">"아쉽지만 시가 피고 싶은 마음을 달랠 만하다"</div>
+    <p>재 튼튼하고 번 고른 건 올리바 컨스트럭션 값을 했고, 향의 복합성은 15불대 대비 부족 — 개비당 $4.6이라는 가격 그대로의 포지션이다. 세션을 기대하고 꺼내는 시가가 아니라, 데일리로 부담 없이 태우는 용도.</p>
+
+    <div class="lesson"><b>이 세션의 발견:</b> 초반 매콤함의 정체가 정리됐다 — 토치 탓만이 아니라 <b>니카라과 필러의 정상 오프닝 + 세션 초입의 예민한 미각</b>. 그리고 건초를 두 시가에서 연달아 잡으며 랩퍼 단위 향 인식이 시작됐다. 남은 4개비는 터퍼더에서 2주쯤 재웠다가 태워, 오늘의 "향이 약하다"가 배송 스트레스였는지 시가 본연의 한계였는지 검증할 것.</div>
+  </div>
+</section>
+
+<section id="d-c7" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">SESSION No.7</div>
+  <h2 class="d-title">올리바 세리에 G 스페셜 G</h2>
+  <div class="d-meta">2026. 9. 16. 아침 (약 20분) · 야외 세션 · 미국 직구 (약 $5) · 페르펙토 3¾×48 · 카메룬 랩퍼 · 첫 페르펙토</div>
+  <div class="d-body">
+    <p>직구 물량이 도착한 이튿날, 터퍼더에서 꺼낸 첫 개비. 세리에 G는 토로(No.3)로 이미 만난 블렌드라, 같은 담뱃잎이 사이즈에 따라 어떻게 달라지는지 보는 세션이 됐다. 페르펙토는 양끝이 좁아지는 모양이라 뾰족한 팁만 먼저 붙이고 번짐이 자연스럽게 퍼지도록 두는 게 정석 — 억지로 토치를 다시 대면 초반 스파이스가 과장된다.</p>
+
+    <div class="phase">초반 — 시작부터 달달, 그리고 화사함</div>
+    <p>팁 좁은 구간은 랩퍼 비중이 가장 높은데, 카메룬 랩퍼의 달큰한 스파이스가 시작부터 왔다. 그리고 토로 초반의 플로럴과 이어지는 화사한 느낌이 스파이스를 뚫고 레트로헤일로 같이 들어왔다.</p>
+    <div class="quote">"조금 달달하네, 시작부터" · "플로럴인지 약간 화사한 느낌이 스파이스랑 같이 들어와"</div>
+    <p>이 지점에서 위스키와의 연결을 스스로 정리했다 — 향은 능동적으로 찾아야 하고, 코가 열려 있어야 느낄 수 있다. 위스키 노징과 레트로헤일은 결국 같은 기관(후각 상피)을 쓰는 같은 기술이다. 그린라벨에서 목 깊은 곳으로 피트를 잡았던 것도 같은 경로.</p>
+    <div class="quote">"이게 약간 위스키 같네. 향을 느끼려고 해야 하고, 코가 잘 열려 있어야 느낄 수 있어"</div>
+
+    <div class="phase">중반 — 약하게 온 초콜릿·캐러멜</div>
+    <p>스파이스 구간이 지나가자 초콜릿·캐러멜 계열이 왔다. 다만 약하게 — 처음엔 저렴이라 향이 약한가 싶었지만, 스페셜 G는 토로와 같은 블렌드를 작게 만 것이라 품질 차이는 없다. 세리에 G 자체가 노트가 은은한 편이고, 링게이지가 작아 랩퍼 비중이 높은 만큼 필러 쪽 노트가 옅게 느껴질 수 있으며, 아이스 아메리카노 페어링이 섬세한 단맛 대역을 덮었을 가능성도 크다 — 다비도프 세션에서 배운 그대로. 차가운 커피는 입안 온도까지 낮춰 단맛 감지를 더 무디게 한다. 다음엔 같은 걸 탄산수와 태워보면 좋은 비교 실험이 될 것.</p>
+
+    <div class="phase">후반 — 조여오는 드로우, 깔끔한 마무리</div>
+    <p>밴드 1cm 앞에서 드로우가 뻑뻑해졌다. 페르펙토 후반부에 타르와 수분이 좁아지는 아래쪽으로 밀리며 생기는 흔한 현상으로, 퍼지(반대로 불어내기)와 재 털기가 대응법. 세션이 20분 안쪽으로 표준(30~45분)보다 빨랐던 만큼 열 누적의 영향도 있었을 것이다. 밴드 근처까지 왔으면 충분히 다 피운 것 — 마지막 1인치는 원래 타르가 모여 맛이 가장 거친 구간이라, 여기서 깔끔하게 내려놓았다.</p>
+
+    <div class="phase">총평</div>
+    <div class="quote">"숏 사이즈라 복합 풍미를 느끼지는 못했지만, 10불 미만이라고 맛이 별로인 것도 아니구나를 배움"</div>
+    <p>약간의 달달함과 캐러멜 — 급할 때 꺼내는 용도로는 프리메로스보다 조금 더 나은 선택지라는 판정.</p>
+
+    <div class="lesson"><b>이 세션의 발견:</b> 가격과 풍미는 비례하지 않는다 — 5불짜리도 충분히 즐길 만하다. 숏 스모크 슬롯의 현재 서열: <b>스페셜 G ≥ 프리메로스</b>. 페르펙토는 팁→몸통으로 가며 랩퍼→필러 비중이 바뀌어 전개가 압축된다 — 짧다고 단순한 게 아니라 빨리 지나갈 뿐. 그리고 시가와 위스키는 같은 코로 즐기는 취미라는 자각.</div>
+  </div>
+</section>
+
+<section id="d-c6" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">SESSION No.6</div>
+  <h2 class="d-title">플라센시아 알마 델 시엘로</h2>
+  <div class="d-meta">2026. 9. 13. · 라운지 레솔베르 구매, 야외 세션 · 66,000원 · 로부스토 · 니카라과</div>
+  <div class="d-body">
+    <p>지난번 다이아몬드 크라운과 함께 사온 두 대 중 남은 한 대. 이번엔 예고대로 자리를 만들어 야외 테이블에서 개시했다. 태우기 전부터 랩퍼 뒤쪽에 잔금형 크랙과 작은 조각이 떨어진 자리가 보였고 — 건조 의심 신호 — 아니나 다를까 번 라인이 다가오자 크랙이 더 벌어졌다. 퍼프 간격을 벌려 온도를 낮추며 그 구간을 그대로 태워 넘겼다.</p>
+
+    <div class="phase">초반 — 가벼운 연기, 그리고 다시 건초</div>
+    <p>퍼프가 라이트하게 되고 연기 질감이 가벼웠다. 그리고 건초향 — 시그니처 No.2에서 스스로 찾아냈던 그 노트를 이번엔 얼핏 바로 알아봤다. 두 번 연속으로 잡았으니 이제 확실히 아는 노트가 됐다.</p>
+
+    <div class="phase">중반 — 다비도프와 같은 결, 반 계단 위 바디</div>
+    <p>다비도프랑 되게 비슷한데, 요게 좀 더 묵직하다. 태우면서는 같은 코네티컷 결로 여겼는데, 알고 보니 니카라과 퓨로 — 랩퍼도 코네티컷이 아니라 할라파 고산지대에서 기른 하바노 품종이다. 하바노 랩퍼를 블라인드로 코네티컷급 부드러움으로 읽은 셈인데, 고산지대 재배가 단맛과 밸런스를 만든다는 이 라인의 컨셉과 맞아떨어지는 감상이었다. 마일드해도 흙내와 무게가 한 겹 더 깔리는 건 퓨로의 몫. 향의 전환은 적고, 올리바처럼 노트가 바뀌는 타입이 아니라 한 결로 쭉 가는 타입.</p>
+
+    <div class="phase">후반 — 크랙 이후의 매콤함, 마무리의 고소함</div>
+    <p>마지막 1/3에서 매콤함이 올라왔다. 크랙으로 공기가 새서일 수도, 후반 열 누적의 자연스러운 전개일 수도 — 둘 다였을 것이다. 그리고 끝으로 가니 매콤함 옆에 고소함이 남았다. 니카라과 필러가 마지막에 서명하고 간 것.</p>
+    <div class="quote">"건초향과 마일드한 연기가 일관적이다가 마지막에 고소함이 얹히는구나"</div>
+
+    <div class="phase">비톨라 메모</div>
+    <p>단점 하나 — No.2보다 들고 있기 불편했다. 파나텔라의 가는 링게이지가 손에 쏙 들어왔다면 로부스토는 통통해서 그립감이 다르다. 맛 취향과 별개로 비톨라 취향이 슬림 쪽일 수 있다는 첫 기록. 다만 마일드해서 피우기 자체는 편했다.</p>
+
+    <div class="lesson"><b>이 세션의 발견:</b> 시가에 "마일드 축"이 생겼다 — 시그니처 No.2(코네티컷, 가볍고 정제됨) — <b>알마 델 시엘로</b>(하바노 랩퍼 퓨로, 같은 결, 반 계단 묵직, 끝에 고소함). 랩퍼 품종은 색과 첫인상만으로 단정할 수 없다 — 하바노도 이렇게 밝고 부드러울 수 있으니, 스펙은 검색으로 확인할 것. 그리고 건조 판별법 하나: 무른 재 하나만으로는 건조 확정이 아니다. 무른 재 + 빠르고 뜨거운 번 + 납작한 맛 + 거친 매콤함이 같이 와야 건조. 잔금형 크랙은 보관 습도 점검 신호 — 휴미더 숫자 확인할 것.</div>
+  </div>
+</section>
+
+<section id="d-c5" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">SESSION No.5</div>
+  <h2 class="d-title">다이아몬드 크라운 마두로 No.5</h2>
+  <div class="d-meta">2026. 9. 11. 17:16–18:10 (약 55분) · 라운지 레솔베르 구매, 차량 세션 · 66,000원 · 로부스토 (4.5×54)</div>
+  <div class="d-body">
+    <p>근처 약속 전에 레솔베르에 들러 집어온 두 대(플라센시아 알마 델 시엘로와 함께, 각 66,000원) 중 첫 개비. 일정 때문에 창문과 선루프를 전부 열고 차에서 태웠는데, 이건 두고두고 후회로 남았다 — 이 급의 시가는 자리부터 만들어놓고 개시할 것.</p>
+
+    <div class="phase">초반 — 의외의 라이트함</div>
+    <p>마두로 랩퍼라 묵직할 줄 알았는데 질감이 라이트했고, 초반부터 너트 계열의 고소함과 로스티한 결이 올라왔다. 연기가 아주 부드러웠다.</p>
+
+    <div class="phase">중반 — 우유 크림의 이중 분리</div>
+    <p>코에서 부드러운 향이 따로 잡혔고, 크림인지 바닐라인지 갈리던 것을 우유 크림으로 정리했다. 크림을 질감과 향, 두 층으로 분리해서 잡아낸 첫 세션. 입에서는 너트가 그대로 유지됐다.</p>
+
+    <div class="phase">절반 이후 — 페퍼, 그리고 끝까지 단맛</div>
+    <p>레트로헤일에 코가 찌릿한 블랙페퍼가 본격화됐지만, 입안은 끝까지 달달하고 부드러웠다. 입과 코의 경로가 갈려 동시에 오는 균형이 이 구간의 매력.</p>
+    <div class="quote">"15불대 시가는 확실히 다르구나" · "이게 압도적이야. 아주 좋아"</div>
+
+    <div class="lesson"><b>이 세션의 발견:</b> 파드론 2000과의 비교에서 <b>압도적</b>이라는 판정. 고소·초콜릿·너트 취향 가설이 상위 등급에서 재검증됐다. 미국 $15.60짜리를 국내 66,000원에 사는 구조도 확인 — 다음 직구 리스트에 다이아몬드 크라운 마두로와 같은 급(푸엔테 계열, 아쉬튼)을 올릴 것. 함께 산 플라센시아는 이번엔 자리를 만들어서 개시 예정.</div>
+  </div>
+</section>
+
+<section id="d-c4" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">SESSION No.4</div>
+  <h2 class="d-title">다비도프 시그니처 No.2</h2>
+  <div class="d-meta">2026. 9. 9. 오후 · 시가 라운지 레솔베르 · 88,000원 · 파나텔라 · 첫 라운지 세션</div>
+  <div class="d-body">
+    <p>처음으로 시가 라운지에서 태운 세션. 다비도프 재떨이가 놓인 대리석 테이블 위에서, 계속 눈여겨보던 시그니처 No.2를 드디어 개시했다. 라운지 가격 88,000원 — 스틱 자체 가격의 세 배 가까이 되지만, 자리값이라 생각하기로 했다. 첫 파나텔라 사이즈이기도 하다.</p>
+
+    <div class="phase">초반 — 라이팅 직후의 매콤함</div>
+    <p>불을 붙이자마자 매콤함이 먼저 올라왔다. 로키파텔 때 배운 대로, 라이팅 직후의 스파이스는 토치 열 때문에 과장되는 경우가 많다. 퍼프 간격을 여유 있게 가져가며 온도를 안정시켰다.</p>
+
+    <div class="phase">중반 — 크림인지 바닐라인지</div>
+    <p>스파이스가 가라앉으니 확실히 부드러워졌고, 그 사이로 정체가 애매한 노트가 올라왔다.</p>
+    <div class="quote">"바닐라? 인지 모를 크림이 좀 있네"</div>
+    <p>알고 보니 이 표현 자체가 정확한 기록이었다 — 시그니처 No.2는 크림과 바닐라의 경계가 섞여서 올라오는 게 특징이다. 다만 커피와 함께 마셔서인지 크림 노트는 많이 못 느꼈다. 커피의 로스티드한 쓴맛이 섬세한 크림 대역을 덮는다는 것, 마일드한 시가일수록 물이나 탄산수 페어링이 낫다는 것을 배웠다. 대신 스파이스가 가라앉은 뒤의 태우는 냄새가 좋았다 — 커피 페어링이 토스티한 쪽을 증폭시킨 효과일 수도.</p>
+
+    <div class="phase">전개 — 복합성 대신 일관성</div>
+    <p>중반부에 들어서며 솔직한 평가가 나왔다: 향이 복합적인지는 잘 모르겠다. 올리바처럼 노트가 전환되는 시가가 아니라, 정제된 맛이 일직선으로 가는 시가였다. 그런데 그게 이 브랜드의 정체성이었다.</p>
+    <div class="quote">"약간의 스파이시함, 마일드한 바닐라, 태우는 향이 꾸준히 기억시켜주네 — 나 다비도프다!"</div>
+
+    <div class="phase">후반 — 다시 매콤, 그리고 건초</div>
+    <p>마지막 1/3에서는 열이 누적되며 다시 매콤해졌다. 초반 매콤 → 중반 크림/바닐라 → 후반 스파이스로 마무리되는 아치형 궤적. 그리고 마지막 구간에서 스파이스 사이로 낯선 향을 스스로 잡아냈다 — 건초향(hay). 사전 정보 없이 찾아낸 노트인데, 알고 보니 코네티컷 랩퍼 마일드 시가의 대표 노트이자 시그니처 No.2 리뷰의 단골 표현이었다.</p>
+
+    <div class="lesson"><b>이 세션의 발견:</b> 다비도프 화이트 라벨의 정체는 복잡함이 아니라 깔끔함과 균형. 그리고 더 중요한 자각 — 크림/바닐라 계열보다 <b>고소함·초콜릿·견과류</b> 쪽을 더 좋아한다는 것. 파드론 2000의 호평이 우연이 아니었다. 다음 구매는 니카라과·마두로 방향으로.</div>
+  </div>
+</section>
+
+<section id="d-c3" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">SESSION No.3</div>
+  <h2 class="d-title">올리바 세리에 G 토로</h2>
+  <div class="d-meta">2026. 9. 5. 16:13–17:13 (약 60분) · 역삼 시가브로 · 25,000원 · 첫 토로 사이즈</div>
+  <div class="d-body">
+    <p>처음 태워본 토로 사이즈. 한 시간에 걸친 세션 동안 향의 전개가 뚜렷하게 세 번 바뀌었다.</p>
+
+    <div class="phase">초반 — 플로럴</div>
+    <p>시작부터 레트로헤일로 플로럴 노트가 잡혔다. 스파이스가 약할 때 이런 섬세한 노트가 드러난다는 것을 스스로 관찰했고, 이는 정확한 원리였다.</p>
+
+    <div class="phase">중반 — 밀크초콜릿</div>
+    <p>중반으로 넘어가며 플로럴이 밀크초콜릿으로 전환됐다. 부드럽고 달큰한 구간.</p>
+
+    <div class="phase">후반 — 페퍼와 가죽, 묵직한 마무리</div>
+    <p>후반부에는 페퍼와 가죽이 올라오며 무게가 실렸고, 묵직하고 스파이시하게 마무리됐다.</p>
+
+    <div class="lesson"><b>이 세션의 발견:</b> 입으로는 뉘앙스를 잘 못 잡는다 — 향의 대부분은 레트로헤일로 온다. 그리고 마일드한 시가는 첫 1/3부터 레트로헤일해도 된다. "중반까지 기다려라"는 조언은 강한 시가에만 해당.</div>
+  </div>
+</section>
+
+<section id="d-c2" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">SESSION No.2</div>
+  <h2 class="d-title">로키파텔 빈티지 1990 주니어</h2>
+  <div class="d-meta">역삼 시가브로 · 틴 5개입 (50,000원) 중 첫 개비 · 약 30분</div>
+  <div class="d-body">
+    <p>틴에서 꺼낸 첫 개비. 콜드 드로우에서 가죽 노트가 잡혔다.</p>
+
+    <div class="phase">초반 — 토치 실수와 스파이스</div>
+    <p>라이팅에서 토치를 잘못 대어 초반에 스파이스가 강하게 올라왔다. 하지만 이 스파이스는 시가의 성격이 아니라 기술의 문제였다.</p>
+
+    <div class="phase">후반 — 부드러워진 본색</div>
+    <p>후반으로 갈수록 부드러워지며 크리미함과 혀끝의 단맛이 드러났고, 레트로헤일로는 시더가 잡혔다. 이 개비는 드로우가 약간 타이트했지만 전반적으로 만족스러운 세션.</p>
+
+    <div class="lesson"><b>이 세션의 발견:</b> 초반 스파이스는 종종 시가가 아니라 라이팅 기술에서 온다. 후반에 부드러워졌다면 기술이 교정됐다는 신호.</div>
+  </div>
+</section>
+
+<section id="d-c1" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">SESSION No.1</div>
+  <h2 class="d-title">파드론 2000 내추럴</h2>
+  <div class="d-meta">약 40분 · 역삼 시가브로 · 25,000원 · 니카라과</div>
+  <div class="d-body">
+    <p>저널의 공식 첫 세션. 고소함에서 코코아로 이어지는 니카라과 담뱃잎의 전개가 인상적이었고, 가격 대비 만족도가 컸다.</p>
+    <div class="quote">"가성비 쥑이네"</div>
+    <div class="lesson"><b>돌아보며:</b> No.4 세션에서 취향이 고소·초콜릿·견과류 계열임을 자각하고 나니, 이 첫 호평이 우연이 아니었음이 분명해졌다. 파드론이 정확히 그 계열의 대표 주자다.</div>
+  </div>
+</section>
+
+<!-- ===================== 위스키 상세 ===================== -->
+
+<section id="d-w-tal" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">싱글몰트 · 피트</div>
+  <h2 class="d-title">탈리스커 10</h2>
+  <div class="d-meta">스카이 섬 · 싱글몰트 스카치</div>
+  <div class="d-body">
+    <p>피트가 생각보다 강했지만, 기름진 음식과 함께할 때는 오히려 그 스모키함이 입안을 잡아주는 역할. 이후 피트 강도의 개인 기준점이 된 병.</p>
+    <div class="quote">"피트가 빡세네"</div>
+  </div>
+</section>
+
+<section id="d-w-green" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">블렌디드 몰트</div>
+  <h2 class="d-title">조니워커 그린라벨 15</h2>
+  <div class="d-meta">2026. 9. 7. 개봉 · 잔을 거듭하며 기록 중</div>
+  <div class="d-body">
+    <div class="phase">첫 잔 — 개봉 직후 (2026. 9. 7.)</div>
+    <p>병을 열자마자 나온 첫인상이 모든 것을 요약했다.</p>
+    <div class="quote">"나 위스키다!!!"</div>
+    <p>코에서는 화사한 꽃향(링크우드의 몫으로 추정)이 먼저 오고, 입에서는 배·바닐라·꿀 — 버번 캐스크의 전형적인 전개. 처음엔 셰리 캐스크를 의심했지만 그린라벨은 버번 캐스크 중심이 맞았다. 목 깊은 곳에서 레트로헤일 경로로 피트가 올라오는데, 이 피니시의 피트 잔향은 블랙·블루에도 공통으로 흐르는 조니워커 하우스 시그니처.</p>
+    <p>좌표도 잡았다: 글렌피딕 12(더 가벼움) — <b>그린라벨</b> — 블루라벨(더 둥글고 묵직함). 그레인 위스키 포함 여부로 설명되는 구조적으로 정확한 배치였다. 반병쯤에서 재평가 노트를 덧붙일 예정.</p>
+
+    <div class="phase">두 번째 잔 — 나흘 뒤 (2026. 9. 11.)</div>
+    <p>첫 잔에서는 꽃향이 먼저 오고 피트는 피니시에서 따로 올라왔는데, 이번 잔에서는 꽃향과 그에 이어지는 스모키 피트가 합쳐져서 왔다. 개봉 후 공기와 닿으며 흩어져 있던 노트가 하나로 통합되는, 오픈 초기 병에서 흔한 변화다.</p>
+    <div class="quote">"조금 더 묵직하다면 블루랑 상당히 유사하겠어"</div>
+    <p>첫 잔에서 잡았던 좌표 — 그린과 블루의 차이는 결이 아니라 무게감 — 가 두 번째 잔에서 반대 방향으로 재확인됐다. 노트가 합쳐지고 나니 블루까지 남은 거리는 바디뿐이었다.</p>
+  </div>
+</section>
+
+<section id="d-w-blue" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">블렌디드</div>
+  <h2 class="d-title">조니워커 블루라벨</h2>
+  <div class="d-meta">즐겨 마셔온 위스키</div>
+  <div class="d-body">
+    <p>그린라벨과의 비교(2026. 9. 7.)에서 좌표가 잡혔다: 그레인 포함 블렌딩이라 부드럽고 둥글며, 주연은 묵직함. 피니시에 코를 덮는 피트 잔향이 있는 것은 조니워커 공통 시그니처. 상세 노트는 다음 잔에서.</p>
+    <p class="todo">상세 시음 노트는 다음 잔에서 채울 예정</p>
+  </div>
+</section>
+
+<section id="d-w-taylor" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">그 외 오크 숙성</div>
+  <h2 class="d-title">테일러스 20년 토니 포트</h2>
+  <div class="d-meta">포르투갈 포트와인 · 우드 20년 숙성 · 2026. 9. 5. 첫 노트</div>
+  <div class="d-body">
+    <p>캐러멜과 짙은 건포도의 끈적하고 달달한 단맛이 중심 — 20년 우드 숙성이 신선한 과일을 말린 과일 쪽으로 농축시킨 결과. 그 뒤로 옅은 한약 같은 뉘앙스가 깔리는데, 오래 산화 숙성된 토니 포트 특유의 허브·약재 노트다. 천천히 홀짝이기 좋고, 와인보다 부담 없이 꺼내기 편한 병.</p>
+    <div class="quote">"캐러멜 + 건포도의 끈적하고 달달함, 옅은 한약 향"</div>
+  </div>
+</section>
+
+<section id="d-w-kirk" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">그 외 오크 숙성</div>
+  <h2 class="d-title">커클랜드 시그니처 타우니 포트 10년</h2>
+  <div class="d-meta">코스트코 · 약 36,000원 · 2026. 9. 11. 첫 노트</div>
+  <div class="d-body">
+    <p>그린라벨에 이어 연 병. 비교 대상이 테일러스 20 하나뿐이라 부정확하다는 단서를 달고 마셨다.</p>
+    <p>향과 당도는 테일러스 20과 얼추 비슷한 캐러멜 계열. 다른 점은 알코올이 살짝 튀는 느낌과 새큼한 산미인데, 이건 병의 결함이 아니라 10년과 20년의 나이 차 그 자체다 — 젊은 타우니일수록 신선한 과일의 산미가 남아 있고 알코올 통합이 덜 되어 있으며, 20년쯤 가야 그게 캐러멜·말린 과일 쪽으로 눌러앉는다. 블라인드에 가까운 상태에서 숙성 연수 차이를 정확히 짚어낸 셈.</p>
+    <div class="quote">"그냥 가성비 디저트와인처럼 먹기 좋아"</div>
+    <p>36,000원이라는 가격을 생각하면 잘 만든 병. 편하게 꺼내는 디저트 와인 역할로 충분하다.</p>
+  </div>
+</section>
+
+<section id="d-w-signet" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">싱글몰트 · 논피트</div>
+  <h2 class="d-title">글렌모렌지 시그넷</h2>
+  <div class="d-meta">하이랜드 싱글몰트 · 2026. 9. 17. 회식 자리 첫 노트</div>
+  <div class="d-body">
+    <p>회식 자리에서 드디어 채운 첫 정식 노트. 스모키한 향이 부드럽게 받쳐주는 가운데 고소한 베리 — 건포도 같은 느낌이 남았다.</p>
+    <p>재밌는 반전은 그 스모크의 정체다. 시그넷은 피트를 안 쓴 위스키 — 받쳐주던 연기는 '초콜릿 몰트'라 부르는 고로스팅 맥아의 로스티드 향이다. 커피·다크초콜릿 굽는 냄새가 피트처럼 읽힌 것. 탈리스커에서 잡은 진짜 피트와는 다른 축이고, 건포도·베리 쪽은 셰리 캐스크의 몫이다. 로스티드 스모크와 진짜 피트를 구분해서 느꼈다는 점에서 정확한 기록.</p>
+    <div class="quote">"특별하다기보다는 실패 없는 선택 — 완벽한 무난함에 어울리는 술"</div>
+    <p>좌표도 잡혔다: 그린라벨에서 고숙성 맛이 좀 더 나는 느낌. 화사함과 밸런스의 결은 공유하되, 로스티드 몰트와 셰리의 농축감이 한 겹 더 얹힌 위치다. 고소함+건포도 조합이라 취향 축(고소·초콜릿·견과)에도 정확히 앉는 병.</p>
+  </div>
+</section>
+
+<section id="d-w-keris" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">싱글몰트 · 논피트</div>
+  <h2 class="d-title">케리스 실버</h2>
+  <div class="d-meta">인도네시아 발리 · 아메리칸 오크 4년 + 올로로소 셰리 피니시 · 43% · 2026. 9. 17. 회식 첫 노트</div>
+  <div class="d-body">
+    <p>회식 자리에서 만난 낯선 병. 2024년 9월에 나온 인도네시아 최초의 싱글몰트로, 발리에서 증류한다. 향은 고소한데 입에서는 꿀과 꽃이 확 퍼지는 전개.</p>
+    <div class="quote">"향은 고소한데 맛은 꿀·꽃이 확 퍼지네. 꿀물 먹는 느낌이야"</div>
+    <p>느낀 그대로가 이 병의 구조다 — 향의 고소함(견과·말린 과일)은 올로로소 셰리 피니시, 입에서 퍼지는 꿀·꽃은 아메리칸 오크의 바닐라·허니 계열. 열대 기후라 숙성이 빨리 진행돼 4년 숙성치고 단맛이 진하게 올라오는 것도 카발란과 같은 원리다.</p>
+  </div>
+</section>
+
+<section id="d-w-chusa" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">그 외 오크 숙성</div>
+  <h2 class="d-title">추사 50 배치3 시라 캐스크 피니시</h2>
+  <div class="d-meta">예산사과와인 · 100% 예산 사과 브랜디 · 프렌치 오크 → 시라 캐스크 피니시 · 50% · 500ml · 논칠필터 · 2026. 9. 17. 회식 첫 노트</div>
+  <div class="d-body">
+    <p>목록에 빈 카드로 오래 걸려 있던 병을 회식에서 드디어 만났다. 충남 예산 — 추사 김정희의 고향 — 의 예산사과와인이 100% 예산 사과로 증류한 브랜디로, 프렌치 오크 1차 숙성 뒤 시라 레드와인 캐스크로 피니시한 배치 한정 생산품이다.</p>
+    <div class="quote">"사과 향이 매우 좋아" · "한국산이 낯선데, 정말 위스키 향이 나. 신기해"</div>
+    <p>이 두 감상이 병의 구조를 그대로 짚었다. 사과 향은 베이스의 몫 — 원액 자체가 사과 와인 증류액이라 칼바도스와 같은 문법이고, 잘 익은 적사과가 중심에 온다. 그리고 위스키 향의 정체는 오크다. '위스키 향'이라 부르는 바닐라·캐러멜·토스티한 골격은 곡물이 아니라 헤비토스팅 오크통이 만드는 것이라, 통이 같으면 원료가 사과여도 향의 뼈대가 같아진다. 이 그룹의 이름("위스키는 아니지만 같은 결")이 잔 안에서 증명된 세션. 50도 논칠필터가 그 향의 밀도를 받쳐주고, 시라 캐스크는 그 위에 베리·레드와인 뉘앙스를 얹는다.</p>
+    <div class="quote">"과실향 셰리? 쉬라? 숙성으로 인한 감칠맛이 있어"</div>
+    <p>추가 관찰 — 잔을 이어가며 감칠맛을 잡았다. 쉬라는 와인 품종 중에서도 후추·올리브·고기 같은 세이버리 노트로 유명한 품종이라, 이 감칠맛은 시라 캐스크의 성격을 그대로 읽은 것. 셰리 캐스크의 감칠맛(견과·산화)과 결이 비슷해 헷갈릴 만하지만 이 병은 시라가 정답이다. 논칠필터로 지방산·풍미 성분이 남아 있는 것도 질감과 감칠맛을 받쳐준다.</p>
+    <p>출시가는 8만원대였지만 배치당 한정 생산이라 지금은 웃돈이 붙어 거래되는 병이기도 하다.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>시가 11건 · 위스키 노트 7건 — 기록은 계속됩니다</footer>
+
+<script>
+var currentTab = 'cigar';
+function topTab(t){
+  currentTab = t;
+  closeDetail();
+  document.getElementById('secCigar').classList.toggle('hidden', t!=='cigar');
+  document.getElementById('secWhisky').classList.toggle('hidden', t!=='whisky');
+  document.getElementById('tabCigar').classList.toggle('on', t==='cigar');
+  document.getElementById('tabWhisky').classList.toggle('on', t==='whisky');
+}
+function cigarView(v){
+  document.getElementById('viewDate').classList.toggle('hidden', v!=='date');
+  document.getElementById('viewCigar').classList.toggle('hidden', v!=='cigar');
+  document.getElementById('vDate').classList.toggle('on', v==='date');
+  document.getElementById('vCigar').classList.toggle('on', v==='cigar');
+}
+function openDetail(id){
+  document.getElementById('secCigar').classList.add('hidden');
+  document.getElementById('secWhisky').classList.add('hidden');
+  document.querySelectorAll('.detail').forEach(function(d){d.classList.add('hidden');});
+  document.getElementById(id).classList.remove('hidden');
+  window.scrollTo(0,0);
+}
+function closeDetail(){
+  document.querySelectorAll('.detail').forEach(function(d){d.classList.add('hidden');});
+  document.getElementById('secCigar').classList.toggle('hidden', currentTab!=='cigar');
+  document.getElementById('secWhisky').classList.toggle('hidden', currentTab!=='whisky');
+  window.scrollTo(0,0);
+}
+</script>
+
+</body>
+</html>
