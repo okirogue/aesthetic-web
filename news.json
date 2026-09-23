@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-23 14:20",
+  "updated": "2026-09-23 14:31",
   "domestic": [
     {
       "co": "파마리서치",
@@ -374,6 +374,13 @@
     },
     {
       "co": "엘앤씨바이오",
+      "title": "엘앤씨바이오, APKASS서 ‘메가카티’ 4년 추적 결과 발표…아시아 인허...",
+      "link": "https://biz.chosun.com/science-chosun/bio/2026/09/23/JDIMQSHD4FDH5GKQ2L5THLHBFM/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+      "date": "09/23 14:24",
+      "desc": "엘앤씨바이오의 무릎 연골 재생 의료기기 ‘메가카티’ 시술 환자를 4년간 추적한 결과가 공개됐다. 환자 40명에서 수술 전보다 통증과 무릎 기능이 개선됐고, 자기공명영상(MRI)으로 확인한 연골 재생조직의 상태도..."
+    },
+    {
+      "co": "엘앤씨바이오",
       "title": "엘앤씨바이오 &quot;메가카티, 환자 평가서 통증 49→12.6 감소 효과&quot;",
       "link": "https://www.hitnews.co.kr/news/articleView.html?idxno=79381",
       "date": "09/23 12:54",
@@ -385,13 +392,6 @@
       "link": "https://www.edaily.co.kr/News/Read?newsId=03260326645583072&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article",
       "date": "09/23 11:34",
       "desc": "인체조직 재생의학 전문기업 엘앤씨바이오(290650)가 무릎 연골 재생 의료기기 ‘메가카티(MegaCarti)’의 4년 중장기 임상 결과를 공개하고 아시아 정형외과 시장 확대에 나선다고 23일 밝혔다. 엘앤씨바이오는..."
-    },
-    {
-      "co": "엘앤씨바이오",
-      "title": "엘앤씨바이오, 메가카티 4년 장기추적 데이터 발표",
-      "link": "https://www.edaily.co.kr/News/Read?newsId=03011046645583072&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article",
-      "date": "09/23 10:31",
-      "desc": "엘앤씨바이오는 지난 10일부터 12일까지 인천에서 열린 'APKASS 2026 Korea &amp; ICKAS 2026'에 글로벌 의료기기 기업 CONMED(콘메드)와 함께 다이아몬드 스폰서로 참여해 무릎 연골 재생 의료기기 ‘메가카티(MegaCarti)’의..."
     },
     {
       "co": "엘앤씨바이오",
@@ -451,10 +451,17 @@
   "foreign": [
     {
       "co": "Galderma",
-      "title": "Miami’s Plastic Surgery Boom Lures Swiss Dermatology Giant Galderma - bloomberg.com",
+      "title": "Miami’s Plastic Surgery Boom Lures Swiss Dermatology Giant Galderma - Bloomberg.com",
       "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPX0lxSmNRUXMzbEhVUzNETjBSQjROSnNLaDNzSGdTUkdZRGFCbEZpNkNON3dDSkdDR1BLRDc1YmU1TUpvQ2RXWkx1V0hhaGpTcUU1b3MyV1ktNDQwUHpTV2phMER6YllCZzZVYm13RHlhY1lJQmpqYVFLQllCMmhlcTVFcml5eWMxY3diNkpZRzVzUm5RamxnUE11VTNibHpZN0RjbGVzV2dfWGNLLW5zSWd5SVl3MFpzZ3c?oc=5",
       "date": "09/22 15:09",
-      "desc": "Miami’s Plastic Surgery Boom Lures Swiss Dermatology Giant Galderma&nbsp;&nbsp;bloomberg.com"
+      "desc": "Miami’s Plastic Surgery Boom Lures Swiss Dermatology Giant Galderma&nbsp;&nbsp;Bloomberg.com"
+    },
+    {
+      "co": "Galderma",
+      "title": "EADV 2026: Galderma to Unveil New Data Advancing Understanding of Skin Diseases, Skin Longevity, and Real-world Patient Experiences - STT Info",
+      "link": "https://news.google.com/rss/articles/CBMiowJBVV95cUxPY2xKVXd3Qm5GSG5ZQ21hX3RIU1JYUDRoTDBzbXdtUlB2UFhIaHpnNGlabmdWNUJoWmtnNWNlVHUyR3dEd0MyQUZDUWZQSVkyQ0RiSFFqMzF3ZXBHMHprcUljaTJNUUJ2akh1cDd3S0FIZU5EcFUyVmE2aThZc19iVUM4NDRyUUJJZk40c3N3aFg1WElYbm1ZTFF5cUIwUWxxUmFRMUdXaUowYUx6T1JqQmxZM1dXTEs4c1lqV1hwbWh1ckEzcEp1NmwxQm1KcDRXc2pITlJPM05BZXZsZnc0cENlMlB4d3FSS3ZiV1A0dGxXdU1hcmd4VDZ0eGUzUXcwLUlFOXpzQkVxR2tleDFyakU0eHZITHU2MDVtS2pUSTl6NG8?oc=5",
+      "date": "09/23 05:00",
+      "desc": "EADV 2026: Galderma to Unveil New Data Advancing Understanding of Skin Diseases, Skin Longevity, and Real-world Patient Experiences&nbsp;&nbsp;STT Info"
     },
     {
       "co": "Allergan",
