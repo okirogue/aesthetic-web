@@ -1,6 +1,20 @@
 {
-  "updated": "2026-09-26 08:30",
+  "updated": "2026-09-27 08:30",
   "domestic": [
+    {
+      "co": "휴젤",
+      "title": "휴젤, 미국 유통 버리고 '직판' 승부수…2027년 성과 나온다",
+      "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=490389",
+      "date": "09/26 13:56",
+      "desc": "휴젤이 미국 시장에서 유통사를 통한 판매 방식에서 직접 영업하는 체제로 전환하면서 단기적인 실적 부담을 감수하고 중장기 성장 기반을 다지는 전략에 들어갔다. 유진투자증권은 최근 보고서에서 휴젤에 대해 미국..."
+    },
+    {
+      "co": "에이피알",
+      "title": "미국 'K뷰티 대목' 10월부터 본격 열린다, 에이피알·아모레·달바 '연말...",
+      "link": "https://www.businesspost.co.kr/BP?command=article_view&num=447824",
+      "date": "09/27 06:00",
+      "desc": "에이피알과 아모레퍼시픽, 달바글로벌 등이 미국 내 대규모 온라인 행사를 앞두고 본격 프로모션을... 에이피알은 신제품 체험과 팝업, 아모레퍼시픽은 베스트셀러 재흥행, 달바글로벌은 광고와 오프라인 매장 확대에..."
+    },
     {
       "co": "에이피알",
       "title": "에이피알 메디큐브, 하늘 위 뷰티 3위…설화수 6위",
@@ -11,18 +25,11 @@
   ],
   "foreign": [
     {
-      "co": "Galderma",
-      "title": "Om Raheja joins Galderma as Cetaphil brand manager - Campaign India",
-      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQZjlacENMQjRNcThlYUhTWGt4RDNtNVFydmFmX0RfajhQa0t1QVNmYmtJblFXVUx0ZEdNOWphbk1MMDNCd01NZTdZR1ByYkhCVElOQkcxWWxkOGI2TXE5bzJyRDFuZy02aVRXUVc4YmhrdUhsNUJnbG9EZUEzNGhrS1paMjJXdk5LeXNZQWx2S2czZUxpV1ZOa3BFa1hxM0pLRE1CdDZnbnhnanV4VTZkelJ4SHQ?oc=5",
-      "date": "09/25 04:14",
-      "desc": "Om Raheja joins Galderma as Cetaphil brand manager&nbsp;&nbsp;Campaign India"
-    },
-    {
       "co": "Allergan",
-      "title": "Allergan Aesthetics - WCIV",
-      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE54TE9SNjV1Vk50UTBBSDcyT043b21MTmpvN1FQR0RGcVNzNElaVTd0Nk5kdk9LOEhqck5NanBDekJrNWpTczNuMi1qRkNhdnEwTEZxajBDX3NqcVpmd0w0OE90cGhTenc?oc=5",
-      "date": "09/25 14:32",
-      "desc": "Allergan Aesthetics&nbsp;&nbsp;WCIV"
+      "title": "Allergan Wins Second Lawsuit Over Breast Implant Cancer Risk - 조선일보",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOMFhLRHdEVU9tbi13QUcxbDVJY2ZMT2RuYm5YU2tNaDV2alBPTm1wRG8xVmhGOXBLbURQUGdZZlduU2ZGVjZfT0hJaExMdTcwU3pZZTRCUGhNZUhNZXh5NFFXbkE5YTRCWVhkSXl4dGpLRUs5RTdYbTJIazRGNk11cFJFSFFodHl6?oc=5",
+      "date": "09/26 04:41",
+      "desc": "Allergan Wins Second Lawsuit Over Breast Implant Cancer Risk&nbsp;&nbsp;조선일보"
     }
   ]
 }
