@@ -235,6 +235,8 @@
   table.map-tbl th{color:var(--gold);font-family:'Gowun Batang',serif;font-weight:400;text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);}
   table.map-tbl td{padding:7px 6px;border-bottom:1px solid var(--line);color:var(--ink);vertical-align:top;}
   table.map-tbl td.dim{color:var(--ink-dim);white-space:nowrap;}
+  table.map-tbl tr[onclick]{cursor:pointer;-webkit-tap-highlight-color:transparent;}
+  table.map-tbl tr[onclick]:active td{color:var(--gold);}
   footer{
     margin-top:40px;
     padding:20px 22px 0;
@@ -1402,7 +1404,7 @@ function buildMap(){
   var tb=document.getElementById('mapTable'); var order=['cuba','nic','dom','mix']; var vt=['아님','보류','좋음'];
   var html='<tr><th>산지</th><th>No.</th><th>시가</th><th>판정</th></tr>';
   order.forEach(function(o){MAP_DATA.filter(function(d){return d.o===o;}).forEach(function(d,i){
-    html+='<tr><td class="dim">'+(i?'':MAP_ORIGIN[o][0])+'</td><td class="dim">'+d.no+'</td><td>'+d.name+'</td><td class="dim">'+vt[d.v]+'</td></tr>';});});
+    html+='<tr onclick="openDetail(\''+d.id+'\')"><td class="dim">'+(i?'':MAP_ORIGIN[o][0])+'</td><td class="dim">'+d.no+'</td><td>'+d.name+'</td><td class="dim">'+vt[d.v]+' ›</td></tr>';});});
   tb.innerHTML=html;
 }
 function topTab(t){
