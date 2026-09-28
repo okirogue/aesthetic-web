@@ -1,6 +1,13 @@
 {
-  "updated": "2026-09-28 19:11",
+  "updated": "2026-09-29 07:01",
   "domestic": [
+    {
+      "co": "파마리서치",
+      "title": "[브랜드평판] 파마리서치, 의료기기 상장기업 9월 1위... 리가켐바이오...",
+      "link": "https://www.enetnews.co.kr/news/articleView.html?idxno=54786",
+      "date": "09/29 06:12",
+      "desc": "파마리서치가 사실상 보합세로 1위를 지킨 가운데, 클래시스가 8%대 급등으로 원익을 제치고 3위를 탈환하는 이번 조사 최대 이변을 연출했다. 리가켐바이오는 20%대 급락으로 이번 조사 상위권 최대 낙폭을..."
+    },
     {
       "co": "휴젤",
       "title": "휴젤, 美 영업구조 전환에 3분기 실적 타격?…전년 동기 대비 40% 하락 전...",
@@ -98,14 +105,15 @@
       "link": "https://www.biotimes.co.kr/news/articleView.html?idxno=34744",
       "date": "09/28 15:14",
       "desc": "한스바이오메드는 지난 9월 14일부터 19일까지 미국 의료진 약 60명이 참여한 가운데 'The 2nd Essence of Korea'를 개최했다고 밝혔다. 'The Essence of Korea'는 해외 의료진을 대상으로 한국 미용의료 현장과 의료 기술, 임상..."
-    },
-    {
-      "co": "한스바이오메드",
-      "title": "스킨부스터 덕에 한달새 3배 뛴 한스바이오메드[급등주 지금은]",
-      "link": "https://www.newsis.com/view/NISX20260923_0003802078",
-      "date": "09/27 11:00",
-      "desc": "한스바이오메드는 지난해 추석을 한 달여 앞두고 스킨부스터 기대감에 주가가 3배 넘게 뛴 종목이다. 이후에도 상승세가 이어지면서 주가는 올해 초 장중 5만원대까지 오르며 역대 최고가를 새로 쓰기도 했다. 27일..."
     }
   ],
-  "foreign": []
+  "foreign": [
+    {
+      "co": "Galderma",
+      "title": "Galderma and the pan-Canadian Pharmaceutical Alliance (pCPA) successfully complete negotiations for NEMLUVIO® (nemolizumab), for moderate-to-severe atopic dermatitis and prurigo nodularis - PR Newswire Canada",
+      "link": "https://news.google.com/rss/articles/CBMi1wJBVV95cUxQVjZOTE5jd2pnXy1JSGlSSk9MWTh5NUVPYU1LTW9QTUhNY1JyeTQzOEdZODJRbXdIN1M2S3ZWZ0FrSklXaDhEdHhYMExwbVkwZk9janZYYnNSZXVoendydTlGV0xieF9tQVByQmd3LTRyRy1pMWdIcS16UHBPZFJXWFhwTWY2NVNUZHAtV3JvRnVheUJKWnI1a1RBUGlsTUVuWjRVVzlLV1V5bEdIbFVVdWxJZXZQRW1vanNuOFF5aVRXZlhZcHp1a3VtSkN0Z05KMmJ2UkFBVUZOZmpUalQwdmNmQ19EOFNvV0RlOElRUERBaEQ5VVFFb2lBWXE0djJjVW1uTjJ0Y2xaem5XZGQ4Qk0yUkdNbmlrVDBlSzV4ZzVxVFUwUG9nUEwyN3k3NnJVMWVIQm40a0U5TXhOMFJjSGJmX2tpWXJiRDhhUFdvcmliUE5qQU1N?oc=5",
+      "date": "09/28 12:00",
+      "desc": "Galderma and the pan-Canadian Pharmaceutical Alliance (pCPA) successfully complete negotiations for NEMLUVIO® (nemolizumab), for moderate-to-severe atopic dermatitis and prurigo nodularis&nbsp;&nbsp;PR Newswire Canada"
+    }
+  ]
 }
