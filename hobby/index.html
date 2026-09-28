@@ -257,7 +257,6 @@
 <div class="top-tabs" id="topTabs">
   <button id="tabCigar" class="on" onclick="topTab('cigar')">시가</button>
   <button id="tabWhisky" onclick="topTab('whisky')">위스키</button>
-  <button id="tabMap" onclick="topTab('map')">지도</button>
 </div>
 
 <main>
@@ -268,6 +267,7 @@
   <div class="view-toggle">
     <button id="vDate" class="on" onclick="cigarView('date')">날짜별</button>
     <button id="vCigar" onclick="cigarView('cigar')">시가별</button>
+    <button id="vMap" onclick="cigarView('map')">지도</button>
   </div>
 
   <!-- 날짜별 보기 -->
@@ -589,11 +589,27 @@
     </div>
   </div>
 
+  <!-- 지도 보기 -->
+  <div id="viewMap" class="hidden">
+  <div class="map-wrap">
+    <svg id="cigarMap" viewBox="0 0 360 380" role="img" aria-label="시가 취향 지도"></svg>
+    <div class="map-legend" id="mapLegend"></div>
+  </div>
+  <div class="map-note">가로는 바디감(마일드 → 풀), 세로는 향의 결(위로 갈수록 시더·플로럴·건초의 밝은 결, 아래로 갈수록 흙·가죽·에스프레소의 묵직한 결). 색은 필러 산지. 테두리만 있는 점은 "취향 아님", 반만 찬 점은 "보류·자리용". 점을 누르면 상세로. 좌표는 세션 기록을 바탕으로 한 감각값이라 대략의 위치.</div>
+  <table class="map-tbl" id="mapTable"></table>
+  </div>
+
 </section>
 
 <!-- ===================== 위스키 목록 ===================== -->
 <section id="secWhisky" class="hidden">
 
+  <div class="view-toggle">
+    <button id="wvList" class="on" onclick="whiskyView('list')">목록</button>
+    <button id="wvMap" onclick="whiskyView('map')">지도</button>
+  </div>
+
+  <div id="wViewList">
   <div class="whisky-group">
     <h2 class="grp">싱글몰트 · 논피트<small>과일과 꽃의 결</small></h2>
     <div class="list-card" onclick="openDetail('d-w-signet')">
@@ -671,18 +687,19 @@
       <div class="chev">›</div>
     </div>
   </div>
-
-</section>
-
-<!-- ===================== 지도 ===================== -->
-<section id="secMap" class="hidden">
-  <div class="map-wrap">
-    <svg id="cigarMap" viewBox="0 0 360 380" role="img" aria-label="시가 취향 지도"></svg>
-    <div class="map-legend" id="mapLegend"></div>
   </div>
-  <div class="map-note">가로는 바디감(마일드 → 풀), 세로는 향의 결(위로 갈수록 시더·플로럴·건초의 밝은 결, 아래로 갈수록 흙·가죽·에스프레소의 묵직한 결). 색은 필러 산지. 테두리만 있는 점은 "취향 아님", 반만 찬 점은 "보류·자리용". 점을 누르면 상세로. 좌표는 세션 기록을 바탕으로 한 감각값이라 대략의 위치.</div>
-  <table class="map-tbl" id="mapTable"></table>
+
+  <div id="wViewMap" class="hidden">
+  <div class="map-wrap">
+    <svg id="whiskyMap" viewBox="0 0 360 380" role="img" aria-label="위스키 취향 지도"></svg>
+    <div class="map-legend" id="wMapLegend"></div>
+  </div>
+  <div class="map-note">가로는 무게감(가벼움 → 묵직), 세로는 결(위로 갈수록 단맛·과일·꽃, 아래로 갈수록 스모크·피트·로스티드). 색은 분류. 점선 점은 노트 미기입. 점이나 표를 누르면 상세로. 좌표는 노트 기준 감각값.</div>
+  <table class="map-tbl" id="wMapTable"></table>
+  </div>
+
 </section>
+
 <div class="map-tip" id="mapTip"></div>
 
 <!-- ===================== 시가 상세 ===================== -->
@@ -1344,8 +1361,8 @@
 <script>
 var currentTab = 'cigar';
 /* ===== 지도 ===== */
-var MAP_ORIGIN={cuba:['쿠바','#b98426'],nic:['니카라과','#3f8fc8'],dom:['도미니카','#c9557a'],mix:['혼합·기타','#7a9c3a']};
-var MAP_DATA=[
+var MAP_C_ORIGIN={cuba:['쿠바','#b98426'],nic:['니카라과','#3f8fc8'],dom:['도미니카','#c9557a'],mix:['혼합·기타','#7a9c3a']};
+var MAP_C_DATA=[
  {id:'d-c1',no:1,name:'Padrón 2000',o:'nic',x:3,y:3.5,v:2,note:'고소 → 코코아, 니카라과 퓨로'},
  {id:'d-c2',no:2,name:'RP Vintage 1990 Jr',o:'mix',x:2.5,y:3,v:1,note:'온두라스 랩퍼 · 니카·도미 필러 — 크림·단맛·가죽'},
  {id:'d-c3',no:3,name:'Oliva Serie G Toro',o:'nic',x:3,y:2.5,v:2,note:'플로럴 → 밀크초콜릿 → 페퍼·가죽'},
@@ -1364,8 +1381,20 @@ var MAP_DATA=[
  {id:'d-c16',no:16,name:'Taru Martani Robusto',o:'mix',x:1.5,y:2.5,v:0,note:'인도네시아 푸로 — 향만 있고 몸통 없음'},
  {id:'d-c17',no:17,name:'Cohiba Siglo II',o:'cuba',x:3,y:3,v:2,note:'건초 → 견과, 두터운 크림 질감'}
 ];
-function buildMap(){
-  var svg=document.getElementById('cigarMap'); if(!svg||svg.childNodes.length) return;
+var MAP_W_ORIGIN={np:['싱글몰트 논피트','#b98426'],pt:['싱글몰트 피트','#3f8fc8'],bl:['블렌디드','#c9557a'],ot:['그 외 오크 숙성','#7a9c3a']};
+var MAP_W_DATA=[
+ {id:'d-w-signet',no:'S',name:'Glenmorangie Signet',o:'np',x:4,y:3.5,v:2,note:'로스티드 몰트의 스모크 + 건포도 — "실패 없는 선택"'},
+ {id:'d-w-keris',no:'K',name:'Keris Silver',o:'np',x:2,y:1,v:2,note:'꿀·꽃이 확 퍼짐, 향은 고소 — "꿀물 먹는 느낌"'},
+ {id:'d-w-tal',no:'T',name:'Talisker 10',o:'pt',x:3.5,y:4.5,v:2,note:'피트 기준점 — "피트가 빡세네", 기름진 음식과'},
+ {id:'d-w-green',no:'G',name:'Johnnie Walker Green 15',o:'bl',x:3,y:3,v:2,note:'꽃·배·바닐라·꿀에 피니시 피트 — "나 위스키다!!!"'},
+ {id:'d-w-blue',no:'B',name:'Johnnie Walker Blue',o:'bl',x:4,y:3,v:2,note:'둥글고 묵직, 피트 잔향 — 즐겨 마셔온 병'},
+ {id:null,no:'R',name:'Royal Salute 21',o:'bl',x:3.5,y:2,v:-1,note:'노트 미기입'},
+ {id:'d-w-taylor',no:'Ty',name:"Taylor's 20 Tawny Port",o:'ot',x:4,y:1.5,v:2,note:'캐러멜·건포도의 끈적한 단맛, 옅은 한약 향'},
+ {id:'d-w-kirk',no:'Kk',name:'Kirkland Tawny Port 10',o:'ot',x:3,y:1.5,v:2,note:'캐러멜에 산미·알코올 살짝 — 가성비 디저트 와인'},
+ {id:'d-w-chusa',no:'C',name:'추사 50 배치3 시라 캐스크',o:'ot',x:4,y:2,v:2,note:'사과 + 오크의 위스키 골격, 시라의 감칠맛'}
+];
+function buildMap(cfg){
+  var svg=document.getElementById(cfg.svg); if(!svg||svg.childNodes.length) return;
   var L=34,R=350,T=26,B=336, W=R-L, H=B-T;
   var sx=function(x){return L+(x-1)/4*W;}, sy=function(y){return T+(y-1)/4*H;};
   var ns='http://www.w3.org/2000/svg';
@@ -1374,60 +1403,69 @@ function buildMap(){
     svg.appendChild(el('line',{x1:sx(g),y1:T,x2:sx(g),y2:B,stroke:'#453729','stroke-width':1}));
     svg.appendChild(el('line',{x1:L,y1:sy(g),x2:R,y2:sy(g),stroke:'#453729','stroke-width':1}));
   }
-  svg.appendChild(el('text',{x:L,y:B+16,fill:'#a89880','font-size':10},'마일드'));
-  svg.appendChild(el('text',{x:R,y:B+16,fill:'#a89880','font-size':10,'text-anchor':'end'},'풀'));
-  svg.appendChild(el('text',{x:(L+R)/2,y:B+30,fill:'#a89880','font-size':10.5,'text-anchor':'middle'},'바디감 →'));
-  svg.appendChild(el('text',{x:12,y:T+4,fill:'#a89880','font-size':10,transform:'rotate(-90 12 '+(T+4)+')','text-anchor':'end'},'밝은 결 (시더·플로럴·건초)'));
-  svg.appendChild(el('text',{x:12,y:B,fill:'#a89880','font-size':10,transform:'rotate(-90 12 '+B+')'},'묵직한 결 (흙·가죽·에스프레소)'));
+  svg.appendChild(el('text',{x:L,y:B+16,fill:'#a89880','font-size':10},cfg.xl));
+  svg.appendChild(el('text',{x:R,y:B+16,fill:'#a89880','font-size':10,'text-anchor':'end'},cfg.xr));
+  svg.appendChild(el('text',{x:(L+R)/2,y:B+30,fill:'#a89880','font-size':10.5,'text-anchor':'middle'},cfg.xt));
+  svg.appendChild(el('text',{x:12,y:T+4,fill:'#a89880','font-size':10,transform:'rotate(-90 12 '+(T+4)+')','text-anchor':'end'},cfg.yt));
+  svg.appendChild(el('text',{x:12,y:B,fill:'#a89880','font-size':10,transform:'rotate(-90 12 '+B+')'},cfg.yb));
   var tip=document.getElementById('mapTip');
   var seen={};
-  MAP_DATA.forEach(function(d){
+  cfg.data.forEach(function(d){
     var k=d.x+','+d.y; seen[k]=(seen[k]||0)+1; var n=seen[k]-1;
     var off=[[0,0],[14,-10],[-14,10],[14,10]][n]||[0,0];
     var cx=sx(d.x)+off[0], cy=sy(d.y)+off[1];
-    var c=MAP_ORIGIN[d.o][1];
-    var grp=el('g',{cursor:'pointer'});
+    var c=cfg.origin[d.o][1];
+    var grp=el('g',{cursor:d.id?'pointer':'default'});
     grp.appendChild(el('circle',{cx:cx,cy:cy,r:9.5,fill:'#221b16'}));
     if(d.v===2) grp.appendChild(el('circle',{cx:cx,cy:cy,r:7.5,fill:c}));
     else if(d.v===1){ grp.appendChild(el('circle',{cx:cx,cy:cy,r:7.5,fill:'none',stroke:c,'stroke-width':2}));
       grp.appendChild(el('path',{d:'M'+cx+' '+(cy-7.5)+' A7.5 7.5 0 0 1 '+cx+' '+(cy+7.5)+' Z',fill:c})); }
+    else if(d.v===-1) grp.appendChild(el('circle',{cx:cx,cy:cy,r:7.5,fill:'none',stroke:c,'stroke-width':1.5,'stroke-dasharray':'3 2'}));
     else grp.appendChild(el('circle',{cx:cx,cy:cy,r:7.5,fill:'none',stroke:c,'stroke-width':2}));
-    grp.appendChild(el('text',{x:cx,y:cy+3,fill:'#e8ddcf','font-size':8,'text-anchor':'middle','font-weight':600},d.no));
+    grp.appendChild(el('text',{x:cx,y:cy+3,fill:'#e8ddcf','font-size':String(d.no).length>1?7:8,'text-anchor':'middle','font-weight':600},d.no));
     grp.appendChild(el('circle',{cx:cx,cy:cy,r:14,fill:'transparent'}));
-    grp.addEventListener('mousemove',function(ev){tip.style.display='block';tip.innerHTML='<b>No.'+d.no+' '+d.name+'</b><br>'+MAP_ORIGIN[d.o][0]+' · '+d.note;tip.style.left=Math.min(ev.clientX+12,window.innerWidth-232)+'px';tip.style.top=(ev.clientY+12)+'px';});
+    grp.addEventListener('mousemove',function(ev){tip.style.display='block';tip.innerHTML='<b>'+(typeof d.no==='number'?'No.'+d.no+' ':'')+d.name+'</b><br>'+cfg.origin[d.o][0]+' · '+d.note;tip.style.left=Math.min(ev.clientX+12,window.innerWidth-232)+'px';tip.style.top=(ev.clientY+12)+'px';});
     grp.addEventListener('mouseleave',function(){tip.style.display='none';});
-    grp.addEventListener('click',function(){tip.style.display='none';openDetail(d.id);});
+    if(d.id) grp.addEventListener('click',function(){tip.style.display='none';openDetail(d.id);});
     svg.appendChild(grp);
   });
-  var lg=document.getElementById('mapLegend');
-  for(var o in MAP_ORIGIN){var s=document.createElement('span');s.innerHTML='<i style="background:'+MAP_ORIGIN[o][1]+'"></i>'+MAP_ORIGIN[o][0];lg.appendChild(s);}
-  var tb=document.getElementById('mapTable'); var order=['cuba','nic','dom','mix']; var vt=['아님','보류','좋음'];
-  var html='<tr><th>산지</th><th>No.</th><th>시가</th><th>판정</th></tr>';
-  order.forEach(function(o){MAP_DATA.filter(function(d){return d.o===o;}).forEach(function(d,i){
-    html+='<tr onclick="openDetail(\''+d.id+'\')"><td class="dim">'+(i?'':MAP_ORIGIN[o][0])+'</td><td class="dim">'+d.no+'</td><td>'+d.name+'</td><td class="dim">'+vt[d.v]+' ›</td></tr>';});});
+  var lg=document.getElementById(cfg.legend);
+  for(var o in cfg.origin){var s=document.createElement('span');s.innerHTML='<i style="background:'+cfg.origin[o][1]+'"></i>'+cfg.origin[o][0];lg.appendChild(s);}
+  var tb=document.getElementById(cfg.table); var vt={'-1':'미기입','0':'아님','1':'보류','2':'좋음'};
+  var html='<tr><th>'+cfg.col+'</th><th>'+(cfg.noCol||'No.')+'</th><th>이름</th><th>'+(cfg.vCol||'판정')+'</th></tr>';
+  Object.keys(cfg.origin).forEach(function(o){cfg.data.filter(function(d){return d.o===o;}).forEach(function(d,i){
+    html+='<tr'+(d.id?' onclick="openDetail(\''+d.id+'\')"':'')+'><td class="dim">'+(i?'':cfg.origin[o][0])+'</td><td class="dim">'+d.no+'</td><td>'+d.name+'</td><td class="dim">'+vt[String(d.v)]+(d.id?' ›':'')+'</td></tr>';});});
   tb.innerHTML=html;
 }
+function buildCigarMap(){buildMap({svg:'cigarMap',legend:'mapLegend',table:'mapTable',data:MAP_C_DATA,origin:MAP_C_ORIGIN,xl:'마일드',xr:'풀',xt:'바디감 →',yt:'밝은 결 (시더·플로럴·건초)',yb:'묵직한 결 (흙·가죽·에스프레소)',col:'필러 산지'});}
+function buildWhiskyMap(){buildMap({svg:'whiskyMap',legend:'wMapLegend',table:'wMapTable',data:MAP_W_DATA,origin:MAP_W_ORIGIN,xl:'가벼움',xr:'묵직',xt:'무게감 →',yt:'단맛·과일·꽃',yb:'스모크·피트·로스티드',col:'분류',noCol:'',vCol:'노트'});}
 function topTab(t){
   currentTab = t;
   closeDetail();
   document.getElementById('secCigar').classList.toggle('hidden', t!=='cigar');
   document.getElementById('secWhisky').classList.toggle('hidden', t!=='whisky');
-  document.getElementById('secMap').classList.toggle('hidden', t!=='map');
   document.getElementById('tabCigar').classList.toggle('on', t==='cigar');
   document.getElementById('tabWhisky').classList.toggle('on', t==='whisky');
-  document.getElementById('tabMap').classList.toggle('on', t==='map');
-  if(t==='map') buildMap();
 }
 function cigarView(v){
   document.getElementById('viewDate').classList.toggle('hidden', v!=='date');
   document.getElementById('viewCigar').classList.toggle('hidden', v!=='cigar');
+  document.getElementById('viewMap').classList.toggle('hidden', v!=='map');
   document.getElementById('vDate').classList.toggle('on', v==='date');
   document.getElementById('vCigar').classList.toggle('on', v==='cigar');
+  document.getElementById('vMap').classList.toggle('on', v==='map');
+  if(v==='map') buildCigarMap();
+}
+function whiskyView(v){
+  document.getElementById('wViewList').classList.toggle('hidden', v!=='list');
+  document.getElementById('wViewMap').classList.toggle('hidden', v!=='map');
+  document.getElementById('wvList').classList.toggle('on', v==='list');
+  document.getElementById('wvMap').classList.toggle('on', v==='map');
+  if(v==='map') buildWhiskyMap();
 }
 function openDetail(id){
   document.getElementById('secCigar').classList.add('hidden');
   document.getElementById('secWhisky').classList.add('hidden');
-  document.getElementById('secMap').classList.add('hidden');
   document.querySelectorAll('.detail').forEach(function(d){d.classList.add('hidden');});
   document.getElementById(id).classList.remove('hidden');
   window.scrollTo(0,0);
@@ -1436,7 +1474,6 @@ function closeDetail(){
   document.querySelectorAll('.detail').forEach(function(d){d.classList.add('hidden');});
   document.getElementById('secCigar').classList.toggle('hidden', currentTab!=='cigar');
   document.getElementById('secWhisky').classList.toggle('hidden', currentTab!=='whisky');
-  document.getElementById('secMap').classList.toggle('hidden', currentTab!=='map');
   window.scrollTo(0,0);
 }
 </script>
