@@ -1,6 +1,13 @@
 {
-  "updated": "2026-09-29 10:15",
+  "updated": "2026-09-29 10:36",
   "domestic": [
+    {
+      "co": "파마리서치",
+      "title": "여신티켓, 파마리서치와 고객 경험·브랜드 가치 강화 위한 MOU 체결",
+      "link": "https://magazine.hankyung.com/business/article/202609291446b",
+      "date": "09/29 10:31",
+      "desc": "뷰티 의료 정보 플랫폼 '여신티켓'을 운영하는 패스트레인(대표 손승우)이 재생의학 전문기업 파마리서치(대표 손지훈)와 지난 16일 업무협약(MOU)을 체결했다고 밝혔다. 협약식은 경기 성남시 분당구에 위치한 파마리서치..."
+    },
     {
       "co": "파마리서치",
       "title": "의료기기 상장기업 2026년 9월 브랜드평판...파마리서치, 리가켐바이오...",
@@ -21,13 +28,6 @@
       "link": "https://www.pharmnews.com/news/articleView.html?idxno=306553",
       "date": "09/29 09:44",
       "desc": "파마리서치가 패스트레인과 업무협약을 체결했다. 파마리서치(대표이사 손지훈)는 29일 뷰티 의료 정보 플랫폼 '여신티켓'을 운영하는 ㈜패스트레인과 고객 관련 업무협약(MOU)을 체결했다고 밝혔다. 이번 협약으로 양사는..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "파마리서치·패스트레인, 브랜드 경험 강화 MOU 체결",
-      "link": "https://weekly.hankooki.com/news/articleView.html?idxno=7186316",
-      "date": "09/29 09:38",
-      "desc": "파마리서치는 최근 패스트레인과 '고객 경험 및 브랜드 가치 강화'를 위한 업무협약(MOU)을 체결했다고 29일 밝혔다. 윤관식 파마리서치 영업마케팅본부장(왼쪽)과 손승우 패스트레인 대표의 모습. 사진=파마리서치..."
     },
     {
       "co": "파마리서치",
@@ -122,6 +122,13 @@
     },
     {
       "co": "에이피알",
+      "title": "에이피알, AI 신뢰성 확보 나서..맞춤형 뷰티테크 확대",
+      "link": "https://kpenews.com/View.aspx?No=4244455",
+      "date": "09/29 10:20",
+      "desc": "한국정경신문 최현준 기­자 raysenel@naver.com [한국정경신문=최현준 기자] 에이피알이 인공지능(AI)... 국제 인증을 바탕으로 미국·유럽 등 해외 진출과 규제 대응에도 활용한다는 전략이다.29일 에이피알에 따르면..."
+    },
+    {
+      "co": "에이피알",
       "title": "에이피알 대표 김병훈 글로벌 무대서 잇따라 '호출' 받아, K뷰티 대표 얼...",
       "link": "https://www.businesspost.co.kr/BP?command=article_view&num=448080",
       "date": "09/28 16:50",
@@ -184,10 +191,10 @@
   "foreign": [
     {
       "co": "Galderma",
-      "title": "Galderma and the pan-Canadian Pharmaceutical Alliance (pCPA) successfully complete negotiations for NEMLUVIO® (nemolizumab), for moderate-to-severe atopic dermatitis and prurigo nodularis - newswire.ca",
+      "title": "Galderma and the pan-Canadian Pharmaceutical Alliance (pCPA) successfully complete negotiations for NEMLUVIO® (nemolizumab), for moderate-to-severe atopic dermatitis and prurigo nodularis - PR Newswire Canada",
       "link": "https://news.google.com/rss/articles/CBMi1wJBVV95cUxQVjZOTE5jd2pnXy1JSGlSSk9MWTh5NUVPYU1LTW9QTUhNY1JyeTQzOEdZODJRbXdIN1M2S3ZWZ0FrSklXaDhEdHhYMExwbVkwZk9janZYYnNSZXVoendydTlGV0xieF9tQVByQmd3LTRyRy1pMWdIcS16UHBPZFJXWFhwTWY2NVNUZHAtV3JvRnVheUJKWnI1a1RBUGlsTUVuWjRVVzlLV1V5bEdIbFVVdWxJZXZQRW1vanNuOFF5aVRXZlhZcHp1a3VtSkN0Z05KMmJ2UkFBVUZOZmpUalQwdmNmQ19EOFNvV0RlOElRUERBaEQ5VVFFb2lBWXE0djJjVW1uTjJ0Y2xaem5XZGQ4Qk0yUkdNbmlrVDBlSzV4ZzVxVFUwUG9nUEwyN3k3NnJVMWVIQm40a0U5TXhOMFJjSGJmX2tpWXJiRDhhUFdvcmliUE5qQU1N?oc=5",
       "date": "09/28 12:00",
-      "desc": "Galderma and the pan-Canadian Pharmaceutical Alliance (pCPA) successfully complete negotiations for NEMLUVIO® (nemolizumab), for moderate-to-severe atopic dermatitis and prurigo nodularis&nbsp;&nbsp;newswire.ca"
+      "desc": "Galderma and the pan-Canadian Pharmaceutical Alliance (pCPA) successfully complete negotiations for NEMLUVIO® (nemolizumab), for moderate-to-severe atopic dermatitis and prurigo nodularis&nbsp;&nbsp;PR Newswire Canada"
     }
   ]
 }
