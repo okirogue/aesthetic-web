@@ -26,39 +26,56 @@
 <section id="listSec">
 
   <div class="view-toggle">
-    <button id="tAll" class="on" onclick="tripView('all')">전체</button>
-    <button id="tRegion" onclick="tripView('region')">지역</button>
+    <button id="tRegion" class="on" onclick="tripView('region')">지역</button>
     <button id="tMap" onclick="tripView('map')">지도</button>
   </div>
 
-  <!-- 전체 -->
-  <div id="viewAll">
-    <div class="list-card" onclick="openDetail('d-t1')">
-      <div class="body">
-        <div class="no">2026. 9. 25. – 10. 2. · 인도네시아</div>
-        <h2>발리 · 우붓</h2>
-        <div class="sub">웨스틴 우붓(포인트 4+1박, "아주 만족") · 왕궁·시내 · 사파리 · 몽키 포레스트</div>
-      </div>
-      <div class="chev">›</div>
-    </div>
-  </div>
-
-  <!-- 지역 -->
-  <div id="viewRegion" class="hidden">
+  <div id="viewRegion">
     <div class="whisky-group">
-      <h2 class="grp">아시아<small>Asia</small></h2>
-      <div class="list-card" onclick="openDetail('d-t1')">
+      <h2 class="grp">아시아 · 인도네시아 · 발리 · 우붓<small>2026. 9. 25. – 10. 2.</small></h2>
+      <div class="list-card" onclick="openDetail('d-t1-hotel')">
         <div class="body">
-          <div class="no">인도네시아 · 발리</div>
-          <h2>우붓</h2>
-          <div class="sub">2026. 9. · 웨스틴 우붓</div>
+          <div class="no">HOTEL</div>
+          <h2>The Westin Resort &amp; Spa Ubud</h2>
+          <div class="sub">메리어트 포인트 4+1박 · "아주 만족"</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+      <div class="list-card" onclick="openDetail('d-t1-palace')">
+        <div class="body">
+          <div class="no">PLACE</div>
+          <h2>우붓 왕궁 · 시내</h2>
+          <div class="sub">택시 30분 · 북적임 · 쇼핑·맛집 구경용</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+      <div class="list-card" onclick="openDetail('d-t1-safari')">
+        <div class="body">
+          <div class="no">PLACE</div>
+          <h2>Bali Safari &amp; Marine Park</h2>
+          <div class="sub">3시간 코스 · 체험형 많음</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+      <div class="list-card" onclick="openDetail('d-t1-monkey')">
+        <div class="body">
+          <div class="no">PLACE</div>
+          <h2>Sacred Monkey Forest</h2>
+          <div class="sub">산책하며 원숭이 보는 정도 · 굳이 목적으로는</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+      <div class="list-card" onclick="openDetail('d-t1-noema')">
+        <div class="body">
+          <div class="no">RESTAURANT</div>
+          <h2>Noema Greek Restaurant &amp; Bar</h2>
+          <div class="sub">음식 훌륭 · 가격 있음 · 아멕스 불가</div>
         </div>
         <div class="chev">›</div>
       </div>
     </div>
   </div>
 
-  <!-- 지도 -->
   <div id="viewMap" class="hidden">
     <div id="tripMap" class="trip-map"></div>
     <div class="map-note">핀을 누르면 상세로. 나라별로 다녀온 곳을 채워가는 지도.</div>
@@ -67,17 +84,12 @@
 
 </section>
 
-<section id="d-t1" class="detail hidden">
+<section id="d-t1-hotel" class="detail hidden">
   <button class="back" onclick="closeDetail()">‹ 목록으로</button>
-  <div class="d-no">인도네시아 · 발리</div>
-  <h2 class="d-title">우붓</h2>
-  <div class="d-meta">2026. 9. 25. – 10. 2. · 가족 넷</div>
+  <div class="d-no">인도네시아 · 발리 · 우붓</div>
+  <h2 class="d-title">The Westin Resort &amp; Spa Ubud, Bali</h2>
+  <div class="d-meta">2026. 9. 25. – 10. 2. · 메리어트 포인트 4+1박 · 기본 룸 · Jl. Lod Tunduh, Br. Kangetan, Ubud 80571</div>
   <div class="d-body">
-    <div class="place">
-      <span class="tag">HOTEL</span>
-      <h3>The Westin Resort &amp; Spa Ubud, Bali</h3>
-      <p>Jl. Lod Tunduh, Br. Kangetan, Ubud 80571 · 메리어트 포인트 4+1박 · 기본 룸</p>
-    </div>
     <div class="gallery">
       <img src="img/t1-01.jpg" loading="lazy" alt="">
       <img src="img/t1-02.jpg" loading="lazy" alt="">
@@ -101,17 +113,21 @@
       <img src="img/t1-k02.jpg" loading="lazy" alt="">
       <img src="img/t1-k03.jpg" loading="lazy" alt="">
     </div>
-    <p>애들 맡겨놓을 프로그램이 꽤 있고 직원이 잘 봐준다. 잔디밭에서 발리 전통 차낭(야자잎 공예) 만들기, 색칠, 레고 벽, 티피 텐트에 카펫까지 — 애들끼리 다른 나라 아이들이랑 섞여서 논다. 수영장은 계곡 쪽으로 열린 구조에 풀바·가제보·미끄럼틀까지 — 애들은 하루 종일 튜브.</p>
+    <p>애들 맡겨놓을 프로그램이 꽤 있고 직원이 잘 봐준다. 잔디밭에서 발리 전통 차낭(야자잎 공예) 만들기, 색칠, 레고 벽, 티피 텐트에 카펫까지 — 애들끼리 다른 나라 아이들이랑 섞여서 논다. 수영장은 계곡 쪽으로 열린 구조에 풀바·가제보 — 애들은 하루 종일 튜브.</p>
     <div class="phase">점심 · 저녁</div>
     <p>1층 수영장 쪽, 3층 조식당 쪽 두 군데. 맛은 좋은데(위 사진의 디너 — 메추리·연어·리조또) 가격이 저렴하진 않다. 점심 4인 5만원 안팎, 저녁 10만원대. 애프터눈티도 있다.</p>
     <div class="phase">아쉬운 것</div>
     <p>하드리쿼가 비싸다. 다음엔 면세점에서 사올 것.</p>
     <div class="lesson"><b>총평:</b> 아주 만족. 포인트 4+1로 이 급이면 재방문 1순위. 다음엔 위스키 한 병 면세로 들고 오기.</div>
-    <div class="place">
-      <span class="tag">PLACE</span>
-      <h3>우붓 왕궁(Puri Saren Agung) · 우붓 시내</h3>
-      <p>호텔에서 택시 30분. 사람 꽤 많고 북적임. 왕궁은 무료 입장, 화요일 저녁엔 레공·라마야나 공연(10만 루피아).</p>
-    </div>
+  </div>
+</section>
+
+<section id="d-t1-palace" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">인도네시아 · 발리 · 우붓</div>
+  <h2 class="d-title">우붓 왕궁 · 시내</h2>
+  <div class="d-meta">Puri Saren Agung · 호텔에서 택시 30분 · 왕궁 무료 입장, 화요일 저녁 레공·라마야나 공연 10만 루피아</div>
+  <div class="d-body">
     <div class="gallery">
       <img src="img/t1-p01.jpg" loading="lazy" alt="">
       <img src="img/t1-p02.jpg" loading="lazy" alt="">
@@ -120,37 +136,48 @@
       <img src="img/t1-p05.jpg" loading="lazy" alt="">
     </div>
     <p>애들이 아직 어려서 걸어다니며 가게 구경하기엔 도로가 편하진 않다 — 인도가 좁고 끊기고, 오토바이가 바로 옆으로 지나간다. 적당한 쇼핑과 시내 맛집 구경에 적합한 정도.</p>
-    <div class="place">
-      <span class="tag">PLACE</span>
-      <h3>Bali Safari &amp; Marine Park</h3>
-      <p>기아냐르 · 3시간 코스</p>
-    </div>
+  </div>
+</section>
+
+<section id="d-t1-safari" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">인도네시아 · 발리 · 기아냐르</div>
+  <h2 class="d-title">Bali Safari &amp; Marine Park</h2>
+  <div class="d-meta">3시간 코스</div>
+  <div class="d-body">
     <div class="gallery">
       <img src="img/t1-s01.jpg" loading="lazy" alt="">
       <img src="img/t1-s02.jpg" loading="lazy" alt="">
     </div>
     <p>나쁘지 않음. 돈 내고 하는 체험형(코끼리 먹이 주기 등)이 많다. 해양 쪽도 같이 있는데 아쿠아리움보다 조금 큰 정도 같아서 안 갔다.</p>
-    <div class="place">
-      <span class="tag">PLACE</span>
-      <h3>Sacred Monkey Forest Sanctuary (우붓 몽키 포레스트)</h3>
-      <p>우붓 시내 남쪽</p>
-    </div>
+  </div>
+</section>
+
+<section id="d-t1-monkey" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">인도네시아 · 발리 · 우붓</div>
+  <h2 class="d-title">Sacred Monkey Forest Sanctuary</h2>
+  <div class="d-meta">우붓 몽키 포레스트 · 우붓 시내 남쪽</div>
+  <div class="d-body">
     <div class="gallery">
       <img src="img/t1-m01.jpg" loading="lazy" alt="">
       <img src="img/t1-m02.jpg" loading="lazy" alt="">
       <img src="img/t1-m03.jpg" loading="lazy" alt="">
     </div>
     <p>그냥 산책하면서 원숭이 보는 정도. 굳이 목적으로 들를 필요는 없을 듯. 안쪽 사원은 닫혀 있었다.</p>
-    <div class="place">
-      <span class="tag">RESTAURANT</span>
-      <h3>Noema Greek Restaurant &amp; Bar</h3>
-      <p>우붓 아트마켓 근처 · 4인 약 7만원 · 아멕스 안 받음(현금)</p>
-    </div>
+  </div>
+</section>
+
+<section id="d-t1-noema" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">인도네시아 · 발리 · 우붓</div>
+  <h2 class="d-title">Noema Greek Restaurant &amp; Bar</h2>
+  <div class="d-meta">우붓 아트마켓 근처 · 4인 약 7만원 · 아멕스 안 받음(현금)</div>
+  <div class="d-body">
     <div class="gallery">
       <img src="img/t1-r01.jpg" loading="lazy" alt="">
     </div>
     <p>아트마켓 구경하다 들어간 그리스 식당. 음식은 훌륭 — 수블라키 플래터(닭·소시지·피타·차지키·그릭샐러드), 미트볼, 파스타. 벌레가 좀 많고 스파클링 와인에 스파클링이 없었다. 가격은 우붓치고 꽤 있는 편. 아멕스를 안 받아서 현금 뽑아서 냈다.</p>
-    <p class="todo">음식점은 다녀온 곳 정리되는 대로 추가</p>
   </div>
 </section>
 
@@ -162,7 +189,11 @@
 <script src="shared.js"></script>
 <script>
 var TRIPS=[
- {id:'d-t1',country:'인도네시아',city:'발리 · 우붓',hotel:'The Westin Resort & Spa Ubud',lat:-8.537,lng:115.253,when:'2026. 9.'}
+ {id:'d-t1-hotel',country:'인도네시아',city:'발리 · 우붓',hotel:'The Westin Resort & Spa Ubud',lat:-8.537,lng:115.253,when:'2026. 9.',pin:true},
+ {id:'d-t1-palace',country:'인도네시아',city:'발리 · 우붓',hotel:'우붓 왕궁 · 시내',when:'2026. 9.'},
+ {id:'d-t1-safari',country:'인도네시아',city:'발리 · 기아냐르',hotel:'Bali Safari & Marine Park',when:'2026. 9.'},
+ {id:'d-t1-monkey',country:'인도네시아',city:'발리 · 우붓',hotel:'Sacred Monkey Forest',when:'2026. 9.'},
+ {id:'d-t1-noema',country:'인도네시아',city:'발리 · 우붓',hotel:'Noema Greek Restaurant & Bar',when:'2026. 9.'}
 ];
 var tripMapObj=null;
 function buildTripMap(){
@@ -172,20 +203,18 @@ function buildTripMap(){
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png',{maxZoom:18,subdomains:'abcd',attribution:'&copy; OpenStreetMap &copy; CARTO'}).addTo(tripMapObj);
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png',{maxZoom:18,subdomains:'abcd',pane:'shadowPane'}).addTo(tripMapObj);
   var icon=L.divIcon({className:'',html:'<div class="pin"></div>',iconSize:[14,14],iconAnchor:[7,7]});
-  TRIPS.forEach(function(t){
+  TRIPS.filter(function(t){return t.pin;}).forEach(function(t){
     var m=L.marker([t.lat,t.lng],{icon:icon}).addTo(tripMapObj);
     m.bindPopup('<b>'+t.country+' · '+t.city+'</b><br>'+t.hotel+'<br>'+t.when);
     m.on('click',function(){openDetail(t.id);});
   });
-  var html='<tr><th>국가</th><th>도시</th><th>호텔</th><th>시기</th></tr>';
+  var html='<tr><th>국가</th><th>도시</th><th>장소</th><th>시기</th></tr>';
   TRIPS.forEach(function(t){html+='<tr onclick="openDetail(\''+t.id+'\')"><td class="dim">'+t.country+'</td><td>'+t.city+'</td><td>'+t.hotel+'</td><td class="dim">'+t.when+' ›</td></tr>';});
   document.getElementById('tripTable').innerHTML=html;
 }
 function tripView(v){
-  document.getElementById('viewAll').classList.toggle('hidden',v!=='all');
   document.getElementById('viewRegion').classList.toggle('hidden',v!=='region');
   document.getElementById('viewMap').classList.toggle('hidden',v!=='map');
-  document.getElementById('tAll').classList.toggle('on',v==='all');
   document.getElementById('tRegion').classList.toggle('on',v==='region');
   document.getElementById('tMap').classList.toggle('on',v==='map');
   if(v==='map'){buildTripMap();if(tripMapObj)setTimeout(function(){tripMapObj.invalidateSize();},50);}
