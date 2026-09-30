@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>취미생활 · 위스키</title>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+<header>
+  <h1>취미생활</h1>
+  <p>시가와 위스키, 천천히 배워가는 기록</p>
+</header>
+
+<div class="top-tabs">
+  <a href="index.html">시가</a>
+  <a href="whisky.html" class="on">위스키</a>
+  <a href="travel.html">여행</a>
+</div>
+
+<main>
+
+<section id="listSec">
+
+  <div class="view-toggle">
+    <button id="wvList" class="on" onclick="whiskyView('list')">목록</button>
+    <button id="wvMap" onclick="whiskyView('map')">지도</button>
+  </div>
+
+  <div id="wViewList">
+  <div class="whisky-group">
+    <h2 class="grp">싱글몰트 · 논피트<small>과일과 꽃의 결</small></h2>
+    <div class="list-card" onclick="openDetail('d-w-signet')">
+      <div class="body">
+        <h2>글렌모렌지 시그넷</h2>
+        <div class="sub">"실패 없는 선택" — 로스티드 스모크와 건포도, 완벽한 무난함</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+    <div class="list-card" onclick="openDetail('d-w-keris')">
+      <div class="body">
+        <h2>케리스 실버</h2>
+        <div class="sub">"꿀물 먹는 느낌" — 인도네시아 최초의 싱글몰트</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+  </div>
+
+  <div class="whisky-group">
+    <h2 class="grp">싱글몰트 · 피트<small>연기와 바다의 결</small></h2>
+    <div class="list-card" onclick="openDetail('d-w-tal')">
+      <div class="body">
+        <h2>탈리스커 10</h2>
+        <div class="sub">"피트가 빡세네" — 피트 강도의 개인 기준점</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+  </div>
+
+  <div class="whisky-group">
+    <h2 class="grp">블렌디드<small>여러 증류소의 조화</small></h2>
+    <div class="list-card" onclick="openDetail('d-w-green')">
+      <div class="body">
+        <h2>조니워커 그린라벨 15</h2>
+        <div class="sub">"나 위스키다!!!" — 블렌디드 몰트 첫 좌표</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+    <div class="list-card" onclick="openDetail('d-w-blue')">
+      <div class="body">
+        <h2>조니워커 블루라벨</h2>
+        <div class="sub">즐겨 마셔온 병 — 좌표만 먼저 기록</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+    <div class="list-card empty">
+      <div class="body">
+        <h2>로얄살루트 21</h2>
+        <div class="sub">노트 미기입 — 기억나는 대로 채울 예정</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="whisky-group">
+    <h2 class="grp">그 외 오크 숙성<small>위스키는 아니지만 같은 결</small></h2>
+    <div class="list-card" onclick="openDetail('d-w-taylor')">
+      <div class="body">
+        <h2>테일러스 20년 토니 포트</h2>
+        <div class="sub">캐러멜과 건포도의 끈적한 단맛, 옅은 한약 향</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+    <div class="list-card" onclick="openDetail('d-w-kirk')">
+      <div class="body">
+        <h2>커클랜드 시그니처 타우니 포트 10년</h2>
+        <div class="sub">알코올이 살짝 튀고 새큼 — 그래도 가성비 디저트 와인</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+    <div class="list-card" onclick="openDetail('d-w-chusa')">
+      <div class="body">
+        <h2>추사 50 배치3 시라 캐스크</h2>
+        <div class="sub">"정말 위스키 향이 나" — 오크가 만든 위스키의 골격</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+  </div>
+  </div>
+
+  <div id="wViewMap" class="hidden">
+  <div class="map-wrap">
+    <svg id="whiskyMap" viewBox="0 0 360 380" role="img" aria-label="위스키 취향 지도"></svg>
+    <div class="map-legend" id="wMapLegend"></div>
+  </div>
+  <div class="map-note">가로는 무게감(가벼움 → 묵직), 세로는 결(위로 갈수록 단맛·과일·꽃, 아래로 갈수록 스모크·피트·로스티드). 색은 분류. 점선 점은 노트 미기입. 점이나 표를 누르면 상세로. 좌표는 노트 기준 감각값.</div>
+  <table class="map-tbl" id="wMapTable"></table>
+  </div>
+
+</section>
+
+<div class="map-tip" id="mapTip"></div>
+
+
+<section id="d-w-tal" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">싱글몰트 · 피트</div>
+  <h2 class="d-title">탈리스커 10</h2>
+  <div class="d-meta">스카이 섬 · 싱글몰트 스카치</div>
+  <div class="d-body">
+    <p>피트가 생각보다 강했지만, 기름진 음식과 함께할 때는 오히려 그 스모키함이 입안을 잡아주는 역할. 이후 피트 강도의 개인 기준점이 된 병.</p>
+    <div class="quote">"피트가 빡세네"</div>
+  </div>
+</section>
+
+<section id="d-w-green" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">블렌디드 몰트</div>
+  <h2 class="d-title">조니워커 그린라벨 15</h2>
+  <div class="d-meta">2026. 9. 7. 개봉 · 잔을 거듭하며 기록 중</div>
+  <div class="d-body">
+    <div class="phase">첫 잔 — 개봉 직후 (2026. 9. 7.)</div>
+    <p>병을 열자마자 나온 첫인상이 모든 것을 요약했다.</p>
+    <div class="quote">"나 위스키다!!!"</div>
+    <p>코에서는 화사한 꽃향(링크우드의 몫으로 추정)이 먼저 오고, 입에서는 배·바닐라·꿀 — 버번 캐스크의 전형적인 전개. 처음엔 셰리 캐스크를 의심했지만 그린라벨은 버번 캐스크 중심이 맞았다. 목 깊은 곳에서 레트로헤일 경로로 피트가 올라오는데, 이 피니시의 피트 잔향은 블랙·블루에도 공통으로 흐르는 조니워커 하우스 시그니처.</p>
+    <p>좌표도 잡았다: 글렌피딕 12(더 가벼움) — <b>그린라벨</b> — 블루라벨(더 둥글고 묵직함). 그레인 위스키 포함 여부로 설명되는 구조적으로 정확한 배치였다. 반병쯤에서 재평가 노트를 덧붙일 예정.</p>
+
+    <div class="phase">두 번째 잔 — 나흘 뒤 (2026. 9. 11.)</div>
+    <p>첫 잔에서는 꽃향이 먼저 오고 피트는 피니시에서 따로 올라왔는데, 이번 잔에서는 꽃향과 그에 이어지는 스모키 피트가 합쳐져서 왔다. 개봉 후 공기와 닿으며 흩어져 있던 노트가 하나로 통합되는, 오픈 초기 병에서 흔한 변화다.</p>
+    <div class="quote">"조금 더 묵직하다면 블루랑 상당히 유사하겠어"</div>
+    <p>첫 잔에서 잡았던 좌표 — 그린과 블루의 차이는 결이 아니라 무게감 — 가 두 번째 잔에서 반대 방향으로 재확인됐다. 노트가 합쳐지고 나니 블루까지 남은 거리는 바디뿐이었다.</p>
+  </div>
+</section>
+
+<section id="d-w-blue" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">블렌디드</div>
+  <h2 class="d-title">조니워커 블루라벨</h2>
+  <div class="d-meta">즐겨 마셔온 위스키</div>
+  <div class="d-body">
+    <p>그린라벨과의 비교(2026. 9. 7.)에서 좌표가 잡혔다: 그레인 포함 블렌딩이라 부드럽고 둥글며, 주연은 묵직함. 피니시에 코를 덮는 피트 잔향이 있는 것은 조니워커 공통 시그니처. 상세 노트는 다음 잔에서.</p>
+    <p class="todo">상세 시음 노트는 다음 잔에서 채울 예정</p>
+  </div>
+</section>
+
+<section id="d-w-taylor" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">그 외 오크 숙성</div>
+  <h2 class="d-title">테일러스 20년 토니 포트</h2>
+  <div class="d-meta">포르투갈 포트와인 · 우드 20년 숙성 · 2026. 9. 5. 첫 노트</div>
+  <div class="d-body">
+    <p>캐러멜과 짙은 건포도의 끈적하고 달달한 단맛이 중심 — 20년 우드 숙성이 신선한 과일을 말린 과일 쪽으로 농축시킨 결과. 그 뒤로 옅은 한약 같은 뉘앙스가 깔리는데, 오래 산화 숙성된 토니 포트 특유의 허브·약재 노트다. 천천히 홀짝이기 좋고, 와인보다 부담 없이 꺼내기 편한 병.</p>
+    <div class="quote">"캐러멜 + 건포도의 끈적하고 달달함, 옅은 한약 향"</div>
+  </div>
+</section>
+
+<section id="d-w-kirk" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">그 외 오크 숙성</div>
+  <h2 class="d-title">커클랜드 시그니처 타우니 포트 10년</h2>
+  <div class="d-meta">코스트코 · 약 36,000원 · 2026. 9. 11. 첫 노트</div>
+  <div class="d-body">
+    <p>그린라벨에 이어 연 병. 비교 대상이 테일러스 20 하나뿐이라 부정확하다는 단서를 달고 마셨다.</p>
+    <p>향과 당도는 테일러스 20과 얼추 비슷한 캐러멜 계열. 다른 점은 알코올이 살짝 튀는 느낌과 새큼한 산미인데, 이건 병의 결함이 아니라 10년과 20년의 나이 차 그 자체다 — 젊은 타우니일수록 신선한 과일의 산미가 남아 있고 알코올 통합이 덜 되어 있으며, 20년쯤 가야 그게 캐러멜·말린 과일 쪽으로 눌러앉는다. 블라인드에 가까운 상태에서 숙성 연수 차이를 정확히 짚어낸 셈.</p>
+    <div class="quote">"그냥 가성비 디저트와인처럼 먹기 좋아"</div>
+    <p>36,000원이라는 가격을 생각하면 잘 만든 병. 편하게 꺼내는 디저트 와인 역할로 충분하다.</p>
+  </div>
+</section>
+
+<section id="d-w-signet" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">싱글몰트 · 논피트</div>
+  <h2 class="d-title">글렌모렌지 시그넷</h2>
+  <div class="d-meta">하이랜드 싱글몰트 · 2026. 9. 17. 회식 자리 첫 노트</div>
+  <div class="d-body">
+    <p>회식 자리에서 드디어 채운 첫 정식 노트. 스모키한 향이 부드럽게 받쳐주는 가운데 고소한 베리 — 건포도 같은 느낌이 남았다.</p>
+    <p>재밌는 반전은 그 스모크의 정체다. 시그넷은 피트를 안 쓴 위스키 — 받쳐주던 연기는 '초콜릿 몰트'라 부르는 고로스팅 맥아의 로스티드 향이다. 커피·다크초콜릿 굽는 냄새가 피트처럼 읽힌 것. 탈리스커에서 잡은 진짜 피트와는 다른 축이고, 건포도·베리 쪽은 셰리 캐스크의 몫이다. 로스티드 스모크와 진짜 피트를 구분해서 느꼈다는 점에서 정확한 기록.</p>
+    <div class="quote">"특별하다기보다는 실패 없는 선택 — 완벽한 무난함에 어울리는 술"</div>
+    <p>좌표도 잡혔다: 그린라벨에서 고숙성 맛이 좀 더 나는 느낌. 화사함과 밸런스의 결은 공유하되, 로스티드 몰트와 셰리의 농축감이 한 겹 더 얹힌 위치다. 고소함+건포도 조합이라 취향 축(고소·초콜릿·견과)에도 정확히 앉는 병.</p>
+  </div>
+</section>
+
+<section id="d-w-keris" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">싱글몰트 · 논피트</div>
+  <h2 class="d-title">케리스 실버</h2>
+  <div class="d-meta">인도네시아 발리 · 아메리칸 오크 4년 + 올로로소 셰리 피니시 · 43% · 2026. 9. 17. 회식 첫 노트</div>
+  <div class="d-body">
+    <p>회식 자리에서 만난 낯선 병. 2024년 9월에 나온 인도네시아 최초의 싱글몰트로, 발리에서 증류한다. 향은 고소한데 입에서는 꿀과 꽃이 확 퍼지는 전개.</p>
+    <div class="quote">"향은 고소한데 맛은 꿀·꽃이 확 퍼지네. 꿀물 먹는 느낌이야"</div>
+    <p>느낀 그대로가 이 병의 구조다 — 향의 고소함(견과·말린 과일)은 올로로소 셰리 피니시, 입에서 퍼지는 꿀·꽃은 아메리칸 오크의 바닐라·허니 계열. 열대 기후라 숙성이 빨리 진행돼 4년 숙성치고 단맛이 진하게 올라오는 것도 카발란과 같은 원리다.</p>
+  </div>
+</section>
+
+<section id="d-w-chusa" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">그 외 오크 숙성</div>
+  <h2 class="d-title">추사 50 배치3 시라 캐스크 피니시</h2>
+  <div class="d-meta">예산사과와인 · 100% 예산 사과 브랜디 · 프렌치 오크 → 시라 캐스크 피니시 · 50% · 500ml · 논칠필터 · 2026. 9. 17. 회식 첫 노트</div>
+  <div class="d-body">
+    <p>목록에 빈 카드로 오래 걸려 있던 병을 회식에서 드디어 만났다. 충남 예산 — 추사 김정희의 고향 — 의 예산사과와인이 100% 예산 사과로 증류한 브랜디로, 프렌치 오크 1차 숙성 뒤 시라 레드와인 캐스크로 피니시한 배치 한정 생산품이다.</p>
+    <div class="quote">"사과 향이 매우 좋아" · "한국산이 낯선데, 정말 위스키 향이 나. 신기해"</div>
+    <p>이 두 감상이 병의 구조를 그대로 짚었다. 사과 향은 베이스의 몫 — 원액 자체가 사과 와인 증류액이라 칼바도스와 같은 문법이고, 잘 익은 적사과가 중심에 온다. 그리고 위스키 향의 정체는 오크다. '위스키 향'이라 부르는 바닐라·캐러멜·토스티한 골격은 곡물이 아니라 헤비토스팅 오크통이 만드는 것이라, 통이 같으면 원료가 사과여도 향의 뼈대가 같아진다. 이 그룹의 이름("위스키는 아니지만 같은 결")이 잔 안에서 증명된 세션. 50도 논칠필터가 그 향의 밀도를 받쳐주고, 시라 캐스크는 그 위에 베리·레드와인 뉘앙스를 얹는다.</p>
+    <div class="quote">"과실향 셰리? 쉬라? 숙성으로 인한 감칠맛이 있어"</div>
+    <p>추가 관찰 — 잔을 이어가며 감칠맛을 잡았다. 쉬라는 와인 품종 중에서도 후추·올리브·고기 같은 세이버리 노트로 유명한 품종이라, 이 감칠맛은 시라 캐스크의 성격을 그대로 읽은 것. 셰리 캐스크의 감칠맛(견과·산화)과 결이 비슷해 헷갈릴 만하지만 이 병은 시라가 정답이다. 논칠필터로 지방산·풍미 성분이 남아 있는 것도 질감과 감칠맛을 받쳐준다.</p>
+    <p>출시가는 8만원대였지만 배치당 한정 생산이라 지금은 웃돈이 붙어 거래되는 병이기도 하다.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>위스키 노트 7건 — 기록은 계속됩니다</footer>
+
+<script src="shared.js"></script>
+<script>
+var MAP_W_ORIGIN={np:['싱글몰트 논피트','#b98426'],pt:['싱글몰트 피트','#3f8fc8'],bl:['블렌디드','#c9557a'],ot:['그 외 오크 숙성','#7a9c3a']};
+var MAP_W_DATA=[
+ {id:'d-w-signet',no:'S',name:'Glenmorangie Signet',o:'np',x:4,y:3.5,v:2,note:'로스티드 몰트의 스모크 + 건포도 — "실패 없는 선택"'},
+ {id:'d-w-keris',no:'K',name:'Keris Silver',o:'np',x:2,y:1,v:2,note:'꿀·꽃이 확 퍼짐, 향은 고소 — "꿀물 먹는 느낌"'},
+ {id:'d-w-tal',no:'T',name:'Talisker 10',o:'pt',x:3.5,y:4.5,v:2,note:'피트 기준점 — "피트가 빡세네", 기름진 음식과'},
+ {id:'d-w-green',no:'G',name:'Johnnie Walker Green 15',o:'bl',x:3,y:3,v:2,note:'꽃·배·바닐라·꿀에 피니시 피트 — "나 위스키다!!!"'},
+ {id:'d-w-blue',no:'B',name:'Johnnie Walker Blue',o:'bl',x:4,y:3,v:2,note:'둥글고 묵직, 피트 잔향 — 즐겨 마셔온 병'},
+ {id:null,no:'R',name:'Royal Salute 21',o:'bl',x:3.5,y:2,v:-1,note:'노트 미기입'},
+ {id:'d-w-taylor',no:'Ty',name:"Taylor's 20 Tawny Port",o:'ot',x:4,y:1.5,v:2,note:'캐러멜·건포도의 끈적한 단맛, 옅은 한약 향'},
+ {id:'d-w-kirk',no:'Kk',name:'Kirkland Tawny Port 10',o:'ot',x:3,y:1.5,v:2,note:'캐러멜에 산미·알코올 살짝 — 가성비 디저트 와인'},
+ {id:'d-w-chusa',no:'C',name:'추사 50 배치3 시라 캐스크',o:'ot',x:4,y:2,v:2,note:'사과 + 오크의 위스키 골격, 시라의 감칠맛'}
+];
+function buildWhiskyMap(){buildMap({svg:'whiskyMap',legend:'wMapLegend',table:'wMapTable',data:MAP_W_DATA,origin:MAP_W_ORIGIN,xl:'가벼움',xr:'묵직',xt:'무게감 →',yt:'단맛·과일·꽃',yb:'스모크·피트·로스티드',col:'분류',noCol:'',vCol:'노트'});}
+function whiskyView(v){
+  document.getElementById('wViewList').classList.toggle('hidden', v!=='list');
+  document.getElementById('wViewMap').classList.toggle('hidden', v!=='map');
+  document.getElementById('wvList').classList.toggle('on', v==='list');
+  document.getElementById('wvMap').classList.toggle('on', v==='map');
+  if(v==='map') buildWhiskyMap();
+}
+</script>
+
+</body>
+</html>

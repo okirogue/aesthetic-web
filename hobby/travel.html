@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>취미생활 · 여행</title>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+<header>
+  <h1>취미생활</h1>
+  <p>시가와 위스키, 천천히 배워가는 기록</p>
+</header>
+
+<div class="top-tabs">
+  <a href="index.html">시가</a>
+  <a href="whisky.html">위스키</a>
+  <a href="travel.html" class="on">여행</a>
+</div>
+
+<main>
+
+<section id="listSec">
+
+  <div class="view-toggle">
+    <button id="tAll" class="on" onclick="tripView('all')">전체</button>
+    <button id="tRegion" onclick="tripView('region')">지역</button>
+    <button id="tMap" onclick="tripView('map')">지도</button>
+  </div>
+
+  <!-- 전체 -->
+  <div id="viewAll">
+    <div class="list-card" onclick="openDetail('d-t1')">
+      <div class="body">
+        <div class="no">2026. 9. 25. – 10. 2. · 인도네시아</div>
+        <h2>발리 · 우붓</h2>
+        <div class="sub">The Westin Resort &amp; Spa Ubud</div>
+      </div>
+      <div class="chev">›</div>
+    </div>
+  </div>
+
+  <!-- 지역 -->
+  <div id="viewRegion" class="hidden">
+    <div class="whisky-group">
+      <h2 class="grp">아시아<small>Asia</small></h2>
+      <div class="list-card" onclick="openDetail('d-t1')">
+        <div class="body">
+          <div class="no">인도네시아 · 발리</div>
+          <h2>우붓</h2>
+          <div class="sub">2026. 9. · 웨스틴 우붓</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 지도 -->
+  <div id="viewMap" class="hidden">
+    <div id="tripMap" class="trip-map"></div>
+    <div class="map-note">핀을 누르면 상세로. 나라별로 다녀온 곳을 채워가는 지도.</div>
+    <table class="map-tbl" id="tripTable"></table>
+  </div>
+
+</section>
+
+<section id="d-t1" class="detail hidden">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">인도네시아 · 발리</div>
+  <h2 class="d-title">우붓</h2>
+  <div class="d-meta">2026. 9. 25. – 10. 2.</div>
+  <div class="d-body">
+    <div class="place">
+      <span class="tag">HOTEL</span>
+      <h3>The Westin Resort &amp; Spa Ubud, Bali</h3>
+      <p>Jl. Lod Tunduh, Br. Kangetan, Ubud 80571 · 우붓 남쪽 싱아케르타 쪽 계곡 리조트</p>
+    </div>
+    <p class="todo">음식점은 다녀온 곳 정리되는 대로 추가</p>
+  </div>
+</section>
+
+</main>
+
+<footer>여행 1건 — 기록은 계속됩니다</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="shared.js"></script>
+<script>
+var TRIPS=[
+ {id:'d-t1',country:'인도네시아',city:'발리 · 우붓',hotel:'The Westin Resort & Spa Ubud',lat:-8.537,lng:115.253,when:'2026. 9.'}
+];
+var tripMapObj=null;
+function buildTripMap(){
+  if(tripMapObj) return;
+  if(typeof L==='undefined'){document.getElementById('tripMap').innerHTML='<p class="map-note" style="padding:20px">지도를 불러오지 못했습니다. 네트워크 연결 후 새로고침.</p>';return;}
+  tripMapObj=L.map('tripMap',{worldCopyJump:true,attributionControl:true}).setView([15,110],2);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png',{maxZoom:18,subdomains:'abcd',attribution:'&copy; OpenStreetMap &copy; CARTO'}).addTo(tripMapObj);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png',{maxZoom:18,subdomains:'abcd',pane:'shadowPane'}).addTo(tripMapObj);
+  var icon=L.divIcon({className:'',html:'<div class="pin"></div>',iconSize:[14,14],iconAnchor:[7,7]});
+  TRIPS.forEach(function(t){
+    var m=L.marker([t.lat,t.lng],{icon:icon}).addTo(tripMapObj);
+    m.bindPopup('<b>'+t.country+' · '+t.city+'</b><br>'+t.hotel+'<br>'+t.when);
+    m.on('click',function(){openDetail(t.id);});
+  });
+  var html='<tr><th>국가</th><th>도시</th><th>호텔</th><th>시기</th></tr>';
+  TRIPS.forEach(function(t){html+='<tr onclick="openDetail(\''+t.id+'\')"><td class="dim">'+t.country+'</td><td>'+t.city+'</td><td>'+t.hotel+'</td><td class="dim">'+t.when+' ›</td></tr>';});
+  document.getElementById('tripTable').innerHTML=html;
+}
+function tripView(v){
+  document.getElementById('viewAll').classList.toggle('hidden',v!=='all');
+  document.getElementById('viewRegion').classList.toggle('hidden',v!=='region');
+  document.getElementById('viewMap').classList.toggle('hidden',v!=='map');
+  document.getElementById('tAll').classList.toggle('on',v==='all');
+  document.getElementById('tRegion').classList.toggle('on',v==='region');
+  document.getElementById('tMap').classList.toggle('on',v==='map');
+  if(v==='map'){buildTripMap();if(tripMapObj)setTimeout(function(){tripMapObj.invalidateSize();},50);}
+}
+</script>
+
+</body>
+</html>
