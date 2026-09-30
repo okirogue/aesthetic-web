@@ -47,7 +47,7 @@
   <div id="trip-bali" class="trip hidden">
     <button class="back" onclick="closeTrip()">‹ 지역으로</button>
     <div class="whisky-group">
-      <h2 class="grp">인도네시아 · 발리 · 우붓<small>2026. 9. 25. – 10. 2.</small></h2>
+      <h2 class="grp">인도네시아 · 발리 · 우붓<small>2026. 9. 25. – 9. 30.</small></h2>
       <div class="list-card" onclick="openDetail('d-t1-hotel')">
         <div class="body">
           <div class="no">HOTEL</div>
@@ -89,6 +89,17 @@
         <div class="chev">›</div>
       </div>
     </div>
+    <div class="whisky-group">
+      <h2 class="grp">인도네시아 · 발리 · 누사두아<small>2026. 9. 30. – 10. 2.</small></h2>
+      <div class="list-card" onclick="openDetail('d-t2-hotel')">
+        <div class="body">
+          <div class="no">HOTEL</div>
+          <h2>The Westin Resort Nusa Dua, Bali</h2>
+          <div class="sub">SNA 2박 · 레지덴셜 스위트</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+    </div>
   </div>
 
   <div id="viewMap" class="hidden">
@@ -103,7 +114,7 @@
   <button class="back" onclick="closeDetail()">‹ 목록으로</button>
   <div class="d-no">인도네시아 · 발리 · 우붓</div>
   <h2 class="d-title">The Westin Resort &amp; Spa Ubud, Bali</h2>
-  <div class="d-meta">2026. 9. 25. – 10. 2. · 메리어트 포인트 4+1박 · 기본 룸 · Jl. Lod Tunduh, Br. Kangetan, Ubud 80571</div>
+  <div class="d-meta">2026. 9. 25. – 9. 30. · 메리어트 포인트 4+1박 · 기본 룸 · Jl. Lod Tunduh, Br. Kangetan, Ubud 80571</div>
   <div class="d-body">
     <div class="gallery">
       <img src="img/t1-01.jpg" loading="lazy" alt="">
@@ -134,6 +145,27 @@
     <div class="phase">아쉬운 것</div>
     <p>하드리쿼가 비싸다. 다음엔 면세점에서 사올 것.</p>
     <div class="lesson"><b>총평:</b> 아주 만족. 포인트 4+1로 이 급이면 재방문 1순위. 다음엔 위스키 한 병 면세로 들고 오기.</div>
+  </div>
+</section>
+
+<section id="d-t2-hotel" class="detail hidden" data-trip="trip-bali">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">인도네시아 · 발리 · 누사두아</div>
+  <h2 class="d-title">The Westin Resort Nusa Dua, Bali</h2>
+  <div class="d-meta">2026. 9. 30. – 10. 2. · 메리어트 포인트 2박 + SNA 업그레이드 → 레지덴셜 스위트 · Kawasan Pariwisata Nusa Dua, BTDC Lot N-3</div>
+  <div class="d-body">
+    <div class="gallery">
+      <img src="img/t2-01.jpg" loading="lazy" alt="">
+      <img src="img/t2-02.jpg" loading="lazy" alt="">
+      <img src="img/t2-03.jpg" loading="lazy" alt="">
+      <img src="img/t2-04.jpg" loading="lazy" alt="">
+      <img src="img/t2-05.jpg" loading="lazy" alt="">
+    </div>
+    <div class="phase">방 — SNA로 뽑은 레지덴셜 스위트</div>
+    <p>우붓에서 넘어와 2박. SNA 2장을 태웠는데 레지덴셜 스위트가 걸렸다. 거의 아파트 한 채 — 6인 다이닝 테이블에 주방 조리대까지 따로 있고, 마스터룸은 킹 침대에 바다 그림 헤드보드, 트윈룸이 하나 더. 방마다 발코니가 있다. 애들이 엄마 없이 못 잔다고 해서 마스터는 와이프·애들, 트윈룸은 나 혼자. 마스터 욕실은 다크 마블에 더블 세면대, 독립 욕조.</p>
+    <div class="phase">시가</div>
+    <p>첫날 밤 여기서 Dos Hermanos Corona(No.19).</p>
+    <p style="color:var(--ink-dim)">조식 · 수영장 · 식사는 지내보고 추가.</p>
   </div>
 </section>
 
@@ -205,6 +237,7 @@
 <script>
 var TRIPS=[
  {id:'d-t1-hotel',country:'인도네시아',city:'발리 · 우붓',hotel:'The Westin Resort & Spa Ubud',lat:-8.537,lng:115.253,when:'2026. 9.',pin:true},
+ {id:'d-t2-hotel',country:'인도네시아',city:'발리 · 누사두아',hotel:'The Westin Resort Nusa Dua, Bali',lat:-8.799,lng:115.229,when:'2026. 9.',pin:true},
  {id:'d-t1-palace',country:'인도네시아',city:'발리 · 우붓',hotel:'우붓 왕궁 · 시내',when:'2026. 9.'},
  {id:'d-t1-safari',country:'인도네시아',city:'발리 · 기아냐르',hotel:'Bali Safari & Marine Park',when:'2026. 9.'},
  {id:'d-t1-monkey',country:'인도네시아',city:'발리 · 우붓',hotel:'Sacred Monkey Forest',when:'2026. 9.'},
