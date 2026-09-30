@@ -297,3 +297,6 @@
   .place h3{font-family:'Gowun Batang',serif;font-size:15px;color:var(--ink);margin-bottom:2px;}
   .place .tag{display:inline-block;font-size:11px;color:var(--ember);letter-spacing:.08em;margin-bottom:4px;}
   .place p{font-size:13.5px;color:var(--ink-dim);margin:0;}
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:0 0 18px;}
+  .gallery img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;border:1px solid var(--line);display:block;}
+  .gallery img:first-child{grid-column:1/-1;aspect-ratio:4/3;}
