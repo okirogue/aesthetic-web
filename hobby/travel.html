@@ -33,21 +33,114 @@
   <div id="viewRegion">
     <div class="whisky-group">
       <h2 class="grp">아시아<small>Asia</small></h2>
-      <div class="list-card" onclick="openTrip('trip-bali')">
+      <div class="list-card" onclick="openCountry('c-id')">
         <div class="body">
-          <div class="no">인도네시아 · 2026. 9. 25. – 10. 2.</div>
-          <h2>발리</h2>
-          <div class="sub">우붓 웨스틴 · 누사두아 웨스틴 · 왕궁·시내 · 사파리 · 몽키 포레스트 · Noema</div>
+          <div class="no">Indonesia</div>
+          <h2>인도네시아</h2>
+          <div class="sub">우붓 (발리) · 누사두아 (발리)</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+      <div class="list-card" onclick="openCountry('c-sg')">
+        <div class="body">
+          <div class="no">Singapore</div>
+          <h2>싱가포르</h2>
+          <div class="sub">아직 기록 없음</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+      <div class="list-card" onclick="openCountry('c-hk')">
+        <div class="body">
+          <div class="no">Hong Kong</div>
+          <h2>홍콩</h2>
+          <div class="sub">아직 기록 없음</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+    </div>
+    <div class="whisky-group">
+      <h2 class="grp">유럽<small>Europe</small></h2>
+      <div class="list-card" onclick="openCountry('c-uk')">
+        <div class="body">
+          <div class="no">United Kingdom</div>
+          <h2>영국</h2>
+          <div class="sub">아직 기록 없음</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+    </div>
+    <div class="whisky-group">
+      <h2 class="grp">북미<small>North America</small></h2>
+      <div class="list-card" onclick="openCountry('c-us')">
+        <div class="body">
+          <div class="no">United States</div>
+          <h2>미국</h2>
+          <div class="sub">아직 기록 없음</div>
         </div>
         <div class="chev">›</div>
       </div>
     </div>
   </div>
 
-  <div id="trip-bali" class="trip hidden">
-    <button class="back" onclick="closeTrip()">‹ 지역으로</button>
+  <div id="c-id" class="country hidden">
+    <button class="back" onclick="closeCountry()">‹ 지역으로</button>
     <div class="whisky-group">
-      <h2 class="grp">우붓<small>2026. 9. 25. – 9. 30.</small></h2>
+      <h2 class="grp">인도네시아<small>Indonesia</small></h2>
+      <div class="list-card" onclick="openTrip('trip-ubud')">
+        <div class="body">
+          <div class="no">2026. 9. 25. – 9. 30.</div>
+          <h2>우붓 (발리)</h2>
+          <div class="sub">웨스틴 우붓 · 왕궁·시내 · 사파리 · 몽키 포레스트 · Noema</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+      <div class="list-card" onclick="openTrip('trip-nusadua')">
+        <div class="body">
+          <div class="no">2026. 9. 30. – 10. 2.</div>
+          <h2>누사두아 (발리)</h2>
+          <div class="sub">웨스틴 누사두아</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="c-sg" class="country hidden">
+    <button class="back" onclick="closeCountry()">‹ 지역으로</button>
+    <div class="whisky-group">
+      <h2 class="grp">싱가포르<small>Singapore</small></h2>
+      <p class="map-note">아직 기록 없음 — 다음 여행 때 채웁니다.</p>
+    </div>
+  </div>
+
+  <div id="c-hk" class="country hidden">
+    <button class="back" onclick="closeCountry()">‹ 지역으로</button>
+    <div class="whisky-group">
+      <h2 class="grp">홍콩<small>Hong Kong</small></h2>
+      <p class="map-note">아직 기록 없음 — 다음 여행 때 채웁니다.</p>
+    </div>
+  </div>
+
+  <div id="c-uk" class="country hidden">
+    <button class="back" onclick="closeCountry()">‹ 지역으로</button>
+    <div class="whisky-group">
+      <h2 class="grp">영국<small>United Kingdom</small></h2>
+      <p class="map-note">아직 기록 없음 — 다음 여행 때 채웁니다.</p>
+    </div>
+  </div>
+
+  <div id="c-us" class="country hidden">
+    <button class="back" onclick="closeCountry()">‹ 지역으로</button>
+    <div class="whisky-group">
+      <h2 class="grp">미국<small>United States</small></h2>
+      <p class="map-note">아직 기록 없음 — 다음 여행 때 채웁니다.</p>
+    </div>
+  </div>
+
+  <div id="trip-ubud" class="trip hidden" data-country="c-id">
+    <button class="back" onclick="closeTrip()">‹ 인도네시아로</button>
+    <div class="whisky-group">
+      <h2 class="grp">우붓 (발리)<small>2026. 9. 25. – 9. 30.</small></h2>
       <div class="list-card" onclick="openDetail('d-t1-hotel')">
         <div class="body">
           <div class="no">HOTEL</div>
@@ -89,8 +182,12 @@
         <div class="chev">›</div>
       </div>
     </div>
+  </div>
+
+  <div id="trip-nusadua" class="trip hidden" data-country="c-id">
+    <button class="back" onclick="closeTrip()">‹ 인도네시아로</button>
     <div class="whisky-group">
-      <h2 class="grp">누사두아<small>2026. 9. 30. – 10. 2.</small></h2>
+      <h2 class="grp">누사두아 (발리)<small>2026. 9. 30. – 10. 2.</small></h2>
       <div class="list-card" onclick="openDetail('d-t2-hotel')">
         <div class="body">
           <div class="no">HOTEL</div>
@@ -110,7 +207,7 @@
 
 </section>
 
-<section id="d-t1-hotel" class="detail hidden" data-trip="trip-bali">
+<section id="d-t1-hotel" class="detail hidden" data-trip="trip-ubud">
   <button class="back" onclick="closeDetail()">‹ 목록으로</button>
   <div class="d-no">인도네시아 · 발리 · 우붓</div>
   <h2 class="d-title">The Westin Resort &amp; Spa Ubud, Bali</h2>
@@ -148,7 +245,7 @@
   </div>
 </section>
 
-<section id="d-t2-hotel" class="detail hidden" data-trip="trip-bali">
+<section id="d-t2-hotel" class="detail hidden" data-trip="trip-nusadua">
   <button class="back" onclick="closeDetail()">‹ 목록으로</button>
   <div class="d-no">인도네시아 · 발리 · 누사두아</div>
   <h2 class="d-title">The Westin Resort Nusa Dua, Bali</h2>
@@ -169,7 +266,7 @@
   </div>
 </section>
 
-<section id="d-t1-palace" class="detail hidden" data-trip="trip-bali">
+<section id="d-t1-palace" class="detail hidden" data-trip="trip-ubud">
   <button class="back" onclick="closeDetail()">‹ 목록으로</button>
   <div class="d-no">인도네시아 · 발리 · 우붓</div>
   <h2 class="d-title">우붓 왕궁 · 시내</h2>
@@ -186,7 +283,7 @@
   </div>
 </section>
 
-<section id="d-t1-safari" class="detail hidden" data-trip="trip-bali">
+<section id="d-t1-safari" class="detail hidden" data-trip="trip-ubud">
   <button class="back" onclick="closeDetail()">‹ 목록으로</button>
   <div class="d-no">인도네시아 · 발리 · 기아냐르</div>
   <h2 class="d-title">Bali Safari &amp; Marine Park</h2>
@@ -200,7 +297,7 @@
   </div>
 </section>
 
-<section id="d-t1-monkey" class="detail hidden" data-trip="trip-bali">
+<section id="d-t1-monkey" class="detail hidden" data-trip="trip-ubud">
   <button class="back" onclick="closeDetail()">‹ 목록으로</button>
   <div class="d-no">인도네시아 · 발리 · 우붓</div>
   <h2 class="d-title">Sacred Monkey Forest Sanctuary</h2>
@@ -215,7 +312,7 @@
   </div>
 </section>
 
-<section id="d-t1-noema" class="detail hidden" data-trip="trip-bali">
+<section id="d-t1-noema" class="detail hidden" data-trip="trip-ubud">
   <button class="back" onclick="closeDetail()">‹ 목록으로</button>
   <div class="d-no">인도네시아 · 발리 · 우붓</div>
   <h2 class="d-title">Noema Greek Restaurant &amp; Bar</h2>
@@ -230,7 +327,7 @@
 
 </main>
 
-<footer>여행 1건 — 기록은 계속됩니다</footer>
+<footer>5개국 · 2개 도시 — 기록은 계속됩니다</footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="shared.js"></script>
@@ -260,24 +357,33 @@ function buildTripMap(){
   TRIPS.forEach(function(t){html+='<tr onclick="openDetail(\''+t.id+'\')"><td class="dim">'+t.country+'</td><td>'+t.city+'</td><td>'+t.hotel+'</td><td class="dim">'+t.when+' ›</td></tr>';});
   document.getElementById('tripTable').innerHTML=html;
 }
-var currentTrip=null;
-function openTrip(id){
-  currentTrip=id;
+var currentTrip=null, currentCountry=null;
+function hideAll(){document.querySelectorAll('.trip,.country').forEach(function(t){t.classList.add('hidden');});}
+function openCountry(id){
+  currentCountry=id; hideAll();
   document.getElementById('viewRegion').classList.add('hidden');
   document.getElementById(id).classList.remove('hidden');
   window.scrollTo(0,0);
 }
+function closeCountry(){
+  hideAll(); currentCountry=null; currentTrip=null;
+  document.getElementById('viewRegion').classList.remove('hidden'); window.scrollTo(0,0);
+}
+function openTrip(id){
+  currentTrip=id; var t=document.getElementById(id); currentCountry=t.getAttribute('data-country');
+  hideAll(); document.getElementById('viewRegion').classList.add('hidden');
+  t.classList.remove('hidden'); window.scrollTo(0,0);
+}
 function closeTrip(){
-  document.querySelectorAll('.trip').forEach(function(t){t.classList.add('hidden');});
-  document.getElementById('viewRegion').classList.remove('hidden');
-  currentTrip=null; window.scrollTo(0,0);
+  var c=currentCountry; currentTrip=null;
+  if(c) openCountry(c); else closeCountry();
 }
 var _closeDetail=closeDetail;
 closeDetail=function(){ _closeDetail(); var t=currentTrip; if(t){tripView('region');openTrip(t);} };
 var _openDetail=openDetail;
 openDetail=function(id){ if(!currentTrip){var t=document.getElementById(id);var tr=t&&t.getAttribute('data-trip');if(tr)currentTrip=tr;} _openDetail(id); };
 function tripView(v){
-  document.querySelectorAll('.trip').forEach(function(t){t.classList.add('hidden');}); currentTrip=null;
+  hideAll(); currentTrip=null; currentCountry=null;
   document.getElementById('viewRegion').classList.toggle('hidden',v!=='region');
   document.getElementById('viewMap').classList.toggle('hidden',v!=='map');
   document.getElementById('tRegion').classList.toggle('on',v==='region');
