@@ -300,3 +300,56 @@
   .gallery{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:0 0 18px;}
   .gallery img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;border:1px solid var(--line);display:block;}
   .gallery img:first-child{grid-column:1/-1;aspect-ratio:4/3;}
+
+  /* ===== 데스크톱 (≥760px) — 모바일 레이아웃은 그대로, 넓은 화면만 보정 ===== */
+  @media (min-width:760px){
+    body{font-size:16px;line-height:1.8;}
+    .hidden{display:none!important;}
+    header{padding:64px 32px 34px;text-align:center;}
+    header h1{font-size:42px;}
+    header p{font-size:14px;margin-top:8px;}
+    .top-tabs{justify-content:center;gap:4px;}
+    .top-tabs a{flex:0 0 auto;padding:16px 40px 14px;font-size:18px;}
+    .top-tabs a:hover{color:var(--ink);}
+    main{max-width:920px;margin:0 auto;padding:36px 32px;}
+    .view-toggle{gap:10px;margin-bottom:28px;}
+    .view-toggle button{padding:8px 20px;font-size:14px;}
+    .view-toggle button:hover:not(.on){border-color:var(--ink-dim);color:var(--ink);}
+    /* 목록: 카드 2열 그리드 (그룹 제목은 한 줄 전체) */
+    div:has(> .list-card):not(.hidden){display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch;}
+    div:has(> .list-card) > :not(.list-card){grid-column:1/-1;}
+    .list-card{margin-bottom:0;padding:18px 20px;}
+    .list-card:hover{border-color:var(--gold);}
+    .list-card h2{font-size:18px;}
+    .list-card .sub{font-size:13px;white-space:normal;}
+    .whisky-group h2.grp{font-size:18px;margin:30px 0 4px;}
+    .whisky-group:first-child h2.grp{margin-top:0;}
+    .country>.back,.trip>.back{grid-column:1/-1;}
+    /* 상세: 읽기 폭 제한 */
+    .detail,.trip,.country{max-width:760px;margin:0 auto;}
+    .detail h2.d-title{font-size:30px;}
+    .detail .d-meta{font-size:14px;margin-bottom:24px;}
+    .d-photo{max-width:460px;}
+    .back:hover{border-color:var(--gold);color:var(--gold);}
+    .phase{font-size:16px;margin:26px 0 8px;}
+    .quote{font-size:16.5px;padding:16px 22px;}
+    .lesson{font-size:14.5px;padding:18px 22px;}
+    .blend,.kv{font-size:14px;}
+    .notes li{font-size:13.5px;}
+    .sec-h{font-size:19px;}
+    /* 지도 */
+    .map-wrap{padding:20px 18px 12px;}
+    .map-wrap svg{max-width:620px;margin:0 auto;}
+    .map-legend{justify-content:center;}
+    .map-legend{font-size:13px;}
+    table.map-tbl{font-size:13.5px;}
+    table.map-tbl tr[onclick]:hover td{color:var(--gold);}
+    .trip-map{height:480px;}
+    .gallery{grid-template-columns:1fr 1fr 1fr;gap:8px;}
+    .gallery img:first-child{grid-column:1/-1;aspect-ratio:16/9;}
+    footer{max-width:920px;margin:56px auto 0;padding:24px 32px 0;font-size:13px;}
+  }
+  @media (min-width:1100px){
+    main,footer{max-width:1040px;}
+    .detail,.trip,.country{max-width:800px;}
+  }
