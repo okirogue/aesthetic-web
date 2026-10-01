@@ -282,6 +282,7 @@
   }
   /* 여행 */
   .trip-map{height:340px;border-radius:10px;border:1px solid var(--line);overflow:hidden;background:var(--panel-deep);}
+  .osm-dark{filter:invert(1) hue-rotate(180deg) brightness(.72) contrast(.9) sepia(.35) saturate(.6);}
   .leaflet-container{background:var(--panel-deep);font-family:'IBM Plex Sans KR',sans-serif;}
   .leaflet-popup-content-wrapper{background:var(--panel-deep);color:var(--ink);border:1px solid var(--line);border-radius:8px;font-size:12.5px;}
   .leaflet-popup-tip{background:var(--panel-deep);}
