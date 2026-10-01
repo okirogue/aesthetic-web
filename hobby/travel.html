@@ -196,6 +196,14 @@
         </div>
         <div class="chev">›</div>
       </div>
+      <div class="list-card" onclick="openDetail('d-t2-ganesha')">
+        <div class="body">
+          <div class="no">RESTAURANT</div>
+          <h2>Ganesha Ek Sanskriti</h2>
+          <div class="sub">아요디아 리조트 안 인도식당 · 점심</div>
+        </div>
+        <div class="chev">›</div>
+      </div>
     </div>
   </div>
 
@@ -310,6 +318,24 @@
   </div>
 </section>
 
+<section id="d-t2-ganesha" class="detail hidden" data-trip="trip-nusadua">
+  <button class="back" onclick="closeDetail()">‹ 목록으로</button>
+  <div class="d-no">인도네시아 · 발리 · 누사두아</div>
+  <h2 class="d-title">Ganesha Ek Sanskriti</h2>
+  <div class="d-meta">Ayodya Resort Bali 안 · 동남아 최대 인도식당 체인 · 2026. 10. 1. 점심 · 가격은 천 루피아 단위 + 세금·봉사료 21%</div>
+  <div class="d-body">
+    <div class="gallery">
+      <img src="img/t2-r01.jpg" loading="lazy" alt="">
+      <img src="img/t2-r02.jpg" loading="lazy" alt="">
+      <img src="img/t2-r03.jpg" loading="lazy" alt="">
+    </div>
+    <p>누사두아 둘째 날 점심. 아요디아 리조트 안에 있는 인도식당으로, 메뉴에 "동남아 최대 인도식당 체인"이라고 적혀 있다.</p>
+    <p>에피타이저 파니 푸리 — 민트 물·타마린드 물 두 가지에 찍어 먹는 바삭한 공. 맛 괜찮았다. 라씨는 한국식보다 시큼하고 센 편. 브로콜리 스프는 묽었다.</p>
+    <p>메인은 로간조시(250) — 메뉴 설명대로 토마토·양파 베이스라 정통 카슈미르식보다 주황빛에 신맛이 살짝. 양이 적어 보여서 올드델리 버터치킨(189) 추가. 둘 다 생각보다 매콤했는데, 버터치킨이 매운 건 크림을 덜 넣는 올드델리식 특징. 난·로티 바구니, 양파 피클·처트니 곁들임.</p>
+    <p>카레류는 다 매콤해서 애들이 먹기는 힘들었다. 그래서 애들은 쌀밥만 먹었다. 인도 카레는 원래 다 매운가?</p>
+  </div>
+</section>
+
 <section id="d-t1-noema" class="detail hidden" data-trip="trip-ubud">
   <button class="back" onclick="closeDetail()">‹ 목록으로</button>
   <div class="d-no">인도네시아 · 발리 · 우붓</div>
@@ -333,6 +359,7 @@
 var TRIPS=[
  {id:'d-t1-hotel',country:'인도네시아',city:'발리 · 우붓',hotel:'The Westin Resort & Spa Ubud',lat:-8.537,lng:115.253,when:'2026. 9.',pin:true},
  {id:'d-t2-hotel',country:'인도네시아',city:'발리 · 누사두아',hotel:'The Westin Resort Nusa Dua, Bali',lat:-8.799,lng:115.229,when:'2026. 9.',pin:true},
+ {id:'d-t2-ganesha',country:'인도네시아',city:'발리 · 누사두아',hotel:'Ganesha Ek Sanskriti (Ayodya Resort)',when:'2026. 10.'},
  {id:'d-t1-palace',country:'인도네시아',city:'발리 · 우붓',hotel:'우붓 왕궁 · 시내',when:'2026. 9.'},
  {id:'d-t1-safari',country:'인도네시아',city:'발리 · 기아냐르',hotel:'Bali Safari & Marine Park',when:'2026. 9.'},
  {id:'d-t1-monkey',country:'인도네시아',city:'발리 · 우붓',hotel:'Sacred Monkey Forest',when:'2026. 9.'},
