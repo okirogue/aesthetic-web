@@ -466,7 +466,7 @@
     <svg id="cigarMap" viewBox="0 0 360 380" role="img" aria-label="시가 취향 지도"></svg>
     <div class="map-legend" id="mapLegend"></div>
   </div>
-  <div class="map-note">가로는 바디감(마일드 → 풀), 세로는 향의 결(위로 갈수록 시더·플로럴·건초의 밝은 결, 아래로 갈수록 흙·가죽·에스프레소의 묵직한 결). 색은 필러 산지. 테두리만 있는 점은 "취향 아님", 반만 찬 점은 "보류·자리용". 점을 누르면 상세로. 좌표는 세션 기록을 바탕으로 한 감각값이라 대략의 위치.</div>
+  <div class="map-note">가로는 강도(니코틴, 순함 → 셈 — 소매 강도 표기와 세션 체감 기준), 세로는 향의 결(위로 갈수록 시더·플로럴·건초의 밝은 결, 아래로 갈수록 흙·가죽·에스프레소의 묵직한 결). 색은 필러 산지. 테두리만 있는 점은 "취향 아님", 반만 찬 점은 "보류·자리용". 점을 누르면 상세로. 좌표는 세션 기록을 바탕으로 한 감각값이라 대략의 위치.</div>
   <table class="map-tbl" id="mapTable"></table>
   </div>
 
@@ -1281,29 +1281,29 @@ var MAP_C_ORIGIN={cuba:['쿠바','#b98426'],nic:['니카라과','#3f8fc8'],dom:[
 var MAP_C_DATA=[
  {id:'d-c1',no:1,name:'Padrón 2000',o:'nic',x:3,y:3.5,v:2,note:'고소 → 코코아, 니카라과 퓨로'},
  {id:'d-c2',no:2,name:'RP Vintage 1990 Jr',o:'mix',x:2.5,y:3,v:1,note:'온두라스 랩퍼 · 니카·도미 필러 — 크림·단맛·가죽'},
- {id:'d-c3',no:3,name:'Oliva Serie G Toro',o:'nic',x:3,y:2.5,v:2,note:'플로럴 → 밀크초콜릿 → 페퍼·가죽'},
+ {id:'d-c3',no:3,name:'Oliva Serie G Toro',o:'nic',x:2.5,y:2.5,v:2,note:'플로럴 → 밀크초콜릿 → 페퍼·가죽'},
  {id:'d-c4',no:4,name:'Davidoff Signature No.2',o:'dom',x:1.5,y:1.5,v:2,note:'건초·크림·바닐라, 정제된 일직선'},
- {id:'d-c5',no:5,name:'Diamond Crown Maduro No.5',o:'dom',x:3,y:3.5,v:2,note:'너트·우유크림·페퍼, "압도적"'},
- {id:'d-c6',no:6,name:'Plasencia Alma del Cielo',o:'nic',x:2,y:2,v:2,note:'건초·마일드, 끝에 고소함'},
- {id:'d-c7',no:7,name:'Oliva Special G',o:'nic',x:2.5,y:3,v:0,note:'세리에 G 숏 — 밋밋, 취향 아님'},
+ {id:'d-c5',no:5,name:'Diamond Crown Maduro No.5',o:'dom',x:2.5,y:3.5,v:2,note:'너트·우유크림·페퍼, "압도적"'},
+ {id:'d-c6',no:6,name:'Plasencia Alma del Cielo',o:'nic',x:2.5,y:2,v:2,note:'건초·마일드, 끝에 고소함'},
+ {id:'d-c7',no:7,name:'Oliva Special G',o:'nic',x:2,y:3,v:0,note:'세리에 G 숏 — 밋밋, 취향 아님'},
  {id:'d-c8',no:8,name:'Oliva Connecticut Reserve',o:'nic',x:1.5,y:2,v:1,note:'건초·크림, "보급형 No.2"'},
- {id:'d-c9',no:9,name:'Davidoff Primeros Maduro Nic.',o:'nic',x:3,y:3.5,v:2,note:'후추 → 고소달콤, 데일리 숏'},
- {id:'d-c10',no:10,name:'Fuente Royal Salute Maduro',o:'dom',x:2,y:3,v:1,note:'초콜릿·건초, 순한 마두로 — 라운지 자리용'},
- {id:'d-c11',no:11,name:'Davidoff Yamasá',o:'mix',x:4,y:4.5,v:0,note:'니카·도미 필러 — 긴 후추·흙'},
- {id:'d-c12',no:12,name:'Montecristo AJ Fernandez',o:'nic',x:3,y:1.5,v:2,note:'시더·라이트 커피·백후추, 니카·온두라스 필러'},
- {id:'d-c13',no:13,name:'AVO Heritage',o:'dom',x:3,y:2.5,v:1,note:'후추·시더 → 고소·크림 — 드로우 두 번 다 빡빡, 보류'},
+ {id:'d-c9',no:9,name:'Davidoff Primeros Maduro Nic.',o:'nic',x:2.5,y:3.5,v:2,note:'후추 → 고소달콤, 데일리 숏'},
+ {id:'d-c10',no:10,name:'Fuente Royal Salute Maduro',o:'dom',x:2.5,y:3,v:1,note:'초콜릿·건초, 순한 마두로 — 라운지 자리용'},
+ {id:'d-c11',no:11,name:'Davidoff Yamasá',o:'mix',x:3.5,y:4.5,v:0,note:'니카·도미 필러 — 긴 후추·흙'},
+ {id:'d-c12',no:12,name:'Montecristo AJ Fernandez',o:'nic',x:3.5,y:1.5,v:2,note:'시더·라이트 커피·백후추, 니카·온두라스 필러'},
+ {id:'d-c13',no:13,name:'AVO Heritage',o:'dom',x:3.5,y:2.5,v:1,note:'후추·시더 → 고소·크림 — 드로우 두 번 다 빡빡, 보류'},
  {id:'d-c14',no:14,name:'Romeo No.1',o:'cuba',x:2.5,y:1.5,v:2,note:'부드러운 시더·단맛·견과, 첫 쿠반 합격 (2차 확인)'},
- {id:'d-c15',no:15,name:'Montecristo No.4',o:'cuba',x:4,y:4.5,v:1,note:'후추·흙·에스프레소 — 위스키 옆 자리'},
+ {id:'d-c15',no:15,name:'Montecristo No.4',o:'cuba',x:3,y:4.5,v:1,note:'후추·흙·에스프레소 — 위스키 옆 자리'},
  {id:'d-c16',no:16,name:'Taru Martani Robusto',o:'mix',x:1.5,y:2.5,v:0,note:'인도네시아 푸로 — 향만 있고 몸통 없음'},
  {id:'d-c23',no:23,name:'Don Agusto Tubos',o:'mix',x:2,y:1,v:0,note:'인도네시아 · 블렌드 미공개 — 건초 원툴(시그니처 No.2 결, 크림 없음), 점화·재 결합 약함, 71점'},
- {id:'d-c22',no:22,name:'CAO Pilón Robusto',o:'nic',x:4,y:2,v:2,note:'에콰도르 하바노 래퍼·니카라과 — 후추 → 시더+크림(맛) → 크림+고소 → 견과 헤비, 78점'},
- {id:'d-c21',no:21,name:'Macanudo Inspirado Orange Robusto',o:'mix',x:3,y:2,v:2,note:'온두라스 래퍼·3국 블렌드 — 시더·후추 → 크림(맛)·견과 → 후반 마른 묵직함(가죽 후보), 75점'},
+ {id:'d-c22',no:22,name:'CAO Pilón Robusto',o:'nic',x:3,y:2,v:2,note:'에콰도르 하바노 래퍼·니카라과 — 후추 → 시더+크림(맛) → 크림+고소 → 견과 헤비, 78점'},
+ {id:'d-c21',no:21,name:'Macanudo Inspirado Orange Robusto',o:'mix',x:2.5,y:2,v:2,note:'온두라스 래퍼·3국 블렌드 — 시더·후추 → 크림(맛)·견과 → 후반 마른 묵직함(가죽 후보), 75점'},
  {id:'d-c20',no:20,name:'Dos Hermanos Maduro Robusto',o:'mix',x:2,y:2,v:1,note:'인도네시아·브라질 블렌드 — 후추+건초 → 중반 크림·너티·건초 피크 → 뒷심 약함, 코로나 승'},
  {id:'d-c19',no:19,name:'Dos Hermanos Corona',o:'mix',x:2.5,y:3.5,v:0,note:'인도네시아·브라질 블렌드 — 흙+약한 후추 → 견과, 열화판 시글로 II — 2차는 그냥 그럼, 추가 구매 없음'},
  {id:'d-c18',no:18,name:'Sultan Vintage Robusto',o:'mix',x:1.5,y:3,v:0,note:'인도네시아 푸로 — 부드러운 흙, 향이 연함, 피니시 고소'},
  {id:'d-c17',no:17,name:'Cohiba Siglo II',o:'cuba',x:3,y:3,v:2,note:'건초 → 견과, 두터운 크림 질감'}
 ];
-function buildCigarMap(){buildMap({svg:'cigarMap',legend:'mapLegend',table:'mapTable',data:MAP_C_DATA,origin:MAP_C_ORIGIN,xl:'마일드',xr:'풀',xt:'바디감 →',yt:'밝은 결 (시더·플로럴·건초)',yb:'묵직한 결 (흙·가죽·에스프레소)',col:'필러 산지'});}
+function buildCigarMap(){buildMap({svg:'cigarMap',legend:'mapLegend',table:'mapTable',data:MAP_C_DATA,origin:MAP_C_ORIGIN,xl:'순함',xr:'셈',xt:'강도(니코틴) →',yt:'밝은 결 (시더·플로럴·건초)',yb:'묵직한 결 (흙·가죽·에스프레소)',col:'필러 산지'});}
 function cigarView(v){
   document.getElementById('viewDate').classList.toggle('hidden', v!=='date');
   document.getElementById('viewCigar').classList.toggle('hidden', v!=='cigar');
