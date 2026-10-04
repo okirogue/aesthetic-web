@@ -62,6 +62,7 @@
     var it=find(id); if(!it||it.qty<=0) return;
     it.qty-=1;
     S.data.log=S.data.log||[]; S.data.log.unshift({d:today(),name:it.name,delta:-1}); if(S.data.log.length>60) S.data.log.length=60;
+    if(it.qty<=0){ S.data.items=S.data.items.filter(function(x){return x.id!==id;}); save(it.name+' 소진 (삭제)'); return; }
     save(it.name+' -1 ('+it.qty+')');
   }
   function plus(id){ var it=find(id); if(!it) return; it.qty+=1; save(it.name+' +1 ('+it.qty+')'); }
@@ -80,7 +81,8 @@
     }else{
       var it=find(S.editing); if(!it) return;
       it.name=name; it.qty=qty; it.date=date; it.store=store; it.memo=memo;
-      S.editing=null; save(name+' 수정 ('+qty+')');
+      if(qty<=0) S.data.items=S.data.items.filter(function(x){return x.id!==it.id;});
+      S.editing=null; save(name+(qty<=0?' 소진 (삭제)':' 수정 ('+qty+')'));
     }
   }
 
@@ -109,7 +111,7 @@
   function render(){
     var root=$('invList'); if(!root) return;
     if(!S.data){ root.innerHTML=''; return; }
-    var items=S.data.items.slice();
+    var items=S.data.items.filter(function(i){return i.qty>0;});
     var total=0, kinds=0; items.forEach(function(i){ total+=i.qty; if(i.qty>0) kinds++; });
     var sum=$('invSummary'); if(sum) sum.innerHTML='<b>'+total+'</b>개비 · <b>'+kinds+'</b>종'+(S.data.updated?' <small>갱신 '+fmtDate(S.data.updated)+'</small>':'');
     var h='';
