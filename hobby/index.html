@@ -28,6 +28,7 @@
     <button id="vDate" class="on" onclick="cigarView('date')">날짜별</button>
     <button id="vCigar" onclick="cigarView('cigar')">시가별</button>
     <button id="vMap" onclick="cigarView('map')">지도</button>
+    <button id="vInv" onclick="cigarView('inv')">재고</button>
   </div>
 
   <!-- 날짜별 보기 -->
@@ -468,6 +469,23 @@
   </div>
   <div class="map-note">가로는 강도(니코틴, 순함 → 셈 — 소매 강도 표기와 세션 체감 기준), 세로는 향의 결(위로 갈수록 시더·플로럴·건초의 밝은 결, 아래로 갈수록 흙·가죽·에스프레소의 묵직한 결). 색은 필러 산지. 테두리만 있는 점은 "취향 아님", 반만 찬 점은 "보류·자리용". 점을 누르면 상세로. 좌표는 세션 기록을 바탕으로 한 감각값이라 대략의 위치.</div>
   <table class="map-tbl" id="mapTable"></table>
+  </div>
+
+  <!-- 재고 보기 -->
+  <div id="viewInv" class="hidden">
+    <div class="inv-head">
+      <div class="inv-summary" id="invSummary"></div>
+      <div class="inv-status" id="invStatus"></div>
+    </div>
+    <div id="invSettings" class="inv-settings hidden">
+      <div class="nt-h">GitHub 저장 설정</div>
+      <p>이 페이지에서 바꾼 재고는 레포의 <code>hobby/inventory.json</code>에 바로 저장돼요. 저장하려면 GitHub 토큰이 필요해요 — 이 폰 브라우저에만 저장되고 페이지 코드엔 들어가지 않아요.</p>
+      <p>토큰 만들기: GitHub → Settings → Developer settings → Personal access tokens → <b>Fine-grained tokens</b> → Generate. Repository access는 <b>aesthetic-web만</b>, Permissions는 <b>Contents: Read and write</b> 하나만.</p>
+      <input id="invToken" type="password" placeholder="github_pat_…" autocomplete="off">
+      <div class="btns"><button class="pri" onclick="INV.saveToken()">저장</button><button onclick="document.getElementById('invSettings').classList.add('hidden')">닫기</button></div>
+    </div>
+    <div id="invList"></div>
+    <div class="map-note">숫자는 남은 개비. "−1 피움"을 누르면 바로 줄고 아래 최근 피움에 날짜가 남아요. 일수는 입고일부터 오늘까지.</div>
   </div>
 
 </section>
@@ -1276,6 +1294,7 @@
 <footer>시가 23건 — 기록은 계속됩니다</footer>
 
 <script src="shared.js"></script>
+<script src="inventory.js"></script>
 <script>
 var MAP_C_ORIGIN={cuba:['쿠바','#b98426'],nic:['니카라과','#3f8fc8'],dom:['도미니카','#c9557a'],mix:['혼합·기타','#7a9c3a']};
 var MAP_C_DATA=[
@@ -1308,10 +1327,13 @@ function cigarView(v){
   document.getElementById('viewDate').classList.toggle('hidden', v!=='date');
   document.getElementById('viewCigar').classList.toggle('hidden', v!=='cigar');
   document.getElementById('viewMap').classList.toggle('hidden', v!=='map');
+  document.getElementById('viewInv').classList.toggle('hidden', v!=='inv');
   document.getElementById('vDate').classList.toggle('on', v==='date');
   document.getElementById('vCigar').classList.toggle('on', v==='cigar');
   document.getElementById('vMap').classList.toggle('on', v==='map');
+  document.getElementById('vInv').classList.toggle('on', v==='inv');
   if(v==='map') buildCigarMap();
+  if(v==='inv') INV.load();
 }
 </script>
 

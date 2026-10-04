@@ -302,6 +302,47 @@
   .gallery img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;border:1px solid var(--line);display:block;}
   .gallery img:first-child{grid-column:1/-1;aspect-ratio:4/3;}
 
+  /* 재고 */
+  .inv-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:12px;}
+  .inv-summary{font-family:'Gowun Batang',serif;font-size:18px;color:var(--gold);}
+  .inv-summary b{font-size:24px;}
+  .inv-summary small{color:var(--ink-dim);font-size:12px;font-family:'IBM Plex Sans KR',sans-serif;margin-left:6px;}
+  .inv-status{font-size:12px;color:var(--ink-dim);}
+  .inv-status.ok{color:#7a9c3a;}
+  .inv-status.warn{color:var(--gold);}
+  .inv-status.err{color:var(--ember);}
+  .inv-top{display:flex;justify-content:space-between;gap:8px;margin-bottom:12px;}
+  .inv-top button{padding:7px 14px;border-radius:20px;border:1px solid var(--line);background:none;color:var(--ink-dim);font-size:13px;font-family:inherit;cursor:pointer;}
+  .inv-top .inv-add{color:var(--gold);border-color:var(--gold);}
+  .inv-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 14px 14px 16px;margin-bottom:10px;display:flex;align-items:center;gap:12px;}
+  .inv-card.out{opacity:.45;}
+  .inv-qty{font-family:'Gowun Batang',serif;font-size:30px;font-weight:700;color:var(--gold);min-width:38px;text-align:center;line-height:1;}
+  .inv-body{flex:1;min-width:0;}
+  .inv-body h3{font-family:'Gowun Batang',serif;font-size:15px;color:var(--ink);line-height:1.35;}
+  .inv-sub{color:var(--ink-dim);font-size:12px;margin-top:2px;}
+  .inv-memo{color:var(--ink-dim);font-size:11.5px;margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .inv-act{display:flex;flex-direction:column;gap:6px;flex-shrink:0;align-items:stretch;}
+  .inv-act button{font-family:inherit;cursor:pointer;border-radius:16px;border:1px solid var(--line);background:none;color:var(--ink-dim);font-size:12px;padding:5px 10px;-webkit-tap-highlight-color:transparent;}
+  .inv-act button.smoke{background:var(--gold);border-color:var(--gold);color:#241c12;font-weight:600;font-size:13px;padding:7px 12px;}
+  .inv-act button:disabled{opacity:.4;cursor:default;}
+  .inv-act .mini{display:flex;gap:4px;}
+  .inv-act .mini button{flex:1;padding:4px 8px;font-size:11.5px;white-space:nowrap;}
+  .inv-form,.inv-settings{background:var(--panel-deep);border:1px solid var(--gold);border-radius:10px;padding:14px 16px;margin-bottom:12px;}
+  .inv-settings p{font-size:12.5px;color:var(--ink-dim);margin:0 0 8px;line-height:1.6;}
+  .inv-settings code{color:var(--gold);}
+  .inv-form label{display:block;font-size:12px;color:var(--ink-dim);margin-bottom:8px;}
+  .inv-form .row{display:flex;gap:10px;}
+  .inv-form .row label{flex:1;}
+  .inv-form input,.inv-settings input{display:block;width:100%;margin-top:3px;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-family:inherit;font-size:14px;}
+  .inv-form .btns,.inv-settings .btns{display:flex;gap:8px;margin-top:10px;}
+  .inv-form .btns button,.inv-settings .btns button{padding:7px 16px;border-radius:20px;border:1px solid var(--line);background:none;color:var(--ink-dim);font-size:13px;font-family:inherit;cursor:pointer;}
+  .inv-form .btns .pri,.inv-settings .btns .pri{background:var(--gold);border-color:var(--gold);color:#241c12;font-weight:600;}
+  .inv-form .btns .danger{color:var(--ember);border-color:var(--ember);margin-left:auto;}
+  .inv-log{margin-top:18px;font-size:12.5px;color:var(--ink-dim);}
+  .inv-log .nt-h{font-family:'Gowun Batang',serif;color:var(--gold);font-size:13px;margin-bottom:6px;}
+  .inv-log div span{display:inline-block;width:92px;color:var(--ink-dim);}
+  .inv-log div{color:var(--ink);padding:2px 0;border-bottom:1px dashed var(--line);}
+
   /* ===== 데스크톱 (≥760px) — 모바일 레이아웃은 그대로, 넓은 화면만 보정 ===== */
   @media (min-width:760px){
     body{font-size:16px;line-height:1.8;}
@@ -349,6 +390,10 @@
     .gallery{grid-template-columns:1fr 1fr 1fr;gap:8px;}
     .gallery img:first-child{grid-column:1/-1;aspect-ratio:16/9;}
     footer{max-width:920px;margin:56px auto 0;padding:24px 32px 0;font-size:13px;}
+    #invList{max-width:760px;margin:0 auto;}
+    .inv-card{padding:16px 18px;}
+    .inv-body h3{font-size:16px;}
+    .inv-act button.smoke:hover{filter:brightness(1.08);}
   }
   @media (min-width:1100px){
     main,footer{max-width:1040px;}
