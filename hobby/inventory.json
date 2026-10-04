@@ -98,14 +98,6 @@
       "memo": "발리 · 재웠다 피울 것"
     },
     {
-      "id": "oliva-ct-reserve",
-      "name": "Oliva Connecticut Reserve Robusto",
-      "qty": 1,
-      "date": "2026-09-15",
-      "store": "락앤락",
-      "memo": "1차 직구 잔여"
-    },
-    {
       "id": "chateau-fuente-rsm",
       "name": "Arturo Fuente Chateau Fuente Royal Salute Maduro",
       "qty": 1,
@@ -115,6 +107,11 @@
     }
   ],
   "log": [
+    {
+      "d": "2026-10-04",
+      "name": "Oliva Connecticut Reserve Robusto",
+      "delta": -1
+    },
     {
       "d": "2026-10-04",
       "name": "Davidoff Primeros Maduro Nicaragua (틴)",
