@@ -15,7 +15,7 @@
       "qty": 2,
       "date": "2026-09-23",
       "store": "락앤락",
-      "memo": "2차 직구 5팩 · 재운 뒤 재평가"
+      "memo": "2차 직구 5팩 · 3차 개비 78점, 남은 건 휴미더 69%로"
     },
     {
       "id": "oliva-v-figurado",
@@ -99,6 +99,11 @@
     }
   ],
   "log": [
+    {
+      "d": "2026-10-04",
+      "name": "AVO Heritage Robusto",
+      "delta": -1
+    },
     {
       "d": "2026-10-04",
       "name": "Montecristo Crafted by AJ Fernandez Toro",
