@@ -12,7 +12,7 @@
     {
       "id": "avo-heritage",
       "name": "AVO Heritage Robusto",
-      "qty": 3,
+      "qty": 2,
       "date": "2026-09-23",
       "store": "락앤락",
       "memo": "2차 직구 5팩 · 재운 뒤 재평가"
@@ -107,6 +107,11 @@
     }
   ],
   "log": [
+    {
+      "d": "2026-10-04",
+      "name": "AVO Heritage Robusto",
+      "delta": -1
+    },
     {
       "d": "2026-10-04",
       "name": "Oliva Connecticut Reserve Robusto",
