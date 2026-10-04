@@ -74,14 +74,6 @@
       "memo": "발리 Bali Collection · 낮/가벼운 자리"
     },
     {
-      "id": "macanudo-white-sc",
-      "name": "Macanudo Inspirado White Short Corona",
-      "qty": 1,
-      "date": "2026-10-01",
-      "store": "락앤락",
-      "memo": "서비스로 받은 것"
-    },
-    {
       "id": "cao-pilon",
       "name": "CAO Pilón Robusto",
       "qty": 4,
@@ -107,6 +99,11 @@
     }
   ],
   "log": [
+    {
+      "d": "2026-10-04",
+      "name": "Macanudo Inspirado White Short Corona",
+      "delta": -1
+    },
     {
       "d": "2026-10-04",
       "name": "Montecristo Crafted by AJ Fernandez Toro",
