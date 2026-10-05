@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-04",
+  "updated": "2026-10-05",
   "items": [
     {
       "id": "monte-aj-toro",
       "name": "Montecristo Crafted by AJ Fernandez Toro",
-      "qty": 6,
+      "qty": 5,
       "date": "2026-09-23",
       "store": "락앤락",
       "memo": "2차 직구 10팩 · 데일리"
@@ -12,7 +12,7 @@
     {
       "id": "avo-heritage",
       "name": "AVO Heritage Robusto",
-      "qty": 2,
+      "qty": 4,
       "date": "2026-09-23",
       "store": "락앤락",
       "memo": "2차 직구 5팩 · 3차 개비 78점, 남은 건 휴미더 69%로"
@@ -36,10 +36,10 @@
     {
       "id": "rp-emerald",
       "name": "Rocky Patel Emerald Robusto",
-      "qty": 5,
+      "qty": 4,
       "date": "2026-10-03",
       "store": "락앤락",
-      "memo": "3차 직구 5팩 · 입고일 확인 필요"
+      "memo": "3차 직구 5팩 · No.24 81점"
     },
     {
       "id": "dc-robusto5-maduro",
@@ -88,14 +88,6 @@
       "date": "2026-09-30",
       "store": "락앤락",
       "memo": "발리 · 재웠다 피울 것"
-    },
-    {
-      "id": "chateau-fuente-rsm",
-      "name": "Arturo Fuente Chateau Fuente Royal Salute Maduro",
-      "qty": 1,
-      "date": "2026-09-15",
-      "store": "락앤락",
-      "memo": "1차 직구 잔여"
     }
   ],
   "log": [
@@ -137,6 +129,11 @@
     {
       "d": "2026-10-04",
       "name": "Davidoff Primeros Maduro Nicaragua (틴)",
+      "delta": -1
+    },
+    {
+      "d": "2026-10-05",
+      "name": "Rocky Patel Emerald Robusto",
       "delta": -1
     }
   ]
