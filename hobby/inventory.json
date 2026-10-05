@@ -6,96 +6,96 @@
       "name": "Montecristo Crafted by AJ Fernandez Toro",
       "qty": 5,
       "date": "2026-09-23",
-      "store": "휴미더",
-      "memo": "2차 직구 10팩 · 데일리"
+      "batch": "2차 직구",
+      "score": null
     },
     {
       "id": "avo-heritage",
       "name": "AVO Heritage Robusto",
       "qty": 2,
       "date": "2026-09-23",
-      "store": "휴미더",
-      "memo": "2차 직구 5팩 · 3차 개비 78점"
+      "batch": "2차 직구",
+      "score": 78
     },
     {
       "id": "oliva-v-figurado",
       "name": "Oliva Serie V Special Figurado",
       "qty": 1,
       "date": "2026-09-23",
-      "store": "휴미더",
-      "memo": "2차 직구"
+      "batch": "2차 직구",
+      "score": null
     },
     {
       "id": "primeros-classic",
       "name": "Davidoff Primeros Classic (틴)",
       "qty": 6,
       "date": "2026-10-02",
-      "store": "휴미더",
-      "memo": "3차 직구"
+      "batch": "3차 직구",
+      "score": null
     },
     {
       "id": "rp-emerald",
       "name": "Rocky Patel Emerald Robusto",
       "qty": 4,
       "date": "2026-10-02",
-      "store": "휴미더",
-      "memo": "3차 직구 5팩 · No.24 81점"
+      "batch": "3차 직구",
+      "score": 81
     },
     {
       "id": "dc-robusto5-maduro",
       "name": "Diamond Crown Robusto #5 Maduro",
       "qty": 5,
       "date": "2026-10-02",
-      "store": "휴미더",
-      "memo": "3차 직구 5팩"
+      "batch": "3차 직구",
+      "score": null
     },
     {
       "id": "romeo-no1-tubos",
       "name": "Romeo y Julieta Romeo No.1 Tubos",
       "qty": 4,
       "date": "2026-09-30",
-      "store": "휴미더",
-      "memo": "발리 LCDH"
+      "batch": "발리 LCDH",
+      "score": null
     },
     {
       "id": "punch-coronations",
       "name": "Punch Coronations Tubos",
       "qty": 1,
       "date": "2026-09-30",
-      "store": "휴미더",
-      "memo": "발리 LCDH"
+      "batch": "발리 LCDH",
+      "score": null
     },
     {
       "id": "macanudo-orange",
       "name": "Macanudo Inspirado Orange Robusto",
       "qty": 4,
       "date": "2026-10-01",
-      "store": "휴미더",
-      "memo": "발리 Bali Collection · 낮/가벼운 자리"
+      "batch": "발리 Bali Collection",
+      "score": 75
     },
     {
       "id": "cao-pilon",
       "name": "CAO Pilón Robusto",
       "qty": 4,
       "date": "2026-10-01",
-      "store": "휴미더",
-      "memo": "발리 Bali Collection · 저녁 식후용"
+      "batch": "발리 Bali Collection",
+      "score": 78
     },
     {
       "id": "dos-hermanos-maduro",
       "name": "Dos Hermanos Maduro Robusto",
       "qty": 1,
       "date": "2026-09-30",
-      "store": "휴미더",
-      "memo": "발리 · 재웠다 피울 것"
+      "batch": "발리 Dos Hermanos",
+      "score": 65
     },
     {
       "id": "chateau-fuente-rsm",
       "name": "Arturo Fuente Chateau Fuente Royal Salute Maduro",
       "qty": 1,
       "date": "2026-09-15",
-      "store": "휴미더",
-      "memo": "1차 직구 잔여"
+      "batch": "1차 직구",
+      "score": null
     }
   ],
   "log": [

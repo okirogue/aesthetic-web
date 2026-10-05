@@ -61,26 +61,28 @@
   function smoke(id){
     var it=find(id); if(!it||it.qty<=0) return;
     it.qty-=1;
-    S.data.log=S.data.log||[]; S.data.log.unshift({d:today(),name:it.name,delta:-1}); if(S.data.log.length>60) S.data.log.length=60;
+    S.data.log=S.data.log||[]; S.data.log.unshift({d:today(),name:it.name,delta:-1}); pruneLog();
     if(it.qty<=0){ S.data.items=S.data.items.filter(function(x){return x.id!==id;}); save(it.name+' 소진 (삭제)'); return; }
     save(it.name+' -1 ('+it.qty+')');
   }
+  /* 기록은 최근 1달만 보관, 그래도 40건 넘으면 오래된 것부터 자름 */
+  function pruneLog(){ var L=S.data.log||[]; L=L.filter(function(l){ var n=days(l.d); return n!=null&&n<=31; }); if(L.length>40) L.length=40; S.data.log=L; }
   function plus(id){ var it=find(id); if(!it) return; it.qty+=1; save(it.name+' +1 ('+it.qty+')'); }
   function remove(id){ var it=find(id); if(!it) return; if(!confirm('"'+it.name+'" 삭제할까요?')) return; S.data.items=S.data.items.filter(function(x){return x.id!==id;}); S.editing=null; save(it.name+' 삭제'); }
   function startEdit(id){ S.editing=id||'__new__'; render(); }
   function cancelEdit(){ S.editing=null; render(); }
   function commitEdit(){
-    var name=$('efName').value.trim(), qty=parseInt($('efQty').value,10), date=$('efDate').value, store=$('efStore').value.trim(), memo=$('efMemo').value.trim();
+    var name=$('efName').value.trim(), qty=parseInt($('efQty').value,10), date=$('efDate').value, batch=$('efBatch').value.trim(), score=parseInt($('efScore').value,10); if(isNaN(score)) score=null;
     if(!name){ alert('이름을 넣어주세요'); return; }
     if(isNaN(qty)||qty<0) qty=0;
     if(S.editing==='__new__'){
       var id=name.toLowerCase().replace(/[^a-z0-9가-힣]+/g,'-').replace(/^-|-$/g,'')||('c'+Date.now());
       if(find(id)) id+='-'+Date.now().toString(36);
-      S.data.items.unshift({id:id,name:name,qty:qty,date:date,store:store,memo:memo});
+      S.data.items.unshift({id:id,name:name,qty:qty,date:date,batch:batch,score:score});
       S.editing=null; save(name+' 추가 ('+qty+')');
     }else{
       var it=find(S.editing); if(!it) return;
-      it.name=name; it.qty=qty; it.date=date; it.store=store; it.memo=memo;
+      it.name=name; it.qty=qty; it.date=date; it.batch=batch; it.score=score;
       if(qty<=0) S.data.items=S.data.items.filter(function(x){return x.id!==it.id;});
       S.editing=null; save(name+(qty<=0?' 소진 (삭제)':' 수정 ('+qty+')'));
     }
@@ -97,13 +99,13 @@
 
   /* ---------- 그리기 ---------- */
   function editForm(it){
-    it=it||{name:'',qty:1,date:today(),store:'락앤락',memo:''};
+    it=it||{name:'',qty:1,date:today(),batch:'',score:null};
     return '<div class="inv-form">'
       +'<label>이름<input id="efName" value="'+esc(it.name)+'" placeholder="Montecristo Crafted by AJ Fernandez Toro"></label>'
       +'<div class="row"><label>수량<input id="efQty" type="number" min="0" inputmode="numeric" value="'+esc(it.qty)+'"></label>'
       +'<label>입고일<input id="efDate" type="date" value="'+esc(it.date)+'"></label></div>'
-      +'<label>보관<input id="efStore" value="'+esc(it.store)+'" placeholder="락앤락 / 노바라(회사) / 케이스"></label>'
-      +'<label>메모<input id="efMemo" value="'+esc(it.memo)+'" placeholder="구매처, 용도 등"></label>'
+      +'<div class="row"><label>구매<input id="efBatch" value="'+esc(it.batch)+'" placeholder="4차 직구 / 발리 LCDH / 시가브로"></label>'
+      +'<label>점수<input id="efScore" type="number" min="0" max="100" inputmode="numeric" value="'+(it.score==null?'':esc(it.score))+'" placeholder="아직 없음"></label></div>'
       +'<div class="btns"><button class="pri" onclick="INV.commitEdit()">저장</button><button onclick="INV.cancelEdit()">취소</button>'
       +(it.id?'<button class="danger" onclick="INV.remove(\''+it.id+'\')">삭제</button>':'')+'</div>'
       +'</div>';
@@ -125,17 +127,16 @@
       h+='<div class="inv-card'+(it.qty<=0?' out':'')+'">'
         +'<div class="inv-qty">'+it.qty+'</div>'
         +'<div class="inv-body"><h3>'+esc(it.name)+'</h3>'
-        +'<div class="inv-sub">'+(it.date?'입고 '+fmtDate(it.date)+' · '+age:'입고일 미입력')+(it.store?' · '+esc(it.store):'')+'</div>'
-        +(it.memo?'<div class="inv-memo">'+esc(it.memo)+'</div>':'')
+        +'<div class="inv-sub">'+(it.batch?esc(it.batch)+' · ':'')+(it.date?fmtDate(it.date)+' · '+age:'입고일 미입력')+(it.score!=null?' · <b>'+esc(it.score)+'점</b>':'')+'</div>'
         +'</div>'
         +'<div class="inv-act">'
         +'<button class="smoke" '+(it.qty<=0||S.busy?'disabled':'')+' onclick="INV.smoke(\''+it.id+'\')">−1 피움</button>'
         +'<div class="mini"><button '+(S.busy?'disabled':'')+' onclick="INV.plus(\''+it.id+'\')">+1</button><button onclick="INV.startEdit(\''+it.id+'\')">수정</button></div>'
         +'</div></div>';
     });
-    var log=(S.data.log||[]).slice(0,8);
+    var log=(S.data.log||[]).filter(function(l){ var n=days(l.d); return n!=null&&n<=31; });
     if(log.length){
-      h+='<div class="inv-log"><div class="nt-h">최근 피움</div>';
+      h+='<div class="inv-log"><div class="nt-h">최근 1달 피움 <small>'+log.length+'대</small></div>';
       log.forEach(function(l){ h+='<div><span>'+fmtDate(l.d)+'</span>'+esc(l.name)+'</div>'; });
       h+='</div>';
     }
