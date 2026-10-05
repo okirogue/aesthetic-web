@@ -28,10 +28,10 @@
     {
       "id": "primeros-classic",
       "name": "Davidoff Primeros Classic (틴)",
-      "qty": 6,
+      "qty": 5,
       "date": "2026-10-02",
       "batch": "3차 직구",
-      "score": null
+      "score": 78
     },
     {
       "id": "rp-emerald",
@@ -99,6 +99,11 @@
     }
   ],
   "log": [
+    {
+      "d": "2026-10-05",
+      "name": "Davidoff Primeros Classic (틴)",
+      "delta": -1
+    },
     {
       "d": "2026-10-04",
       "name": "AVO Heritage Robusto",
