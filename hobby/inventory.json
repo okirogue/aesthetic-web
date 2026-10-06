@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05",
+  "updated": "2026-10-06",
   "items": [
     {
       "id": "monte-aj-toro",
@@ -68,7 +68,7 @@
     {
       "id": "macanudo-orange",
       "name": "Macanudo Inspirado Orange Robusto",
-      "qty": 4,
+      "qty": 3,
       "date": "2026-10-01",
       "batch": "발리 Bali Collection",
       "score": 75
@@ -99,6 +99,11 @@
     }
   ],
   "log": [
+    {
+      "d": "2026-10-06",
+      "name": "Macanudo Inspirado Orange Robusto",
+      "delta": -1
+    },
     {
       "d": "2026-10-05",
       "name": "Davidoff Primeros Classic (틴)",
