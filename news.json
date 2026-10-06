@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06 15:41",
+  "updated": "2026-10-06 15:51",
   "domestic": [
     {
       "co": "파마리서치",
@@ -52,13 +52,5 @@
       "desc": "셀르디엠(CellREDM)은 인체 유래 무세포동종진피(hADM)를 활용한 ECM 기반 제품이며, 최근에는 기존 제품군을 확장한 셀르디엠 V(CellREDM V)가 선보였다. 공개된 제품 정보에 따르면 셀르디엠 V는 75~212㎛ 범위의 입자 크기와 320mg..."
     }
   ],
-  "foreign": [
-    {
-      "co": "Allergan",
-      "title": "Allergan Updates Clinical Documentation for Armour Thyroid Tablets - geneonline.com",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxONTAzellSZzhRbnBROGFkUHZONkpVT3djdm4wZDVWSTdIblR3MHAyWWYwTzFSdHZsd0hjRVFscmVKbjRMNXl2N0N4M3dwazdTaFpVTllHU0JVYlFVR0tsOU5vOFlXalZLNi1XVlI2MzU2MGpjUUJtZDZ3SXRQUjU2elhZV21sSlBkSHVpdW1wQW92YTlLanM0Rmg3RE4?oc=5",
-      "date": "10/05 06:46",
-      "desc": "Allergan Updates Clinical Documentation for Armour Thyroid Tablets&nbsp;&nbsp;geneonline.com"
-    }
-  ]
+  "foreign": []
 }
