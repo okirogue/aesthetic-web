@@ -1,6 +1,13 @@
 {
-  "updated": "2026-10-06 19:24",
+  "updated": "2026-10-07 07:05",
   "domestic": [
+    {
+      "co": "파마리서치",
+      "title": "강릉 국가산단 '앵커기업'에 달렸다…'파마리서치·미코세라믹' LH에 제...",
+      "link": "https://www.news1.kr/local/kangwon/6311971",
+      "date": "10/07 06:10",
+      "desc": "강릉시는 파마리서치와 미코세라믹을 중심으로 투자계획을 구체화해 LH에 전달한 데 이어 연말 LH 경영투자심사, 2027년 7월 예비타당성조사 통과를 거쳐 2030년 착공으로 이어간다는 목표다. 김중남 강릉시장은 지난 6일..."
+    },
     {
       "co": "파마리서치",
       "title": "파마리서치, 의료진 전용 에스테틱 플랫폼 '더미결' 리뉴얼",
@@ -75,11 +82,18 @@
   ],
   "foreign": [
     {
+      "co": "Galderma",
+      "title": "Galderma stock after-hours at EUR 172.03: minus 0.95 percent versus prior close - AD HOC NEWS",
+      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNcFptM0N0WkVjWTczVDZVaVBTZWZSNnFFZ3VkaGNreVE1dEp6anV5NFB6ay15S2NYZmpTeS1Cbjl2RVAwRkhWc0hJSXZZUzFWdFhvLW9xck9ZY19WZUNXUjMtNUpYbGhxZGJYVlN0MGFIS3F4d2hCWF9Pc2gxajdiN1JXVktMVmFXTS12RlJFNzZudTNoYnc1VEpsblY0SFB2Q3ZYT2FFLTJpUUwxbl9NWXBzV0hqM3NUTUNzMFhYSXB6SUJuQkxpX25ndw?oc=5",
+      "date": "10/06 16:48",
+      "desc": "Galderma stock after-hours at EUR 172.03: minus 0.95 percent versus prior close&nbsp;&nbsp;AD HOC NEWS"
+    },
+    {
       "co": "Allergan",
-      "title": "Allergan Updates Armour Thyroid Clinical Documentation in DailyMed Database - geneonline.com",
+      "title": "Allergan Updates Armour Thyroid Clinical Documentation in DailyMed Database - www.geneonline.com",
       "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNRl91OExadG9acm95MzYteWZzdG9mSnhoVWxkRS1mRHFoX0JVQklXRGdGa25aMExobG5yTThHN25DdmNUUWtQTGZDcWpzaUlFV2RuSS1taUw1dDJIaEdsc2JqMlZ4UkFKblhIYl9PUzBpMlgtdHpyak43TjNlN2tMaGhnUk9GM0pteUUzc1dPRVN1cXFhYXdSZTNveC1leWNwTmg0X0Z6UDY?oc=5",
       "date": "10/06 06:17",
-      "desc": "Allergan Updates Armour Thyroid Clinical Documentation in DailyMed Database&nbsp;&nbsp;geneonline.com"
+      "desc": "Allergan Updates Armour Thyroid Clinical Documentation in DailyMed Database&nbsp;&nbsp;www.geneonline.com"
     }
   ]
 }
