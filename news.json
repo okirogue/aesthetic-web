@@ -1,6 +1,13 @@
 {
-  "updated": "2026-10-08 18:16",
+  "updated": "2026-10-08 18:26",
   "domestic": [
+    {
+      "co": "파마리서치",
+      "title": "파마리서치 주가, 10월 8일 애프터마켓 301,500원 2.27% 하락",
+      "link": "https://www.joongangenews.com/news/articleView.html?idxno=553720",
+      "date": "10/08 18:20",
+      "desc": "|중앙이코노미뉴스 조용우 기자|출처=네이버페이 증권 8일 애프터마켓 오후 5시 50분 기준, 네이버페이 증권에 따르면 파마리서치 주가는 301,500원을 기록하며 지난 종가 대비 7,000원 하락한 2.27%의..."
+    },
     {
       "co": "파마리서치",
       "title": "파마리서치 리쥬란, 유사 상표 분쟁 승소… 브랜드 보호 체계 강화",
@@ -72,11 +79,11 @@
       "desc": "애니 주인공과 성분 수수께끼…7일간 팝업 구매 특전 한정 상품 6종…日사업 1년 기념  파마리서치의 더마코스메틱 브랜드 '리쥬란 코스메틱'이 일본에서 인기 애니메이션과 손잡고 첫 브랜드 협업에 나선다. 일본..."
     },
     {
-      "co": "에이피알",
-      "title": "에이피알 주가, 10월 8일 애프터마켓 370,000원 2.37% 하락",
-      "link": "https://www.joongangenews.com/news/articleView.html?idxno=553695",
-      "date": "10/08 17:46",
-      "desc": "따르면 에이피알은 현재 370,000원의 가격에 거래되며, 지난 종가 379,000원 대비 9,000원 하락, 2.37%의... 에이피알의 시가총액은 13조 8,521억 원이며, 외국인소진율은 38.68%로 나타났다. 52주 최고가는 475..."
+      "co": "클래시스",
+      "title": "클래시스 주가, 10월 8일 애프터마켓 30,200원 1.63% 하락",
+      "link": "https://www.joongangenews.com/news/articleView.html?idxno=553717",
+      "date": "10/08 18:20",
+      "desc": "따르면 클래시스 주가가 하락세를 나타내고 있다. 현재 30,200원을 기록하며 지난 종가 30,700원 대비... 현재 클래시스 주가는 52주 최저가인 29,700원에 근접한 수준이다. 이러한 흐름 속에서 클래시스의..."
     },
     {
       "co": "에이피알",
@@ -374,17 +381,10 @@
   "foreign": [
     {
       "co": "Galderma",
-      "title": "Fall Clinical 2026: Galderma Presents New Three-Year Nemluvio® Da - The National Law Review",
-      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPaGxXaGJydW1YQ0RROF9iZmxHWFpJSFJfSHV0bmZvSzJkbVJaVmRUSDlMZXMwTDlVMl95MzFNNFNtQ09UZDFEUzdGdU94R2FFQm00VVkyWDk0c1VnckdxbVNSRHNUVlZxcHkwUnBla2llcnlLdUNHNHRWYVhzcnRhUjBvb0ZlWHpZQi12S2xoMHpZLVl6bmczeFdYUWRpM0lndzBQXzNBdmRjYkxyNDdUWnBhNV8?oc=5",
-      "date": "10/08 06:11",
-      "desc": "Fall Clinical 2026: Galderma Presents New Three-Year Nemluvio® Da&nbsp;&nbsp;The National Law Review"
-    },
-    {
-      "co": "Galderma",
-      "title": "Galderma Presents New Nemluvio Data Showing Responses In Patients With Atopic Dermatitis Aged 12 And Older - TradingView",
-      "link": "https://news.google.com/rss/articles/CBMihwJBVV95cUxPejgzVXMxd1pvUDEyUkRVTkpYTVRRd2dlWkxsVVVQYVNNOWJpZko3UURhVEpFaWI2X2hnbmZqZVppTDJpdldRd3A3YVZXdGVfR0RMNm1DckxyRzZoYWNYbjBzRjRqM1N1cVlYVXExanVtVk0tSHFWTjJTbEMwa3pMNW12SC02WFJQR2U1cjJUWERGcGcxS1ZuaVR6TFBTaWpYeGpkVVhHemR4ZUdmTTlrZll6TE5yY1l2NlZKeDdrME5VaEoxakJhWjBCdWtuSmp6ZWZfNmN2SW5aRm1BM1VYdGdoM3dubGctRTFacVBRTFMyVmhYck1EUHhhVVd0VVFLbDZQS29WMA?oc=5",
-      "date": "10/08 05:10",
-      "desc": "Galderma Presents New Nemluvio Data Showing Responses In Patients With Atopic Dermatitis Aged 12 And Older&nbsp;&nbsp;TradingView"
+      "title": "Fall Clinical 2026: Galderma Presents New Three-Year Nemluvio® Data Showing Deep and Lasting Skin Lesion and Itch Responses in Patients With Atopic Dermatitis Aged 12 and Older - Yahoo Finance UK",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPQlhoZ052REJOX3QxTmZkV1IwRjA4U3ZGMm1MUnV1UkRZdHR4T3J2Y2R5bnJSZE9UcUktR0lEMG9LQnBOWXR2TXotcHkxZmRZNTktZ3JmMVR0cC1EenN5Yy1pWU9ocTNPeUZwa0x4NFB0Q1E4N3JZMXI0anRMb21VdnB1cGpQWGlzOHdjZkhR?oc=5",
+      "date": "10/08 05:00",
+      "desc": "Fall Clinical 2026: Galderma Presents New Three-Year Nemluvio® Data Showing Deep and Lasting Skin Lesion and Itch Responses in Patients With Atopic Dermatitis Aged 12 and Older&nbsp;&nbsp;Yahoo Finance UK"
     },
     {
       "co": "Galderma",
