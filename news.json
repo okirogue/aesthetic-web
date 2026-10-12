@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-12 16:46",
+  "updated": "2026-10-12 16:56",
   "domestic": [
     {
       "co": "파마리서치",
@@ -56,6 +56,13 @@
       "link": "https://www.youthdaily.co.kr/news/article.html?no=228191",
       "date": "10/12 09:52",
       "desc": "기업 클래시스가 글로벌 컨설팅 전문가를 영입하고 영업·마케팅 조직을 통합하며 해외 사업 확장에 속도를... 클래시스는 최고사업책임자(CCO) 직책을 신설하고 배정희 부사장을 CCO 겸 GTM(Go to Market)센터장으로..."
+    },
+    {
+      "co": "에이피알",
+      "title": "에이피알, 7.67% 하락…기관·외국인·프로그램 매수에도 약세",
+      "link": "https://www.cbci.co.kr/news/articleView.html?idxno=614561",
+      "date": "10/12 16:52",
+      "desc": "에이피알(APR) CI 에이피알 주가가 기관과 외국인, 프로그램 매수에도 2거래일 연속 하락했다. 12일 에이피알은 에프터장에서 전 거래일보다 2만8500원 내린 34만3000원을 기록중이다. 하락률은 7.67%다. 코스피와 코스닥이..."
     },
     {
       "co": "에이피알",
@@ -122,17 +129,24 @@
     },
     {
       "co": "엘앤씨바이오",
-      "title": "엘앤씨바이오, ‘리투오’ 美 공급계약…최소 820억원 규모",
-      "link": "https://biz.chosun.com/science-chosun/bio/2026/10/12/CH4B7G4NKZDOZJ7DFEG5MIMBVA/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-      "date": "10/12 16:43",
-      "desc": "내년부터 美 공급…리투오 150㎎ 기준 최소구매 계약 - 동탄 신공장 추진해 생산능력 확대…추가 제품 공급도 검토' 엘앤씨바이오는 미국 현지 인체조직·바이오 제품 전문기업과 인체조직 기반 피부 재생 제품..."
+      "title": "엘앤씨바이오, '리투오' 美독점 공급계약…6천만달러 규모",
+      "link": "http://www.medisobizanews.com/news/articleView.html?idxno=143060",
+      "date": "10/12 16:54",
+      "desc": "재생의학 전문기업 엘앤씨바이오는 미국 현지 바이오 전문기업 및 조직은행과 인체조직 피부 세포외기질(ECM) 제품 '리투오(Re2O)' 시리즈의 독점 공급계약을 체결했다고 12일 밝혔다. 계약 기간은 2031년 말까지..."
     },
     {
       "co": "엘앤씨바이오",
-      "title": "엘앤씨바이오, '리투오' 美현지 바이오 전문기업과 독점 공급 계약 체결...",
-      "link": "http://www.paxetv.com/news/articleView.html?idxno=283895",
+      "title": "엘앤씨바이오, 발행가 3만9100원 유상증자 확정…1447억 조달",
+      "link": "https://www.bloter.net/news/articleView.html?idxno=675465",
+      "date": "10/12 16:52",
+      "desc": "코스닥 상장사인 엘앤씨바이오가 유상증자의 최종 발행가액을 3만9100원으로 확정하며 약 1447억원 규모의 자금 조달을 위한 막바지 절차에 돌입했다. 엘앤씨바이오는 유상증자 최종 발행가액 확정 및 상장 일정 변경..."
+    },
+    {
+      "co": "엘앤씨바이오",
+      "title": "엘앤씨바이오 '리투오', 美 독점 공급…최소 820억 계약",
+      "link": "https://www.sentv.co.kr/article/view/sentv202610120161",
       "date": "10/12 16:34",
-      "desc": "엘앤씨바이오는 미국 현지 인체조직 및 바이오 제품 전문기업, 조직은행과 리투오 시리즈의 미국 독점 공급계약을 체결했다고 밝혔습니다. 계약 규모는 최소 6천만 달러, 한화 약 820억 원이며, 기간은 2031년 말까지 약..."
+      "desc": "엘앤씨바이오가 인체조직 유래 세포외기질(ECM) 제품 '리투오'의 미국 독점 공급계약을 체결했다. 5년간 최소 약 820억원 규모로, 내년부터 본격적인 제품 공급에 나선다. 미국 전역의 병·의원 1만7000여 곳에 접근할 수..."
     },
     {
       "co": "엘앤씨바이오",
@@ -228,11 +242,11 @@
       "desc": "Average basic shares outstanding of Galderma Group AG – HAN:PY3&nbsp;&nbsp;TradingView"
     },
     {
-      "co": "Galderma",
-      "title": "Why Galderma Group (SWX:GALD) Is Back In The Spotlight - Simply Wall Street",
-      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOZGprSl9wdm9lM0owamVXMmZlV0M2dnZSVUpPSnVrM2RfMTYyMzNVbENWekhFeC03cGdhOExnZnB2R0loeDQteTVWRG5IeWJwWlZvclBEVXcyMG4wbWFKaEYyVjFyYnZfdExPclBFQTlDMm8tQmI1UkUxMTBKbTZ2RFMwVy1LV1JpUGh4cDZCM3ByWURsVHA1LXRDbFFscmhWRkZWc2ttZ0d1Tnp5TzdjQ2RZY0p4MWtlSndYZFlRcW1vQkZlWGY5clVTMWpTQzE0ajNObHk2N0pPVkVmelBXWtIB4AFBVV95cUxOZGprSl9wdm9lM0owamVXMmZlV0M2dnZSVUpPSnVrM2RfMTYyMzNVbENWekhFeC03cGdhOExnZnB2R0loeDQteTVWRG5IeWJwWlZvclBEVXcyMG4wbWFKaEYyVjFyYnZfdExPclBFQTlDMm8tQmI1UkUxMTBKbTZ2RFMwVy1LV1JpUGh4cDZCM3ByWURsVHA1LXRDbFFscmhWRkZWc2ttZ0d1Tnp5TzdjQ2RZY0p4MWtlSndYZFlRcW1vQkZlWGY5clVTMWpTQzE0ajNObHk2N0pPVkVmelBXWg?oc=5",
-      "date": "10/11 07:54",
-      "desc": "Why Galderma Group (SWX:GALD) Is Back In The Spotlight&nbsp;&nbsp;Simply Wall Street"
+      "co": "Merz Aesthetics",
+      "title": "Lucy Liu Joins Merz Aesthetics to Launch Your Time is Now, Inspiring a New Conversation on Aging Well Across Asia Pacific - ANTARA News",
+      "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNeEtHdXBtRFlMUVhpUlltUkdfSXJyX3Jjb1pObENnUVdTTFJFcWt2MWNSUUdFbThBbzU5UHJORGdGQnMzLVhNdkR5QUpXUjhwOEhiX2UxbkFlakw3ZngwVG5WSDVpekw1Q3k3SW5faGxUc0VuUnVlSDRtNjluelJRb0NzVEZ6TlU1d2p3azB6eEsyVDcxYThpckw2cW5KcXpmV2ViYnhDenhyV2JFTHZzdW5MMXoxRGV4YTVRSzg0TEdMcWtSUDJqQXpwUENIMWt4ZzZ3SWl1bUNJeDVRNDdVejBiSnRJQUFJZlRGSW9SMWI5V05M0gH0AUFVX3lxTE14S0d1cG1EWUxRWGlSWW1SR19JcnJfcmNvWk5sQ2dRV1NMUkVxa3YxY1JRR0VtOEFvNTlQck5EZ0ZCczMtWE12RHlBSldSOHA4SGJfZTFuQWVqTDdmeDBUblZINWl6TDVDeTdJbl9obFRzRW5SdWVING02OW56UlFvQ3NURnpOVTV3andrMHp4SzJUNzFhOGlyTDZxbkpxemZXZWJieEN6eHJXYkVMdnN1bkwxejFEZXhhNVFLODRMR0xxa1JQMmpBenBQQ0gxa3hnNndJaXVtQ0l4NVE0N1V6MGJKdElBQUlmVEZJb1IxYjlXTkw?oc=5",
+      "date": "10/12 03:58",
+      "desc": "Lucy Liu Joins Merz Aesthetics to Launch Your Time is Now, Inspiring a New Conversation on Aging Well Across Asia Pacific&nbsp;&nbsp;ANTARA News"
     },
     {
       "co": "Merz Aesthetics",
