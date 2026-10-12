@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-12 17:06",
+  "updated": "2026-10-12 17:16",
   "domestic": [
     {
       "co": "파마리서치",
@@ -136,6 +136,13 @@
     },
     {
       "co": "엘앤씨바이오",
+      "title": "엘앤씨바이오, 리투오 미국 독점 공급계약…약 820억원 규모",
+      "link": "https://new.dailypharm.com/user/news/343320?REFERER=NP",
+      "date": "10/12 17:14",
+      "desc": "엘앤씨바이오는 미국 현지 인체조직·바이오 제품 전문기업 및 조직은행과 리투오 시리즈의 미국 독점 공급계약을 체결했다고 12일 밝혔다. 계약 규모는 최소 약 6000만달러로, 회사가 제시한 원화 환산액은 약..."
+    },
+    {
+      "co": "엘앤씨바이오",
       "title": "엘앤씨바이오 &quot;美조직은행과 '리투오' 820억 계약&quot;",
       "link": "https://www.newsis.com/view/NISX20261012_0003822692",
       "date": "10/12 17:03",
@@ -147,13 +154,6 @@
       "link": "https://www.newsway.co.kr/news/view?ud=2026101216491155393",
       "date": "10/12 17:02",
       "desc": "엘앤씨바이오가 인체조직 기반 피부 세포외기질(ECM) 제품 '리투오(Re2O)'의 미국 독점 공급계약을 맺었다. 12일 엘앤씨바이오는 미국 독점 공급 계약을 맺고, 생산능력 확대와 연계해 현지 공급을 늘릴 계획이라고..."
-    },
-    {
-      "co": "엘앤씨바이오",
-      "title": "엘앤씨바이오, '리투오' 미국 시장 진출…820억원 규모 독점 공급계약",
-      "link": "http://www.newsprime.co.kr/news/article.html?no=750607",
-      "date": "10/12 17:00",
-      "desc": "엘앤씨바이오(290650)가 인체조직 피부 세포외기질(ECM) 제품인 '리투오(Re2O)'의 미국 시장 진출을 본격화하며, 글로벌 넘버원 ECM 브랜드 도약을 위한 핵심 단추를 뀄다. 인체조직 재생의학 전문기업 엘앤씨바이오는..."
     },
     {
       "co": "엘앤씨바이오",
@@ -262,20 +262,6 @@
     }
   ],
   "foreign": [
-    {
-      "co": "Galderma",
-      "title": "Average basic shares outstanding of Galderma Group AG – HAN:PY3 - TradingView",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQREE4SEc3dG1xQUR4bmNVak93OUFvSldvZmc0QlhiaDBfNjh6TE4zU09qLU1iWWdVRndhMjdTWXVUY3ZSUkhocmUyY0FwZmx1NklUVFBOTlpjMjF4QTV5aExZYTFrQW5RT2dVcUdNVFFYOF91V2FkbHFXazU1clFkaTJYVXFkZWg4c1dzMnpyRVRveTVWekk1RlZhdjZtQQ?oc=5",
-      "date": "10/12 04:44",
-      "desc": "Average basic shares outstanding of Galderma Group AG – HAN:PY3&nbsp;&nbsp;TradingView"
-    },
-    {
-      "co": "Galderma",
-      "title": "Galderma presents three-year Nemluvio data and Galderma stock costs EUR 178.18 - ad-hoc-news.de",
-      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQSTZmeHBZaHRMMFQ4YzZWQ3ZWT3VqeUNiblFFMjVQNXNXSlgwYUpocWl6OVI4QXM4WGpIZ0JRaHU2cU1DaE54WlVBcUdJMncxcXlyRFNFV3YtYVhxaVhHNXNNakV1N2d6bkZReUVlTXk5V01ZVHFjVXdoS2s0d1BYZ2s3MF9PdXF6Z2FrNU12S3RwcG1KZ1NxWG5mY2UwLVpYODVYaUs3Z1FQbE5jbUU4Y2tUb00wYjNncll1R3JLaDdFckU4bk5Idm5jOFAwOWM?oc=5",
-      "date": "10/12 07:52",
-      "desc": "Galderma presents three-year Nemluvio data and Galderma stock costs EUR 178.18&nbsp;&nbsp;ad-hoc-news.de"
-    },
     {
       "co": "Merz Aesthetics",
       "title": "Merz Aesthetics steps up expansion amid aesthetics boom - NST Online",
