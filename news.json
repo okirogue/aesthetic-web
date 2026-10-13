@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-13 19:07",
+  "updated": "2026-10-13 19:17",
   "domestic": [
     {
       "co": "파마리서치",
@@ -77,13 +77,6 @@
       "link": "https://weekly.hankooki.com/news/articleView.html?idxno=7188557",
       "date": "10/13 08:52",
       "desc": "사진=파마리서치  파마리서치는 최근 열린 대한미용비만재생의학회(KORA) 학술대회에 참가해 리쥬란, 리쥬비엘, 에버클 등 에스테틱 제품군과 의료진 전용 유통 플랫폼을 소개했다고 13일 밝혔다. 파마리서치는 이번..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "파마리서치 '리쥬란코스메틱', 가수 이재와 손잡고 글로벌 마케팅 확대",
-      "link": "http://www.press9.kr/news/articleView.html?idxno=84018",
-      "date": "10/12 10:12",
-      "desc": "파마리서치가 가수 겸 작곡가 이재(EJAE)와 협업해 화장품 브랜드 '리쥬란코스메틱'의 해외 홍보를 확대한다. 결혼을 앞둔 이재의 피부 관리 과정을 담은 콘텐츠로 글로벌 소비자에게 제품을 알린다는 계획이다...."
     },
     {
       "co": "휴젤",
@@ -437,17 +430,17 @@
     },
     {
       "co": "에이피알",
-      "title": "단기 악재 딛고 뛴다…에이피알, 글로벌 성장성 '이상 무'",
-      "link": "https://www.pointe.co.kr/news/articleView.html?idxno=85953",
-      "date": "10/13 08:42",
-      "desc": "뷰티테크 기업 에이피알이 올해 3분기 괄목할 만한 외형 확장을 이뤄내고도 수익성 측면에서는 다소 아쉬운... 수익성 갉아먹은 환율과 항공 운임 에이피알의 3분기 연결 기준 매출액은 7700억원에서 7800억원 안팎으로..."
-    },
-    {
-      "co": "에이피알",
       "title": "SK證 “에이피알, 유럽 시장 진출에 일시적 수익성 부담… 목표가 56만→...",
       "link": "https://biz.chosun.com/stock/stock_general/2026/10/13/7S3OEI4DABHRXBYHMOFSVJ34Q4/?utm_source=naver&utm_medium=original&utm_campaign=biz",
       "date": "10/13 08:42",
       "desc": "SK증권은 13일 에이피알에 대해 올해 3분기 영업이익이 시장 전망치를 소폭 하회할 것으로 예상되지만, 유럽... 형권훈 SK증권 연구원은 “에이피알의 올해 3분기 매출액은 전년 동기 대비 101% 증가한 7748억원..."
+    },
+    {
+      "co": "에이피알",
+      "title": "단기 악재 딛고 뛴다…에이피알, 글로벌 성장성 '이상 무'",
+      "link": "https://www.pointe.co.kr/news/articleView.html?idxno=85953",
+      "date": "10/13 08:42",
+      "desc": "뷰티테크 기업 에이피알이 올해 3분기 괄목할 만한 외형 확장을 이뤄내고도 수익성 측면에서는 다소 아쉬운... 수익성 갉아먹은 환율과 항공 운임 에이피알의 3분기 연결 기준 매출액은 7700억원에서 7800억원 안팎으로..."
     },
     {
       "co": "에이피알",
@@ -497,6 +490,13 @@
       "link": "https://www.joongangenews.com/news/articleView.html?idxno=554105",
       "date": "10/12 14:08",
       "desc": "따르면 에이피알은 지난 종가 대비 4,500원 상승한 376,000원에 거래되고 있으며, 등락률은 1.21%를 기록했다. 에이피알은 시가 371,500원으로 시작해 383,500원의 고가와 366,500원의 저가를 기록하며 현재까지..."
+    },
+    {
+      "co": "엘앤씨바이오",
+      "title": "이환철號 엘앤씨바이오, 시험기구 없이 성적서 거짓 작성...업무정지 19...",
+      "link": "https://www.lawissue.co.kr/view.php?ud=202610131810347367f4ab64559d_12",
+      "date": "10/13 19:06",
+      "desc": "이환철 대표이사가 이끄는 엘앤씨바이오가 의약품 원료시험에 필요한 기구조차 갖추지 않은 상태에서 시험을 실시한 것처럼 성적서를 거짓 작성해 행정처분을 받은 것으로 드러났다. 제조업무정지 6개월 15일 처분은..."
     },
     {
       "co": "엘앤씨바이오",
@@ -674,14 +674,6 @@
       "desc": "파마리서치는 더마 코스메틱 브랜드 '리쥬란코스메틱'이 가수 겸 작곡가 이재(EJAE)와 협업해 웨딩 스킨케어... 리쥬란코스메틱은 이번 콘텐츠를 시작으로 연말까지 이재와 함께한 캠페인 영상을 활용해 미국 등 해외..."
     },
     {
-      "co": "리쥬란",
-      "kw": "리쥬란",
-      "title": "리쥬란코스메틱, 가수 이재(EJAE)와 협업 콘텐츠 공개",
-      "link": "https://www.pharmnews.com/news/articleView.html?idxno=306817",
-      "date": "10/12 10:16",
-      "desc": "파마리서치(대표이사 손지훈)의 더마 코스메틱 브랜드 리쥬란코스메틱은 가수 겸 작곡가 이재(EJAE)의 결혼... 리쥬란코스메틱 관계자는 &quot;이번 협업은 결혼 준비를 주제로 이재가 자신의 스킨케어 루틴을 소개하는 모습을..."
-    },
-    {
       "co": "ECM",
       "kw": "리투오",
       "title": "강민종 휴메딕스 대표 “리투오 안전성 검증 협조”",
@@ -747,13 +739,6 @@
     },
     {
       "co": "Galderma",
-      "title": "Gross margin % of Galderma Group AG – HAN:PY3 - TradingView",
-      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQejl4MjYzTS1QRXNXRHE0aHVzZXY1UlgyeVdDekxoVHYtRGxVeHFzUWdsenI3M0EzZWV6ZHVLbzl4RTlsU1I4LWJHSDM0a292VzlxRFVxRWpIMTZRTUg3aXVMX0pBc1RaTDU2QXNjcEJNUmUtbXZSbUpJbjJIVEczR0VCdU9xbHNCa3oydVIyQWZoeEJm?oc=5",
-      "date": "10/13 06:31",
-      "desc": "Gross margin % of Galderma Group AG – HAN:PY3&nbsp;&nbsp;TradingView"
-    },
-    {
-      "co": "Galderma",
       "title": "Galderma presents Nemluvio data as Galderma stock reaches CHF 39.7 billion value - ad-hoc-news.de",
       "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQdFB6M3ROU0ZCcnlsSkFFbmFqcV9WaTNORXZBNHpuUC1iZk44OGRDemlHM2xYUjJueGFwVzhLNHhra21URXRkMHItdW1SNDFudFBjZjJKUGhoWEJmenJrcExsOWZYa3dkWG9EQ193b1hSZmF4bjBnRVdqazk0NHh4MnlQZWEydmQ1UV8wekRqM1ZuYlhVSzNmS09LaF9BeWdfU0o2TExKaWZxVXNNck1DTFJZNElYdnFaTzdfTWR5MUswSTdyazd3aXRveFlKQkxuME9F?oc=5",
       "date": "10/13 07:59",
@@ -762,7 +747,7 @@
     {
       "co": "Galderma",
       "title": "Galderma research finds 56% misread menopause-related skin changes; stock pre-market at EUR 180.25 - ad-hoc-news.de",
-      "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPTUNiMnlkSjdKRzc0RFRQRWl4RnU3THRXNHEwbDV6cGVRRC1kSjQ3elNCWEVtQzdHeXNhVHZxWHhyWndXdFZWMGVQR3UxcEVLUHgxRkxQX3BsX2NKQVUyUHM5dk9fNDRJOFFuVHFJNnc1bUVXX05mTERrWGVwRUJDcHhpa1pqQ2VXQmtINHBxTWNJY3AyQlhXbHk2XzlMT01peGJvREJBM2xTVXc0aFc1NDlEWHNiQVdQeWo0QUVrZVpzQVNpamROQ2xaN2g2cHhJVmtiT0ZDbW5mYmtpY1ZkaTA3ZHZpZ2ZJcmk0?oc=5",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNb1VhWFJQQk91ZnpFdnkxMThmb3VyOHJFRXF6U2xIS1dSMERMV2t0MGtKX3ozSGFnd2twZmNRTG5jaVVreWJFN2xDZjE4YXNIYzdvM3o1NjhkdjMwRmFrYmZyc2V5Y1RvNV9LbURhUnp0c0V6bGVWWGhPNDJiQ3ZDN0kyOEd4d2I3M2YzWXJIX1dITmZ3bF8zVmtoZk1ITmp4RGFqZ3pzd2ttbl9pUnc1dG5TVmE4UnJSRndtejJqcDg?oc=5",
       "date": "10/13 06:19",
       "desc": "Galderma research finds 56% misread menopause-related skin changes; stock pre-market at EUR 180.25&nbsp;&nbsp;ad-hoc-news.de"
     },
