@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14 18:34",
+  "updated": "2026-10-14 18:44",
   "domestic": [
     {
       "co": "파마리서치",
@@ -338,6 +338,13 @@
       "desc": "에이피알(278470)이 증권사들의 잇따른 목표주가 하향 속에 상장 이후 최대 하락률을 기록했다. 해외 매출... 13일 한국거래소에서 따르면 에이피알은 전 거래일보다 6만 9000원(19.60%) 내린 28만 3000원에 거래를..."
     },
     {
+      "co": "에이피알",
+      "title": "에이피알 주가 석달새 25%↓···증권가 목표주가 줄하향 왜?",
+      "link": "http://www.koreastocknews.com/news/articleView.html?idxno=121722",
+      "date": "10/13 16:38",
+      "desc": "에이피알(278470, 대표이사 김병훈)의 올해 3분기 영업이익이 시장 기대치를 밑돌 것이라는 전망이... 13일 증권업계에 따르면 SK증권은 에이피알의 목표주가를 기존 56만원에서 48만원으로 14.3% 낮췄다. 신한투자증권은..."
+    },
+    {
       "co": "엘앤씨바이오",
       "title": "엘앤씨바이오, '리투오' UAE 수입허가 획득",
       "link": "https://www.pointdaily.co.kr/news/articleView.html?idxno=322298",
@@ -469,10 +476,10 @@
   "foreign": [
     {
       "co": "Galderma",
-      "title": "EXCLUSIVE: Galderma agrees to buy ZO Skin Health for around $1.5 billion, sources say - Reuters",
-      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQUWxpVzlpTVNNbm5VeHJROVRQeUFxTWRMZk9kOXh2LVdGUXRiZnBjb0xPY3BmSGU2Z2xTamM0aFItYmphOHY2ZmdDaGVGV0FQNzl2aS1NMV83ZEM0VnNTMDkzLUdnMzNmS0pod05TSUZBWS1kcTFkSktaMWxZUkdYOWxvMGV4NFhzTVA3N0J3YlFqbl8tQXdpdE9qUXh0czdhSnNMSm1qX2RnQQ?oc=5",
-      "date": "10/13 23:17",
-      "desc": "EXCLUSIVE: Galderma agrees to buy ZO Skin Health for around $1.5 billion, sources say&nbsp;&nbsp;Reuters"
+      "title": "Galderma to buy US firm ZO Skin Health for $1.5 billion - Reuters",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQc2QySERhWlB6T0E1NDdsbFRaNS01Y1JUWEdKSVUyRURZYnNQb0RrbGU4SnduaVh0TENqUUZLTGMyTk10cW1VR3lXdWFwcDlkWU8zNjhFcWI5X2t5QlJrS013Q1E3ckk0bmdTNnoycnNOam9kYlJKc3Z5VkJ2c0ZBNXFhdGRfLUp4ZHhUNGIwQks3aWxCN3dTcVhvcVo2d3Z3SnQ4OA?oc=5",
+      "date": "10/14 05:24",
+      "desc": "Galderma to buy US firm ZO Skin Health for $1.5 billion&nbsp;&nbsp;Reuters"
     },
     {
       "co": "Galderma",
@@ -490,13 +497,6 @@
     },
     {
       "co": "Galderma",
-      "title": "Galderma to buy Zo Skin from Blackstone for $1.5 bln, Reuters reports - Yahoo Finance",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxObjN6NE5RRUdOYm96a3FZdWp4RUlVRUstSkJhU3BNMWN4MHZiOWM2MHd6YU55Z2ItN0pIQmo4NFBGNFRCUWpHaEY0TGhTdnlCRHQ0RWVJd3MtOWEzcXE3X3N0ZnBrTHprOURFSUZ2ZGZ0MXcyNU8xdkJ2LWNLZmNwem9FVjhVWWxJZHBOc0MwMkhTenFaMzZr?oc=5",
-      "date": "10/14 00:55",
-      "desc": "Galderma to buy Zo Skin from Blackstone for $1.5 bln, Reuters reports&nbsp;&nbsp;Yahoo Finance"
-    },
-    {
-      "co": "Galderma",
       "title": "Galderma buys ZO Skin Health for $1.5B in cash from Blackstone, Obagi family - TradingView",
       "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPaHo5cEhubVc4RTRQTWVzeFRtUmRLbFFlalc4OUFWYWJwSVF0QXJBdXRGc2NfdmRTWnpVRWFNLVp2eWZ3ZjJLS2I2V3NSRUpOOFRwNDExS3J4Z09NSjRhQXRUTThkcmJxaTE3OF9zdkRMWk5aSVJ6UXZpS19weThQV3N4TXoyRUZDZUFfajh5RmxxZUphQVlpT2xndGFiMmlQVFhVeVZEVzRSZ0lhOHNhX0FySU82Z2s4RHV4U1pzdDhkc2NoblZvSDJraGpsdmw4dHZv?oc=5",
       "date": "10/14 06:01",
@@ -505,16 +505,16 @@
     {
       "co": "Galderma",
       "title": "Swiss health group Galderma acquires US skincare brand for $1.5bn - SWI swissinfo.ch",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNcDZtdEpLUUJjR2dRLU4wVjM3VzMzR2F3Z2hkQU1ON1hfdE5QNnVQejMxZ2FnT1A2VGJNcmNoZnd2MmNLbGZFT1VZYVA4Zm9iNUxaS1FlWnladm5FMEJ6eU9SLW9WX0pON0hFcWtMLXBrM2tZUXRteU5NSnBZaWd3c19UOHh2LWxXd040REFlTFpWalZ2cVJLRUNQODl0WUFpcVpIVnRpYWJ4Y0d3NF93?oc=5",
+      "link": "https://news.google.com/rss/articles/CBMi1gJBVV95cUxPRl8tOEhHRXdkeHZucHBsRDRZQmFKWENVOG83MWlieThWeE1LXzRvYTFWZ19sLTVkb0N0c3ZvMVdPWUhZR0Y1OXA0TXAyT2V2MG42aWEteFZ6MmFQNzgyQ1NaTVhvZ21PZnJXeUtTRWR1LTlTSUlxOGZJYXh4QnRkclU5bWpEclR0V1ViTnhyMHBER0J0ampRY2NRaWc0NVphZnNYMHdzdEVuZWVYWGNVVlllTnBOMkhMaGlnel9yZnFXV3BLQ0wyZVNYUjBRbG1iN1psaldYSllETGNyLVBGVEo4NlRiM2JHMnpNWUlBbmlkaWsxOUdlaGxqV1loOVFUY29OU2lWbXl2b0dMcktQMWFfQU92UHROZDJJTV9tQlZVRkVYdHdhLVVYaTgyVzhvOExfWlhKX2hvTzBqYWJkRnYxTGN1dko0WWhZdWdHdTZjN2xrcEE?oc=5",
       "date": "10/14 08:15",
       "desc": "Swiss health group Galderma acquires US skincare brand for $1.5bn&nbsp;&nbsp;SWI swissinfo.ch"
     },
     {
       "co": "Galderma",
-      "title": "Key facts: Galderma (GALD) to buy ZO Skin Health for $1.5B; EPS-neutral first year - TradingView",
-      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNYkxiUmxkVGlhTVV1Tk1IVE5RanFxNFUzMjJZR2w1VUFUdHBBalFyLXl3QmJxZGFscnRwZ0VLUVA5RC1JREpsM0hQQUwxR3RlWnQ1RVFVTDFRYnVsQW94cjg0ZWRMMGE0a1phZTJ1QjRWeS1mT01aNUpsWVBHR1oybjIzeEY2TGNUenlGRU5nU1phV1lJQmRxMmhNd2I3R0x3dzJ2ZnhrVmRVVzZkSWQ3RURyQWNmLXdUaDFpNzZxeFR1Z2c5S2ZYTklmLUpUZXdsZHQ5UnVR?oc=5",
-      "date": "10/14 07:00",
-      "desc": "Key facts: Galderma (GALD) to buy ZO Skin Health for $1.5B; EPS-neutral first year&nbsp;&nbsp;TradingView"
+      "title": "Galderma acquiert ZO Skin Health pour 1,5 milliard de dollars - TradingView",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1NTTluNzd0aGNHYV9UV3JEZ0Exc2ZVWUlGMjdPcHVoQlNPbUVEZDZjZ1JFWWlYZTJjMVROektrT1JsbnIxamVFYWloamh3NGI0cWlQZDVycDVJaFhvSEJfQ005MA?oc=5",
+      "date": "10/14 06:02",
+      "desc": "Galderma acquiert ZO Skin Health pour 1,5 milliard de dollars&nbsp;&nbsp;TradingView"
     },
     {
       "co": "Galderma",
@@ -532,17 +532,17 @@
     },
     {
       "co": "Galderma",
-      "title": "Galderma acquires ZO Skin Health for 1.340 million euros - Demócrata",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZEZzREFzNFZDOWlKMGRhdS1OQTZLa0NTZ2Z6amdGYUoxbzc3Z3BId3BpOURrMVZReFZnOVF6dHhhU1FrWDA5WG1XcXFWTW11Wk9XTHlIZlBTVko0N290R3FZTE5vR1NXTnJFNVdFZUpkUjFmM1ZfRWVvcEs2VGx6SGItY3hWSzVoMFZxREZvemJGY3BYOHp5adIBngFBVV95cUxQek9TMkJqV1laRTM2VUNPTENPTHVZVkd2R0ltUXdfR0hkSlhmM25fU2ZmXzJoVEQyNl9weDE5eEhqeU9BOHBlMElqeU5YeGRncnFTdE0tNlJtd0s5V3lWZjh5OWJUTGFYdHhJRUdBWnJzdm9TUWFtcUN6WnQweGpXTnMyNXFJM1lhNmtWaUVOb2Qxc19SbmhISTlERDRzZw?oc=5",
-      "date": "10/14 07:46",
-      "desc": "Galderma acquires ZO Skin Health for 1.340 million euros&nbsp;&nbsp;Demócrata"
-    },
-    {
-      "co": "Galderma",
       "title": "Galderma signs ZO Skin Health deal: stock pre-market at EUR 180.73 - ad-hoc-news.de",
       "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOSzF4NlZmX1ZjQ2MxU2pKRmZ3ZXJnX1NjUFY2WmFPZXNVTnNLcjlKMDRQeGZiTmUwSVR2UDVqc19YX3Zva2pSaVpiS3RwTnF5LU82UkNGWTZ1clZIamF6M0lDNnNwZElZdVdGS3NiOFQyd05XbWZVUlRJOUpDTjNMY2dLM05XbHE1a21zUlN1cHlCWjE3YjMyTVJKRU9Sb09pckFpcVZTZTV0UEl1UTdwYkVCekNuSnZ1bEdQYzMzcFU?oc=5",
       "date": "10/14 05:38",
       "desc": "Galderma signs ZO Skin Health deal: stock pre-market at EUR 180.73&nbsp;&nbsp;ad-hoc-news.de"
+    },
+    {
+      "co": "Galderma",
+      "title": "Galderma acquires ZO Skin Health for 1.340 million euros - Demócrata",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQek9TMkJqV1laRTM2VUNPTENPTHVZVkd2R0ltUXdfR0hkSlhmM25fU2ZmXzJoVEQyNl9weDE5eEhqeU9BOHBlMElqeU5YeGRncnFTdE0tNlJtd0s5V3lWZjh5OWJUTGFYdHhJRUdBWnJzdm9TUWFtcUN6WnQweGpXTnMyNXFJM1lhNmtWaUVOb2Qxc19SbmhISTlERDRzZ9IBngFBVV95cUxQek9TMkJqV1laRTM2VUNPTENPTHVZVkd2R0ltUXdfR0hkSlhmM25fU2ZmXzJoVEQyNl9weDE5eEhqeU9BOHBlMElqeU5YeGRncnFTdE0tNlJtd0s5V3lWZjh5OWJUTGFYdHhJRUdBWnJzdm9TUWFtcUN6WnQweGpXTnMyNXFJM1lhNmtWaUVOb2Qxc19SbmhISTlERDRzZw?oc=5",
+      "date": "10/14 07:46",
+      "desc": "Galderma acquires ZO Skin Health for 1.340 million euros&nbsp;&nbsp;Demócrata"
     },
     {
       "co": "Merz Aesthetics",
