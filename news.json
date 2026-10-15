@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15 18:37",
+  "updated": "2026-10-15 18:47",
   "domestic": [
     {
       "co": "파마리서치",
@@ -73,17 +73,17 @@
     },
     {
       "co": "에이피알",
-      "title": "'K뷰티 시총 1위' 에이피알 중남미 공략 나섰다",
-      "link": "https://www.mk.co.kr/article/12176992",
-      "date": "10/15 17:23",
-      "desc": "운영하는 에이피알(APR)이 스킨부스터를 앞세워 중남미 시장을 공략한다. 화장품과 뷰티 디바이스에 이어... 에이피알은 다음달 칠레를 시작으로 중남미 시장에 '메디큐브 스킨부스터'를 공급한다고 15일 밝혔다. 2024년..."
-    },
-    {
-      "co": "에이피알",
       "title": "에이피알 '메디큐브 스킨부스터' 칠레 진출…중남미 유통 확대",
       "link": "https://biz.sbs.co.kr/article_hub/20000340187?division=NAVER",
       "date": "10/15 17:23",
       "desc": "에이피알이 다음달 칠레에서 '메디큐브 스킨부스터' 제품 2종을 다음달 공식 출시한다고 오늘(15일) 밝혔습니다. 에이피알 관계자는 &quot;최근 중남미 지역을 중심으로 메디큐브 스킨부스터 해외 공급을 시작했다&quot;며 &quot;일부..."
+    },
+    {
+      "co": "에이피알",
+      "title": "'K뷰티 시총 1위' 에이피알, 중남미 공략",
+      "link": "https://www.mk.co.kr/article/12176992",
+      "date": "10/15 17:23",
+      "desc": "운영하는 에이피알(APR)이 스킨부스터를 앞세워 중남미 시장을 공략한다. 화장품과 뷰티 디바이스에 이어... 에이피알은 다음달 칠레를 시작으로 중남미 시장에 '메디큐브 스킨부스터'를 공급한다고 15일 밝혔다. 2024년..."
     },
     {
       "co": "에이피알",
@@ -98,13 +98,6 @@
       "link": "https://www.etoday.co.kr/news/view/2636341",
       "date": "10/15 16:44",
       "desc": "추진 에이피알이 화장품과 뷰티 디바이스에 이어 스킨부스터의 해외 공급을 본격화한다. 올해 7월 가동을... 에이피알은 메디큐브 스킨부스터의 중남미 공급을 시작했다고 15일 밝혔다. 현재 일부 물량을 현지에..."
-    },
-    {
-      "co": "에이피알",
-      "title": "김병훈의 'K뷰티 영토 확장'…에이피알, 스킨부스터로 중남미 공략",
-      "link": "https://www.asiatoday.co.kr/kn/view.php?key=20261015010004994",
-      "date": "10/15 16:38",
-      "desc": "아시아투데이 장지영 기자 = 김병훈 에이피알 대표가 스킨부스터를 앞세워 글로벌 뷰티 시장 공략에 속도를... 15일 에이피알에 따르면 회사는 최근 중남미 지역을 중심으로 메디큐브 스킨부스터의 해외 공급을 시작했다...."
     },
     {
       "co": "에이피알",
@@ -308,31 +301,17 @@
   "foreign": [
     {
       "co": "Galderma",
-      "title": "Galderma Bolsters Its Skincare-To-Syringes Portfolio With $1.5B Deal For ZO Skin Health - Beauty Independent",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNUGQ0R1VZT0xROXk4aFhlcFRBOHJmYWwzQ01ZbEhSb2dFOXRhSzdRYkt5RlR2QTJ5TGlJVjBRV3VNeUdmMmNyRXhHUFBrNHdKZ3YzMEtobEZ5TXk0cjRwYUo2VktheW1SampjaFFKaFE0NG5iSlZDVFlJNGJUTll6Vk5GUUVVa0UyajZSMkxPYjFaczBuNnRoVndsRlA?oc=5",
-      "date": "10/14 21:40",
-      "desc": "Galderma Bolsters Its Skincare-To-Syringes Portfolio With $1.5B Deal For ZO Skin Health&nbsp;&nbsp;Beauty Independent"
+      "title": "Galderma Buys ZO Skin Health in $1.5B Skin-Care Deal - NewBeauty",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE0yYy1qVmM2QUtEems1R1J5WVFCNC00aExQcUVRaVFJMEpUM3lJclRQNEhCcHdSbWViRUpaaWJZQi1UVkp4UmtHb1duY25iTEsyalNtcWNpZFIyN1NUTjdjMV81czBSaGlVWW5sT1Q5YTY?oc=5",
+      "date": "10/14 15:00",
+      "desc": "Galderma Buys ZO Skin Health in $1.5B Skin-Care Deal&nbsp;&nbsp;NewBeauty"
     },
     {
       "co": "Galderma",
-      "title": "Galderma to Acquire ZO Skin Health in US$1.5 Billion Deal - Global Cosmetics News",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPLVNrVGJkMnRoa0JUZEdIcW5aUnFHaExTMFgzeFhIMERQQmR3cW01QTRLRDc2R1VYLVhEazQ0Vnh1X1hkdVgwemt3OUhmMGhvT0d1ZHNRREVVcjVIZjVrS3lvZWxuRlBJN0VHZzNnUjRJU1I3ZTg0bFEyZTdSWDNxMHp0dVUxYU01STh5eENfNjdWU1l6LUR6Qg?oc=5",
-      "date": "10/15 05:02",
-      "desc": "Galderma to Acquire ZO Skin Health in US$1.5 Billion Deal&nbsp;&nbsp;Global Cosmetics News"
-    },
-    {
-      "co": "Galderma",
-      "title": "Galderma to buy US firm ZO Skin Health for $1.5 billion By Reuters - Investing.com",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPQnRrUndQZERXQzhTYm1jR1hlSzE3VUFDR2oyUGVsSnZuTHdocENvZmROMHlDZHVtTFpVTmotY1k4enJRRFo4cS16d2FFSEZzTGxwcXl4NWtJSFh0WlRoc0I3SEpQLVNBZ2VPSzZXNmZIN254Y3M3UlQ4SGhCVkZMZGpFVnFsT1NpUVY0QTJMSUVCWEFWZ2pvdTJoa3BoRjh0WU1wWVZPeVdUZjRuN293?oc=5",
-      "date": "10/14 16:38",
-      "desc": "Galderma to buy US firm ZO Skin Health for $1.5 billion By Reuters&nbsp;&nbsp;Investing.com"
-    },
-    {
-      "co": "Galderma",
-      "title": "Business News: Galderma Set To Acquire ZO Skin Health - The Dermatology Digest",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOM2xjcV9hLTVlZ3JlUVRsUXhNTHdwakVueTJtZ0dfQVVGZG40NlZTNXJwUzRscEFlVmNrVE5JNTZCS0JOTFFQdWZPcFlZaDNUV1h4NHBZS1Z6YTB0VUVpbG9ua0xWTEJRbHN5azl1S3lZZTJSSVVGQmphZHh0STVsVjJ6OFJ6UQ?oc=5",
-      "date": "10/14 20:47",
-      "desc": "Business News: Galderma Set To Acquire ZO Skin Health&nbsp;&nbsp;The Dermatology Digest"
+      "title": "Galderma to Acquire ZO Skin Health for $1.5 Billion - Dermatology Times",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNTFl4R3RSWW12UkdxSzlNQUN6UTV0bzdwNGNpNGpwQUZIMDc3eEFCRWhyWmMtNTVoWFJBWmxzM2xDNzFQRlRHb0pEM0U4WElQeU9nQ2JfQ3pndVVOTE8weHRUeGc0SENvOURmVFJ0aHVfRmFrNTJyaVY5anh6UGExcWhzZlhWR3NhZEZvRGl6SVAtdw?oc=5",
+      "date": "10/14 14:33",
+      "desc": "Galderma to Acquire ZO Skin Health for $1.5 Billion&nbsp;&nbsp;Dermatology Times"
     },
     {
       "co": "Galderma",
@@ -350,24 +329,17 @@
     },
     {
       "co": "Galderma",
-      "title": "Galderma to Acquire ZO Skin Health for $1.5 Billion, Doubling Down on Physician-Dispensed Skincare - Oui Speak Fashion (OSF)",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFA5b1hUOGlrWXdta2xiZEN5UlBBckdlbnZrUjJLVWtJYkdXN3VOeG9sMjFpZUJxVFdaU1JfRnlzSG1LYkZ2WjFvOEFtV0xMZlpXRVR0S2Nfa25WbkZoa1ZzWW8xYWZKeVZwbXRRMw?oc=5",
-      "date": "10/14 21:37",
-      "desc": "Galderma to Acquire ZO Skin Health for $1.5 Billion, Doubling Down on Physician-Dispensed Skincare&nbsp;&nbsp;Oui Speak Fashion (OSF)"
-    },
-    {
-      "co": "Galderma",
-      "title": "Galderma to Acquire ZO Skin Health from Blackstone and Obagi Family for $1.5B - citybiz",
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNZkI5MHZXQVRlT3NIRUlWNFJ2MHNTUXItcktweEhscWtIX3pqSXVOVWswOVVPSWhQNVgyZUVrRnpnMngzZm12b1BheF9mN3U3dmU4d0ZTbnlxU3ZBNy1za0dwdlFpX3VxcjlGNFJ1bEhSZ1cwZklXTzg1ZDRaSjJfMUR2dlN2TFdpZ0tfS0VjSEU0MGhiYjN1ZEdUUHMxSmhDT0RYNzJnSklBUWNpWktzMVhYZ1BIX09ZcVdYVFRoRmJKaFV3M0h1X2RDTXh5WGNKR0VVMw?oc=5",
-      "date": "10/14 13:21",
-      "desc": "Galderma to Acquire ZO Skin Health from Blackstone and Obagi Family for $1.5B&nbsp;&nbsp;citybiz"
-    },
-    {
-      "co": "Galderma",
       "title": "Ropes, Weil, Paul Weiss guide Galderma’s $1.5bn ZO Skin Health acquisition - The Global Legal Post",
       "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPa3NORlFmdWNBVDhkemRKenVkRkM5YnptRVVCRFM1aVoyUkRVRnQ2YmU3a25ZbHFiSVd0QnBFbDRhSVFiZUo3Si1fMkQ5bHI4NE14MXhFUVZLN3VMc2t2SW1RTlVYeHIxVHFIU09LeUNTbDB1S3hTMGotc29zUHpDeEN3Vk5zOXJkM1dueXlvbk0xT0tlZkFSVDRRSFRQX2pFczJFTTBoaVIyZ0l6U01TanVvaWgtYkk?oc=5",
       "date": "10/14 14:42",
       "desc": "Ropes, Weil, Paul Weiss guide Galderma’s $1.5bn ZO Skin Health acquisition&nbsp;&nbsp;The Global Legal Post"
+    },
+    {
+      "co": "Galderma",
+      "title": "Beauty Updates: Galderma to Buy ZO Skin Health & More - BeautyNewsDaily",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNWEd0UV8yTlpneXRIX2RtT3AyNkFleUVGa0pWM0MyNENoN1JHakFDUFhMazRXWDhGYkM1c3U2X0FXajNvUjdQQ0NCcXZGWE1jM0VHeEJjV3lUWGQ0NTJ6eWNCNFhRclVna1BwZUlwYUFDZVZURW5uSmItMFFyWlNpQkFn?oc=5",
+      "date": "10/14 19:41",
+      "desc": "Beauty Updates: Galderma to Buy ZO Skin Health & More&nbsp;&nbsp;BeautyNewsDaily"
     },
     {
       "co": "Galderma",
