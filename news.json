@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15 19:38",
+  "updated": "2026-10-15 19:48",
   "domestic": [
     {
       "co": "파마리서치",
@@ -73,17 +73,17 @@
     },
     {
       "co": "에이피알",
-      "title": "에이피알 '메디큐브 스킨부스터' 칠레 진출…중남미 유통 확대",
-      "link": "https://biz.sbs.co.kr/article_hub/20000340187?division=NAVER",
-      "date": "10/15 17:23",
-      "desc": "에이피알이 다음달 칠레에서 '메디큐브 스킨부스터' 제품 2종을 다음달 공식 출시한다고 오늘(15일) 밝혔습니다. 에이피알 관계자는 &quot;최근 중남미 지역을 중심으로 메디큐브 스킨부스터 해외 공급을 시작했다&quot;며 &quot;일부..."
-    },
-    {
-      "co": "에이피알",
       "title": "'K뷰티 시총 1위' 에이피알, 중남미 공략",
       "link": "https://www.mk.co.kr/article/12176992",
       "date": "10/15 17:23",
       "desc": "운영하는 에이피알(APR)이 스킨부스터를 앞세워 중남미 시장을 공략한다. 화장품과 뷰티 디바이스에 이어... 에이피알은 다음달 칠레를 시작으로 중남미 시장에 '메디큐브 스킨부스터'를 공급한다고 15일 밝혔다. 2024년..."
+    },
+    {
+      "co": "에이피알",
+      "title": "에이피알 '메디큐브 스킨부스터' 칠레 진출…중남미 유통 확대",
+      "link": "https://biz.sbs.co.kr/article_hub/20000340187?division=NAVER",
+      "date": "10/15 17:23",
+      "desc": "에이피알이 다음달 칠레에서 '메디큐브 스킨부스터' 제품 2종을 다음달 공식 출시한다고 오늘(15일) 밝혔습니다. 에이피알 관계자는 &quot;최근 중남미 지역을 중심으로 메디큐브 스킨부스터 해외 공급을 시작했다&quot;며 &quot;일부..."
     },
     {
       "co": "에이피알",
@@ -248,6 +248,13 @@
     },
     {
       "co": "엘앤씨바이오",
+      "title": "엘앤씨바이오 '리투오', UAE 수입허가 획득…중동 진출 본격화",
+      "link": "http://www.bokuennews.com/news/article.html?no=285601",
+      "date": "10/15 19:44",
+      "desc": "엘앤씨바이오가 인체조직 피부 ECM 제품 '리투오(Re2O)'의 아랍에미리트(UAE) 수입허가를 획득하며 중동 시장 진출에 나선다. 태국과 페루에서 정식 허가를 확보한 데 이어 미국 공급계약까지 체결하면서 해외 시장..."
+    },
+    {
+      "co": "엘앤씨바이오",
       "title": "엘앤씨바이오 '리투오', UAE 수입허가 확보…글로벌 사업 확대",
       "link": "https://www.sentv.co.kr/article/view/sentv202610150065",
       "date": "10/15 09:54",
@@ -262,24 +269,10 @@
     },
     {
       "co": "엘앤씨바이오",
-      "title": "엘앤씨바이오, ECM 제품 '리투오' UAE 수입허가 획득",
-      "link": "https://www.rapportian.com/news/articleView.html?idxno=241264",
-      "date": "10/14 15:46",
-      "desc": "엘앤씨바이오(대표 이환철)는 인체조직 피부 세포외기질(ECM) 제품 '리투오'(Re2O)가 아랍에미리트(UAE) 의약품청(EDE)으로부터 수입허가를 획득했다고 14일 밝혔다. UAE는 중동과 아시아·유럽을 연결하는 거점으로..."
-    },
-    {
-      "co": "엘앤씨바이오",
       "title": "[속보] 엘앤씨바이오 VI 발동…오후장 KRX·NXT서 각각 발동",
       "link": "https://www.cbci.co.kr/news/articleView.html?idxno=615372",
       "date": "10/14 14:00",
       "desc": "엘앤씨바이오(290650)가 14일 오후장에서 상승세를 보이는 가운데 한국거래소(KRX)와 넥스트레이드(NXT)에서 각각 변동성완화장치(VI)가 발동돼 눈길을 끌고 있다. 14일 오후 1시 55분 현재 엘앤씨바이오는 전 거래일보다..."
-    },
-    {
-      "co": "엘앤씨바이오",
-      "title": "엘앤씨바이오, 신제품 'Re2O V' 초기 임상 경험 공개…나비성형외과 신...",
-      "link": "https://www.mhns.co.kr/news/articleView.html?idxno=764128",
-      "date": "10/14 10:40",
-      "desc": "엘앤씨바이오가 기존 제품 대비 입자 크기를 키워 진피 구조 지지를 고려해 개발한 신제품 '리투오 브이(Re2O V)'의 초기 임상 경험을 발표했다. 신동우 나비성형외과 원장은 지난 7일 웨스틴 서울 파르나스에서 열린..."
     },
     {
       "co": "리쥬란",
@@ -321,6 +314,13 @@
     },
     {
       "co": "Galderma",
+      "title": "Galderma acquiert ZO Skin Health pour 1,5 milliard de dollars - TradingView",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5DWnZhaDEzY3R5d0NSZFB4MHA5Ty1TRTRuc0I0cHVTZF9YTWpnSFJETjJFaWR5T0lQQTBKWVRvTkFuc1ZCQTVqcjJ2UTN2ZHAwVjQyTWJvTF9QUmZfOHpMbjBCOA?oc=5",
+      "date": "10/14 20:08",
+      "desc": "Galderma acquiert ZO Skin Health pour 1,5 milliard de dollars&nbsp;&nbsp;TradingView"
+    },
+    {
+      "co": "Galderma",
       "title": "Beauty Updates: Galderma to Buy ZO Skin Health & More - BeautyNewsDaily",
       "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNWEd0UV8yTlpneXRIX2RtT3AyNkFleUVGa0pWM0MyNENoN1JHakFDUFhMazRXWDhGYkM1c3U2X0FXajNvUjdQQ0NCcXZGWE1jM0VHeEJjV3lUWGQ0NTJ6eWNCNFhRclVna1BwZUlwYUFDZVZURW5uSmItMFFyWlNpQkFn?oc=5",
       "date": "10/14 19:41",
@@ -332,13 +332,6 @@
       "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPa3NORlFmdWNBVDhkemRKenVkRkM5YnptRVVCRFM1aVoyUkRVRnQ2YmU3a25ZbHFiSVd0QnBFbDRhSVFiZUo3Si1fMkQ5bHI4NE14MXhFUVZLN3VMc2t2SW1RTlVYeHIxVHFIU09LeUNTbDB1S3hTMGotc29zUHpDeEN3Vk5zOXJkM1dueXlvbk0xT0tlZkFSVDRRSFRQX2pFczJFTTBoaVIyZ0l6U01TanVvaWgtYkk?oc=5",
       "date": "10/14 14:42",
       "desc": "Ropes, Weil, Paul Weiss guide Galderma’s $1.5bn ZO Skin Health acquisition&nbsp;&nbsp;The Global Legal Post"
-    },
-    {
-      "co": "Galderma",
-      "title": "Galderma acquiert ZO Skin Health pour 1,5 milliard de dollars - TradingView",
-      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5DWnZhaDEzY3R5d0NSZFB4MHA5Ty1TRTRuc0I0cHVTZF9YTWpnSFJETjJFaWR5T0lQQTBKWVRvTkFuc1ZCQTVqcjJ2UTN2ZHAwVjQyTWJvTF9QUmZfOHpMbjBCOA?oc=5",
-      "date": "10/14 20:08",
-      "desc": "Galderma acquiert ZO Skin Health pour 1,5 milliard de dollars&nbsp;&nbsp;TradingView"
     },
     {
       "co": "Galderma",
