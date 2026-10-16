@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16 09:42",
+  "updated": "2026-10-16 09:52",
   "domestic": [
     {
       "co": "파마리서치",
@@ -122,17 +122,17 @@
     },
     {
       "co": "에이피알",
-      "title": "에이피알 '메디큐브 스킨부스터' 칠레 진출…중남미 유통 확대",
-      "link": "https://biz.sbs.co.kr/article_hub/20000340187?division=NAVER",
-      "date": "10/15 17:23",
-      "desc": "에이피알이 다음달 칠레에서 '메디큐브 스킨부스터' 제품 2종을 다음달 공식 출시한다고 오늘(15일) 밝혔습니다. 에이피알 관계자는 &quot;최근 중남미 지역을 중심으로 메디큐브 스킨부스터 해외 공급을 시작했다&quot;며 &quot;일부..."
-    },
-    {
-      "co": "에이피알",
       "title": "'K뷰티 시총 1위' 에이피알, 중남미 공략",
       "link": "https://www.mk.co.kr/article/12176992",
       "date": "10/15 17:23",
       "desc": "운영하는 에이피알(APR)이 스킨부스터를 앞세워 중남미 시장을 공략한다. 화장품과 뷰티 디바이스에 이어... 에이피알은 다음달 칠레를 시작으로 중남미 시장에 '메디큐브 스킨부스터'를 공급한다고 15일 밝혔다. 2024년..."
+    },
+    {
+      "co": "에이피알",
+      "title": "에이피알 '메디큐브 스킨부스터' 칠레 진출…중남미 유통 확대",
+      "link": "https://biz.sbs.co.kr/article_hub/20000340187?division=NAVER",
+      "date": "10/15 17:23",
+      "desc": "에이피알이 다음달 칠레에서 '메디큐브 스킨부스터' 제품 2종을 다음달 공식 출시한다고 오늘(15일) 밝혔습니다. 에이피알 관계자는 &quot;최근 중남미 지역을 중심으로 메디큐브 스킨부스터 해외 공급을 시작했다&quot;며 &quot;일부..."
     },
     {
       "co": "에이피알",
@@ -314,10 +314,24 @@
   "foreign": [
     {
       "co": "Galderma",
-      "title": "Galderma to Buy ZO Skin Health for $1.5 Billion - WSJ",
-      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPdmJxbVNaWHBKX1dVY1U3dEFIU1Q1NExrUjQ2Mllnb0VkdEpMeE1UYlZ5R18tdjZJR0F1TV9zZVlaQWpHa05MRWtYSXZxaTZoZ25BRlpBbjBCY2hyWEszbWNMZ2E4eWU4WDBWYzdxNnNVc3ZseFNzQS1SY0s0X1BYdHh1NEM5aWFKR0ZLcnRfZHhTMmFY?oc=5",
-      "date": "10/15 23:18",
-      "desc": "Galderma to Buy ZO Skin Health for $1.5 Billion&nbsp;&nbsp;WSJ"
+      "title": "Cetaphil Maker Galderma to Buy ZO Skin Health for $1.5 Billion in Medical Skincare Push - Law Commentary",
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOYlo0S281Z3BhOWNlcU9JNlRGelpjWTBfM3lHU2l2WVhKSjBBVmZCMnBod3F6NXBQeW9qSWIzN1ZZNm5SWUpEdnQ3WTFmdnpaeDczNXA2RHpGd0ZVWklwSS1jSzlfRTk0Z2s2aXg3bkNlaF9Ic1ZHeHd5UHNTUW5yekhXNW9UYjZCRHlyYXF2Yw?oc=5",
+      "date": "10/15 19:39",
+      "desc": "Cetaphil Maker Galderma to Buy ZO Skin Health for $1.5 Billion in Medical Skincare Push&nbsp;&nbsp;Law Commentary"
+    },
+    {
+      "co": "Galderma",
+      "title": "Galderma to snap up California-based ZO Skin Health for USD 1.5 billion - Premium Beauty News",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1YeGNlTTEzWE52Um1XaUw3ME13SGZ2T243S0M1TEpXWUdxdDd2Nk5FUWRSOXFLUGZBekg2Ym5jeXFRMXBaRVpHYXRFQWFGdTJaYVZOOU1IaFFzWHhWZVBRZnpGZHB2enF5Mi1kc3ZQZGtyNWl6NVpnYmFaRDZXZw?oc=5",
+      "date": "10/15 11:30",
+      "desc": "Galderma to snap up California-based ZO Skin Health for USD 1.5 billion&nbsp;&nbsp;Premium Beauty News"
+    },
+    {
+      "co": "Galderma",
+      "title": "Galderma buys ZO Skin Health for US$1.5B to expand dermatological skin care - Personal Care Insights",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNS0s3S0lqcHc2SFAxZGRaUE9mQ1Z0NGxpc2lPQU02NDRYUERmcFBscE95Um54dl9OeDBxdFVlQmJjcHBaNms5ODNMX3AzUU81T1gwMWdrSlVBYWFEZWtsQUY3Yk1BYUlvbERvV1ZWSHBCczFGLVYzdVNnTmZKZ1VicldXYURZUlRxVGc?oc=5",
+      "date": "10/15 12:48",
+      "desc": "Galderma buys ZO Skin Health for US$1.5B to expand dermatological skin care&nbsp;&nbsp;Personal Care Insights"
     },
     {
       "co": "Galderma",
@@ -325,6 +339,13 @@
       "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNbmJ4SFcwVkhiWjcyTUQ0eHVOUGk0T2RuTmFHQ2ZPQUFsM3VIcFVXbTdoV1pDQWxEWXdoMDBENXVPVS1famRZMG9ya3ZZT095cF8zbWxZXzduUHFkTzBjOUNVaHkzanY1OU85bVRJR1ZrNHJpSC1ZOHBpbFlmX2pZRkhVejNSVk1MSjAtMURPVklldW1EN2c?oc=5",
       "date": "10/15 14:15",
       "desc": "Galderma Makes $1.5B Bet on Pro Skincare with ZO Skin Health&nbsp;&nbsp;American Spa"
+    },
+    {
+      "co": "Galderma",
+      "title": "Galderma to Acquire ZO Skin Health in US$1.5 Billion Deal - Global Cosmetics News",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPLVNrVGJkMnRoa0JUZEdIcW5aUnFHaExTMFgzeFhIMERQQmR3cW01QTRLRDc2R1VYLVhEazQ0Vnh1X1hkdVgwemt3OUhmMGhvT0d1ZHNRREVVcjVIZjVrS3lvZWxuRlBJN0VHZzNnUjRJU1I3ZTg0bFEyZTdSWDNxMHp0dVUxYU01STh5eENfNjdWU1l6LUR6Qg?oc=5",
+      "date": "10/15 05:31",
+      "desc": "Galderma to Acquire ZO Skin Health in US$1.5 Billion Deal&nbsp;&nbsp;Global Cosmetics News"
     },
     {
       "co": "Galderma",
@@ -339,6 +360,13 @@
       "link": "https://news.google.com/rss/articles/CBMiowJBVV95cUxOZTJRSk0zSERtY2RyYnVuajVsaG5EazVuS2xKd2sxcFY5R3A0TzFhMnFyNWN0Ykh4bHBDVjRxQk1fYUhRNE5hNlBBd3RkZUtiOFhhLU00NjhlUlo4TW42SnNoUWdicEh2NDh1dWVZUERFbVdxVTduSnlIc0NDdC1JMHgta0twSjB3c04zNWVteHhzZE5kSDlvckFhaDFQejJoX25rbGtuOEhnekRKOTBucHdGbDY3WE9Cc1prZ0ZVVmM3c1paZlpqdGxyTmVUbGlTOE96d2VVUmhwaXNsQXFuVENGMlJaTjR3Wnpfa2lkM0Q1UXJEMVY5ZVd0MlRwUnkyX1d6XzJfcWFJRE1QZFRPSHcxYU5Ya2xWUm9tTDVoRUpQb1k?oc=5",
       "date": "10/15 19:20",
       "desc": "Galderma Signs Agreement to Acquire ZO Skin Health, Strengthening Its Physician-Dispensed Skincare Offering&nbsp;&nbsp;ANSA"
+    },
+    {
+      "co": "Galderma",
+      "title": "Galderma signs USD 1.5 billion ZO deal. Galderma stock costs EUR 184.08 - ad-hoc-news.de",
+      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQczljNXpOM0gtcVhyWTZNWVRpbVZ2V1AzNmM2UHA5OFJnelVITFoxQ3NmajFZY191QWp2ODhzTjJFLVdBR3BMV0E1cUh5UGVTVUhfSUxqUXBSZXZmeUhXZjVxWVFzTjVscUZXalBpSHVYOUIzX25TNk4zX3gyNW9MVC1DMmhnQzhNU2JJaVlobVpkTkg2Z2lTM29HMjczcTFtWEY1YlMwRFdnRE0zT3pwQWI3ck4wbGFKaUtjbnc2WWtBeG5MSDlLNGZlWkRHUQ?oc=5",
+      "date": "10/15 08:18",
+      "desc": "Galderma signs USD 1.5 billion ZO deal. Galderma stock costs EUR 184.08&nbsp;&nbsp;ad-hoc-news.de"
     }
   ]
 }
