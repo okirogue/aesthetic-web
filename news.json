@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19 19:41",
+  "updated": "2026-10-19 19:51",
   "domestic": [
     {
       "co": "파마리서치",
@@ -312,10 +312,10 @@
     {
       "co": "리쥬란",
       "kw": "리쥬란",
-      "title": "[mhn포토] 마서영, 리쥬란 단장님과 함께",
-      "link": "https://mhnse.com/news/articleView.html?idxno=1601121",
+      "title": "[MT포토] 마서영, 리쥬란 임세호 단장과 함께",
+      "link": "https://www.maniareport.com/view.php?ud=20261018164543994031792476ff_19",
       "date": "10/18 16:48",
-      "desc": "마서영(리쥬란)이 4언더파 합계 212타(68-71-73)로 생애 첫 우승컵을 차지했다. 동타를 이룬 성유진(대방건설)과 연장 두 번째 홀 파를 성공시키며 승리를 했다. 김시현(NH투자증권)과 이예원(메디힐)이 공동 3위로..."
+      "desc": "2026시즌 KLPGA투어 시즌 스물일곱 번째 대회인 ‘아이스버그골프 · 서울신문 오픈’(총상금 15억 원, 우승상금 2억 7천만 원)이 경기도 이천시에 위치한 H1 클럽(파72/6,953야드)에서 열리고 있다. 18일 현재 최종라운드..."
     },
     {
       "co": "ECM",
@@ -326,27 +326,5 @@
       "desc": "최근에는 피부 조직의 구성에 주목한 소재를 활용하는 리투오가 피부 관리 분야에서 관심을 받고 있다.”고 밝혔다. ◆리투오란? 리투오는 인체 유래 무세포동종진피(hADM)를 기반으로 하는 스킨부스터 제품이다. 인체 유래..."
     }
   ],
-  "foreign": [
-    {
-      "co": "Galderma",
-      "title": "Galderma reports pediatric Nemluvio data as Galderma stock gains value - ad-hoc-news.de",
-      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPR3A0d2pWdnd0WmtyZlk0QzI3ZkZXaEZxZi00NFdDZmJ2RFJRdnhDZG82aDlnSW1hZmxwelBJc2VEbGtJM3FwTG1KdkVIUTJFamF2RkRLQ0ZSelB0NmpiTjR2ZlE0aTRiRmdxd3RYcTVha0k5WC1xWng1RGx6OTc4aXI5X3BlTVlUMjhtTk5MSVhhejE2R3RGNE5GRmZIenNnMU9XM1d0cEQ5OENBMU9DUXlaUk0yOFlMcTFLcjlNVlh1OS1QNUF1UXhlNGluZw?oc=5",
-      "date": "10/19 08:16",
-      "desc": "Galderma reports pediatric Nemluvio data as Galderma stock gains value&nbsp;&nbsp;ad-hoc-news.de"
-    },
-    {
-      "co": "Galderma",
-      "title": "Galderma stock: dermatology group at EUR 190.63 ahead of the Xetra open - ad-hoc-news.de",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPTmRWTWpzRHE2c3htQXdLTjlaOHNiQms1bUVTVkNjNXlKRkZIZlZwNTQxbW5yZ2ZLNnVDLTI2ZDJ1dWZwd2dDN2xPV2kwS2RNR1U1UGNrOXpxMmsyUHpod1FDS2UydHFsbkxWWkRSMzBKM2lBN1hOS3Q5S011R3l5UHlTX2dvbVhEVnhFRFl3a0VSYV9hZVdSRWN3Rm5wcEkxcGRrbnVfc285UjlNaEcwTE1LU1BVZWN6WjM4RUlzX3lzVWhTdk1n?oc=5",
-      "date": "10/19 06:06",
-      "desc": "Galderma stock: dermatology group at EUR 190.63 ahead of the Xetra open&nbsp;&nbsp;ad-hoc-news.de"
-    },
-    {
-      "co": "Galderma",
-      "title": "Galderma agrees to acquire ZO Skin Health - ad-hoc-news.de",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPUG56NVlhVXpvNE9MMUYzZmxZNHZHNjE3VFdxLWRhMkRYOFJRUlF2WFhLMFh5YkRMU0xhZ2lpVWlaOWxVS21pOFJsTjlGcDBmQ3hpT0FOMzdGQl9NNURXV2hfN01TSVVTOTk0ZHJXV1pFdnpfY0Jpa3hhX3FhRVp1Tkd6Q2dDTmUzcGVNblJsNWNDZFZobkh1ZGVuTjg1LWxQMWhQelRINA?oc=5",
-      "date": "10/18 15:34",
-      "desc": "Galderma agrees to acquire ZO Skin Health&nbsp;&nbsp;ad-hoc-news.de"
-    }
-  ]
+  "foreign": []
 }
