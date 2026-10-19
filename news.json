@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19 19:01",
+  "updated": "2026-10-19 19:11",
   "domestic": [
     {
       "co": "파마리서치",
@@ -178,17 +178,17 @@
     },
     {
       "co": "에이피알",
-      "title": "에이피알, 북미 K뷰티 시장 '쌍끌이'...월마트 이어 코스트코 진출",
-      "link": "https://www.mt.co.kr/living/2026/10/19/2026101911125319966",
-      "date": "10/19 11:20",
-      "desc": "에이피알의 대표 브랜드 메디큐브가 미국 대형 유통 채널에 잇따라 입점하면서 현지 시장 공략에 속도를 낸다. 에이피알은 이달 미국 코스트코(Costco) 약 400개 지점에 메디큐브가 공식 입점했다고 19일 밝혔다. 국내..."
-    },
-    {
-      "co": "에이피알",
       "title": "미국서 보폭 넓히는 K뷰티…코스맥스·에이피알 현지 공략 속도",
       "link": "https://www.asiatime.co.kr/article/20261019500163",
       "date": "10/19 11:20",
       "desc": "코스맥스, 美법인 흑자 전환 기반 현지 생산·K인디브랜드 지원 강화 에이피알, 코스트코 400여곳 입점…연내... (자료=에이피알) ODM 기업이 현지 생산 기반을 강화하는 가운데 브랜드사들은 미국 소비자와 직접 만나는..."
+    },
+    {
+      "co": "에이피알",
+      "title": "에이피알, 북미 K뷰티 시장 '쌍끌이'...월마트 이어 코스트코 진출",
+      "link": "https://www.mt.co.kr/living/2026/10/19/2026101911125319966",
+      "date": "10/19 11:20",
+      "desc": "에이피알의 대표 브랜드 메디큐브가 미국 대형 유통 채널에 잇따라 입점하면서 현지 시장 공략에 속도를 낸다. 에이피알은 이달 미국 코스트코(Costco) 약 400개 지점에 메디큐브가 공식 입점했다고 19일 밝혔다. 국내..."
     },
     {
       "co": "에이피알",
@@ -319,5 +319,27 @@
       "desc": "최근에는 피부 조직의 구성에 주목한 소재를 활용하는 리투오가 피부 관리 분야에서 관심을 받고 있다.”고 밝혔다. ◆리투오란? 리투오는 인체 유래 무세포동종진피(hADM)를 기반으로 하는 스킨부스터 제품이다. 인체 유래..."
     }
   ],
-  "foreign": []
+  "foreign": [
+    {
+      "co": "Galderma",
+      "title": "Galderma reports pediatric Nemluvio data as Galderma stock gains value - ad-hoc-news.de",
+      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPR3A0d2pWdnd0WmtyZlk0QzI3ZkZXaEZxZi00NFdDZmJ2RFJRdnhDZG82aDlnSW1hZmxwelBJc2VEbGtJM3FwTG1KdkVIUTJFamF2RkRLQ0ZSelB0NmpiTjR2ZlE0aTRiRmdxd3RYcTVha0k5WC1xWng1RGx6OTc4aXI5X3BlTVlUMjhtTk5MSVhhejE2R3RGNE5GRmZIenNnMU9XM1d0cEQ5OENBMU9DUXlaUk0yOFlMcTFLcjlNVlh1OS1QNUF1UXhlNGluZw?oc=5",
+      "date": "10/19 08:16",
+      "desc": "Galderma reports pediatric Nemluvio data as Galderma stock gains value&nbsp;&nbsp;ad-hoc-news.de"
+    },
+    {
+      "co": "Galderma",
+      "title": "Galderma stock: dermatology group at EUR 190.63 ahead of the Xetra open - ad-hoc-news.de",
+      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPTmRWTWpzRHE2c3htQXdLTjlaOHNiQms1bUVTVkNjNXlKRkZIZlZwNTQxbW5yZ2ZLNnVDLTI2ZDJ1dWZwd2dDN2xPV2kwS2RNR1U1UGNrOXpxMmsyUHpod1FDS2UydHFsbkxWWkRSMzBKM2lBN1hOS3Q5S011R3l5UHlTX2dvbVhEVnhFRFl3a0VSYV9hZVdSRWN3Rm5wcEkxcGRrbnVfc285UjlNaEcwTE1LU1BVZWN6WjM4RUlzX3lzVWhTdk1n?oc=5",
+      "date": "10/19 06:06",
+      "desc": "Galderma stock: dermatology group at EUR 190.63 ahead of the Xetra open&nbsp;&nbsp;ad-hoc-news.de"
+    },
+    {
+      "co": "Galderma",
+      "title": "Galderma agrees to acquire ZO Skin Health - ad-hoc-news.de",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPUG56NVlhVXpvNE9MMUYzZmxZNHZHNjE3VFdxLWRhMkRYOFJRUlF2WFhLMFh5YkRMU0xhZ2lpVWlaOWxVS21pOFJsTjlGcDBmQ3hpT0FOMzdGQl9NNURXV2hfN01TSVVTOTk0ZHJXV1pFdnpfY0Jpa3hhX3FhRVp1Tkd6Q2dDTmUzcGVNblJsNWNDZFZobkh1ZGVuTjg1LWxQMWhQelRINA?oc=5",
+      "date": "10/18 15:34",
+      "desc": "Galderma agrees to acquire ZO Skin Health&nbsp;&nbsp;ad-hoc-news.de"
+    }
+  ]
 }
