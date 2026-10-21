@@ -11,7 +11,7 @@ async function loadVisitors(){
   try{const r=await fetch('visitors.json',{cache:'no-store'});if(r.ok)visData=await r.json();}catch(e){}
   try{const r=await fetch('visitors_insights.json',{cache:'no-store'});if(r.ok)visIns=await r.json();}catch(e){}
   if(!visData){document.getElementById('vis-cards').innerHTML='<div class="na-msg">visitors.json이 아직 없습니다 — ir-bot 수집 대기</div>';return;}
-  renderVisCards();renderVisMed();renderVisNat();renderVisShare();renderVisArr();renderVisCont();renderVisInsights();
+  renderVisCards();renderVisMed();renderVisNat();renderVisShare();renderVisCont();renderVisInsights();
   const note=document.getElementById('vis-note');
   if(note&&visData.updated)note.textContent=`데이터랩(신한카드·한국관광통계) · ${visData.updated} 수집 · 매월 11일 갱신`;
 }
@@ -28,11 +28,15 @@ function renderVisCards(){
     `<div class="card"><div class="k">의료소비 중 피부과 비중</div><div class="v">${rate.toFixed(1)}<span style="font-size:14px;font-weight:600">%</span></div><div class="s">${_vLab(m.ym[0])} ${rate0.toFixed(1)}% → 상승 추세</div></div>`;
 }
 function renderVisMed(){
-  const m=visData.med,labels=m.ym.map(_vLab);
+  const m=visData.med,a=visData.arr,labels=m.ym.map(_vLab);
+  const arr=m.ym.map(y=>{const i=a.ym.indexOf(y);return i<0?null:+(a.n[i]/1e4).toFixed(1);});
   _vChart('vis-med-chart',{type:'line',data:{labels,datasets:[
-    {label:'의료소비 전체',data:m.tot.map(v=>Math.round(v/100)),borderColor:'#4a90d9',borderWidth:2.2,backgroundColor:'transparent',pointRadius:0,tension:.15},
-    {label:'피부과',data:m.derm.map(v=>Math.round(v/100)),borderColor:'#e07b28',borderWidth:2.2,backgroundColor:'rgba(224,123,40,.08)',fill:true,pointRadius:0,tension:.15}
-  ]},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:_vLegend},scales:{x:{ticks:{color:'#9aa4af',maxTicksLimit:14},grid:{display:false}},y:{ticks:{color:'#9aa4af',callback:v=>v.toLocaleString()+'억'},grid:{color:'#eef1f3'}}}}});
+    {label:'피부과 소비액(억 원)',yAxisID:'y',data:m.derm.map(v=>Math.round(v/100)),borderColor:'#e07b28',borderWidth:2.2,backgroundColor:'rgba(224,123,40,.10)',fill:true,pointRadius:0,tension:.15},
+    {label:'방한 외국인(만 명)',yAxisID:'y2',data:arr,borderColor:'#4e9d46',borderWidth:2.2,backgroundColor:'transparent',pointRadius:0,tension:.15,spanGaps:false}
+  ]},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:_vLegend,tooltip:{callbacks:{label:c=>c.raw==null?null:`${c.dataset.label.split('(')[0].trim()} ${c.raw.toLocaleString()}${c.datasetIndex?'만 명':'억 원'}`}}},
+    scales:{x:{ticks:{color:'#9aa4af',maxTicksLimit:14},grid:{display:false}},
+      y:{position:'left',ticks:{color:'#e07b28',callback:v=>v.toLocaleString()+'억'},grid:{color:'#eef1f3'}},
+      y2:{position:'right',ticks:{color:'#4e9d46',callback:v=>v+'만'},grid:{drawOnChartArea:false}}}}});
 }
 function _visNatSeries(){
   const g=visData.med;const nats=(visData.medNat||[]).filter(c=>c.ym&&c.ym.length);
@@ -78,10 +82,6 @@ function renderVisShare(){
   const tot=rows.reduce((a,r)=>a+r.v,0)||1;
   document.getElementById('vis-share-ttl').textContent=`국가별 피부과 소비 비중 · ${ttl} 합계 ${Math.round(tot/100).toLocaleString()}억 원`;
   _vChart('vis-share-chart',{type:'bar',data:{labels:rows.map(r=>r.nm),datasets:[{data:rows.map(r=>Math.round(r.v/100)),backgroundColor:rows.map(r=>VIS_NAT_COLORS[r.nm]),borderRadius:3}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`${c.raw.toLocaleString()}억 원 (${(c.raw/(tot/100)*100).toFixed(1)}%)`}}},scales:{x:{ticks:{color:'#9aa4af',callback:v=>v.toLocaleString()+'억'},grid:{color:'#eef1f3'}},y:{ticks:{color:'#67707b',font:{size:12}},grid:{display:false}}}}});
-}
-function renderVisArr(){
-  const a=visData.arr;
-  _vChart('vis-arr-chart',{type:'line',data:{labels:a.ym.map(_vLab),datasets:[{label:'방한 외국인(만 명)',data:a.n.map(v=>+(v/1e4).toFixed(1)),borderColor:'#4e9d46',borderWidth:2.2,backgroundColor:'rgba(78,157,70,.08)',fill:true,pointRadius:0,tension:.15}]},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:_vLegend},scales:{x:{ticks:{color:'#9aa4af',maxTicksLimit:14},grid:{display:false}},y:{ticks:{color:'#9aa4af',callback:v=>v+'만'},grid:{color:'#eef1f3'}}}}});
 }
 function renderVisCont(){
   const c=visData.cont;if(!c)return;
