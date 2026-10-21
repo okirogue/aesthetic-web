@@ -16,7 +16,7 @@ async function loadReports(){
     if(!r.ok){document.getElementById('rep-list').innerHTML='<div class="na-msg">reports.json 없음</div>';return;}
     repData=await r.json();
     repSeason=repSeasons().slice(-1)[0];   // 기본: 최신 시즌
-    repListSeason=repListSeasons().slice(-1)[0];   // 목록 기본 탭: 가장 최근 분류(Update 포함)
+    repListSeason=repData.reports.slice().sort((a,b)=>b.date.localeCompare(a.date))[0].season;   // 목록 기본 탭: 가장 최근 리포트의 분류
     const f=repFocusPeriod(repSeason);
     repPeriod=(/Earnings/i.test(repSeason)&&repNextQ(f))?repNextQ(f):f;  // 어닝 시즌=다음 분기 기본
     renderReports();
