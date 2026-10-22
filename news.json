@@ -1,6 +1,13 @@
 {
-  "updated": "2026-10-22 15:08",
+  "updated": "2026-10-22 15:18",
   "domestic": [
+    {
+      "co": "파마리서치",
+      "title": "파마리서치, ‘리쥬란’ 앞세워 에스테틱 학술 교류 확대…의료진 소통...",
+      "link": "https://www.mk.co.kr/article/12182848",
+      "date": "10/22 15:16",
+      "desc": "대한미용기능의학회·대한비만미용학회 참가…의료진과 학술 교류 확대 리쥬란·에버클·리쥬더마 등 제품별 특성과 임상 활용 경험, 시술 노하우 공유 재생의학 전문기업 파마리서치가 ‘리쥬란’을 비롯한 주요 미용..."
+    },
     {
       "co": "파마리서치",
       "title": "'연어 주사' 리쥬란 막히자 '연어 화장품' 먼저…파마리서치, 美 승부수",
@@ -17,10 +24,17 @@
     },
     {
       "co": "파마리서치",
-      "title": "파마리서치, 에스테틱 학술 마케팅 강화",
-      "link": "https://www.smarttoday.co.kr/ko-kr/articles/113022",
-      "date": "10/22 10:46",
-      "desc": "파마리서치가 에스테틱 라인업의 학술 마케팅을 강화하고 있다. 22일 파마리서치에 따르면 파마리서치는 최근 대한비만미용학회(KOAT) 학술행사와 대한미용기능의학회(KFCC) 추계학술대회에 참가, 리쥬란 등 에스테틱..."
+      "title": "파마리서치, '리쥬란' 중심 에스테틱 학술 마케팅 강화",
+      "link": "https://www.bosa.co.kr/news/articleView.html?idxno=3014574",
+      "date": "10/22 10:22",
+      "desc": "파마리서치(대표 손지훈)는 '리쥬란'을 중심으로 '에버클', '리쥬더마' 등 주요 에스테틱 라인업의 학술 마케팅 강화에 나섰다. 파마리서치는 최근 대한비만미용학회(KOAT) 학술행사와 대한미용기능의학회(KFCC)..."
+    },
+    {
+      "co": "파마리서치",
+      "title": "파마리서치, 리쥬란 넘어 에버클·리쥬더마까지…학술 마케팅 확대",
+      "link": "http://www.hansbiz.co.kr/news/articleView.html?idxno=875003",
+      "date": "10/22 09:42",
+      "desc": "대한비만미용학회(KOAT) 학술행사(위)와 대한미용기능의학회(KFCC) 추계학술대회(아래)에 마련된 파마리서치 부스 전경. 파마리서치 제공 | 서울=한스경제 허승아 기자 |  파마리서치가 '리쥬란' 중심으로 주요 에스테틱..."
     },
     {
       "co": "파마리서치",
@@ -178,17 +192,17 @@
     },
     {
       "co": "에이피알",
-      "title": "[패션·뷰티 돋보기] 코오롱FnC '백패킹'·에이피알 '피부 연구'…신세계...",
-      "link": "https://www.moneystorm.kr/news/articleView.html?idxno=7487",
-      "date": "10/21 15:21",
-      "desc": "에이피알은 홈 뷰티 디바이스와 화장품을 함께 사용할 때 나타나는 피부 변화를 분석한 연구 결과를 국제학술지 '코스메틱스(Cosmetics)'에 게재했다고 21일 밝혔다. 기업부설연구소 글로벌피부과학연구원이 수행한..."
-    },
-    {
-      "co": "에이피알",
       "title": "에이피알, 화장품에 뷰티기기 더했더니…광채 개선율 1.9배↑",
       "link": "http://www.joseilbo.com/news/news_read.php?uid=577864&class=17&grp=",
       "date": "10/21 15:21",
       "desc": "에이피알이 홈 뷰티 디바이스와 화장품을 함께 사용한 부위에서 화장품만 사용한 부위보다 피부 광채... 에이피알은 이번 연구 결과를 국제학술지에 게재해 뷰티 디바이스와 화장품의 병용 사용에 따른 피부 지표..."
+    },
+    {
+      "co": "에이피알",
+      "title": "[패션·뷰티 돋보기] 코오롱FnC '백패킹'·에이피알 '피부 연구'…신세계...",
+      "link": "https://www.moneystorm.kr/news/articleView.html?idxno=7487",
+      "date": "10/21 15:21",
+      "desc": "에이피알은 홈 뷰티 디바이스와 화장품을 함께 사용할 때 나타나는 피부 변화를 분석한 연구 결과를 국제학술지 '코스메틱스(Cosmetics)'에 게재했다고 21일 밝혔다. 기업부설연구소 글로벌피부과학연구원이 수행한..."
     },
     {
       "co": "에이피알",
@@ -395,6 +409,13 @@
     },
     {
       "co": "Galderma",
+      "title": "Galderma raises 2026 sales growth outlook after Q3 revenue beats forecasts - Investing.com Australia",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOMko4cmpzN2lfS1hWYUhxbVpsOGRvQ2ZGUlYyRmg2WmwxeE1kc1ZoVlV1M2Q1bkdhdnNWbWVaR0tKZVVNeG5NY0dVblZSaC1kWWxZaUVEa1BvY2kyM3dOdUJ4bHNSWnU1QjBuSUVRNnloOU11czk2SFhRTVJzVmlzRm9VTWhPbVVjcVdSczZLRFdWWm4xVXFiZWpISzZXd0NVaUZjSEtqamRkd1RjSUxxdTJfUXBZMnc2aTdfeWVB?oc=5",
+      "date": "10/22 06:16",
+      "desc": "Galderma raises 2026 sales growth outlook after Q3 revenue beats forecasts&nbsp;&nbsp;Investing.com Australia"
+    },
+    {
+      "co": "Galderma",
       "title": "A Galderma handout image shows a patient receiving a Sculptra injectable in Miami - The Daily News | Texas' Oldest Newspaper",
       "link": "https://news.google.com/rss/articles/CBMihwJBVV95cUxOdUsxc0F3ZS1YVjhkYTFwa1NSajlER19vRGhRSnh4aEEyNndhaXpxdkRzaGc1TlZLb2dmS2NCSG00YXBNY20zQ0NBdlY3V2tJT2Nkd21QUFF6dVFSaDBSRkQtT1YxNTNuV2dGOGtxUDZCTEwzcjA2b1U5NnVjcF9zYkV4Qmp0MVRYUlo0Z1FaQ2VUX0ZPTndZQW9iQmJrTy01TUVzZ0VybWRnRy1MdklMcWpyRXNUQU9YOTgyNWxSU1dNM1FWLU8zQ1JSeG1oSnZ6RG9zekkySlY2RFVleGhwR0tZajhPWDllSVc2ZGlQeXVzUlhxeWtSSnJjZkF3R1BKZHBKX3JzVQ?oc=5",
       "date": "10/21 07:12",
@@ -420,13 +441,6 @@
       "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOcWx3ZE8tLUhLTlJSY29ySUNyWU9aOWppZ2JYXy1JMFh1eTA2czdxQVlObkoyRHUzMGFXSzhUTEtNYVZfaDU2b2VZcWI4ektwSG5Kbm40NGpVVjF2bHpDZ0dCeFo3c2x6WUZUQ2hESEMybUYtbjNEM1NQOG04aVZLdWpqUHJkcGF5aE1vNDIzZUMzcmNkX2ExanJCc3cya0JUSXZVQmw4dWpJZ0R1SHNLbEVacU9vbWY1cUlHZ3pjcGtuZw?oc=5",
       "date": "10/21 13:19",
       "desc": "Galderma stock: Citi sets CHF 185.00 target for Galderma stock&nbsp;&nbsp;AD HOC NEWS"
-    },
-    {
-      "co": "Galderma",
-      "title": "Galderma stock pre-market at EUR 189.30: dermatology group - AD HOC NEWS",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOQ0lGeXU1Vlhsc1VGQlZ4S2VHSzJoMWZtVEc3SzNLLXFCZHpFMzdoNUM5VXJ4OUtIakUxOFpvRDFXT29wVDJFNWx2RGpoX0hrR2FxNkxEbzduY19HaktpSDZSNXk5eF9CdEF4amZ1RnIzMmtOeGluY25Sd2tkeEdDWkZ6X1A2VENFai1PMzlYa095NU0tOG8wUndsTDEyZGRRYVhNc1pPMU5IZ0xEMmRHWG1XbGl2UQ?oc=5",
-      "date": "10/21 06:38",
-      "desc": "Galderma stock pre-market at EUR 189.30: dermatology group&nbsp;&nbsp;AD HOC NEWS"
     },
     {
       "co": "Allergan",
