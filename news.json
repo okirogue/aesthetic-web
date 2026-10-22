@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22 13:25",
+  "updated": "2026-10-22 13:35",
   "domestic": [
     {
       "co": "파마리서치",
@@ -157,17 +157,17 @@
     },
     {
       "co": "에이피알",
-      "title": "에이피알, 화장품에 뷰티기기 더했더니…광채 개선율 1.9배↑",
-      "link": "http://www.joseilbo.com/news/news_read.php?uid=577864&class=17&grp=",
-      "date": "10/21 15:21",
-      "desc": "에이피알이 홈 뷰티 디바이스와 화장품을 함께 사용한 부위에서 화장품만 사용한 부위보다 피부 광채... 에이피알은 이번 연구 결과를 국제학술지에 게재해 뷰티 디바이스와 화장품의 병용 사용에 따른 피부 지표..."
-    },
-    {
-      "co": "에이피알",
       "title": "[패션·뷰티 돋보기] 코오롱FnC '백패킹'·에이피알 '피부 연구'…신세계...",
       "link": "https://www.moneystorm.kr/news/articleView.html?idxno=7487",
       "date": "10/21 15:21",
       "desc": "에이피알은 홈 뷰티 디바이스와 화장품을 함께 사용할 때 나타나는 피부 변화를 분석한 연구 결과를 국제학술지 '코스메틱스(Cosmetics)'에 게재했다고 21일 밝혔다. 기업부설연구소 글로벌피부과학연구원이 수행한..."
+    },
+    {
+      "co": "에이피알",
+      "title": "에이피알, 화장품에 뷰티기기 더했더니…광채 개선율 1.9배↑",
+      "link": "http://www.joseilbo.com/news/news_read.php?uid=577864&class=17&grp=",
+      "date": "10/21 15:21",
+      "desc": "에이피알이 홈 뷰티 디바이스와 화장품을 함께 사용한 부위에서 화장품만 사용한 부위보다 피부 광채... 에이피알은 이번 연구 결과를 국제학술지에 게재해 뷰티 디바이스와 화장품의 병용 사용에 따른 피부 지표..."
     },
     {
       "co": "에이피알",
@@ -367,10 +367,24 @@
   "foreign": [
     {
       "co": "Galderma",
+      "title": "Why Galderma Group (SWX:GALD) Is Back In The Spotlight - Simply Wall Street",
+      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNams0UDJaYXpfb3RKc0Rwa2VUUnllb1NzRkhraGVZNDVZUDlPS0J0dEpIOVdVUzN2cVFpUmlmTWF5SzNJaXM4VE1hUHhON1BHTG0wTTluSUk4dlgtWnRnYmdZM25ORDFwNnlLN0lFZjR6YjVqRWR3UFR2Nkt1ODUwVU5DcktEVU80Q0RjSFlJTy1GOFdRY0RUaDJid1ZRWWdldWVBdWxWaXVKLUFKOHNFWG9vN05BcE04cnFYTDB0YkNQcWRlM0JFNnNrR0cyX3luVFpkQVRNTU9GNmlTOXfSAeMBQVVfeXFMTmZQXzFGU3REZ2k4M1F6eWNfQWtVYWs3RDlvWDg0bGMxTTZWOTl4ajRJRVVVYWt0RTdRamRRSlNfaVg1dXBlbk1EMjlJRlVRNFdoTE1uWDBpTUJJQ01EMmFBbFZ0ZlJlaDhGUEJGRFBzNGdzenh1TmNEeXl0UVdGaWlzdDNxSkRON1dDT28tOVU4QkRQVTA0aEMyTzJzOHNuOTZzMVRWQjVISHc2YWhGSWZZSkg2Wk02R0pGWllTZGxweEtFT0tRRlNfVTYzOG1tTGJkVUxCbzZQMVZkS01FQUdjS0U?oc=5",
+      "date": "10/21 07:13",
+      "desc": "Why Galderma Group (SWX:GALD) Is Back In The Spotlight&nbsp;&nbsp;Simply Wall Street"
+    },
+    {
+      "co": "Galderma",
       "title": "AMWC Dubai 2026: Galderma Reinforces Its Injectable Aesthetics Leadership - Business Wire",
       "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPMG10VE9aYTRkZWN4TjJlMG5QNzFiR1FRd3ctMDR6WDlpbHBwOUpNMUR2V0lyT0xvcll3YWNkNU9kSVVQbjdSSUFiZ3hMYVRyWlJrVXNnMW5MUXliWEhFRXNSSXVBaTAxV3NPMDRlTEQ2SThDTEdENWN5X3RyeWYyVGI2WkpVSzFGM2JPTTY3dGF3N2RGZkFKcm1JMENjWkprUUtqN2dFdnRXWlZ2Yjl1azQ3UTdEN3U4V3l5czBpQTFORTRmNm1yQQ?oc=5",
       "date": "10/21 05:00",
       "desc": "AMWC Dubai 2026: Galderma Reinforces Its Injectable Aesthetics Leadership&nbsp;&nbsp;Business Wire"
+    },
+    {
+      "co": "Galderma",
+      "title": "Galderma präsentiert neue Studiendaten zu injizierbaren Ästhetikprodukten - TradingView",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE11bE8tM3E1ZU5CR19wZHkyODNCM2xTUzB1WEdEOXZGUUpwTWJwWXRhTzc0dHRYdXkta2lHMXJKRFBzeEhSc0Y0a0tId20ya3VpM2ZtZjVYWEZfR1JfSkxDaTUyVQ?oc=5",
+      "date": "10/21 05:05",
+      "desc": "Galderma präsentiert neue Studiendaten zu injizierbaren Ästhetikprodukten&nbsp;&nbsp;TradingView"
     },
     {
       "co": "Galderma",
@@ -392,41 +406,6 @@
       "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQTmpJa3JIODI4UGRkMDdibmlOUERDVzVhY3pIOTF0NDMxa1ktNFFxZkhCeUx0MW8xdllwSUd6S1haek96ZkdWY1d6M3BndFpMQ2RMWHJZUW1pc2FYa0trTExRQmo3WEstalEyMGpna0pyWVNqUEtZZnhLYUJuaFRnaWdSMnpsUGE3ZWlpRjFWVGp6SWMxU0U0aTJyNnVobkVTa0pUaHpFUkczUUo0NjVJU3hUa2dRM0FQZjk5SGRHczVRZ2pCNzFYU2lFbS05RW1B?oc=5",
       "date": "10/21 13:17",
       "desc": "Baker McKenzie Advises Lenders on USD 800 Million Bridge Financing for Galderma's Acquisition of ZO Skin Health&nbsp;&nbsp;Legal Desire"
-    },
-    {
-      "co": "Galderma",
-      "title": "Galderma stock: Citi sets CHF 185.00 target for Galderma stock - AD HOC NEWS",
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOcWx3ZE8tLUhLTlJSY29ySUNyWU9aOWppZ2JYXy1JMFh1eTA2czdxQVlObkoyRHUzMGFXSzhUTEtNYVZfaDU2b2VZcWI4ektwSG5Kbm40NGpVVjF2bHpDZ0dCeFo3c2x6WUZUQ2hESEMybUYtbjNEM1NQOG04aVZLdWpqUHJkcGF5aE1vNDIzZUMzcmNkX2ExanJCc3cya0JUSXZVQmw4dWpJZ0R1SHNLbEVacU9vbWY1cUlHZ3pjcGtuZw?oc=5",
-      "date": "10/21 13:19",
-      "desc": "Galderma stock: Citi sets CHF 185.00 target for Galderma stock&nbsp;&nbsp;AD HOC NEWS"
-    },
-    {
-      "co": "Galderma",
-      "title": "Galderma stock pre-market at EUR 189.30: dermatology group - AD HOC NEWS",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOQ0lGeXU1Vlhsc1VGQlZ4S2VHSzJoMWZtVEc3SzNLLXFCZHpFMzdoNUM5VXJ4OUtIakUxOFpvRDFXT29wVDJFNWx2RGpoX0hrR2FxNkxEbzduY19HaktpSDZSNXk5eF9CdEF4amZ1RnIzMmtOeGluY25Sd2tkeEdDWkZ6X1A2VENFai1PMzlYa095NU0tOG8wUndsTDEyZGRRYVhNc1pPMU5IZ0xEMmRHWG1XbGl2UQ?oc=5",
-      "date": "10/21 06:38",
-      "desc": "Galderma stock pre-market at EUR 189.30: dermatology group&nbsp;&nbsp;AD HOC NEWS"
-    },
-    {
-      "co": "Allergan",
-      "title": "Allergan Aesthetics Deepens Science Behind Multimodal Approach at AMWC Dubai, Backed by Growing HArmonyCa™ Evidence - Yahoo Finance",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNUkowd1UxSE1ndGFYcENGVDJnYjhrN2JlOElRVnJROHhlbVZNbnhSZTA1Vk1YN19LZWMzZmtDQWpxZ2dHTXdVbVR5LXdpc2JZcHlneHRqcGRmenZ6SWpLRUhPV0k1ZmFZd19leG1iWXg4VHg4eVNWdERRdWJ1TDBxRlF5ZXhVSDcxRVpIemJHdEotMlUzdHRQX0dJRVhqaXBUZm1DNUxB?oc=5",
-      "date": "10/21 12:00",
-      "desc": "Allergan Aesthetics Deepens Science Behind Multimodal Approach at AMWC Dubai, Backed by Growing HArmonyCa™ Evidence&nbsp;&nbsp;Yahoo Finance"
-    },
-    {
-      "co": "Allergan",
-      "title": "Allergan Aesthetics presents its latest scientific advances - marketscreener.com",
-      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOeVdEUVRYTXotS0JjUlFPT3JBcFlFdXB3c015Y3JWQ1NjVjBxSDlHNmpUT094NC1QX3lFQ212eWZWdUxDMldkWDlQdDRwTk1iVE5KWVByZU4yX1lFY2RKZVdzTFFwaWRCaEJsT2dvcUlfYXNYZkg4aHBibjY3UVpZOGlid3RWZFBLeGZzX1ktUjRhdjVuX0p4RmlqUmVPZDN3WGJ2VmxkQXVMdUFuQlFGa3BpTHhreGNWUkRSaVVzREpfeExOQkhTaHBhWEZxbTFrOG9MU1pR?oc=5",
-      "date": "10/21 13:06",
-      "desc": "Allergan Aesthetics presents its latest scientific advances&nbsp;&nbsp;marketscreener.com"
-    },
-    {
-      "co": "Allergan",
-      "title": "Allergan Aesthetics presents data on facial injectables at Dubai By Investing.com - Investing.com India",
-      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOazlLSldqbDBoM1oxRWNIaFB2cnlRY2o5Qi1xdWJ0dUNjTzhnMXRWd2FZajdISDlLTWdJMmU2THd4TlJXeUNvb3VfNlUxcENDVjRsV1VQRnV0NENQam5JLUoyX2NqTGY0SVpaM2RlWldJcnl0YVJKeHFwbmRNUVNyMHFDQ2dkT1o3Sm91S3lxNVV0S0JJN3BZMVRJMWxOQ2NCTHZuX0Zhdm12cnVKekl2MU92dHF6ZEJDOEhDaDc5NmpPV3c?oc=5",
-      "date": "10/21 12:33",
-      "desc": "Allergan Aesthetics presents data on facial injectables at Dubai By Investing.com&nbsp;&nbsp;Investing.com India"
     }
   ]
 }
