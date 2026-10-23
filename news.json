@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23 14:24",
+  "updated": "2026-10-23 14:34",
   "domestic": [
     {
       "co": "파마리서치",
@@ -199,6 +199,13 @@
     },
     {
       "co": "엘앤씨바이오",
+      "title": "엘앤씨바이오, 미용 주사 ‘리투오’ 불법 유통 차단",
+      "link": "https://biz.chosun.com/science-chosun/bio/2026/10/23/33ALILRKBBGW7NREHNK7Q7V6FA/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+      "date": "10/23 14:28",
+      "desc": "엘앤씨바이오는 미용 주사 ‘리투오’ 불법 유통을 차단한다고 23일 밝혔다. 리투오는 콜라겐, 엘라스틴 등을 피부에 주입해 수분과 탄력을 촉진하는 스킨부스터다. 해외에서 K미용 수요가 높아지자 무단 반출 등에 선제..."
+    },
+    {
+      "co": "엘앤씨바이오",
       "title": "엘앤씨바이오, '리투오 쇼크' 적극 대응...인체조직이식재 관련 금지사...",
       "link": "https://www.financialpost.co.kr/news/articleView.html?idxno=282217",
       "date": "10/23 13:44",
@@ -210,13 +217,6 @@
       "link": "http://www.newsprime.co.kr/news/article.html?no=752140",
       "date": "10/23 13:26",
       "desc": "기증부터 이식까지 전주기 추적관리 기반으로 유통 경로 확인·관계기관 단속 협조 인체조직 및 재생의학 전문기업 엘앤씨바이오(290650)는 인체조직 피부 ECM 제품 리투오(Re2O)의 해외 사업 확대에 맞춰 국내외 유통 관리..."
-    },
-    {
-      "co": "엘앤씨바이오",
-      "title": "엘앤씨바이오, '리투오' 불법 유통 차단 위해 국내외 관리 강화",
-      "link": "https://www.mdtoday.co.kr/news/articleView.html?idxno=620524",
-      "date": "10/23 13:26",
-      "desc": "엘앤씨바이오가 인체조직 피부 ECM 제품 '리투오(Re2O)'의 불법 해외 유통을 막기 위해 국내외 공급 경로에 대한 관리 강화에 나섰다. 최근 홍콩에서 리투오 제품이 적발된 가운데 국내 의료기관의 취급 이력과 해외 유통..."
     },
     {
       "co": "엘앤씨바이오",
@@ -350,17 +350,17 @@
     },
     {
       "co": "Galderma",
-      "title": "Ozempic, Botox and the anti-aging boom: Galderma CEO on what's driving beauty spending - CNBC",
-      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQdHNrUkoxeTJUdnNRVlV6LVBBR1hwNmJrV09ueFdWY2dkYWlqemVnaU9oUUJTVFBZZGlLbE8yU2U0cFdoa3oyTFhKN3BPUlNmMldsRnBLMnBRSi16Zkp2WVp0dkJROEF1QlJLeFAyaThjcFdFdWlfVHBsaU9QZGZjYWYxQkpDbHMyVklOUzhLZVNveFpBX0I2V01WZWtUUVBoWGF6d2tZMURZV0gxOU1RNWZpTGRrYnNjd3ZTczFqbGhWeUFT?oc=5",
-      "date": "10/22 08:44",
-      "desc": "Ozempic, Botox and the anti-aging boom: Galderma CEO on what's driving beauty spending&nbsp;&nbsp;CNBC"
-    },
-    {
-      "co": "Galderma",
       "title": "Why is Galderma stock surging today? - Investing.com",
       "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPd2Z1TU4teFl4MThJUjJSNTNkYlNuUWxyUUhNTWgyczl0cFZuc1hyNC0tOElwOS14QlJsYUhRR1hBdXV3R0VNN0FQNDduRGZjaF8wNkJVR0FsT3dZYy1FUEVZSU01SGJwel9IbEQ0bjhGTk4xdjNFYm5Cc0c4U3RuZ0w5dmJYVWx6Ry1Mb1Uya0NUYVQzVHAtNzJ5VEVnQQ?oc=5",
       "date": "10/22 08:59",
       "desc": "Why is Galderma stock surging today?&nbsp;&nbsp;Investing.com"
+    },
+    {
+      "co": "Galderma",
+      "title": "Galderma Group Q3 2026 Earnings Call Is Live - TradingView",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQZUtqakVId2ZEbnVTRDFmd2J3MVVjSVhocmNVVlRIZ25WNHMtWllrUTVra01HcG80Wm1TSWl2MTRoQVYxNHU3N3RPRDRWRjAwVEtLTWdoUzlkOVVsZW9ick5JSVBWQlhCeDhCQlhmS3U4TWdwQmVfWUZLb1ZKUnc1OV84RGZUWk1VNWI0UWFtd2FTSXIzZ0hMUGRNTEcybFF1Zk11R2tRT2I3eGc2X3VWbHk5QQ?oc=5",
+      "date": "10/22 13:27",
+      "desc": "Galderma Group Q3 2026 Earnings Call Is Live&nbsp;&nbsp;TradingView"
     },
     {
       "co": "Galderma",
@@ -385,10 +385,17 @@
     },
     {
       "co": "Galderma",
-      "title": "Beauty Awards 2026: Sculptra by Galderma Is the Treatment of the Year - L'Officiel Philippines",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNV3ZmXzBDUGk2R3pQaFNmb0kxU3FfdzNIN1pVUHE3UWJadDliNkR5ZHN6WExFZFQ1dWdpOHMzbFZzSkU0bnRtaXVuNEJ3UlBfVnNOcEpSdDdBOVU2ZGN4ZVh6cFpCVXBXQlFQWTVvdWNvQWJRZ2pla0hqTHhjOXpDa3F2SFM3MkY3UGxKSVhhQ3FrOURkdlVmWE1mV241cTFaS3N5VEhR?oc=5",
-      "date": "10/22 06:32",
-      "desc": "Beauty Awards 2026: Sculptra by Galderma Is the Treatment of the Year&nbsp;&nbsp;L'Officiel Philippines"
+      "title": "Ozempic, Botox and the anti-aging boom: Galderma CEO on what's driving beauty spending - CNBC",
+      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQdHNrUkoxeTJUdnNRVlV6LVBBR1hwNmJrV09ueFdWY2dkYWlqemVnaU9oUUJTVFBZZGlLbE8yU2U0cFdoa3oyTFhKN3BPUlNmMldsRnBLMnBRSi16Zkp2WVp0dkJROEF1QlJLeFAyaThjcFdFdWlfVHBsaU9QZGZjYWYxQkpDbHMyVklOUzhLZVNveFpBX0I2V01WZWtUUVBoWGF6d2tZMURZV0gxOU1RNWZpTGRrYnNjd3ZTczFqbGhWeUFT?oc=5",
+      "date": "10/22 08:44",
+      "desc": "Ozempic, Botox and the anti-aging boom: Galderma CEO on what's driving beauty spending&nbsp;&nbsp;CNBC"
+    },
+    {
+      "co": "Galderma",
+      "title": "Galderma progresse au troisième trimestre et relève ses objectifs - TradingView",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5oSEM0MkpOUWQ4RE1hTk9wNE81c0t2Ymxha1R5Y3o5em9hanRXZkNnVXh2eTdmYjZSdTJueGtzcUJjb2FXYVNBaWlNMVVkSlMxNzB1VnBMb2tJV2JGSFRMNHlSOA?oc=5",
+      "date": "10/22 15:42",
+      "desc": "Galderma progresse au troisième trimestre et relève ses objectifs&nbsp;&nbsp;TradingView"
     },
     {
       "co": "Galderma",
@@ -399,17 +406,31 @@
     },
     {
       "co": "Galderma",
+      "title": "Galderma accelerates further and raises its ambitions for 2026 - marketscreener.com",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOVFJoNy0zaGRCM3hzQWpWRWxTRVlqZzhENXVfaGdRaHZ1aHktY0xwY1I3YXd4c0J2X2NuVHRuT19vcFRueGhBT25CZWkzOERRTUlvVjZrVXd3NWtTTFlQZnBoVVVjVmtkT2FSZmZwU05ubFBEenVLZkgzTlNXNTJ5Y3ZBT2tnd21kaHJ1VjBPYWt4OTN2RFZhWW1aN0w0UTgxTlNGQnZkMDJ4dEpaS2t0NktrcGhHdw?oc=5",
+      "date": "10/22 09:03",
+      "desc": "Galderma accelerates further and raises its ambitions for 2026&nbsp;&nbsp;marketscreener.com"
+    },
+    {
+      "co": "Galderma",
+      "title": "Galderma Q3 2026 slides: sales guidance raised on Nemluvio surge By Investing.com - Investing.com Nigeria",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQczA2ajZHd1JuREVGWUpOcUdzREJiUFpkNTVvN2UzS1dQUWVrMmtfdFFRU0tHdmtuS1J2b3VaYjRJZks0MnlSeDVITUwxcHdVU1JyVEc3RDBiSzdfRmVQVV9EcHg5WUZXZG5BeF84dFBlZkVjVHk0LWJEZDBLQXlsZjhUWFFydVdYMENRX2tLUi16WHNMaFpqNGJLRGNOZnZ2RzU0X19qeWtfZHRDTjN1RDdlbVMzTDRlTUNmdmg4a3F1dw?oc=5",
+      "date": "10/22 15:33",
+      "desc": "Galderma Q3 2026 slides: sales guidance raised on Nemluvio surge By Investing.com&nbsp;&nbsp;Investing.com Nigeria"
+    },
+    {
+      "co": "Galderma",
+      "title": "Beauty Awards 2026: Sculptra by Galderma Is the Treatment of the Year - L'Officiel Philippines",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNV3ZmXzBDUGk2R3pQaFNmb0kxU3FfdzNIN1pVUHE3UWJadDliNkR5ZHN6WExFZFQ1dWdpOHMzbFZzSkU0bnRtaXVuNEJ3UlBfVnNOcEpSdDdBOVU2ZGN4ZVh6cFpCVXBXQlFQWTVvdWNvQWJRZ2pla0hqTHhjOXpDa3F2SFM3MkY3UGxKSVhhQ3FrOURkdlVmWE1mV241cTFaS3N5VEhR?oc=5",
+      "date": "10/22 06:32",
+      "desc": "Beauty Awards 2026: Sculptra by Galderma Is the Treatment of the Year&nbsp;&nbsp;L'Officiel Philippines"
+    },
+    {
+      "co": "Galderma",
       "title": "Galderma's Q3 Net Sales Rise; Outlook Upgraded - marketscreener.com",
       "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNbExZLTczc3hsQ2oxZHdxcnplZTJTekNwMnlvakR5dm4yNloyYzdqUWZLUUtDMTdQZm1hb1hQdmxFLWtIaHprblY4NkMwcjN6Q214eTdNRzY5Q1hMUkNMQUtBeVVvWm1BYmh6LVkxT3M5NUN6RkFpU1dmaHJ5bGo1dEhvYU82eUptZ0oySl9xY2I2TGpFU0dTUWVRLVkyTnc?oc=5",
       "date": "10/22 05:36",
       "desc": "Galderma's Q3 Net Sales Rise; Outlook Upgraded&nbsp;&nbsp;marketscreener.com"
-    },
-    {
-      "co": "Galderma",
-      "title": "Galderma Q3 2026 slides: sales guidance raised on Nemluvio surge By Investing.com - Investing.com India",
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOYkhhc3BwUXMyYkp4cXNoR0xSajYtMTFYdWxISVBod2cxdlp1eEZadzFsRXAwQXlGeW9SMzRVSW4zMGxVRDBQd0JCZ3JOdnNHSE1QS0J1T1NwR1A4RlpIYmhaUUtFOG1RQXowenZmZTVSYXpjSmVwTWh5Ny1FWmVoSjNiS0s1d2RqYVZLZXZsR205Sk9sdHJFMFdhalNzbWhQem9oQnNETGNpaFE4cXhuZUxIVVJtLVl0RDZodjZqVW1jUQ?oc=5",
-      "date": "10/22 15:10",
-      "desc": "Galderma Q3 2026 slides: sales guidance raised on Nemluvio surge By Investing.com&nbsp;&nbsp;Investing.com India"
     },
     {
       "co": "Galderma",
@@ -424,13 +445,6 @@
       "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPU1FpdFJSWWQwSnhKZDU5T0Uxc3I0d1FnOXI1Q0Fwd1JEMWZkVVo0cVVkSUN4YXl0MGdZRUpjbkpVaU5jQjFlR21oSzFfY1FVQlp4dmt1ME43SktTcUp3UGJRbWZIM0U0emMta09WT0hUUkx1TjZjNlgzV2tFYmh2eHRLaFpST0txQ2IwS2dDVzdrdGpjdGNsbVZSY3lfaXRJVEYwWFZtN05wVDlTbUl0bTR4Vm1uRFEtbnZNSTMteWlnMnJjRmxDelgyWQ?oc=5",
       "date": "10/22 15:17",
       "desc": "Galderma raises 2026 net sales growth forecast to 22.5%-23.5% at constant currency&nbsp;&nbsp;VZ VermögensZentrum"
-    },
-    {
-      "co": "Galderma",
-      "title": "SMI ends 0.03 percent lower as Galderma leads earnings - AD HOC NEWS",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNMnRTbW85UHY4bk9TSExvbGQ4R3oydWg2SS1yZ3FwWlBBazU0dk5sai1RSUNCMThZUDA3Qlo0NmdvUjdBdGlsTVB5OW9HOHRkNVhlNlBpRWlGYklpMVNSMHEwb05GenBYMDMyeTAzYmEzcHlnOVUxRzV5VEdZOXVTajU3TUtwVmJsaU1UZUwyLTNZUG1zTUVuRGw4RTFnRlNuWWNRRzA2MDQyZnFRUXlfaldqT0pyYnc?oc=5",
-      "date": "10/22 20:47",
-      "desc": "SMI ends 0.03 percent lower as Galderma leads earnings&nbsp;&nbsp;AD HOC NEWS"
     }
   ]
 }
