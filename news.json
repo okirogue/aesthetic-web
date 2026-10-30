@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30 18:24",
+  "updated": "2026-10-30 18:45",
   "domestic": [
     {
       "co": "파마리서치",
@@ -58,18 +58,18 @@
       "desc": "파마리서치와 SK케미칼 지분을 각각 2%p 이상 늘린 데 이어 한미약품, HK이노엔, 인바디 등 주요 기업 보유 주식도 추가 확보했다. 특히 의료기기와 전문의약품 등 안정적인 사업 기반을 갖춘 기업을 중심으로..."
     },
     {
-      "co": "파마리서치",
-      "title": "파마리서치, 실적 눈높이 낮췄지만…화장품 성장·저평가 주목",
-      "link": "https://www.financialpost.co.kr/news/articleView.html?idxno=283236",
-      "date": "10/29 09:44",
-      "desc": "파마리서치가 원화 강세와 매출 구성 변화로 수익성 부담을 겪을 것이라는 전망이 29일 나왔다. 다만 주가 하락으로 밸류에이션 부담이 낮아졌고, 화장품 사업이 새로운 성장축으로 자리 잡을 수 있다는 분석이..."
-    },
-    {
       "co": "휴젤",
       "title": "만리장성 넘은 휴젤…中 진출 6년 만에 톡신 점유율 2위 올랐다",
       "link": "https://www.theguru.co.kr/news/article.html?no=109060",
       "date": "10/30 14:10",
       "desc": "사환제약과 전략 제휴…현지 병·의원 8000곳 확보 상하이서 '레티보컵'…차세대 의료진 접점 확대 1위 정조준 휴젤이 보툴리눔 톡신 제제 ‘레티보’를 앞세워 중국 시장 진출 6년 만에 점유율 2위에 올랐다. 휴젤은..."
+    },
+    {
+      "co": "에이피알",
+      "title": "에이피알, 3분기 누적 매출 2조 돌파…지난해 연간 실적 넘어섰다",
+      "link": "https://www.newsway.co.kr/news/view?ud=2026103018355804197",
+      "date": "10/30 18:38",
+      "desc": "에이피알이 해외 시장 성장세에 힘입어 올해 3분기 만에 누적 매출 2조원을 돌파했다. 대표 브랜드 메디큐브의 글로벌 판매 확대와 북미·유럽 중심의 온·오프라인 유통망 확장이 실적 성장을 견인했다. 30일 에이피알..."
     },
     {
       "co": "에이피알",
@@ -80,24 +80,17 @@
     },
     {
       "co": "에이피알",
-      "title": "에이피알, 3분기 누적 매출 2조원 돌파…지난해 연간 실적 추월",
-      "link": "https://it.chosun.com/news/articleView.html?idxno=2023092173240",
-      "date": "10/30 17:40",
-      "desc": "에이피알이 미국과 유럽 시장의 성장에 힘입어 올해 3분기 누적 매출 2조원을 돌파하며 지난해 연간 매출을 넘어섰다. 에이피알은 올해 3분기 연결 기준 매출 7731억원, 영업이익 1606억원을 기록했다고 30일 밝혔다...."
-    },
-    {
-      "co": "에이피알",
-      "title": "에이피알, 3분기 누적 매출 2조 돌파…해외 비중 94%",
-      "link": "https://www.cnbizm.com/news/articleView.html?idxno=319911",
-      "date": "10/30 16:42",
-      "desc": "기업 에이피알이 올해 3분기 누적 매출 2조원을 돌파하며 지난해 연간 실적을 넘어섰다. 해외 매출 비중이 94%까지 확대되면서 미국과 유럽을 중심으로 한 글로벌 사업이 성장의 핵심 동력으로 자리 잡았다. 에이피알..."
-    },
-    {
-      "co": "에이피알",
       "title": "에이피알, 매출 두 배 뛰었지만 수익성은 뒷걸음",
       "link": "http://www.ktnews.com/news/articleView.html?idxno=149800",
       "date": "10/30 16:14",
       "desc": "에이피알 로고 에이피알의 고속성장에 수익성이라는 변수가 부상했다. 3분기 매출이 전년 동기 대비 두 배로 뛰었지만, 영업이익 증가율은 이에 미치지 못했다. 영업이익률은 전년 동기와 직전 분기 대비 모두..."
+    },
+    {
+      "co": "에이피알",
+      "title": "에이피알, 3분기 만에 연매출 기록 갈아치웠다…누적 매출 2조원 돌파",
+      "link": "https://www.mkhealth.co.kr/news/articleView.html?idxno=80707",
+      "date": "10/30 16:10",
+      "desc": "에이피알 CI. [사진=에이피알] 글로벌 뷰티 기업 에이피알이 올해 3분기 만에 누적 매출 2조원을 돌파하며 지난해 연간 실적을 넘어섰다. 주요 해외 시장에서 제품 판매량이 꾸준히 증가하는 가운데 미국과 유럽을..."
     },
     {
       "co": "에이피알",
@@ -112,6 +105,13 @@
       "link": "https://www.news1.kr/finance/general-stock/6338062",
       "date": "10/30 16:02",
       "desc": "에이피알(278470)이 올해 3분기 역대 최대 매출을 기록하고도 7% 넘게 급락했다. 영업이익이 시장 기대치를 밑돌면서 실망 매물이 출회된 것으로 풀이된다. 30일 한국거래소에 따르면 에이피알은 전 거래일 대비 2만..."
+    },
+    {
+      "co": "에이피알",
+      "title": "[컨콜줍줍] 에이피알, 3분기 매출 7731억원... 해외 비중 94%",
+      "link": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202610301413110070925",
+      "date": "10/30 15:40",
+      "desc": "에이피알이 3분기 원화 강세에도 성장세를 유지하며 3개분기만에 지난해 연간 실적을 달성했다. 에이피알은 30일 2026년 3분기 연결 기준 매출 7731억원, 영업이익 1606억원을 기록했다고 밝혔다. 전년 동기 대비 각각 100.3..."
     },
     {
       "co": "에이피알",
@@ -234,10 +234,10 @@
     },
     {
       "co": "엘앤씨바이오",
-      "title": "엘앤씨바이오, 태국서 '리투오' 허가 확보…시장 진입 본격화",
-      "link": "https://www.bosa.co.kr/news/articleView.html?idxno=3015306",
-      "date": "10/30 17:00",
-      "desc": "엘앤씨바이오가 인체 진피 유래 세포외기질(ECM) '리투오(Re2O)'의 제품 허가에 이어 학술 교류와 유통망 구축에 나서면서 동남아시아 시장 확대를 위한 기반 마련에 속도를 내는 모습이다. 엘앤씨바이오는 지난..."
+      "title": "엘앤씨바이오, 태국서 ‘리투오’ 공식 출시 준비 본격화",
+      "link": "https://www.edaily.co.kr/News/Read?newsId=05844966645618168&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article",
+      "date": "10/30 18:36",
+      "desc": "인체조직 전문기업 엘앤씨바이오(290650)가 인체 진피에서 유래한 세포외기질(ECM) 이식재 ‘리투오(Re2O)’의 태국 시장 공식 진출을 위한 준비 작업에 박차를 가하고 있다. 엘앤씨바이오는 지난 9월 태국 식품의약품청..."
     },
     {
       "co": "엘앤씨바이오",
@@ -245,20 +245,6 @@
       "link": "https://www.getnews.co.kr/news/articleView.html?idxno=885476",
       "date": "10/30 16:48",
       "desc": "인체조직 전문기업 엘앤씨바이오(290650)는 인체 진피 유래 세포외기질(ECM) 이식재 '리투오(Re2O)'의 태국 공식 론칭 준비를 본격화하고 있다고 30일 밝혔다. 엘앤씨바이오는 지난 9월 리투오와 '리투오 파인(Re2O Fine)'에..."
-    },
-    {
-      "co": "엘앤씨바이오",
-      "title": "엘앤씨바이오, 태국서 리투오 출시 준비…현지 의료진 공략",
-      "link": "https://www.news1.kr/bio/pharmaceutical-bio/6338162",
-      "date": "10/30 16:46",
-      "desc": "엘앤씨바이오(290650)가 인체 진피 유래 이식재 '리투오'의 태국 시장 진출을 본격화한다. 현지 의료기기 허가를 마친 데 이어 의료진 대상 학술 교류를 확대하며 출시를 위한 사전 작업에 나섰다. 엘앤씨바이오는..."
-    },
-    {
-      "co": "엘앤씨바이오",
-      "title": "엘앤씨바이오, '리투오' 태국 시장 공략 '본격화'…공식 론칭 준비 박차",
-      "link": "http://www.newsprime.co.kr/news/article.html?no=753138",
-      "date": "10/30 16:38",
-      "desc": "인체조직 전문기업 엘앤씨바이오(290650)는 인체 진피 유래 세포외기질(ECM) 이식재 '리투오(Re2O)'의 태국 공식 론칭 준비를 본격화하고 있다고 30일 밝혔다. 회사는 지난달 리투오(Re2O)와 리투오 파인(Re2O Fine)에 대해..."
     },
     {
       "co": "리쥬란",
@@ -270,14 +256,6 @@
     },
     {
       "co": "ECM",
-      "kw": "리투오",
-      "title": "[건강 칼럼] 미라젯 활용한 엘라비에 리투오 시술, 통증 부담 낮춘 피부...",
-      "link": "https://www.thefairnews.co.kr/news/articleView.html?idxno=92304",
-      "date": "10/29 09:44",
-      "desc": "이에 바늘 없이 약물을 피부에 전달하는 미라젯을 활용해 엘라비에 리투오 시술 시 통증 부담을 줄이는... 엘라비에 리투오는 무세포동종진피(hADM)를 기반으로 한 제품이다. hADM은 사람의 진피 조직에서 세포 성분을..."
-    },
-    {
-      "co": "ECM",
       "kw": "쥬브아셀",
       "title": "미담의원, ECM 부스터 쥬브아셀 신규 도입…개인별 맞춤 진료 강화",
       "link": "http://www.bokuennews.com/news/article.html?no=286389",
@@ -285,5 +263,13 @@
       "desc": "제품 '쥬브아셀(Juveàcell)'을 신규 도입했다고 밝혔다. 쥬브아셀은 초임계 이산화탄소(CO₂)를 활용한 'ECell™ Technology' 탈세포화 공정을 적용한 제품이다. 제조사에 따르면 해당 기술은 계면활성제를 사용하지 않고..."
     }
   ],
-  "foreign": []
+  "foreign": [
+    {
+      "co": "Galderma",
+      "title": "Galderma stock: 2026 sales outlook rises after strong Q3 growth - ad-hoc-news.de",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNZUdiTE1fTE5xOFFFbXQ0cTFUSGwyRWY1Ykk4djg5Y0M5LS1vUGNmYktkX3ZoVG5uWUROYmlzXzg2Rjdsb3JNYm5fc05RWG9odTVHM0V5b3prcVNxLTRjbzBLSTRpLXJkUWxKYlg5NWFsM0lPYWtRNTFQRVV5X0dQUGtuT29GZWl1OTF2MmdaRDJTWGlGVnFaa1BNelBzRl9PVzhpRWpnQS16clIwc0FtU295Z245Y1R6X2Y3eVVxaDQzVmc?oc=5",
+      "date": "10/30 09:28",
+      "desc": "Galderma stock: 2026 sales outlook rises after strong Q3 growth&nbsp;&nbsp;ad-hoc-news.de"
+    }
+  ]
 }
