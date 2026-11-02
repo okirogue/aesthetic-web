@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 18:31",
+  "updated": "2026-11-02 18:42",
   "domestic": [
     {
       "co": "파마리서치",
@@ -119,6 +119,13 @@
       "link": "https://www.bloter.net/news/articleView.html?idxno=677400",
       "date": "11/01 13:28",
       "desc": "휴젤이 매출 성장세가 엇갈리는 보툴리눔톡신·필러 사업에서 서로 다른 방식으로 생산시설에 투자하고... 시설투자 급증, 사업별 전략 차이 1일 금융감독원 전자공시시스템에 따르면 휴젤의 올해 상반기 연결..."
+    },
+    {
+      "co": "에이피알",
+      "title": "&quot;에이피알, 3분기 실적 컨센서스 하회...목표가↓&quot;-삼성證",
+      "link": "https://www.betanews.net/article/view/beta202611020152",
+      "date": "11/02 18:34",
+      "desc": "에이피알에 대해 환율 영향으로 3분기 영업이익이 하락했다는 분석이 나왔다. 삼성증권은 에이피알에 대해 투자의견 '매수'를 유지하고 목표주가를 400,000원으로 하향한다고 밝혔다. 삼성증권 정동희 연구원은 “환율..."
     },
     {
       "co": "에이피알",
@@ -255,13 +262,6 @@
     },
     {
       "co": "에이피알",
-      "title": "한투證 &quot;에이피알, 환율 영향에 3분기 실적 부진…목표가↓&quot;",
-      "link": "https://www.newsis.com/view/NISX20261102_0003850168",
-      "date": "11/02 08:46",
-      "desc": "한국투자증권은 2일 에이피알에 대해 원화 강세와 디바이스 매출 부진 등으로 3분기 매출이 시장 기대치를... 에이피알의 3분기 연결 매출액은 7731억원으로 전년 동기 대비 100.3% 증가했다. 영업이익은 전년 동기 대비 67.1..."
-    },
-    {
-      "co": "에이피알",
       "title": "&quot;환율에 눈물&quot; 한달 주가 28% 급락...에이피알 목표가도 뚝",
       "link": "https://www.mt.co.kr/stock/2026/11/02/2026110208102423389",
       "date": "11/02 08:45",
@@ -304,6 +304,13 @@
     },
     {
       "co": "에이피알",
+      "title": "&quot;에이피알, 원화 강세에 실적 부진…목표가↓&quot;-한국",
+      "link": "https://www.hankyung.com/article/2026110289606",
+      "date": "11/02 07:34",
+      "desc": "한국투자증권은 2일 에이피알에 대해 &quot;원화 강세로 지난 3분기 실적이 부진했다&quot;며 목표주가를 기존... 에이피알의 3분기 연결기준 매출과 영업이익은 각각 전년 동기 대비 100.3%와 67.1% 증가한 7731억원, 1606억원으로..."
+    },
+    {
+      "co": "에이피알",
       "title": "KB증권 &quot;에이피알, 주가 급락에 밸류에이션 매력 확대…목표가 15%↓&quot;",
       "link": "https://www.etoday.co.kr/news/view/2642718",
       "date": "11/02 07:20",
@@ -331,13 +338,5 @@
       "desc": "증자 대금 1446억7000만원 납입 완료 엘앤씨바이오가 유상증자로 발행한 보통주 370만주가 오는 4일 상장될 예정이다. 회사가 지난 22일 금융감독원 전자공시시스템(DART)에 제출한 ‘증권발행결과(자율공시)’에..."
     }
   ],
-  "foreign": [
-    {
-      "co": "Galderma",
-      "title": "Galderma stock: Shareholders approve dividend and board elections - ad-hoc-news.de",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPaEVIRTY3YV9JSE9CYVg5UHZrTlVOQ01ady1HS0ZlcU0zVmhVRUl1Z2dKZzNXbnRidEVvY2ZCRXVyb1h3eDg2TUhfLWM3WU1rZWRHeXpMakxqYzN2aTNrSUp4Sk1SRGhiUWdRT3NCS1Jibm1uLTlLMTZmWEZ2cWdXWV9OcnRyMnBibzFJai1JRmxPcUpwTFZDenkzNU43OXAzOXhHdml4SDNrdldXbUNLQVZxMzJiVzQ1eWt4azVKNldXM3dkYVE?oc=5",
-      "date": "11/02 09:21",
-      "desc": "Galderma stock: Shareholders approve dividend and board elections&nbsp;&nbsp;ad-hoc-news.de"
-    }
-  ]
+  "foreign": []
 }
