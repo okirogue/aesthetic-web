@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03 16:15",
+  "updated": "2026-11-03 16:25",
   "domestic": [
     {
       "co": "파마리서치",
@@ -168,6 +168,13 @@
       "link": "https://www.topdaily.kr/articles/112661",
       "date": "11/03 14:43",
       "desc": "주목 휴젤이 차세대 제품 개발에 공을 들이고 있다. 기존 A형 보툴리눔 톡신에서 반복 시술에 따른 내성... 3일 관련 업계에 따르면 휴젤은 일찌감치 올해 초 JP모건 헬스케어 콘퍼런스에서 퓨어 톡신(Pure Toxin)과 E형 톡신..."
+    },
+    {
+      "co": "에이피알",
+      "title": "에이피알 24만6000원으로 후퇴…해외 매출과 마케팅 효율 관건",
+      "link": "https://www.job-post.co.kr/news/articleView.html?idxno=236214",
+      "date": "11/03 16:16",
+      "desc": "3일 장 마감 결과 에이피알 종가는 246,000원으로 집계됐다. 전 거래일 대비 17,500원 움직이며 6.64% 하락했다.... 에이피알은 뷰티 디바이스와 화장품 브랜드를 해외로 확대하고 있다. 미국·일본 등 주요 지역의 매출..."
     },
     {
       "co": "에이피알",
@@ -429,19 +436,20 @@
       "desc": "무난 에이피알 연간 실적 가이던스 및 증권사 추정치[출처: 연합인포맥스, AI 생성 이미지] (서울=연합인포맥스) 정수인 기자 = 원화 강세 여파로 3분기 영업이익이 시장 기대를 밑돈 에이피알[278470]이 연간 실적..."
     },
     {
-      "co": "에이피알",
-      "title": "삼성證, 에이피알 목표주가 27%↓ &quot;환율 상승, 단기조정 불가피&quot;",
-      "link": "https://www.news1.kr/finance/general-stock/6339246",
-      "date": "11/02 08:51",
-      "desc": "삼성증권은 2일 에이피알(278470)에 대한 투자의견 '매수'를 유지하면서도 목표주가를 기존 대비 27% 하향한 40만 원으로 제시했다. 에이피알의 지난달 30일 종가는 26만 1000원이다. 정동희 삼성증권 연구원은 이날..."
-    },
-    {
       "co": "리쥬란",
       "kw": "리쥬란",
       "title": "V&amp;MJ피부과 김민주 원장, 심포지움서 리쥬란 시술 사례 강연",
       "link": "http://www.bokuennews.com/news/article.html?no=286578",
       "date": "11/03 11:14",
       "desc": "이번 행사는 전 세계 약 750명의 피부 및 미용 의료진이 참석한 가운데, 차세대 스킨부스터인 리쥬란의 최신 시술 트렌드와 학술적 지견을 나누는 자리로 진행됐다. 이날 심포지엄의 핵심 주제는 리쥬란 시술 효과를..."
+    },
+    {
+      "co": "ECM",
+      "kw": "리투오",
+      "title": "리투오·리투오 파인, 같은 hADM 기반…입자 차이와 고려사항",
+      "link": "https://www.vegannews.co.kr/news/article.html?no=399913",
+      "date": "11/03 16:22",
+      "desc": "리투오와 리투오 파인은 인체 유래 무세포 동종진피(hADM)를 기반으로 하지만 입자 특성에 차이가 있어 적용 부위의 피부 두께와 조직 상태를 함께 살펴야 한다. 피부 노화는 주름뿐 아니라 진피를 지지하는 콜라겐과..."
     },
     {
       "co": "ECM",
@@ -476,10 +484,10 @@
     },
     {
       "co": "Galderma",
-      "title": "Galderma stock: Shareholders approve dividend and board elections - ad-hoc-news.de",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPaEVIRTY3YV9JSE9CYVg5UHZrTlVOQ01ady1HS0ZlcU0zVmhVRUl1Z2dKZzNXbnRidEVvY2ZCRXVyb1h3eDg2TUhfLWM3WU1rZWRHeXpMakxqYzN2aTNrSUp4Sk1SRGhiUWdRT3NCS1Jibm1uLTlLMTZmWEZ2cWdXWV9OcnRyMnBibzFJai1JRmxPcUpwTFZDenkzNU43OXAzOXhHdml4SDNrdldXbUNLQVZxMzJiVzQ1eWt4azVKNldXM3dkYVE?oc=5",
-      "date": "11/02 09:21",
-      "desc": "Galderma stock: Shareholders approve dividend and board elections&nbsp;&nbsp;ad-hoc-news.de"
+      "title": "How Investors Are Reacting To Galderma Group (SWX:GALD) Raised Sales Guidance - Simply Wall St",
+      "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQODhHbGlaSVFGRUkzVG13aXNJS2I2cnNlRXRvM096Ny10OEM2eWhNMW1jcWJYM2ZxcHhuU0ducXRRZ2V3OWFTbk1JMFBjTG5oTDdQaWJHZmpzSGZoRDdqQ1U1bVBTcWNlcHVPaENwbXdnTEVEMEktTWliRGU1TFUxT25SR29jZWU0R01zbEtHWldzcGZFamdaQWRDZzYtcXBZU2NKcHdNMlpHU0dESTkzdEFOVm4yWGZ1V2o1cUM5cGV5NTNCX3gtZjJpLU9CazF6SVBvV0JIR2ZDSHZVSzk2U0o3UkhhUVNKcHVZ0gHrAUFVX3lxTFA4OEdsaVpJUUZFSTNUbXdpc0lLYjZyc2VFdG8zT3o3LXQ4QzZ5aE0xbWNxYlgzZnFweG5TR25xdFFnZXc5YVNuTUkwUGNMbmhMN1BpYkdmanNIZmhEN2pDVTVtUFNxY2VwdU9oQ3Btd2dMRUQwSS1NaWJEZTVMVTFPblJHb2NlZTRHTXNsS0daV3NwZkVqZ1pBZENnNi1xcFlTY0pwd00yWkdTR0RJOTN0QU5WbjJYZnVXajVxQzlwZXk1M0JfeC1mMmktT0JrMXpJUG9XQkhHZkNIdlVLOTZTSjdSSGFRU0pwdVk?oc=5",
+      "date": "11/02 07:36",
+      "desc": "How Investors Are Reacting To Galderma Group (SWX:GALD) Raised Sales Guidance&nbsp;&nbsp;Simply Wall St"
     }
   ]
 }
