@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03 17:47",
+  "updated": "2026-11-03 17:57",
   "domestic": [
     {
       "co": "파마리서치",
@@ -133,20 +133,6 @@
       "link": "https://www.medipana.com/news/articleView.html?idxno=420617",
       "date": "11/02 09:12",
       "desc": "파마리서치가 전 세계 64개국 의료진을 대상으로 리쥬란의 임상 연구 성과와 시술 경험을 공유했다. 학술 발표와 함께 연어 원료 확보부터 제품 생산까지 이어지는 제조 현장을 공개하며 PN·PDRN 기반 재생의학..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "파마리서치, 제7회 글로벌 심포지엄 성료…리쥬란 임상 연구 공유",
-      "link": "https://www.medicopharma.co.kr/news/articleView.html?idxno=70137",
-      "date": "11/02 08:52",
-      "desc": "파마리서치가 전 세계 64개국 의료진과 함께 리쥬란 관련 임상 연구와 시술 경험을 공유하는 글로벌 학술행사를 개최했다. 재생의학 분야 연구 성과와 최신 시술 동향을 논의하며 국제 학술 교류를 확대하는 모습이다...."
-    },
-    {
-      "co": "파마리서치",
-      "title": "파마리서치, 강릉서 글로벌 심포지엄…“재생의학 미래 모색”",
-      "link": "https://www.sedaily.com/article/20108898?ref=naver",
-      "date": "11/02 08:52",
-      "desc": "파마리서치(214450)가 전 세계 의료진 750여 명이 참석한 국제 학술행사를 열고 리쥬란의 임상 적용 사례와 의료미용 시술 동향을 공유했다. 파마리서치는 지난달 26일부터 28일까지 강원 강릉에서 ‘제7회 파마리서치..."
     },
     {
       "co": "휴젤",
@@ -415,6 +401,14 @@
       "link": "https://www.rapportian.com/news/articleView.html?idxno=241991",
       "date": "11/03 15:06",
       "desc": "이러한 가운데 세포외기질(ECM)을 활용한 제품인 '리투오'가 피부 관리에 사용되고 있다. 리투오는 인체 유래 무세포동종진피(hADM)를 가공한 제품으로, 진피 조직을 구성하는 세포외기질 성분을 기반으로 한다. 세포외기질은..."
+    },
+    {
+      "co": "ECM",
+      "kw": "쥬브아셀",
+      "title": "김태한 브라이트피부과의원 원장, 쥬브아셀 공식 시술의료진 선정",
+      "link": "https://www.globalepic.co.kr/view.php?ud=20261103133326651837600e7ec7_29",
+      "date": "11/03 13:40",
+      "desc": "스킨부스터 '쥬브아셀'의 공식 시술 의료진으로 선정됐다. 제조사가 임상 경험과 시술 원칙 준수 등 전문성을... 쥬브아셀은 인체 진피 조직에서 세포 성분을 제거한 무세포 동종진피(hADM)를 기반으로 한다. 콜라겐과..."
     }
   ],
   "foreign": [
@@ -438,6 +432,13 @@
       "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPNHdCUk92UlJoT2JZTWlQN0xobWd1N3ZOcEVtTXVtWmNQWm9oYnhDMkVreTltTl9Lbm5laE5CckdCaThDNGxDdjlZQTA4b2JYYmFwUmM4N2F0bF9sVUp6Nk5EWU1aRW9vZ0wtMVY0LUtoMzM4UmFPRkFUN2poYU9vV01YcDVBd0tHS2VlT3dXNVJRNU5KZFhKeTFuVEljTWdNR09BQV94TmQzTW1xTjVDZDFHRQ?oc=5",
       "date": "11/02 17:02",
       "desc": "Galderma Says CFO La Corte To Leave Company&nbsp;&nbsp;TradingView"
+    },
+    {
+      "co": "Galderma",
+      "title": "Galderma stock: Shareholders approve dividend and board elections - ad-hoc-news.de",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPaEVIRTY3YV9JSE9CYVg5UHZrTlVOQ01ady1HS0ZlcU0zVmhVRUl1Z2dKZzNXbnRidEVvY2ZCRXVyb1h3eDg2TUhfLWM3WU1rZWRHeXpMakxqYzN2aTNrSUp4Sk1SRGhiUWdRT3NCS1Jibm1uLTlLMTZmWEZ2cWdXWV9OcnRyMnBibzFJai1JRmxPcUpwTFZDenkzNU43OXAzOXhHdml4SDNrdldXbUNLQVZxMzJiVzQ1eWt4azVKNldXM3dkYVE?oc=5",
+      "date": "11/02 09:21",
+      "desc": "Galderma stock: Shareholders approve dividend and board elections&nbsp;&nbsp;ad-hoc-news.de"
     }
   ]
 }
