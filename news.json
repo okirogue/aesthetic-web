@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05 10:59",
+  "updated": "2026-11-05 11:10",
   "domestic": [
     {
       "co": "파마리서치",
@@ -42,6 +42,13 @@
       "link": "http://www.metroseoul.co.kr/article/20261104500078",
       "date": "11/04 09:36",
       "desc": "PN·HA 복합 4등급 의료기기 '자이쥬란' /파마리서치. 재생의학 전문기업 파마리서치가 주력 제품인 '리쥬란'에 이어 국소 부위에서 활용 가능한 신제품으로 제품군을 강화하며 미용의료 시장 지배력을 넓힌다...."
+    },
+    {
+      "co": "휴젤",
+      "title": "&quot;ASP 높은 미국 직판 들어온다…휴젤, 4분기 실적 회복 vs 마케팅 비용 ...",
+      "link": "https://www.newsquest.co.kr/news/articleView.html?idxno=304305",
+      "date": "11/05 11:02",
+      "desc": "휴젤은 3분기 미국 직판 전략 변경으로 재고 재매입 과정이 있었고, 아메리카 지역 매출액이 -2억원을... 키움증권은 5일 휴젤에 대해 선행 4개 분기 주당순이익(EPS) 전망치 1만1330원에 목표 주가수익비율(PER)..."
     },
     {
       "co": "휴젤",
@@ -105,13 +112,6 @@
       "link": "https://www.fnnews.com/news/202611050834406289",
       "date": "11/05 08:42",
       "desc": "휴젤이 미국 직판 체제 전환 과정에서 발생한 매출 공백과 비용 증가로 3·4분기 시장 기대치를 밑도는... 5일 삼성증권은 분석 보고서를 통해 휴젤의 3·4분기 연결 매출액을 975억원으로 추정했다. 전년 동기 대비 7.9..."
-    },
-    {
-      "co": "휴젤",
-      "title": "[모닝 리포트] &quot;휴젤, 미국 직판 본격화에 실적 반등 기대&quot;",
-      "link": "https://www.newspim.com/news/view/20261105000094",
-      "date": "11/05 08:37",
-      "desc": "삼성증권은 5일 보툴리눔 톡신·필러 기업 휴젤에 대해 오는 4분기부터 미국 직판 실적이 본격 반영되며 외형과 수익성이 반등할 것으로 전망해 투자의견 '매수(BUY)'와 목표주가 27만원을 유지했다. 휴젤의 올해 3분기..."
     },
     {
       "co": "휴젤",
@@ -409,6 +409,13 @@
     },
     {
       "co": "에이피알",
+      "title": "'분기 매출 1조' 눈앞인데…'해외 비중 94%' 에이피알의 딜레마",
+      "link": "https://www.ebn.co.kr/news/articleView.html?idxno=1730570",
+      "date": "11/05 11:02",
+      "desc": "뷰티기업 에이피알(APR)이 또 역대 최대 매출을 갈아치웠다. 하지만 마냥 웃을 수가 없다. 미국·유럽을... 5일 업계에 따르면 에이피알의 올해 3분기 연결 매출은 7731억원으로 전년 동기 대비 100.3% 증가했다. 영업이익도 68...."
+    },
+    {
+      "co": "에이피알",
       "title": "에이피알 '메디큐브', 캐나다 드럭스토어 '샤퍼스' 1300개 매장 입점",
       "link": "http://www.apparelnews.co.kr/news/news_view/?idx=228764",
       "date": "11/05 09:34",
@@ -652,13 +659,6 @@
     }
   ],
   "foreign": [
-    {
-      "co": "Galderma",
-      "title": "Proposed Board Appointments and CFO Transition at Galderma - The Dermatology Digest",
-      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPSlNpT09XRmxGeEJHZkotTklmY0RRcmpBR24zZURnSkpLLW12cXVleENNc2hFNy11MFB6VGlQR1ZpWUVzSW52VkNhOG1FNG04Vk9ocjZDVng0bjVfbl85RExORF9mTnFKR0FmOUFQdEhJX09oeEdzUmc1X3N2c3RkcVNqWFAwNHZDa05sRjBR?oc=5",
-      "date": "11/04 02:08",
-      "desc": "Proposed Board Appointments and CFO Transition at Galderma&nbsp;&nbsp;The Dermatology Digest"
-    },
     {
       "co": "Galderma",
       "title": "Galderma stock: 1.73% above midday quote, AGM details - ad-hoc-news.de",
