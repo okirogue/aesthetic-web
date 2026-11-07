@@ -1,282 +1,50 @@
 {
-  "updated": "2026-11-07 08:30",
+  "updated": "2026-11-08 08:30",
   "domestic": [
     {
       "co": "파마리서치",
-      "title": "파마리서치, 3분기 매출 1715억원…전년 대비 27% 증가",
-      "link": "https://www.mdtoday.co.kr/news/articleView.html?idxno=623522",
-      "date": "11/06 20:28",
-      "desc": "파마리서치가 올해 3분기 화장품과 의료기기 수출 확대에 힘입어 전년 동기 대비 27%의 매출 성장률을 기록했다. 파마리서치는 올해 3분기 연결 기준 매출액 1715억원, 영업이익 626억원을 기록했다고 6일 밝혔다. 매출은..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "파마리서치, 화장품 수출 호조에 3Q 매출 껑충",
-      "link": "https://news.dealsitetv.com/articles/178182",
-      "date": "11/06 18:18",
-      "desc": "수출 비중 48%…4분기 중남미·중동 유통망 확대 파마리서치가 화장품과 의료기기 수출 호조에 힘입어 올해 3분기 매출을 늘렸다. 미국과 유럽을 중심으로 판매가 확대되면서 해외 시장이 새로운 성장 축으로 자리 잡고..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "파마리서치, 글로벌 에스테틱 브랜드 입지 굳건",
-      "link": "https://www.econovill.com/news/articleView.html?idxno=756353",
-      "date": "11/06 18:02",
-      "desc": "파마리서치가 두드러진 해외 사업 부문의 확장을 발판 삼아 글로벌 에스테틱 브랜드로서의 입지를 굳힌 모습이다. 파마리서치는 2026년 3분기 연결기준 매출액 1715억원, 영업이익 626억원을 기록했다고 6일 밝혔다. 전년..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "파마리서치, 3분기 매출 1,715억원 기록...4분기 남미·중동 공략으로 최...",
-      "link": "http://www.paxetv.com/news/articleView.html?idxno=286304",
-      "date": "11/06 17:22",
-      "desc": "파마리서치가 2026년 3분기 연결 기준 매출액 1,715억 원, 영업이익 626억 원을 기록했다고 밝혔습니다. 전년 동기 대비 매출은 약 27% 성장했으며 영업이익률은 36.5%를 기록하며 견조한 수익성을 유지했습니다...."
-    },
-    {
-      "co": "파마리서치",
-      "title": "파마리서치, 3분기 매출 26% 늘어난 1715억",
-      "link": "https://www.mk.co.kr/article/12200625",
-      "date": "11/06 17:18",
-      "desc": "화장품 수출 92% 급증 리쥬란 인기 해외까지 파마리서치의 3분기 매출이 화장품과 의료기기 수출 확대에 힘입어 성장했다. 전체 매출에서 수출이 차지하는 비중은 48%까지 늘었다. 파마리서치는 올해 3분기 연결 기준..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "[제약사 리포트] 파마리서치, 의료기기 내수 정체…유럽·아시아가 보완",
-      "link": "https://www.bloter.net/news/articleView.html?idxno=677987",
-      "date": "11/06 17:05",
-      "desc": "파마리서치가 의료기기 내수 성장 정체에도 유럽 의료기기와 아시아 화장품 수출을 늘렸다. 올해 3분기 전체 수출 증가액의 62%가 두 품목·지역 조합에서 발생했다. 중국에서 리쥬란 판매가 줄어든 가운데 유럽..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "파마리서치, 3분기 매출 1,715억... 화장품 수출 92% 급증, 수익성은 둔...",
-      "link": "https://www.meconomynews.com/news/articleView.html?idxno=203385",
-      "date": "11/06 16:32",
-      "desc": "파마리서치가 화장품과 의료기기 사업의 해외 성장에 힘입어 3분기 외형 확대를 이어갔다. 특히 화장품 수출이 전년 동기 대비 92% 증가하며 전체 매출 성장을 견인했다. 다만 매출 증가에도 영업이익 성장률은 1%대에..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "파마리서치, 3분기 영업이익 626억원…해외 사업 확대",
-      "link": "http://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202611060107&t=NN",
-      "date": "11/06 16:21",
-      "desc": "파마리서치는 2026년 3분기 연결 기준 영업이익 626억원, 매출액 1,715억원을 기록했다고 6일 밝혔다. 전년 동기 대비 매출은 26.7% , 영업이익은 1.2% 가량 늘어난 수치다. 영업이익률은 36.5%였다. 매출 확장과 관련해서는..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "파마리서치, 매출 27% 늘었지만…‘리쥬란’ 포함 국내 의료기기는 제자...",
-      "link": "http://digitalchosun.dizzo.com/site/data/html_dir/2026/11/06/2026110680168.html",
-      "date": "11/06 16:20",
-      "desc": "김정아 기자 | 파마리서치가 올해 3분기 매출을 26.7% 늘렸지만, 주력 사업인 국내 의료기기 매출은 지난해 같은 기간과 사실상 같은 수준에 머물렀다. 국내 의약품 매출도 22% 감소했다. 화장품과 수출 사업이 전체..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "파마리서치, 3분기 영업익 626억원…전년比 1.2% 증가",
-      "link": "https://www.edaily.co.kr/News/Read?newsId=05477606645643096&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article",
-      "date": "11/06 15:12",
-      "desc": "파마리서치(214450) 올해 3분기 매출 증가에도 영업이익은 소폭 성장하는 데 그쳤다. 의료기기 내수 매출은 전년 동기 수준에 머물렀지만 해외 수출과 화장품 사업은 성장세를 이어갔다. 파마리서치 로고 (사진..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "파마리서치 3분기 매출 1715억원…&quot;리쥬란·화장품 수출 확대&quot;",
-      "link": "https://biz.sbs.co.kr/article_hub/20000344781?division=NAVER",
-      "date": "11/06 14:52",
-      "desc": "파마리서치는 연결 기준 올해 3분기 영업이익이 626억원으로 지난해 동기보다 1.2% 증가한 것으로 잠정 집계됐다고 오늘(6일) 공시했습니다. 매출은 1천715억원으로 작년 동기 대비 26.7% 증가했고, 순이익은 302억원으로..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "파마리서치 3분기 수출 62% 증가…영업이익은 1% 늘어",
-      "link": "https://www.vegannews.co.kr/news/article.html?no=401284",
-      "date": "11/06 13:56",
-      "desc": "화장품 매출 76% 증가, 순이익은 전년 대비 41% 감소 파마리서치(214450)는 6일 공개한 2026년 3분기 연결 기준 잠정 실적에서 매출 1715억원, 영업이익 626억원을 기록했다. 전년 동기보다 매출은 26.7%, 영업이익은 1.2..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "눈에 띠는 실적 올리고 있는 제약바이오, SK바이오팜·파마리서치",
-      "link": "https://www.medipana.com/news/articleView.html?idxno=421163",
-      "date": "11/06 13:06",
-      "desc": "SK바이오팜과 파마리서치가 자사가 개발한 블록버스터로 해마다 눈에 띠는 경영 실적을 내고 있다. 자체 개발 제품인데다 해외시장이 나날이 확대되고 있어 영업이익이 독보적인데다 앞으로도 지속적인 성장이..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "너무 빨리 성장했나…'파죽지세' 파마리서치, 2Q 연속 영업이익률↓",
-      "link": "https://www.apsk.co.kr/news/articleView.html?idxno=540990",
-      "date": "11/06 11:36",
-      "desc": "파마리서치가 화장품과 의료기기 사업 호조에 힘입어 실적 상승세를 이어갔다. 영업이익률은 30%대 후반의 높은 수준을 지켰지만, 1분기 이후 두 분기 연속 하락했다. 가파르게 성장한 데 따른 기저효과로 성장세가..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "'리쥬란' 해외서 불티나는데, 왜? … 파마리서치, 3Q 영업이익률 9%p '뚝...",
-      "link": "https://biz.newdaily.co.kr/site/data/html/2026/11/06/2026110600116.html",
-      "date": "11/06 11:28",
-      "desc": "뉴데일리 성재용 기자 = 재생의학 전문기업 파마리서치가 '리쥬란'의 해외판매 확대와 화장품 수출 성장에 힘입어 3분기 두 자릿수 매출 성장을 이어갔다. 그러나 매출이 전년 동기보다 26% 넘게 증가하는 동안..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "파마리서치, 3Q 매출 26.7% 증가…해외 매출 비중 48%",
-      "link": "https://www.medicopharma.co.kr/news/articleView.html?idxno=70275",
-      "date": "11/06 10:50",
-      "desc": "파마리서치가 화장품과 의료기기 수출 확대에 힘입어 3분기 외형 성장을 이어갔다. 해외 매출 비중이 48%까지 높아지면서 수출이 실적 성장을 이끄는 구조가 한층 뚜렷해졌다. 6일 전자공시시스템에 따르면..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "해외서 불붙은 '리쥬란' 돌풍…파마리서치, 3분기 매출 1700억 뚫었다",
-      "link": "https://www.widedaily.com/news/articleView.html?idxno=303029",
-      "date": "11/06 10:46",
-      "desc": "재생의학 전문기업 파마리서치가 글로벌 시장에서의 가파른 외형 성장에 힘입어 3분기 호실적을 달성했다. 전 세계적인 K-뷰티 및 메디컬 에스테틱 수요 확대 속에 분기 매출이 1700억 원 고지를 넘어섰다. 파마리서치는..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "파마리서치, '화장품 성과'에 3분기 영업익 전년비 1.2%↑",
-      "link": "https://www.dailian.co.kr/news/view/1711701/?sc=Naver",
-      "date": "11/06 10:43",
-      "desc": "파마리서치가 올해 3분기에도 화장품 사업을 필두로 외형 성장에 성공했다. 파마리서치는 올해 3분기 매출이 1715억원으로 전년 동기 대비 26.7% 늘었다고 6일 공시했다. 3분기 영업이익은 626억원으로 전년 동기 대비 1.2..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "파마리서치, 화장품·의료기기 '해외 성장' 이끌었다",
-      "link": "http://www.issuenbiz.com/news/articleView.html?idxno=81317",
-      "date": "11/06 10:34",
-      "desc": "파마리서치는 화장품과 의료기기 수출 호조에 힘입어 올해 3분기 연결 기준 매출 1,715억원, 영업이익 626억원을 기록했다고 6일 밝혔다. 자료=파마리서치 파마리서치가 화장품과 의료기기 수출 호조에 힘입어 올해 3분기..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "3Q 매출 1715억 중 해외 매출이 절반...글로벌 성과 커지는 파마리서치",
-      "link": "https://www.wolyo.co.kr/news/articleView.html?idxno=320130",
-      "date": "11/06 10:28",
-      "desc": "재생의학 전문기업 파마리서치가 화장품과 의료기기의 해외 판매 확대에 힘입어 올해 3분기 매출 성장세를 이어갔다. 특히 전체 매출에서 해외 사업이 차지하는 비중이 48%까지 높아지면서 글로벌 시장이 주요 성장..."
+      "title": "‘리쥬란’ 파마리서치, 3분기 매출 1715억원…수출 48%",
+      "link": "https://biz.chosun.com/science-chosun/bio/2026/11/07/ZTFP6BXV3ZAELIBVRSTKM6TATE/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+      "date": "11/07 13:12",
+      "desc": "화장품 수출 92% 증가…의료기기도 해외 성장 남미·중동 진출 확대 재생의학 기업 파마리서치가 올해 3분기 해외 사업 성장에 힘입어 매출과 수익성을 함께 끌어올렸다. 화장품과 의료기기 수출이 큰 폭으로 늘면서..."
     },
     {
       "co": "휴젤",
-      "title": "휴젤, CBC그룹의 상장폐지 검토 보도에 &quot;최대주주 전략 검토 중일 뿐 미...",
-      "link": "https://www.topstarnews.net/news/articleView.html?idxno=16270115",
-      "date": "11/06 17:08",
-      "desc": "휴젤(145020)은 2022년 7월 13일 한국거래소 공시를 통해 블룸버그의 'CBC그룹, 휴젤 상장폐지 고려' 보도와 관련한 입장을 밝혔다. 회사에 따르면 이번 공시는 2022년 7월 12일자 블룸버그 보도에 대한 해명(미확정)..."
+      "title": "휴젤, 미국은 주춤했지만 브라질은 역대 최대…해외 성장 이어간다",
+      "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=502127",
+      "date": "11/08 08:12",
+      "desc": "휴젤이 미국 시장의 유통 구조를 기존 파트너사 중심에서 직접 판매 방식으로 전환하는 과정에서 3분기... 휴젤의 3분기 연결 기준 매출액은 975억원으로 지난해 같은 기간보다 7.9% 감소했다. 영업이익은 181억원으로 61.8..."
     },
     {
       "co": "휴젤",
-      "title": "[글로벌 승부수] [휴젤] 신사업 '화장품'도 존재감↑…웰라쥬 '날갯짓'",
-      "link": "https://www.topdaily.kr/articles/112754",
-      "date": "11/06 13:51",
-      "desc": "확대 휴젤이 화장품 사업에서도 존재감을 뽐내고 있다. 올해 3분기까지의 매출이 지난해 연간 매출과... 6일 관련 업계에 따르면 휴젤의 올해 1~3분기 화장품·기타 부문 매출은 584억원으로 집계됐다. 상반기 390억원에..."
-    },
-    {
-      "co": "휴젤",
-      "title": "휴젤, 美 유통 재편에 3분기 매출 감소…영업외손익엔 환율 영향",
-      "link": "http://digitalchosun.dizzo.com/site/data/html_dir/2026/11/06/2026110680118.html",
-      "date": "11/06 13:32",
-      "desc": "김정아 기자 | 휴젤의 올해 3분기 실적 감소에는 미국 보툴리눔 톡신 판매 체제 전환에 따른 일회성 영향과 직판 조직 구축 비용이 작용한 것으로 나타났다. 휴젤은 영업이익보다 세전이익이 약 105억원 적었던 데에는..."
-    },
-    {
-      "co": "휴젤",
-      "title": "K톡신 첫 美 직판 승부수…휴젤, 이익 줄었지만 핵심 거래처 절반 뚫어",
-      "link": "https://view.asiae.co.kr/article/2026110516345596768",
-      "date": "11/06 09:33",
-      "desc": "휴젤이 미국에서 보툴리눔 톡신 보툴렉스(미국명 레티보)를 직접 판매한 지 넉 달 만에 공략 대상으로 정한... 6일 휴젤에 따르면 이달 초 기준 미국 전략 거래처의 50% 이상이 '계정 활성화' 단계에 들어섰다. 계정..."
-    },
-    {
-      "co": "휴젤",
-      "title": "‘연내 허가’ 기대 꺾인 HLB 급락…휴젤 실적 충격·아리바이오 상한가...",
-      "link": "https://www.edaily.co.kr/News/Read?newsId=03217686645643096&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article",
-      "date": "11/06 08:12",
-      "desc": "급락했고, 휴젤(145020)은 3분기 실적 부진에 장중 12% 넘게 하락했다. 반면 아리바이오홀딩스(290690)는... 휴젤, 3분기 영업익 62% 감소…美 재고 재매입 영향 휴젤 보툴리눔 톡신 ‘레티보’ (사진=휴젤) 휴젤은 이날..."
-    },
-    {
-      "co": "휴젤",
-      "title": "휴젤 ‘투톱 체제’ 엇박자…국내 웃고 미국 울었다",
-      "link": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202611060614580260918",
-      "date": "11/06 06:22",
-      "desc": "기자] 휴젤의 ‘국내-해외 투톱 체제’가 3분기 엇박자를 냈다. 장두현 한국 대표가 맡은 국내 시장은 두... 5일 공시에 따르면 휴젤의 3분기 연결 매출액은 975억원으로 전년 동기보다 8% 줄었다. 영업이익은..."
-    },
-    {
-      "co": "휴젤",
-      "title": "대웅 vs 휴젤, 미국 톡신시장 엇갈린 공략법…누가 웃을까",
-      "link": "https://www.dailypharm.com/user/news/344252?REFERER=NP",
-      "date": "11/06 06:02",
-      "desc": "미국 보툴리눔톡신 시장에 진출한 대웅제약과 휴젤이 서로 다른 판매 전략을 선택하면서 실적에서도 희비가 갈리고 있다. 대웅제약이 현지 파트너를 활용한 간접판매 방식으로 수출을 크게 확대한 반면, 휴젤은..."
-    },
-    {
-      "co": "휴젤",
-      "title": "'4년 새 5배 ↑·매출 비중 20%'...휴젤, 흔들린 실적에도 '웰라쥬' 존재...",
-      "link": "https://www.apsk.co.kr/news/articleView.html?idxno=540983",
-      "date": "11/06 05:50",
-      "desc": "휴젤이 미국 보툴리눔 톡신 사업 재편으로 실적 부진을 겪는 가운데 화장품 사업은 성장세를 이어가고... 휴젤의 화장품 매출은 2020년 132억원에서 지난해 563억원으로 5년 새 4.3배 증가했다. 같은 기간 보툴리눔..."
-    },
-    {
-      "co": "휴젤",
-      "title": "휴젤, 美 유통망 갈아엎고 직판 승부…글로벌 영토 확장",
-      "link": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065624628243115",
-      "date": "11/05 23:52",
-      "desc": "휴젤이 국내외 메디컬 에스테틱 시장에서 성장세를 이어가며 올해 3분기까지 누적 매출 3500억원을... 5일 휴젤에 따르면 휴젤의 2026년 3분기 누적 연결 기준 매출은 전년 동기 대비 15% 늘어난 3521억원으로 집계됐다...."
+      "title": "K-톡신, 美 공략법 갈렸다...대웅 '수출 최대'·휴젤 '직판 준비'",
+      "link": "https://www.news2day.co.kr/article/20261106500303",
+      "date": "11/08 07:02",
+      "desc": "대웅제약, 나보타 수출 1068억...미국향 물량 집중 휴젤, 레티보 재고 재매입...북남미 제외 매출 13.5% 증가... 같은 기간 휴젤의 국내외 톡신 매출은 472억원으로 21% 줄었다. 대웅제약과 휴젤의 국내외 톡신 3분기 매출..."
     },
     {
       "co": "에이피알",
-      "title": "K뷰티 너마저…LG생건·에이피알 줄줄이 목표가 하락[종목e슈]",
+      "title": "&quot;K뷰티도 먹구름&quot;…LG생건·에이피알 목표가 '10~17%↓[종목e슈]",
       "link": "https://www.edaily.co.kr/News/Read?newsId=01085686645643424&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article",
       "date": "11/07 00:02",
       "desc": "이어가던 에이피알(278470)은 원화 강세에 따른 환차손이 주가 발목을 잡았다. 화장품 섹터 전반에 대한... 같은 날 에이피알은 1만 3500원(5.02%) 떨어진 25만 5500원에 장을 마감했다. 52주 최고가인 47만 5000원과 비교하면..."
     },
     {
-      "co": "에이피알",
-      "title": "주가로 읽는 K-뷰티: 에이피알 등 성장주 급락...외국인 매수세 지속",
-      "link": "https://www.thebk.co.kr/news/articleView.html?idxno=312713",
-      "date": "11/06 19:34",
-      "desc": "특히 에이피알, 파마리서치, 실리콘투는 20%가 넘는 하락률을 보였다. 반면 주가 하락에도 불구하고 파마리서치, 한국콜마, LG생활건강, 에이피알은 외국인 보유율이 증가했다. 뷰티경제가 네이버증권 자료를 바탕으로..."
-    },
-    {
-      "co": "에이피알",
-      "title": "막내가 형님들 제쳤다… 에이피알, 3분기 영업이익 아모레ㆍLG생건 뷰티...",
-      "link": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202611051118399950782",
-      "date": "11/06 06:00",
-      "desc": "K뷰티 3대장의 막내인 에이피알이 3분기 영업이익에서 형님 격인 아모레퍼시픽과 LG생활건강의 뷰티 사업을 합친 규모를 넘어섰다. 매출 대부분을 북미와 유럽에서 올리는 에이피알과 국내, 중국 비중이 큰 두..."
-    },
-    {
-      "co": "엘앤씨바이오",
-      "title": "엘앤씨바이오, 2026 대한수부외과학회 참가… ECM 기반 재건 재료 소개",
-      "link": "https://health.chosun.com/site/data/html_dir/2026/11/06/2026110601680.html",
-      "date": "11/06 14:22",
-      "desc": "인체 조직 기반 세포외기질(ECM) 플랫폼 기업 엘앤씨바이오가 10월 31일부터 11월 1일까지 진행된 ‘2026년 대한수부외과학회 추계학술대회’에 참가해 신경·연부 조직 재건 분야의 주요 제품과 임상 적용 가능성을..."
-    },
-    {
-      "co": "리쥬란",
-      "kw": "리쥬란",
-      "title": "브이앤엠제이피부과 김민주 원장, '리쥬란' 메가도스 강연 공로 파마리...",
-      "link": "https://www.hemophilia.co.kr/news/articleView.html?idxno=45519",
-      "date": "11/06 13:24",
-      "desc": "압구정 V&amp;MJ피부과(브이앤엠제이피부과) 김민주 대표원장이 6일 파마리서치(PharmaResearch)로부터 리쥬란 시술... 이날 파마리서치 측은 김 원장의 학술적 기여도가 세계 에스테틱 시장 내 리쥬란의 위상을 한층 강화하고..."
-    },
-    {
       "co": "ECM",
-      "kw": "셀르디엠",
-      "title": "피부 진피 구조를 고려한 ECM 소재 셀르디엠, 무엇 체크해야 할까?",
-      "link": "https://www.livesnews.com/news/article.html?no=65683",
-      "date": "11/06 09:00",
-      "desc": "셀르디엠(CellREDM)은 인체 유래 무세포동종진피(hADM)를 기반으로 한 ECM 소재다. 인체 진피 조직에서 세포 성분을 제거하고 세포외기질을 활용하는 방식으로 가공한 소재로, 콜라겐을 비롯한 ECM 구성 성분을 포함하고 있다...."
+      "kw": "리투오",
+      "title": "피부 이식의 발상을 바꾸다…매출 3배 뛴 '리투오', 수출 기대주로 우뚝...",
+      "link": "https://www.news1.kr/bio/pharmaceutical-bio/6346036",
+      "date": "11/07 10:00",
+      "desc": "올해 상반기에만 약 236억 원의 매출을 올리며 지난해 연간 매출의 3배가 넘는 실적을 기록한 엘앤씨바이오의 '리투오(Re2O)'다. 리투오는 사람의 피부에서 불필요한 세포를 제거하고, 피부의 탄력과 구조를 유지하는..."
     }
   ],
   "foreign": [
     {
       "co": "Galderma",
-      "title": "Chutes & Ladders—Novo's longtime CFO to hang up gloves as Galderma exec steps in - Fierce Biotech",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQYk5LVXd5U1A3a2ZzQ0h3MUIwc0FleW9UbHZHZ1V3WGVHNVdnUWwxWUcyYWZ1Yk1ud21WOG11WlBLaFFRc2libHRma2ItZUlzeHRQSjZnNURJcTNWY0xuMDRsMG83cXFkWGpVelFSald0MkpwSG5tdFJNdkM5N01fM1BucHltZmcxZFNNNXlEQjlyb2V1Q3lqdlFqUElMTVBURVl4YUFR?oc=5",
-      "date": "11/06 15:12",
-      "desc": "Chutes & Ladders—Novo's longtime CFO to hang up gloves as Galderma exec steps in&nbsp;&nbsp;Fierce Biotech"
-    },
-    {
-      "co": "Galderma",
-      "title": "What Galderma Group Doubters Overlooked - Simply Wall St",
-      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOaFdRbHhrWGZ0SW9oSEh3ckUtYmVvcVRqUndBdS1zYlJlTzZnUmU2QVRaemZ3NkpndUl5SVhBR0NsaTg4eFc0Z3NITXFGWVRvenF5Tl9uLURfTG1Rb2V1OVlsM0VGamVabldUeDZCaUJzTlBNeHFzUm8ybWV1ZEpFeW9tWWFKdm5mb1JpWFNDNnFfQVhleGZ6V0dZOVo0YTQ4ay1RdUZpTVFzQVJnWFI4ZWRkWUd1MU82aTJPNlBEc0tTMlJ5MVFqRDJQa9IB0AFBVV95cUxQaG5TcS12bldRMmlsT0VxdzFvOFY3N1ZxTEpRVnJMeFVkNDJtenp5aHotYUtkMHVWMEJ0cVE4bWpvLW13cmoxT1FVeTRVelZBdU9nbXdmWUZGdXpnTng3QzRBUnY3XzhRRXNwUzgwQ29uMDI0MXpya0plb3FWWXJYc19FeFBfQnlKc3Rhc2J5Uk0yZDJseno1SUZvY2RnMVFJYUo5V1l5YTlRWlMxV2pxR2w1NDNaQS1PWW9OOUVlM1JkMW9taTR2MGdBS2lEenZK?oc=5",
-      "date": "11/06 07:28",
-      "desc": "What Galderma Group Doubters Overlooked&nbsp;&nbsp;Simply Wall St"
-    },
-    {
-      "co": "Galderma",
-      "title": "Galderma stock faces CFO transition before December vote - ad-hoc-news.de",
-      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNODdJLTV5MXhwZFo2VEFNZEtXeEVvSm85T0xXUFdkOWdpeFMyQV9YWHdjU2lmaWpwNzZXc1ZnTUdBTk9sWURWa3VVMVNZNVZmN2pTOU5YMlVTSEpmY1R1Rk5JWmNGSU9pWXV2ckhiLWpxeGVQYnFYTERXeUU1SW1HWDlhRlVXem1PeXVpTlpIYVQwNV9Rc3pDSm9jbHkxdGVVaWpnRkJpQWpBRGd3THVmNEVjMk1ZdXJ0VGRn?oc=5",
-      "date": "11/06 11:44",
-      "desc": "Galderma stock faces CFO transition before December vote&nbsp;&nbsp;ad-hoc-news.de"
-    },
-    {
-      "co": "Galderma",
-      "title": "Galderma stock gains 1.33% as late quote tops midday level - ad-hoc-news.de",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQZGZSaXcxLVYxckNOcmN5TVpBM2F5YVRUY05qLWx5NkMxMXFZTTY4OFM0R1hDRER3M0J0STdVZFpMYlNRSGdKcVZkNHpYUi1UaUl1d1U4aGkzUTJLNGF2TlZteXRaZ2RTZlAwbW1fZEMxb0xkTkZoZTRDSmN2eFR4ZnRIYTluMUQ5Q0lfUDJReHdlVkFPYklZU3ptbFFvWm8xcFNURVNYdzMwR2V0cnJCdzl2eG54TUN4MmVmdw?oc=5",
-      "date": "11/06 16:46",
-      "desc": "Galderma stock gains 1.33% as late quote tops midday level&nbsp;&nbsp;ad-hoc-news.de"
+      "title": "Galderma Group AG/ADR (GALDY) SEC Filings - Stock Titan",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE82X09HR0JrUEVBMUZ2Y29IZnFXUG5hNzIwYWZUSUR4NHhIdEt4bmxNUWFURWdJQkNfenktcC1ZNHVRV1JFdjFpT3lBNFdBZzBHU2NMUmY1WGw?oc=5",
+      "date": "11/07 22:03",
+      "desc": "Galderma Group AG/ADR (GALDY) SEC Filings&nbsp;&nbsp;Stock Titan"
     }
   ]
 }
