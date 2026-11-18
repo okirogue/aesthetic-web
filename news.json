@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18 11:09",
+  "updated": "2026-11-18 11:20",
   "domestic": [
     {
       "co": "파마리서치",
@@ -66,17 +66,17 @@
     },
     {
       "co": "파마리서치",
-      "title": "[핀포인트] [파마리서치] 2대주주 CVC 투자금 회수 시점 다가온다",
-      "link": "https://news.dealsitetv.com/articles/178543",
-      "date": "11/17 08:02",
-      "desc": "내년 10월 RCPS 상환청구·양도 제한 해제…2869억 오버행 부담 파마리서치가 내년 10월부터 2대주주인 글로벌 사모펀드 CVC캐피탈파트너스(CVC)의 투자금 회수에 따른 부담에 직면할 전망이다. CVC가 보유한..."
-    },
-    {
-      "co": "파마리서치",
       "title": "[핀포인트] [파마리서치] 리쥬란 독주 흔들…화장품 성장에도 이익 제자...",
       "link": "https://news.dealsitetv.com/articles/178541",
       "date": "11/17 08:02",
       "desc": "ECM 스킨부스터 추격에 리쥬란 점유율 73.1%→58.5% 전망 파마리서치의 핵심 성장동력이었던 스킨부스터 '리쥬란'의 국내 시장 지배력이 흔들리고 있다. 최근 관련 시장에서 세포외기질(ECM) 스킨부스터가 빠르게 성장..."
+    },
+    {
+      "co": "파마리서치",
+      "title": "[핀포인트] [파마리서치] 2대주주 CVC 투자금 회수 시점 다가온다",
+      "link": "https://news.dealsitetv.com/articles/178543",
+      "date": "11/17 08:02",
+      "desc": "내년 10월 RCPS 상환청구·양도 제한 해제…2869억 오버행 부담 파마리서치가 내년 10월부터 2대주주인 글로벌 사모펀드 CVC캐피탈파트너스(CVC)의 투자금 회수에 따른 부담에 직면할 전망이다. CVC가 보유한..."
     },
     {
       "co": "파마리서치",
@@ -208,6 +208,14 @@
     },
     {
       "co": "ECM",
+      "kw": "리투오",
+      "title": "헤브피부과 신지연 원장, 리투오 자문의로 지속 활동… 피부과 전문의 ...",
+      "link": "https://www.mdtoday.co.kr/news/articleView.html?idxno=625971",
+      "date": "11/18 11:16",
+      "desc": "헤브피부과(Hev Dermatology)는 신지연 대표원장이 '리투오(Re2O)' ABM(Advisory Board Meeting)에 자문의로 참여했다고 18일 밝혔다. 신 원장은 리투오 자문의로 위촉된 이후 현재까지 꾸준히 활동을 이어오고 있으며, 이번 ABM에서도..."
+    },
+    {
+      "co": "ECM",
       "kw": "셀르디엠",
       "title": "비티큐의원 이승민 원장, '셀르디엠 V' 임상 증례 및 시술 경험 공유",
       "link": "http://www.medisobizanews.com/news/articleView.html?idxno=144432",
@@ -223,13 +231,5 @@
       "desc": "부스터 '쥬브아셀(Juveàcell)'의 누적 사용량 1000시린지를 달성해 제조사 바임(VAIM)으로부터 기념 인증패를 받았다고 밝혔다. 이번 인증패는 쥬브아셀의 누적 사용 실적을 기념하고, 해당 제품을 활용해 피부 상태에..."
     }
   ],
-  "foreign": [
-    {
-      "co": "Galderma",
-      "title": "Galderma stock gets Mexico approval for first global jawline use - ad-hoc-news.de",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQUnpkeFZlNWxKMUlHVkxNWGdvSmVUWmxYUWdJaWtVbkptdU1tbFFIc3BIcDhxNVdNUEhzMDNJYjdlako5M1p6YU8xTGY0Mkh4VjVYQ2REUXNGZi1HMlFkRlktWVhTR1ktWTVmSHB3UW5YV1I1bEFTd1FEb21vQm91TnIwdnBoYnBIX0ROTFExeGJJR1U5WklHMEFMakxsb3hUNURXczVLbkltclV4bmpvQVluRGN4ek1tekZzMk84bHhBdElzeXc?oc=5",
-      "date": "11/17 10:43",
-      "desc": "Galderma stock gets Mexico approval for first global jawline use&nbsp;&nbsp;ad-hoc-news.de"
-    }
-  ]
+  "foreign": []
 }
