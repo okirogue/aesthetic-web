@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24 18:26",
+  "updated": "2026-11-24 18:37",
   "domestic": [
     {
       "co": "파마리서치",
@@ -444,6 +444,13 @@
     },
     {
       "co": "엘앤씨바이오",
+      "title": "엘앤씨바이오, 싱가포르서 미용 주사 소개",
+      "link": "https://biz.chosun.com/science-chosun/bio/2026/11/24/Z7XNAZM7OJBMLKAGMOR2LRNYGM/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+      "date": "11/24 18:33",
+      "desc": "엘앤씨바이오는 최근 싱가포르에서 미용 주사 리투오V를 선보였다고 23일 밝혔다. 리투오는 콜라겐 등 유효 성분을 피부에 주입하는 것이다. 사체 기증자의 피부 조직에서 세포외기질(ECM)을 추출해 분말로 만든 뒤..."
+    },
+    {
+      "co": "엘앤씨바이오",
       "title": "엘앤씨바이오, 싱가포르서 '리투오 V' 첫 공개",
       "link": "https://www.fnnews.com/news/202611241813072983",
       "date": "11/24 18:14",
@@ -565,13 +572,5 @@
       "desc": "한국 대표 연자로 무대에 오른 김명진 원장은 '핵심 스킨 퀄리티 치료로서의 셀르디엠: 심화 임상 사례 및 복합 시술 전략(CellREDM as a Core Skin Quality Treatment: Advanced Clinical Cases &amp; Combination Treatment Strategies)..."
     }
   ],
-  "foreign": [
-    {
-      "co": "Galderma",
-      "title": "Galderma stock: Galderma wins second FDA approval for Nemluvio - ad-hoc-news.de",
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNM2JIRnkyYjRGNDNvMC1LaDB0LWI5a28tT1FVZlR4eDUtWlJ6YVphZnFhMkZqSWZ2ZG9SRnp2ZkJfNlhYYnRpT1hxZjVwVUhwZUFQYUN4VERxSUVlSS1jcTh3SkhkQ19MTmt1MkhXcFY0MzdRWVZZMmZUZTNtRkNTSDc0azBtbzZzQmxHdkNIdkJBNTJncFJkb2RuMzBmTDU1aUV6WG9Ga1Fpc2cyUVllRWpkMVQxSG1FSDRhM0NEVE1kdw?oc=5",
-      "date": "11/23 16:44",
-      "desc": "Galderma stock: Galderma wins second FDA approval for Nemluvio&nbsp;&nbsp;ad-hoc-news.de"
-    }
-  ]
+  "foreign": []
 }
