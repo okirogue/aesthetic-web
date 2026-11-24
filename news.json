@@ -1,6 +1,13 @@
 {
-  "updated": "2026-11-24 10:56",
+  "updated": "2026-11-24 11:06",
   "domestic": [
+    {
+      "co": "파마리서치",
+      "title": "파마리서치메디케어, '리본 심포지엄' 개최…피부관리 노하우 공유",
+      "link": "http://www.press9.kr/news/articleView.html?idxno=86902",
+      "date": "11/24 11:00",
+      "desc": "파마리서치메디케어가 의사, 약사, 인플루언서 등이 함께하는 심포지엄을 열고 일상 속 피부 관리와 셀프메디케이션(자가 건강관리)을 주제로 교류의 시간을 마련했다. 파마리서치메디케어는 지난 22일 서울 강남구..."
+    },
     {
       "co": "파마리서치",
       "title": "파마리서치메디케어 RE:BORN 심포지엄…약사·인플루언서 한자리에",
@@ -10,17 +17,17 @@
     },
     {
       "co": "파마리서치",
-      "title": "파마리서치메디케어, 제6회 리본 심포지엄 개최…&quot;피부 관리 경험 공유...",
-      "link": "https://www.asiatime.co.kr/article/20261124500100",
-      "date": "11/24 10:30",
-      "desc": "최신 시장 트렌드·제품 정보 공유 약사·인플루언서 총 50명 참석 배우 이주빈과 뷰티토크 진행 [아시아타임즈=김지수 기자] 파마리서치메디케어가 약사와 인플루언서가 함께 피부 관리와 셀프메디케이션 경험을..."
-    },
-    {
-      "co": "파마리서치",
       "title": "파마리서치메디케어, 약사 등과 셀프메디케이션 소통",
       "link": "http://www.medisobizanews.com/news/articleView.html?idxno=144685",
       "date": "11/24 09:14",
       "desc": "파마리서치 자회사 파마리서치메디케어는 지난 22일 서울 강남구 라움아트센터에서 약사와 인플루언서 등 50여명이 참석한 가운데 '제6회 리본(RE:BORN) 심포지엄'을 개최했다고 24일 밝혔다. 이번 행사는 최신 시장..."
+    },
+    {
+      "co": "파마리서치",
+      "title": "파마리서치메디케어, 제6회 리본 심포지엄 개최…배우 이주빈도 참석",
+      "link": "https://www.mdtoday.co.kr/news/articleView.html?idxno=627233",
+      "date": "11/24 09:04",
+      "desc": "파마리서치메디케어가 약국을 기반으로 한 피부 관리와 셀프메디케이션의 활용 가능성을 공유하는 자리를 마련했다. 의료진과 약사가 전문적인 관리 방법을 소개하고, 배우 이주빈이 일상에서 실천하는 피부 관리..."
     },
     {
       "co": "파마리서치",
@@ -185,10 +192,10 @@
     },
     {
       "co": "에이피알",
-      "title": "에이피알 메디큐브, 콜라겐 스킨케어 글로벌 누적 판매량 1억 개 돌파",
-      "link": "https://www.ksilbo.co.kr/news/articleView.html?idxno=1073418",
-      "date": "11/24 10:48",
-      "desc": "메디큐브 콜라겐 라인 주요 제품군, 사진=에이피알 제공 에이피알은 2026년 10월 말 기준 메디큐브 콜라겐 스킨케어 제품군의 글로벌 누적 판매량이 1억 개를 넘어섰다고 24일 밝혔다. 메디큐브는 제로 라인과 PDRN 라인에..."
+      "title": "에이피알, 메디큐브 콜라겐 제품 글로벌 누적판매 1억개 달성",
+      "link": "http://www.koreastocknews.com/news/articleView.html?idxno=122451",
+      "date": "11/24 10:56",
+      "desc": "에이피알 뷰티 브랜드 메디큐브가 콜라겐 스킨케어 제품군의 글로벌 누적 판매량 1억개를 넘어섰다. 전체... 에이피알은 24일 2026년 10월 말 기준 메디큐브 콜라겐 스킨케어 제품의 글로벌 누적 판매량이 처음으로 1억개를..."
     },
     {
       "co": "에이피알",
@@ -389,13 +396,5 @@
       "desc": "한국 대표 연자로 무대에 오른 김명진 원장은 '핵심 스킨 퀄리티 치료로서의 셀르디엠: 심화 임상 사례 및 복합 시술 전략(CellREDM as a Core Skin Quality Treatment: Advanced Clinical Cases &amp; Combination Treatment Strategies)..."
     }
   ],
-  "foreign": [
-    {
-      "co": "Galderma",
-      "title": "Galderma stock: Galderma wins second FDA approval for Nemluvio - ad-hoc-news.de",
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNM2JIRnkyYjRGNDNvMC1LaDB0LWI5a28tT1FVZlR4eDUtWlJ6YVphZnFhMkZqSWZ2ZG9SRnp2ZkJfNlhYYnRpT1hxZjVwVUhwZUFQYUN4VERxSUVlSS1jcTh3SkhkQ19MTmt1MkhXcFY0MzdRWVZZMmZUZTNtRkNTSDc0azBtbzZzQmxHdkNIdkJBNTJncFJkb2RuMzBmTDU1aUV6WG9Ga1Fpc2cyUVllRWpkMVQxSG1FSDRhM0NEVE1kdw?oc=5",
-      "date": "11/23 16:44",
-      "desc": "Galderma stock: Galderma wins second FDA approval for Nemluvio&nbsp;&nbsp;ad-hoc-news.de"
-    }
-  ]
+  "foreign": []
 }
