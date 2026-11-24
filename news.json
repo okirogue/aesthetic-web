@@ -1,6 +1,13 @@
 {
-  "updated": "2026-11-25 08:30",
+  "updated": "2026-11-25 08:40",
   "domestic": [
+    {
+      "co": "파마리서치",
+      "title": "파마리서치, 부패방지경영 국제표준 개정 심사 통과",
+      "link": "https://www.news1.kr/bio/pharmaceutical-bio/6365001",
+      "date": "11/25 08:30",
+      "desc": "파마리서치(214450)는 부패방지경영시스템의 개정 국제표준인 'ISO 37001:2025' 전환심사와 정기 사후심사를 모두 통과했다고 25일 밝혔다. 지난해 11월 최초 인증을 획득한 데 이어 올해 개정 표준에 따른 전환심사까지..."
+    },
     {
       "co": "파마리서치",
       "title": "파마리서치메디케어, 제6회 심포지엄서 피부 관리 경험 공유",
@@ -213,10 +220,10 @@
     },
     {
       "co": "에이피알",
-      "title": "다올證 &quot;에이피알, 4분기 실적 기대치 상회 전망…목표가 50만원&quot;",
-      "link": "https://www.ajunews.com/view/20261125080153898",
-      "date": "11/25 08:06",
-      "desc": "아주경제=신동근 기자 sdk6425@ajunews.com 메디큐브 롯데백화점 에비뉴엘 잠실점 팝업스토어 조감도 [사진=에이피알] 다올투자증권은 25일 에이피알에 대해 북미와 유럽을 중심으로 해외 매출이 빠르게 늘면서 올해..."
+      "title": "다올證 “에이피알, 4분기 성수기·해외 실적 호조 예상… 목표가 50만원...",
+      "link": "https://biz.chosun.com/stock/stock_general/2026/11/25/5LAAG3VIQ5E6TP3CJOVTZAJ7FU/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+      "date": "11/25 08:36",
+      "desc": "다올투자증권은 25일 에이피알에 대해 올해 4분기 성수기 효과와 해외 온라인 채널 호조로 시장... 다올투자증권이 추정한 에이피알의 올해 4분기 연결 기준 매출액은 전년 동기 대비 108% 늘어난 1조1377억원..."
     },
     {
       "co": "에이피알",
@@ -332,13 +339,6 @@
     },
     {
       "co": "엘앤씨바이오",
-      "title": "엘앤씨바이오, 싱가포르서 미용 주사 소개",
-      "link": "https://biz.chosun.com/science-chosun/bio/2026/11/24/Z7XNAZM7OJBMLKAGMOR2LRNYGM/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-      "date": "11/24 18:33",
-      "desc": "엘앤씨바이오는 최근 싱가포르에서 미용 주사 리투오V를 선보였다고 23일 밝혔다. 리투오는 콜라겐 등 유효 성분을 피부에 주입하는 것이다. 사체 기증자의 피부 조직에서 세포외기질(ECM)을 추출해 분말로 만든 뒤..."
-    },
-    {
-      "co": "엘앤씨바이오",
       "title": "엘앤씨바이오, '리투오 V' 싱가포르 첫선…의료진 100여명",
       "link": "https://new.dailypharm.com/user/news/344977?REFERER=NP",
       "date": "11/24 15:48",
@@ -410,5 +410,13 @@
       "desc": "한국 대표 연자로 무대에 오른 김명진 원장은 '핵심 스킨 퀄리티 치료로서의 셀르디엠: 심화 임상 사례 및 복합 시술 전략(CellREDM as a Core Skin Quality Treatment: Advanced Clinical Cases &amp; Combination Treatment Strategies)..."
     }
   ],
-  "foreign": []
+  "foreign": [
+    {
+      "co": "Galderma",
+      "title": "Galderma Group-SINGLE STOCK Futures Price Chart — EUREX:GADFZ2029 - TradingView",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBMWHR0TEZiWVBRSkF3ODVHT2FDdzlnTWVLT1RXOE1qYmdseGlLS2E4MXh6aWF4aFFVQm9BcWgtaVJ4bVd6NTBNT29Senlqa3hhb21OMi1vTDNyZ0h4cDh6MFNDelc1dGE1WlJJN3Q4QmdOS2lEVXVR?oc=5",
+      "date": "11/24 08:31",
+      "desc": "Galderma Group-SINGLE STOCK Futures Price Chart — EUREX:GADFZ2029&nbsp;&nbsp;TradingView"
+    }
+  ]
 }
