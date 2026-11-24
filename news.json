@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25 07:08",
+  "updated": "2026-11-25 07:18",
   "domestic": [
     {
       "co": "파마리서치",
@@ -213,6 +213,13 @@
     },
     {
       "co": "에이피알",
+      "title": "에이피알, 공급업체에 산림 보호 요구…팜유 조달 실적은 공개 공백",
+      "link": "https://www.ekn.kr/web/view.php?key=20261125026074293",
+      "date": "11/25 07:10",
+      "desc": "화장품과 홈 뷰티 디바이스 사업을 영위하는 에이피알(APR)은 2026년 6월 첫 지속가능경영보고서를 공시했다.... ◆화장품을 위탁생산해도 원료 선택은 에이피알의 몫 에이피알은 국내외 제조업자개발생산(ODM)..."
+    },
+    {
+      "co": "에이피알",
       "title": "뷰티 디바이스 선두 에이피알 &quot;경쟁사 잠식 더이상 안돼&quot;",
       "link": "https://www.pointdaily.co.kr/news/articleView.html?idxno=327201",
       "date": "11/25 06:30",
@@ -396,13 +403,5 @@
       "desc": "한국 대표 연자로 무대에 오른 김명진 원장은 '핵심 스킨 퀄리티 치료로서의 셀르디엠: 심화 임상 사례 및 복합 시술 전략(CellREDM as a Core Skin Quality Treatment: Advanced Clinical Cases &amp; Combination Treatment Strategies)..."
     }
   ],
-  "foreign": [
-    {
-      "co": "Galderma",
-      "title": "Galderma Group-SINGLE STOCK Futures Price Chart — EUREX:GADFZ2029 - TradingView",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBMWHR0TEZiWVBRSkF3ODVHT2FDdzlnTWVLT1RXOE1qYmdseGlLS2E4MXh6aWF4aFFVQm9BcWgtaVJ4bVd6NTBNT29Senlqa3hhb21OMi1vTDNyZ0h4cDh6MFNDelc1dGE1WlJJN3Q4QmdOS2lEVXVR?oc=5",
-      "date": "11/24 08:31",
-      "desc": "Galderma Group-SINGLE STOCK Futures Price Chart — EUREX:GADFZ2029&nbsp;&nbsp;TradingView"
-    }
-  ]
+  "foreign": []
 }
