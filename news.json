@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25 08:09",
+  "updated": "2026-11-25 08:30",
   "domestic": [
     {
       "co": "파마리서치",
@@ -297,17 +297,17 @@
     },
     {
       "co": "에이피알",
-      "title": "[핀포인트] [에이피알] 해외 판로 확대에 재고 부담…현금흐름 '경고등...",
-      "link": "https://news.dealsitetv.com/articles/178982",
-      "date": "11/24 08:02",
-      "desc": "영업익 117% 증가에도 영업현금흐름 70% ↓…운전자본 관리 과제 부상 에이피알이 해외 오프라인 유통망을... 에이피알은 지난해 8월 미국 울타뷰티 입점을 시작으로 타깃·월마트·코스트코 등 현지 유통업체로 판매처를..."
-    },
-    {
-      "co": "에이피알",
       "title": "[핀포인트] [에이피알] 김병훈 대표 경영에 흠집…외환거래 제재에 공시...",
       "link": "https://news.dealsitetv.com/articles/178877",
       "date": "11/24 08:02",
       "desc": "매출 1조원 돌파 이면에 드러난 관리 부실…재발 방지책 실효성도 의문 뷰티업체인 에이피알이 해외투자... 에이피알은 김 대표가 창업 초기부터 구축한 소비자 직접판매(D2C) 구조를 바탕으로 성장해 왔다. D2C는 기업이..."
+    },
+    {
+      "co": "에이피알",
+      "title": "[핀포인트] [에이피알] 해외 판로 확대에 재고 부담…현금흐름 '경고등...",
+      "link": "https://news.dealsitetv.com/articles/178982",
+      "date": "11/24 08:02",
+      "desc": "영업익 117% 증가에도 영업현금흐름 70% ↓…운전자본 관리 과제 부상 에이피알이 해외 오프라인 유통망을... 에이피알은 지난해 8월 미국 울타뷰티 입점을 시작으로 타깃·월마트·코스트코 등 현지 유통업체로 판매처를..."
     },
     {
       "co": "에이피알",
@@ -410,13 +410,5 @@
       "desc": "한국 대표 연자로 무대에 오른 김명진 원장은 '핵심 스킨 퀄리티 치료로서의 셀르디엠: 심화 임상 사례 및 복합 시술 전략(CellREDM as a Core Skin Quality Treatment: Advanced Clinical Cases &amp; Combination Treatment Strategies)..."
     }
   ],
-  "foreign": [
-    {
-      "co": "Galderma",
-      "title": "Galderma Group-SINGLE STOCK Futures Price Chart — EUREX:GADFZ2029 - TradingView",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBMWHR0TEZiWVBRSkF3ODVHT2FDdzlnTWVLT1RXOE1qYmdseGlLS2E4MXh6aWF4aFFVQm9BcWgtaVJ4bVd6NTBNT29Senlqa3hhb21OMi1vTDNyZ0h4cDh6MFNDelc1dGE1WlJJN3Q4QmdOS2lEVXVR?oc=5",
-      "date": "11/24 08:31",
-      "desc": "Galderma Group-SINGLE STOCK Futures Price Chart — EUREX:GADFZ2029&nbsp;&nbsp;TradingView"
-    }
-  ]
+  "foreign": []
 }
