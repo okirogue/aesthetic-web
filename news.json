@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25 11:55",
+  "updated": "2026-11-25 12:05",
   "domestic": [
     {
       "co": "파마리서치",
@@ -402,6 +402,13 @@
     },
     {
       "co": "엘앤씨바이오",
+      "title": "엘앤씨바이오, 잔여 CB 150억 전량 소각…오버행·회계 부담 해소",
+      "link": "https://www.biotimes.co.kr/news/articleView.html?idxno=36471",
+      "date": "11/25 11:56",
+      "desc": "엘앤씨바이오가 150억 원 규모의 전환사채를 만기 전에 취득해 소각했다. 엘앤씨바이오는 지난 23일 콜옵션(중도상환권)을 행사해 제3회 무보증 사모 전환사채(CB) 잔여 물량 150억 원을 장외매수하고 24일 전량..."
+    },
+    {
+      "co": "엘앤씨바이오",
       "title": "엘앤씨바이오, 150억원 규모 CB 취득·소각 완료…주주가치 제고",
       "link": "https://www.ebn.co.kr/news/articleView.html?idxno=1732950",
       "date": "11/25 11:52",
@@ -464,13 +471,6 @@
       "desc": "IBK투자증권은 24일 인체조직 이식재와 세포외기질(ECM) 기반 스킨부스터를 생산하는 엘앤씨바이오에 대해 '리투오'의 국내 판매 확대에 수출 성장이 더해지면서 실적 개선세가 이어질 것으로 전망했다. 투자의견..."
     },
     {
-      "co": "엘앤씨바이오",
-      "title": "엘앤씨바이오, 26~27일 기관 대상 3분기 실적 NDR",
-      "link": "https://www.vegannews.co.kr/news/article.html?no=410140",
-      "date": "11/24 03:04",
-      "desc": "엘앤씨바이오(290650)는 오는 26~27일 국내 기관투자자를 대상으로 2026년 3분기 경영실적을 설명한다. 회사가 17일 정정 공시한 기업설명회 일정에 따르면 이번 NDR은 LS증권 주관으로 서울 여의도 등에서 1대1 및..."
-    },
-    {
       "co": "한스바이오메드",
       "title": "“가슴 보형물을 직접 접해보세요”…한스바이오메드의 이색 팝업",
       "link": "https://www.inthenews.co.kr/news/article.html?no=94947",
@@ -516,13 +516,5 @@
       "desc": "한국 대표 연자로 무대에 오른 김명진 원장은 '핵심 스킨 퀄리티 치료로서의 셀르디엠: 심화 임상 사례 및 복합 시술 전략(CellREDM as a Core Skin Quality Treatment: Advanced Clinical Cases &amp; Combination Treatment Strategies)..."
     }
   ],
-  "foreign": [
-    {
-      "co": "Galderma",
-      "title": "Galderma Group-SINGLE STOCK Futures Price Chart — EUREX:GADFZ2029 - TradingView",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBMWHR0TEZiWVBRSkF3ODVHT2FDdzlnTWVLT1RXOE1qYmdseGlLS2E4MXh6aWF4aFFVQm9BcWgtaVJ4bVd6NTBNT29Senlqa3hhb21OMi1vTDNyZ0h4cDh6MFNDelc1dGE1WlJJN3Q4QmdOS2lEVXVR?oc=5",
-      "date": "11/24 08:31",
-      "desc": "Galderma Group-SINGLE STOCK Futures Price Chart — EUREX:GADFZ2029&nbsp;&nbsp;TradingView"
-    }
-  ]
+  "foreign": []
 }
