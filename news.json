@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25 11:34",
+  "updated": "2026-11-25 11:55",
   "domestic": [
     {
       "co": "파마리서치",
@@ -402,6 +402,13 @@
     },
     {
       "co": "엘앤씨바이오",
+      "title": "엘앤씨바이오, 150억원 규모 CB 취득·소각 완료…주주가치 제고",
+      "link": "https://www.ebn.co.kr/news/articleView.html?idxno=1732950",
+      "date": "11/25 11:52",
+      "desc": "엘앤씨바이오가 150억원 규모 전환사채(CB)의 취득과 소각을 완료했다. 잠재적 주식 전환에 따른 지분 희석과 오버행 부담을 해소하고, 주주가치 제고를 위한 후속 환원 정책도 검토한다. 엘앤씨바이오는 콜옵션 행사에..."
+    },
+    {
+      "co": "엘앤씨바이오",
       "title": "[특징주] 엘앤씨바이오, 지분 희석 우려 덜고 화장품주 강세 맞물려 장...",
       "link": "https://www.widedaily.com/news/articleView.html?idxno=304698",
       "date": "11/25 10:52",
@@ -409,17 +416,10 @@
     },
     {
       "co": "엘앤씨바이오",
-      "title": "엘앤씨바이오, 150억원 규모 CB 전량 소각",
-      "link": "https://www.medipana.com/news/articleView.html?idxno=422602",
-      "date": "11/25 09:54",
-      "desc": "엘앤씨바이오가 150억원 규모 전환사채(CB)를 만기 전에 사들인 뒤 전량 소각했다. 이사회에서 결정한 취득·소각 절차는 모두 끝났다. 인체조직 기반 세포외기질(ECM) 플랫폼 기업인 회사는 콜옵션을 행사해 지난 23일 CB를..."
-    },
-    {
-      "co": "엘앤씨바이오",
-      "title": "엘앤씨바이오, 150억 규모 전환사채 소각 완료…주주가치 제고",
-      "link": "https://www.medicopharma.co.kr/news/articleView.html?idxno=70629",
-      "date": "11/25 09:34",
-      "desc": "엘앤씨바이오가 150억원 규모 전환사채(CB)를 소각하며 주주가치 제고에 나섰다. 기존 주주의 지분 희석과 잠재적 오버행 부담을 줄이는 한편, 재무 여건을 고려한 추가 주주환원 방안도 검토할 계획이다. 25일..."
+      "title": "엘앤씨바이오, 150억원 전환사채 전량 소각…잠재 매도 물량 해소",
+      "link": "https://www.mdtoday.co.kr/news/articleView.html?idxno=627554",
+      "date": "11/25 09:32",
+      "desc": "엘앤씨바이오가 전환사채(CB)의 주식 전환에 따른 기존 주주의 지분 희석 부담을 덜게 됐다. 앞서 이사회에서 결정한 150억원 규모의 전환사채 소각을 마무리하면서 주주가치 제고를 위한 후속 방안도 검토한다...."
     },
     {
       "co": "엘앤씨바이오",
@@ -516,5 +516,13 @@
       "desc": "한국 대표 연자로 무대에 오른 김명진 원장은 '핵심 스킨 퀄리티 치료로서의 셀르디엠: 심화 임상 사례 및 복합 시술 전략(CellREDM as a Core Skin Quality Treatment: Advanced Clinical Cases &amp; Combination Treatment Strategies)..."
     }
   ],
-  "foreign": []
+  "foreign": [
+    {
+      "co": "Galderma",
+      "title": "Galderma Group-SINGLE STOCK Futures Price Chart — EUREX:GADFZ2029 - TradingView",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBMWHR0TEZiWVBRSkF3ODVHT2FDdzlnTWVLT1RXOE1qYmdseGlLS2E4MXh6aWF4aFFVQm9BcWgtaVJ4bVd6NTBNT29Senlqa3hhb21OMi1vTDNyZ0h4cDh6MFNDelc1dGE1WlJJN3Q4QmdOS2lEVXVR?oc=5",
+      "date": "11/24 08:31",
+      "desc": "Galderma Group-SINGLE STOCK Futures Price Chart — EUREX:GADFZ2029&nbsp;&nbsp;TradingView"
+    }
+  ]
 }
