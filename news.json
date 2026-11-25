@@ -1,6 +1,20 @@
 {
-  "updated": "2026-11-25 08:50",
+  "updated": "2026-11-25 09:00",
   "domestic": [
+    {
+      "co": "파마리서치",
+      "title": "파마리서치, 국제표준 개정 맞춰 준법경영 체계 강화",
+      "link": "http://www.press9.kr/news/articleView.html?idxno=86970",
+      "date": "11/25 08:58",
+      "desc": "파마리서치가 글로벌 부패방지 기준에 맞춰 내부 관리체계를 정비하고 준법경영 역량을 강화했다. 파마리서치는 부패방지경영시스템 개정 국제표준인 'ISO 37001:2025' 전환심사와 정기 사후심사를 모두 통과했다고 25일..."
+    },
+    {
+      "co": "파마리서치",
+      "title": "파마리서치, 부패방지경영시스템 'ISO 37001:2025' 전환심사 통과",
+      "link": "http://www.medisobizanews.com/news/articleView.html?idxno=144741",
+      "date": "11/25 08:52",
+      "desc": "재생의학 전문기업 파마리서치(대표이사 손지훈)는 부패방지경영시스템의 개정 국제표준인 'ISO 37001:2025' 전환심사와 사후심사를 통과했다고 25일 밝혔다. 'ISO 37001'은 국제표준화기구(ISO)가 조직 내 부패 리스크를..."
+    },
     {
       "co": "파마리서치",
       "title": "파마리서치, 부패방지경영 국제표준 개정 심사 통과",
@@ -409,6 +423,14 @@
     },
     {
       "co": "ECM",
+      "kw": "리투오",
+      "title": "리투오 활용한 피부 관리, 개인별 시술 방향이 중요해",
+      "link": "https://www.livesnews.com/news/article.html?no=66283",
+      "date": "11/25 09:00",
+      "desc": "리투오(Re2O)는 인체 유래 무세포 동종 진피(hADM)를 기반으로 한 스킨부스터다. 피부 고민과 시술 목적에 따라... 이를 바탕으로 리투오 적용 여부와 시술 방향을 결정할 수 있다. 비티큐의원 이원철 대표원장은 “리투오를..."
+    },
+    {
+      "co": "ECM",
       "kw": "셀르디엠",
       "title": "뷰성형외과 이승현 원장 '셀르디엠' 엠버서더 위촉",
       "link": "http://www.bokuennews.com/news/article.html?no=287652",
@@ -424,13 +446,5 @@
       "desc": "한국 대표 연자로 무대에 오른 김명진 원장은 '핵심 스킨 퀄리티 치료로서의 셀르디엠: 심화 임상 사례 및 복합 시술 전략(CellREDM as a Core Skin Quality Treatment: Advanced Clinical Cases &amp; Combination Treatment Strategies)..."
     }
   ],
-  "foreign": [
-    {
-      "co": "Galderma",
-      "title": "Galderma Group-SINGLE STOCK Futures Price Chart — EUREX:GADFZ2029 - TradingView",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBMWHR0TEZiWVBRSkF3ODVHT2FDdzlnTWVLT1RXOE1qYmdseGlLS2E4MXh6aWF4aFFVQm9BcWgtaVJ4bVd6NTBNT29Senlqa3hhb21OMi1vTDNyZ0h4cDh6MFNDelc1dGE1WlJJN3Q4QmdOS2lEVXVR?oc=5",
-      "date": "11/24 08:31",
-      "desc": "Galderma Group-SINGLE STOCK Futures Price Chart — EUREX:GADFZ2029&nbsp;&nbsp;TradingView"
-    }
-  ]
+  "foreign": []
 }
