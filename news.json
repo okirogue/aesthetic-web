@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25 12:46",
+  "updated": "2026-11-25 13:07",
   "domestic": [
     {
       "co": "파마리서치",
@@ -276,6 +276,13 @@
     },
     {
       "co": "에이피알",
+      "title": "[특징주] 에이피알, 4분기 호실적 전망.. 11%대 '급등'",
+      "link": "https://www.g-enews.com/view.php?ud=20261125102404159144093b5d4e_1",
+      "date": "11/25 13:00",
+      "desc": "에이피알이 11% 넘게 급등하고 있다. 증권가에서 4분기 실적 개선과 해외 시장 확대에 대한 긍정적인 전망을 내놓으면서 투자심리가 개선된 것으로 풀이된다. 25일 한국거래소에 따르면 오전 10시 23분 현재 에이피알은..."
+    },
+    {
+      "co": "에이피알",
       "title": "[특징주] 증권사 핑크빛 전망…'화장품주' 코스맥스·에이피알 급등",
       "link": "http://www.newsdream.kr/news/articleView.html?idxno=122993",
       "date": "11/25 11:32",
@@ -325,13 +332,6 @@
     },
     {
       "co": "에이피알",
-      "title": "[특징주] &quot;4분기 호실적 전망&quot;⋯에이피알 8%대↑",
-      "link": "http://www.inews24.com/view/2030105",
-      "date": "11/25 10:02",
-      "desc": "에이피알이 장 초반 8%대 강세를 보이고 있다. 증권가 목표가가 상향 조정되면서 매수세가 급격히 유입되고 있다. 25일 한국거래소에 따르면 에이피알은 이날 오전 9시 43분 현재 전 거래일 대비 2만3000원(8.73%) 오른..."
-    },
-    {
-      "co": "에이피알",
       "title": "&quot;주가 90% 상승 여력&quot;…에이피알 목표가 50만원으로 상향",
       "link": "https://www.fnnews.com/news/202611250836472359",
       "date": "11/25 08:43",
@@ -378,13 +378,6 @@
       "link": "https://www.mk.co.kr/article/12217212",
       "date": "11/24 16:23",
       "desc": "관건 에이피알, 메디큐브 쏠림 완화 목적 [본 기사는 11월 24일(16:18) 매일경제 자본시장 전문 유료매체인 ‘레이더M’에 보도 된 기사입니다] 에이피알이 더마 스킨케어 브랜드 ‘닥터멜락신’을 운영하는..."
-    },
-    {
-      "co": "에이피알",
-      "title": "코스피 급락에도 화장품 '1조 클럽' 1년새 7개→8개 확대...에이피알 '후...",
-      "link": "https://www.thebk.co.kr/news/articleView.html?idxno=313002",
-      "date": "11/24 15:08",
-      "desc": "에이피알이 10조1000억원으로 가장 컸고, 아모레퍼시픽 7조원, LG생활건강 4조3000억원, 코스맥스 2조2000억원... 에이피알 역시 소폭 감소했지만 여전히 업계 시가총액 1위를 유지했다. 급락장 속 '1조 클럽' 확대가..."
     },
     {
       "co": "엘앤씨바이오",
@@ -509,5 +502,13 @@
       "desc": "한국 대표 연자로 무대에 오른 김명진 원장은 '핵심 스킨 퀄리티 치료로서의 셀르디엠: 심화 임상 사례 및 복합 시술 전략(CellREDM as a Core Skin Quality Treatment: Advanced Clinical Cases &amp; Combination Treatment Strategies)..."
     }
   ],
-  "foreign": []
+  "foreign": [
+    {
+      "co": "Galderma",
+      "title": "Galderma Group-SINGLE STOCK Futures Price Chart — EUREX:GADFZ2029 - TradingView",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBMWHR0TEZiWVBRSkF3ODVHT2FDdzlnTWVLT1RXOE1qYmdseGlLS2E4MXh6aWF4aFFVQm9BcWgtaVJ4bVd6NTBNT29Senlqa3hhb21OMi1vTDNyZ0h4cDh6MFNDelc1dGE1WlJJN3Q4QmdOS2lEVXVR?oc=5",
+      "date": "11/24 08:31",
+      "desc": "Galderma Group-SINGLE STOCK Futures Price Chart — EUREX:GADFZ2029&nbsp;&nbsp;TradingView"
+    }
+  ]
 }
