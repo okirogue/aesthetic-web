@@ -1,6 +1,13 @@
 {
-  "updated": "2026-11-25 10:02",
+  "updated": "2026-11-25 10:12",
   "domestic": [
+    {
+      "co": "파마리서치",
+      "title": "파마리서치, 부패방지 빗장…개정 ISO 국제표준 통과",
+      "link": "https://www.medicaltimes.com/Main/News/NewsView.html?ID=1172128&ref=naverpc",
+      "date": "11/25 10:10",
+      "desc": "재생의학 전문기업 파마리서치가 개정된 부패방지경영시스템 국제표준 전환심사와 정기 사후심사를 통과하며 준법경영 체계를 고도화한다.파마리서치 부패방지경영시스템 인증서25일 파마리서치(대표이사 손지훈)는..."
+    },
     {
       "co": "파마리서치",
       "title": "파마리서치, 부패방지경영시스템 'ISO 37001:2025' 전환심사 통과",
@@ -35,13 +42,6 @@
       "link": "http://www.press9.kr/news/articleView.html?idxno=86970",
       "date": "11/25 08:58",
       "desc": "파마리서치가 글로벌 부패방지 기준에 맞춰 내부 관리체계를 정비하고 준법경영 역량을 강화했다. 파마리서치는 부패방지경영시스템 개정 국제표준인 'ISO 37001:2025' 전환심사와 정기 사후심사를 모두 통과했다고 25일..."
-    },
-    {
-      "co": "파마리서치",
-      "title": "파마리서치, 부패방지경영 국제표준 개정 심사 통과",
-      "link": "https://www.news1.kr/bio/pharmaceutical-bio/6365001",
-      "date": "11/25 08:30",
-      "desc": "파마리서치(214450)는 부패방지경영시스템의 개정 국제표준인 'ISO 37001:2025' 전환심사와 정기 사후심사를 모두 통과했다고 25일 밝혔다. 지난해 11월 최초 인증을 획득한 데 이어 올해 개정 표준에 따른 전환심사까지..."
     },
     {
       "co": "파마리서치",
@@ -255,6 +255,20 @@
     },
     {
       "co": "에이피알",
+      "title": "화장품주, 하락장서 동반 강세…에이피알 9%대 급등",
+      "link": "https://www.hankyung.com/article/2026112587176",
+      "date": "11/25 10:08",
+      "desc": "이날 오전 9시48분 현재 유가증권시장에서 한국화장품(18.91%), 에이피알(9.30%), 한국화장품제조(7.98%) 등이... 이날 하나증권은 에이피알에 대해 미국과 유럽에서의 매출 증가세가 두드러지는 가운데 미국 오프라인..."
+    },
+    {
+      "co": "에이피알",
+      "title": "[특징주] &quot;4분기 호실적 전망&quot;⋯에이피알 8%대↑",
+      "link": "http://www.inews24.com/view/2030105",
+      "date": "11/25 10:02",
+      "desc": "에이피알이 장 초반 8%대 강세를 보이고 있다. 증권가 목표가가 상향 조정되면서 매수세가 급격히 유입되고 있다. 25일 한국거래소에 따르면 에이피알은 이날 오전 9시 43분 현재 전 거래일 대비 2만3000원(8.73%) 오른..."
+    },
+    {
+      "co": "에이피알",
       "title": "에이피알 주가, 11월 25일 장중 287,000원 8.92% 상승",
       "link": "https://www.joongangenews.com/news/articleView.html?idxno=566413",
       "date": "11/25 09:48",
@@ -360,13 +374,6 @@
     },
     {
       "co": "에이피알",
-      "title": "[핀포인트] [에이피알] 해외 판로 확대에 재고 부담…현금흐름 '경고등...",
-      "link": "https://news.dealsitetv.com/articles/178982",
-      "date": "11/24 08:02",
-      "desc": "영업익 117% 증가에도 영업현금흐름 70% ↓…운전자본 관리 과제 부상 에이피알이 해외 오프라인 유통망을... 에이피알은 지난해 8월 미국 울타뷰티 입점을 시작으로 타깃·월마트·코스트코 등 현지 유통업체로 판매처를..."
-    },
-    {
-      "co": "에이피알",
       "title": "[핀포인트] [에이피알] 김병훈 대표 경영에 흠집…외환거래 제재에 공시...",
       "link": "https://news.dealsitetv.com/articles/178877",
       "date": "11/24 08:02",
@@ -374,10 +381,10 @@
     },
     {
       "co": "에이피알",
-      "title": "중국 시장 다시 열린다… 에이피알·LG생활건강 화장품주에 올라타라",
-      "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=507260",
-      "date": "11/24 06:36",
-      "desc": "실제 에이피알은 온라인 중심이었던 중국 유통 전략을 오프라인으로 확대하고 있다. 메디큐브 제품이 입점한... 화장품 분야에서는 중국 오프라인 유통망 확대를 추진하는 에이피알과 프리미엄 브랜드 경쟁력을 보유한..."
+      "title": "[핀포인트] [에이피알] 해외 판로 확대에 재고 부담…현금흐름 '경고등...",
+      "link": "https://news.dealsitetv.com/articles/178982",
+      "date": "11/24 08:02",
+      "desc": "영업익 117% 증가에도 영업현금흐름 70% ↓…운전자본 관리 과제 부상 에이피알이 해외 오프라인 유통망을... 에이피알은 지난해 8월 미국 울타뷰티 입점을 시작으로 타깃·월마트·코스트코 등 현지 유통업체로 판매처를..."
     },
     {
       "co": "엘앤씨바이오",
@@ -488,13 +495,5 @@
       "desc": "한국 대표 연자로 무대에 오른 김명진 원장은 '핵심 스킨 퀄리티 치료로서의 셀르디엠: 심화 임상 사례 및 복합 시술 전략(CellREDM as a Core Skin Quality Treatment: Advanced Clinical Cases &amp; Combination Treatment Strategies)..."
     }
   ],
-  "foreign": [
-    {
-      "co": "Galderma",
-      "title": "Galderma Group-SINGLE STOCK Futures Price Chart — EUREX:GADFZ2029 - TradingView",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBMWHR0TEZiWVBRSkF3ODVHT2FDdzlnTWVLT1RXOE1qYmdseGlLS2E4MXh6aWF4aFFVQm9BcWgtaVJ4bVd6NTBNT29Senlqa3hhb21OMi1vTDNyZ0h4cDh6MFNDelc1dGE1WlJJN3Q4QmdOS2lEVXVR?oc=5",
-      "date": "11/24 08:31",
-      "desc": "Galderma Group-SINGLE STOCK Futures Price Chart — EUREX:GADFZ2029&nbsp;&nbsp;TradingView"
-    }
-  ]
+  "foreign": []
 }
