@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27 18:00",
+  "updated": "2026-11-27 18:11",
   "domestic": [
     {
       "co": "파마리서치",
@@ -70,6 +70,13 @@
       "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=508715",
       "date": "11/27 09:06",
       "desc": "전문 미용의료기기 시장에서는 클래시스가 상승세를 이어가고 있다. 전 거래일 대비 2.34% 오른 가격에 거래 중이다. 고주파와 초음파 기반 미용의료기기를 중심으로 해외 시장을 공략하고 있으며, 장비 판매 이후 카트리지..."
+    },
+    {
+      "co": "에이피알",
+      "title": "美틱톡샵 1·2위가 한집에…에이피알의 3900억 베팅[주末머니]",
+      "link": "https://view.asiae.co.kr/article/2026112710570945523",
+      "date": "11/27 18:00",
+      "desc": "메디큐브 운영사 에이피알이 닥터멜락신 운영사 브랜드501을 인수하기로 하면서다. 증권가는 이미 잘 팔리는 브랜드에 에이피알의 유통망과 마케팅 역량을 더하면 수익성을 높일 수 있다고 봤다. 매출만 보면 싸게..."
     },
     {
       "co": "에이피알",
@@ -339,17 +346,17 @@
     },
     {
       "co": "에이피알",
-      "title": "교보증권 &quot;에이피알, 닥터멜락신 인수가 매력적…해외 유통망 활용 수익...",
-      "link": "http://www.popcornnews.net/news/articleView.html?idxno=141770",
-      "date": "11/27 08:02",
-      "desc": "교보증권은 27일 에이피알에 대해 &quot;닥터멜락신 운영사인 브랜드 501의 인수 가격이 예상보다 낮고, 인수 후 매출과 수익성을 높일 여력도 크다&quot;고 평가했다. 에이피알이 메디큐브를 키우며 확보한 해외 유통망을..."
-    },
-    {
-      "co": "에이피알",
       "title": "[핀포인트] [에이피알] 메디큐브 93% 의존도…사업 다각화 없인 지속 가...",
       "link": "https://news.dealsitetv.com/articles/179047",
       "date": "11/27 08:02",
       "desc": "단일 브랜드 매출 비중 쏠려…국내외 경쟁사 추격도 부담 김병훈 대표가 이끄는 에이피알의 사업구조가... 에이피알의 실적도 가파른 상승 곡선을 그려왔다. 2021년 2591억원이던 매출은 지난해 1조5273억원으로 6배가량..."
+    },
+    {
+      "co": "에이피알",
+      "title": "교보증권 &quot;에이피알, 닥터멜락신 인수가 매력적…해외 유통망 활용 수익...",
+      "link": "http://www.popcornnews.net/news/articleView.html?idxno=141770",
+      "date": "11/27 08:02",
+      "desc": "교보증권은 27일 에이피알에 대해 &quot;닥터멜락신 운영사인 브랜드 501의 인수 가격이 예상보다 낮고, 인수 후 매출과 수익성을 높일 여력도 크다&quot;고 평가했다. 에이피알이 메디큐브를 키우며 확보한 해외 유통망을..."
     },
     {
       "co": "에이피알",
@@ -471,5 +478,13 @@
       "desc": "피부 탄력과 밀도 저하 등 다양한 피부 고민에 스킨부스터가 활용되는 가운데, 인체 유래 진피 조직을 기반으로 한 쥬브아셀에도 관심이 이어지고 있다. 쥬브아셀은 인체 유래 무세포 동종진피(hADM)를 활용한 ECM 기반..."
     }
   ],
-  "foreign": []
+  "foreign": [
+    {
+      "co": "Galderma",
+      "title": "Galderma stock: RBC raises rating and price target to CHF 215 - ad-hoc-news.de",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQQnhPMnVYcGR6c1M3dGpwLUs4LVR4eHJ0NDgwS3Zmdml4ajh1LUVIMUF0SGJYU1hCQUFKdFFYSnZPNXhfdDJ3Z0hfMGhnbGxjTG4zWnN2dkVKNkRnSlJKeWZWMGNUSzNUUjU1MlVoQllTSUpReUpPZEg1NXN4Nm43T3gyajZhSHFiRE0teUJIZ2NDU2ZDYks2VDNGOVNfcFRTS3kxdGJrZFIwSEFlS3ZDZkVaTXhvUElETFo0eHY1NDc?oc=5",
+      "date": "11/26 16:49",
+      "desc": "Galderma stock: RBC raises rating and price target to CHF 215&nbsp;&nbsp;ad-hoc-news.de"
+    }
+  ]
 }
