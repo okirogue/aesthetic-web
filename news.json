@@ -1,6 +1,13 @@
 {
-  "updated": "2026-11-27 17:50",
+  "updated": "2026-11-27 18:00",
   "domestic": [
+    {
+      "co": "파마리서치",
+      "title": "파마리서치, 대한임상미용의학회서 '리쥬비엘' 임상 활용 노하우 및 교...",
+      "link": "http://www.paxetv.com/news/articleView.html?idxno=288127",
+      "date": "11/27 17:56",
+      "desc": "▲대한임상미용의학회 제21회 정기학술대회 강연 파마리서치가 지난 15일 개최된 대한임상미용의학회 제21회 정기학술대회에 참가해 리쥬비엘의 임상 활용 경험을 공유했습니다. 파마리서치는 학술대회 참가를 통해..."
+    },
     {
       "co": "파마리서치",
       "title": "파마리서치, 대한임상미용의학회서 리쥬비엘 시술 경험 공유",
@@ -66,7 +73,7 @@
     },
     {
       "co": "에이피알",
-      "title": "김병훈 에이피알 대표, 뷰티기기 美 성공 방정식 들고 '더마' 공략 나선...",
+      "title": "김병훈 에이피알 대표, 美 '닥터멜락신' 품고 스킨케어 고도화 나선다",
       "link": "https://www.insightkorea.co.kr/news/articleView.html?idxno=259962",
       "date": "11/27 17:28",
       "desc": "김병훈 에이피알(APR) 대표가 스킨케어 사업 역량 고도화에 나선다. '닥터멜락신'을 인수하며 더마... 에이피알은 닥터멜락신이 미국 틱톡샵에서 입증한 판매력과 아마존 및 오프라인 매장으로 판매를 확대할 가능성에..."
@@ -408,13 +415,6 @@
       "desc": "인체조직 이식재 및 미용 의료기기 개발·제조 기업 한스바이오메드는 자사 품질분임조인 이음분임조가 지난 11월 18일부터 20일까지 방글라데시 다카에서 열린 제51회 국제 품질분임조대회(ICQCC 2026)에서 금상을..."
     },
     {
-      "co": "한스바이오메드",
-      "title": "프레임청담의원 이호영 원장, 한스바이오메드 심포지엄서 민트실리프팅...",
-      "link": "https://www.mdtoday.co.kr/news/articleView.html?idxno=627730",
-      "date": "11/26 09:00",
-      "desc": "프레임청담의원은 이호영 대표원장이 서울 한스바이오메드 본사에서 개최된 심포지엄에 강연자로 참석해 민트실리프팅 시술을 주제로 초청 강연을 진행했다고 26일 밝혔다. 이호영 원장은 최근 의료진 등을 대상으로 한..."
-    },
-    {
       "co": "ECM",
       "kw": "리투오",
       "title": "리투오, 피부 상태에 따른 맞춤형 시술 계획이 중요",
@@ -471,13 +471,5 @@
       "desc": "피부 탄력과 밀도 저하 등 다양한 피부 고민에 스킨부스터가 활용되는 가운데, 인체 유래 진피 조직을 기반으로 한 쥬브아셀에도 관심이 이어지고 있다. 쥬브아셀은 인체 유래 무세포 동종진피(hADM)를 활용한 ECM 기반..."
     }
   ],
-  "foreign": [
-    {
-      "co": "Galderma",
-      "title": "Galderma stock: RBC raises rating and price target to CHF 215 - ad-hoc-news.de",
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQQnhPMnVYcGR6c1M3dGpwLUs4LVR4eHJ0NDgwS3Zmdml4ajh1LUVIMUF0SGJYU1hCQUFKdFFYSnZPNXhfdDJ3Z0hfMGhnbGxjTG4zWnN2dkVKNkRnSlJKeWZWMGNUSzNUUjU1MlVoQllTSUpReUpPZEg1NXN4Nm43T3gyajZhSHFiRE0teUJIZ2NDU2ZDYks2VDNGOVNfcFRTS3kxdGJrZFIwSEFlS3ZDZkVaTXhvUElETFo0eHY1NDc?oc=5",
-      "date": "11/26 16:49",
-      "desc": "Galderma stock: RBC raises rating and price target to CHF 215&nbsp;&nbsp;ad-hoc-news.de"
-    }
-  ]
+  "foreign": []
 }
